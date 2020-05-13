@@ -1,4 +1,5 @@
 @extends('layouts.head')
+
 @section('content')
 <form class="mt-5" action="{{ route('reg-submit') }}" method="post" novalidate>
 @csrf
