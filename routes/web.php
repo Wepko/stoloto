@@ -25,8 +25,13 @@ Route::get('/login', function (){
   return view('login');
 })->name('login');
 
+Route::get('/lk', function (){
+    return view('lk');
+})->name('lk');
+
 Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
+Route::get('/logout', 'LKController@logout')->name('logout');
 
 Route::get('/ticket', function (){
   return view('ticket_sms');

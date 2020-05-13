@@ -25,22 +25,38 @@
     <div class="left_panel">
       <div class="column">
         <!-- Button trigger modal -->
-    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalLong">
-      Карта
-    </button>
-        <div class="left_nav_panel">
-          <a href="{{ route('login') }}">Войти</a>
-          <a href="{{ route('reg') }}">Регистрация</a>
-        </div>
-        <div class="left_nav_panel">
-          <a href="{{ route('ticket') }}">Билеты по СМС</a>
-        </div>
-        <div class="left_nav_panel">
-        <a href="{{ route('broadcast') }}">Трансляции</a>
-        </div>
-        <div class="left_nav_panel">
-          <a href="{{ route('valid_ticket') }}">Проверка билетов</a>
-        </div>
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalLong">
+          Карта
+        </button>
+        @if (Auth::check())
+            <div class="left_nav_panel">
+              <a href="{{ route('lk') }}">Личный кабинет</a>
+              <a href="{{ route('logout') }}">Выйти</a>
+            </div>
+            <div class="left_nav_panel">
+              <a href="{{ route('ticket') }}">Билеты по СМС</a>
+            </div>
+            <div class="left_nav_panel">
+              <a href="{{ route('broadcast') }}">Трансляции</a>
+            </div>
+            <div class="left_nav_panel">
+              <a href="{{ route('valid_ticket') }}">Проверка билетов</a>
+            </div>
+        @else
+            <div class="left_nav_panel">
+              <a href="{{ route('login') }}">Войти</a>
+              <a href="{{ route('reg') }}">Регистрация</a>
+            </div>
+            <div class="left_nav_panel">
+              <a href="{{ route('ticket') }}">Билеты по СМС</a>
+            </div>
+            <div class="left_nav_panel">
+            <a href="{{ route('broadcast') }}">Трансляции</a>
+            </div>
+            <div class="left_nav_panel">
+              <a href="{{ route('valid_ticket') }}">Проверка билетов</a>
+            </div>
+        @endif
       </div>
     </div>
     <!-- END left - panel -->
