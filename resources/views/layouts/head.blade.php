@@ -62,19 +62,21 @@
     <!-- END left - panel -->
     <!-- START right - panel -->
     <div class="right_panel">
-    <a href="/four-of-twenty"><p><img src="img/4iz.png" width="30px" alt=""> «Гослото «4 из 20»</p></a>
-    <a href="/five-of-threety-six"><p><img src="img/5iz.png" width="30px" alt=""> «Гослото «5 из 36»</p></a>
-    <a href="/seven-of-fourty-nine"><p><img src="img/7iz.png" width="30px" alt=""> «Гослото «7 из 49»</p></a>
-    <a href="/six-of-fourty-five"> <p><img src="img/6iz.png" width="30px" alt=""> «Гослото «6 из 45»</p></a>
-    <a href="/twenteen-of-twenty-four">  <p><img src="img/12iz.png" width="30px" alt=""> «Гослото «12 из 24»</p></a>
-    <a href="/rapido"><p><img src="img/rapido.png" width="30px" alt=""> «Рапидо»</p></a>
-    <a href="/top-4"> <p><img src="img/top-3.png" width="30px" alt=""> «Топ - 3»</p></a>
+    <a href="{{ route('one-game') }}"><p><img src="img/4iz.png" width="30px" alt=""> «Гослото «4 из 20»</p></a>
+    <a href="{{ route('two-game') }}"><p><img src="img/5iz.png" width="30px" alt=""> «Гослото «5 из 36»</p></a>
+    <a href="{{ route('three-game') }}"><p><img src="img/7iz.png" width="30px" alt=""> «Гослото «7 из 49»</p></a>
+    <a href="{{ route('four-game') }}"> <p><img src="img/6iz.png" width="30px" alt=""> «Гослото «6 из 45»</p></a>
+    <a href="{{ route('five-game') }}">  <p><img src="img/12iz.png" width="30px" alt=""> «Гослото «12 из 24»</p></a>
+    <a href="{{ route('six-game') }}"><p><img src="img/rapido.png" width="30px" alt=""> «Рапидо»</p></a>
+    <a href="{{ route('seven-game') }}"> <p><img src="img/top-3.png" width="30px" alt=""> «Топ - 3»</p></a>
 
     </div>
     <!-- END right - panel -->
     <!-- site-map -->
 
-
+    <div class="logo" style="text-align: center">
+      <img src="img/crisis_logo.svg"  alt="">
+    </div>
 
 
     <!-- site-map -->

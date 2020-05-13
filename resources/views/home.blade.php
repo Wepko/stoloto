@@ -1,4 +1,4 @@
-@extends('layouts.head');
+@extends('layouts.head')
 @section('content')
 <!-- <div class="collapse" id="collapseExample">
 <div class="card card-body sitemap">
@@ -6,9 +6,7 @@
 </div>
 </div> -->
 <!-- logo -->
-<div class="logo">
-<img src="img/crisis_logo.svg" alt="">
-</div>
+
 <!-- logo -->
 @if (Session::has('info'))
   <div class="alert alert-success mt-5" role="alert">

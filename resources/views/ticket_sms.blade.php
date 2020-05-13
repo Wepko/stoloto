@@ -1,1 +1,6 @@
-<h1>Ticket SMS</h1>
+@extends('layouts.head')
+@section('content')
+
+
+
+@endsection
