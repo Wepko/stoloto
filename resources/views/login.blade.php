@@ -21,10 +21,6 @@
       <span class="hel[-block text-danger">{{ $errors->first('password') }}</span>
     @endif
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" name="remember" class="form-check-input {{ $errors->has('validAge') ? ' is-invalid' : '' }}" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Войти</button>
 </form>
 @endsection
