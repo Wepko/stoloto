@@ -9,8 +9,12 @@
 <div class="logo">
 <img src="img/crisis_logo.svg" alt="">
 </div>
-<!-- logo --> 
-
+<!-- logo -->
+@if (Session::has('info'))
+  <div class="alert alert-success mt-5" role="alert">
+    {{   Session::get('info') }}
+  </div>
+@endif
 <!-- start home slider -->
 <div class="home_slider">
 <div id="home_slider1" class="carousel slide" data-ride="carousel">

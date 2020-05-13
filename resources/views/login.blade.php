@@ -1,5 +1,10 @@
 @extends('layouts.head')
 @section('content')
+  @if (Session::has('info'))
+  <div class="alert alert-danger mt-5" role="alert">
+    {{   Session::get('info') }}
+  </div>
+  @endif
 <form class="mt-5" action="{{ route('login-submit') }}" method="post" novalidate>
 @csrf
   <div class="form-group">
