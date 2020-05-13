@@ -1,0 +1,1 @@
+<h1>Valid ticket</h1>
