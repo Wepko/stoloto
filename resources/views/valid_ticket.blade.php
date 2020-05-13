@@ -1,1 +1,6 @@
-<h1>Valid ticket</h1>
+@extends('layouts.head')
+@section('content')
+
+
+
+@endsection

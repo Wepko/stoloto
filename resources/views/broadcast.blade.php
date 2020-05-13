@@ -1,1 +1,6 @@
-<h1>Live</h1>
+@extends('layouts.head')
+@section('content')
+
+
+
+@endsection

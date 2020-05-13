@@ -1,1 +1,6 @@
-5678
+@extends('layouts.head');
+@section('content')
+
+
+
+@endsection

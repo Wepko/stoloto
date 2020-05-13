@@ -3,9 +3,6 @@
 </div>
 <div class="two-game" style="background-color: rgba(36, 207, 69, 0.9);">
       <div class="container text-center">
-        <div class="logo">
-        <img src="img/crisis_logo.svg" alt="">
-        </div>
         <div class="row game mt-150">
           <p class="head-game">
             <img src="img/5iz.png" width="150px" alt="">
