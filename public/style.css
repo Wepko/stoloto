@@ -123,7 +123,8 @@
 .carGame{
   margin: 100px 0;
 }
-//Component
+
+
 .md-modal {
   margin: auto;
 	position: fixed;
@@ -223,4 +224,8 @@
   background-color: white;
   border-radius: 5px;
   text-align: left;
+}
+
+body {
+  background: red;
 }

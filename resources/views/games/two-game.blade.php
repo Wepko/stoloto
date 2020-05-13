@@ -1,4 +1,5 @@
 @extends('layouts.head')
+
 @section('content')
 </div>
 <div class="two-game" style="background-color: rgba(36, 207, 69, 0.9);">
