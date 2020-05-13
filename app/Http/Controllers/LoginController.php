@@ -9,8 +9,8 @@ class LoginController extends Controller
 {
     public function submit(Request $request) {
         $this->validate($request, [
-            'email' => 'required',
-            'password' => 'required'
+            'email' => 'required|email',
+            'password' => 'required|min:6'
         ]);
 
         if(!Auth::attempt($request->only(['email','password']), $request->has('remember'))) {
