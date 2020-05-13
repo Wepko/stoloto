@@ -25,6 +25,10 @@
     <label for="exampleInputPassword1">Повторить пароль</label>
     <input type="password" class="form-control" id="exampleInputPassword1">
   </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Мне есть 18 лет</label>
+  </div>
   <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
 </form>
 @endsection
