@@ -1,4 +1,4 @@
-@extends('layouts.head');
+@extends('layouts.head')
 @section('content')
 
 
