@@ -225,3 +225,63 @@
   border-radius: 5px;
   text-align: left;
 }
+<<<<<<< HEAD
+=======
+
+.content-4_20 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4rem 0;
+}
+
+.blocks-ticket {
+    flex-grow: 1;
+    margin-right: 4rem;
+}
+
+.help-information {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.zone-headers {
+    display: flex;
+    justify-content: space-around;
+}
+
+.zone-worker {
+    display: flex;
+    justify-content: space-around;
+}
+.zone-one, .zone-two {
+    flex-basis: 15rem;
+}
+
+.zone-worker tr > td:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.quick-panel {
+    text-align: center;
+}
+
+.panel-score {
+    flex-grow: 0.3;
+    padding: 1rem 2rem;
+}
+
+.inpt1,
+.inpt2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inpt2 {
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    padding: 0.5rem 0;
+}
+>>>>>>> 5799319b52e739f567b672dc96e17130c08a184e

@@ -1,12 +1,16 @@
 @extends('layouts.head')
 @section('content')
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5799319b52e739f567b672dc96e17130c08a184e
 <div class="content-4_20">
     <div class="blocks-ticket">
-        <div class="block-ticket">
+        <div class="card block-ticket">
             <div class="help-information">
                 <p>Отметьте не менее 4 чисел в каждом поле.</p>
-                <a href="#" class="btn btn-dark"></a>
+                <a href="#" class="btn btn-dark">Добавить билет</a>
             </div>
         
             <div class="zone-headers">
@@ -89,7 +93,7 @@
                 </div>
             </div>
         
-            <div class="quick-panel">
+            <div class=" card-footer quick-panel">
                 <div class="btn btn-dark">1</div>
                 <div class="btn btn-dark">2</div>
                 <div class="btn btn-dark">3</div>
@@ -98,20 +102,24 @@
         </div>
     </div>
     
-    <div class="panel-score box">
+    <div class="card panel-score box">
         <img src="" alt="">
         <div class="future-draw"></div>
-        <p>Кол-во тиражей<select name="12" id="12">
+        <p class="inpt1">Кол-во тиражей<select name="12" id="12">
             <option value="1">1</option> 
             <option value="2">2</option> 
             <option value="3">3</option>
         </select></p>
     
-        <p>Билетов <span>0</span></p>
-        <p>Комбинаций <span>0</span></p>
-        <p>Сумма <strong>0</strong></p>
+        <p class="inpt1">Билетов <span>0</span></p>
+        <p class="inpt1">Комбинаций <span>0</span></p>
+        <p class="inpt2">Сумма <strong>0</strong></p>
     
     </div>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5799319b52e739f567b672dc96e17130c08a184e
 
 @endsection
