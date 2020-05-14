@@ -1,15 +1,20 @@
 @extends('layouts.head')
 @section('content')
 
+@if (Session::has('info'))
+  <div class="alert alert-success mt-5" role="alert">
+    {{   Session::get('info') }}
+  </div>
+  @endif
 
 <div class="content-4_20">
-    <div class="blocks-ticket">
-        <div class="card block-ticket">
+    <div class="blocks-ticket" id="test">
+        <div class="card">
             <div class="help-information">
                 <p>Отметьте не менее 4 чисел в каждом поле.</p>
-                <a href="#" class="btn btn-dark">Добавить билет</a>
+                <a href="#" class="btn btn-dark" onclick="addTicket()">Добавить билет</a>
             </div>
-        
+
             <div class="zone-headers">
                 <div class="zone-header">Поле 1 <p></p></div>
                 <div class="zone-header">Поле 2 <p></p></div>
@@ -89,8 +94,8 @@
                     </table> 
                 </div>
             </div>
-        
-            <div class=" card-footer quick-panel">
+
+            <div class="card-footer quick-panel">
                 <div class="btn btn-dark">1</div>
                 <div class="btn btn-dark">2</div>
                 <div class="btn btn-dark">3</div>

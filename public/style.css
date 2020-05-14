@@ -225,12 +225,12 @@
   border-radius: 5px;
   text-align: left;
 }
-<<<<<<< HEAD
-=======
+
 
 .content-4_20 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin: 4rem 0;
 }
 
@@ -284,4 +284,4 @@
     border-top: 1px solid #ccc;
     padding: 0.5rem 0;
 }
->>>>>>> 5799319b52e739f567b672dc96e17130c08a184e
+
