@@ -116,7 +116,7 @@
         <p class="inpt1">Билетов <span>0</span></p>
         <p class="inpt1">Комбинаций <span>0</span></p>
         <p class="inpt2">Сумма <strong>0</strong></p>
-    
+        <a href="#" class="btn btn-dark"">Оплатить</a>
     </div>
 </div>
 
