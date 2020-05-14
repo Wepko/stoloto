@@ -6,3 +6,4 @@ function addTicket() {
     parent.appendChild(clone1);
 
 }
+

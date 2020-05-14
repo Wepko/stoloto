@@ -24,72 +24,72 @@
                 <div class="zone-one">
                     <table class="table table-bordered">
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>14</td>
-                                <td>15</td>
-                                <td>16</td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td>18</td>
-                                <td>19</td>
-                                <td>20</td>
-                            </tr>
+                           <tr>
+                               <td><label for="ch1">1</label><input type="checkbox" name="ch1" id="ch1"></td>
+                               <td><label for="ch2">2</label><input type="checkbox" name="ch2" id="ch2"></td>
+                               <td><label for="ch3">3</label><input type="checkbox" name="ch3" id="ch3"></td>
+                               <td><label for="ch4">4</label><input type="checkbox" name="ch4" id="ch4"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch5">5</label><input type="checkbox" name="ch5" id="ch5"></td>
+                               <td><label for="ch6">6</label><input type="checkbox" name="ch6" id="ch6"></td>
+                               <td><label for="ch7">7</label><input type="checkbox" name="ch7" id="ch7"></td>
+                               <td><label for="ch8">8</label><input type="checkbox" name="ch8" id="ch8"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch9">9</label><input type="checkbox" name="ch9" id="ch9"></td>
+                               <td><label for="ch10">10</label><input type="checkbox" name="ch10" id="ch10"></td>
+                               <td><label for="ch11">11</label><input type="checkbox" name="ch11" id="ch11"></td>
+                               <td><label for="ch12">12</label><input type="checkbox" name="ch12" id="ch12"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch13">13</label><input type="checkbox" name="ch13" id="ch13"></td>
+                               <td><label for="ch14">14</label><input type="checkbox" name="ch14" id="ch14"></td>
+                               <td><label for="ch15">15</label><input type="checkbox" name="cр15" id="ch15"></td>
+                               <td><label for="ch16">16</label><input type="checkbox" name="ch16" id="ch16"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch17">17</label><input type="checkbox" name="ch17" id="ch17"></td>
+                               <td><label for="ch18">18</label><input type="checkbox" name="ch18" id="ch18"></td>
+                               <td><label for="ch19">19</label><input type="checkbox" name="ch19" id="ch19"></td>
+                               <td><label for="ch20">20</label><input type="checkbox" name="ch20" id="ch20"></td>
+                           </tr>
                         </tbody>
                     </table> 
                 </div>
                 <div class="zone-two">
                     <table class="table table-bordered">
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>10</td>
-                                <td>11</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>14</td>
-                                <td>15</td>
-                                <td>16</td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td>18</td>
-                                <td>19</td>
-                                <td>20</td>
-                            </tr>
+                           <tr>
+                               <td><label for="ch1">1</label><input type="checkbox" name="ch1" id="ch1"></td>
+                               <td><label for="ch2">2</label><input type="checkbox" name="ch2" id="ch2"></td>
+                               <td><label for="ch3">3</label><input type="checkbox" name="ch3" id="ch3"></td>
+                               <td><label for="ch4">4</label><input type="checkbox" name="ch4" id="ch4"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch5">5</label><input type="checkbox" name="ch5" id="ch5"></td>
+                               <td><label for="ch6">6</label><input type="checkbox" name="ch6" id="ch6"></td>
+                               <td><label for="ch7">7</label><input type="checkbox" name="ch7" id="ch7"></td>
+                               <td><label for="ch8">8</label><input type="checkbox" name="ch8" id="ch8"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch9">9</label><input type="checkbox" name="ch9" id="ch9"></td>
+                               <td><label for="ch10">10</label><input type="checkbox" name="ch10" id="ch10"></td>
+                               <td><label for="ch11">11</label><input type="checkbox" name="ch11" id="ch11"></td>
+                               <td><label for="ch12">12</label><input type="checkbox" name="ch12" id="ch12"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch13">13</label><input type="checkbox" name="ch13" id="ch13"></td>
+                               <td><label for="ch14">14</label><input type="checkbox" name="ch14" id="ch14"></td>
+                               <td><label for="ch15">15</label><input type="checkbox" name="cр15" id="ch15"></td>
+                               <td><label for="ch16">16</label><input type="checkbox" name="ch16" id="ch16"></td>
+                           </tr>
+                           <tr>
+                               <td><label for="ch17">17</label><input type="checkbox" name="ch17" id="ch17"></td>
+                               <td><label for="ch18">18</label><input type="checkbox" name="ch18" id="ch18"></td>
+                               <td><label for="ch19">19</label><input type="checkbox" name="ch19" id="ch19"></td>
+                               <td><label for="ch20">20</label><input type="checkbox" name="ch20" id="ch20"></td>
+                           </tr>
                         </tbody>
                     </table> 
                 </div>
