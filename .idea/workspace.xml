@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d87f4953-66d6-4c21-a951-b61ad16efc06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/games/five-game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/games/five-game.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/games/seven-game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/games/seven-game.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/games/six-game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/games/six-game.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/games/one-game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/games/one-game.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +169,8 @@
       <updated>1589352219805</updated>
       <workItem from="1589352223822" duration="1513000" />
       <workItem from="1589353750565" duration="19137000" />
+      <workItem from="1589376669218" duration="431000" />
+      <workItem from="1589434843231" duration="2892000" />
     </task>
     <servers />
   </component>
@@ -185,6 +187,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="461" y="164" key="SettingsEditor" timestamp="1589352745221">

@@ -1,9 +1,6 @@
 @extends('layouts.head')
 @section('content')
 
-<<<<<<< HEAD
-
-=======
 <div class="content-4_20">
     <div class="blocks-ticket">
         <div class="block-ticket">
@@ -116,6 +113,5 @@
     
     </div>
 </div>
->>>>>>> f28a78ffa72af7739dfcf5d412fd62bf34806b70
 
 @endsection
