@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\OneGameModels;
 use Illuminate\Http\Request;
 
 class AddTicketController extends Controller
@@ -29,7 +32,14 @@ class AddTicketController extends Controller
         $arr22 = array_diff($arr2, array(" "));
         
         if (count($arr11) > 3 && count($arr22) > 3) {
-            return redirect()->back()->with('info', 'Вы выбрали номер билета ' . implode($arr1) . ' --- ' . implode($arr2));
+            OneGameModels::insert(array(
+                #Добавить id пользователя
+                'user_id'  => 1,
+                'circulation' => 1,
+                'ticketOne' => implode($arr11),
+                'ticketTwo' => implode($arr22)
+              ));
+            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
         }
         else {
             return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
