@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}">
     <link rel="stylesheet" href="{{ asset('style.css')}}">
-  <style>.left_panel{
+  <style>
+  .left_panel{
     font-weight: 400;
     font-size: 16px;
     left: 0;
