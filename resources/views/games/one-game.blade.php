@@ -27,7 +27,7 @@
                             <tbody>
                             <tr>
                                 <td><label for="ticketOne_fieldOne">1</label><input type="checkbox" name="ticketOne_fieldOne" value="1"></td>
-                                <td><label for="cticketOne_fieldOneh">2</label><input type="checkbox" name="ticketOne_fieldOne" value="2"></td>
+                                <td><label for="ticketOne_fieldOne">2</label><input type="checkbox" name="ticketOne_fieldOne" value="2"></td>
                                 <td><label for="ticketOne_fieldOne">3</label><input type="checkbox" name="ticketOne_fieldOne" value="3"></td>
                                 <td><label for="ticketOne_fieldOne">4</label><input type="checkbox" name="ticketOne_fieldOne" value="4"></td>
                             </tr>
@@ -62,34 +62,34 @@
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
-                                <td><label for="ch1">1</label><input type="checkbox" name="ch1" id="ch1"></td>
-                                <td><label for="ch2">2</label><input type="checkbox" name="ch2" id="ch2"></td>
-                                <td><label for="ch3">3</label><input type="checkbox" name="ch3" id="ch3"></td>
-                                <td><label for="ch4">4</label><input type="checkbox" name="ch4" id="ch4"></td>
+                                <td><label for="ticketOne_fieldTwo">1</label><input type="checkbox" name="ticketOne_fieldTwo" value="1"></td>
+                                <td><label for="ticketOne_fieldTwo">2</label><input type="checkbox" name="ticketOne_fieldTwo" value="2"></td>
+                                <td><label for="ticketOne_fieldTwo">3</label><input type="checkbox" name="ticketOne_fieldTwo" value="3"></td>
+                                <td><label for="ticketOne_fieldTwo">4</label><input type="checkbox" name="ticketOne_fieldTwo" value="4"></td>
                             </tr>
                             <tr>
-                                <td><label for="ch5">5</label><input type="checkbox" name="ch5" id="ch5"></td>
-                                <td><label for="ch6">6</label><input type="checkbox" name="ch6" id="ch6"></td>
-                                <td><label for="ch7">7</label><input type="checkbox" name="ch7" id="ch7"></td>
-                                <td><label for="ch8">8</label><input type="checkbox" name="ch8" id="ch8"></td>
+                                <td><label for="ticketOne_fieldTwo">5</label><input type="checkbox" name="ticketOne_fieldTwo" value="5"></td>
+                                <td><label for="ticketOne_fieldTwo">6</label><input type="checkbox" name="ticketOne_fieldTwo" value="6"></td>
+                                <td><label for="ticketOne_fieldTwo">7</label><input type="checkbox" name="ticketOne_fieldTwo" value="7"></td>
+                                <td><label for="ticketOne_fieldTwo">8</label><input type="checkbox" name="ticketOne_fieldTwo" value="8"></td>
                             </tr>
                             <tr>
-                                <td><label for="ch9">9</label><input type="checkbox" name="ch9" id="ch9"></td>
-                                <td><label for="ch10">10</label><input type="checkbox" name="ch10" id="ch10"></td>
-                                <td><label for="ch11">11</label><input type="checkbox" name="ch11" id="ch11"></td>
-                                <td><label for="ch12">12</label><input type="checkbox" name="ch12" id="ch12"></td>
+                                <td><label for="ticketOne_fieldTwo">9</label><input type="checkbox" name="ticketOne_fieldTwo" value="9"></td>
+                                <td><label for="ticketOne_fieldTwo">10</label><input type="checkbox" name="ticketOne_fieldTwo" value="10"></td>
+                                <td><label for="ticketOne_fieldTwo">11</label><input type="checkbox" name="ticketOne_fieldTwo" value="11"></td>
+                                <td><label for="ticketOne_fieldTwo">12</label><input type="checkbox" name="ticketOne_fieldTwo" value="12"></td>
                             </tr>
                             <tr>
-                                <td><label for="ch13">13</label><input type="checkbox" name="ch13" id="ch13"></td>
-                                <td><label for="ch14">14</label><input type="checkbox" name="ch14" id="ch14"></td>
-                                <td><label for="ch15">15</label><input type="checkbox" name="cр15" id="ch15"></td>
-                                <td><label for="ch16">16</label><input type="checkbox" name="ch16" id="ch16"></td>
+                                <td><label for="ticketOne_fieldTwo">13</label><input type="checkbox" name="ticketOne_fieldTwo" value="13"></td>
+                                <td><label for="ticketOne_fieldTwo">14</label><input type="checkbox" name="ticketOne_fieldTwo" value="14"></td>
+                                <td><label for="ticketOne_fieldTwo">15</label><input type="checkbox" name="ticketOne_fieldTwo" value="15"></td>
+                                <td><label for="ticketOne_fieldTwo">16</label><input type="checkbox" name="ticketOne_fieldTwo" value="16"></td>
                             </tr>
                             <tr>
-                                <td><label for="ch17">17</label><input type="checkbox" name="ch17" id="ch17"></td>
-                                <td><label for="ch18">18</label><input type="checkbox" name="ch18" id="ch18"></td>
-                                <td><label for="ch19">19</label><input type="checkbox" name="ch19" id="ch19"></td>
-                                <td><label for="ch20">20</label><input type="checkbox" name="ch20" id="ch20"></td>
+                                <td><label for="ticketOne_fieldTwo">17</label><input type="checkbox" name="ticketOne_fieldTwo" value="17"></td>
+                                <td><label for="ticketOne_fieldTwo">18</label><input type="checkbox" name="ticketOne_fieldTwo" value="18"></td>
+                                <td><label for="ticketOne_fieldTwo">19</label><input type="checkbox" name="ticketOne_fieldTwo" value="19"></td>
+                                <td><label for="ticketOne_fieldTwo">20</label><input type="checkbox" name="ticketOne_fieldTwo" value="20"></td>
                             </tr>
                             </tbody>
                         </table> 
