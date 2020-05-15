@@ -249,6 +249,10 @@
 }
 
 
+
+
+
+
 .content-4_20 {
     display: flex;
     flex-wrap: wrap;
@@ -279,18 +283,19 @@
 .zone-one, .zone-two {
     flex-basis: 15rem;
 }
+.zone-worker tr > td {
+  padding: 0;
+}
 
 .zone-worker tr > td:hover {
     background-color: #eee;
-    cursor: pointer;
+
 }
 
 .table label {
   margin: 0;
-  padding: 0;
-}
-.table input {
-  display: none;
+  padding: 1rem 1.75rem;
+  cursor: pointer;
 }
 
 .quick-panel {

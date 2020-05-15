@@ -193,34 +193,34 @@
 	transform: scale(1);
 	opacity: 1;
 }
-.game{
+.game {
   margin-top: 100px;
 }
-.head-game{
+.head-game {
   font-size: 34px;
   color: white;
   line-height: 1px;
 }
-.head-game a{
+.head-game a {
   font-size: 18px;
   color: black;
 }
-.head-game a:hover{
+.head-game a:hover {
   color: red;
 }
-.main-game{
+.main-game {
   background-color: rgba(232, 232, 232, 1);
   height: 100px;
   border-radius: 8px;
   margin-top: 30px;
   padding: 40px 50px;
 }
-.active{
+.active {
   padding: 10px 5px;
   background-color: white;
   border-radius: 5px;
 }
-.in-main-game{
+.in-main-game {
   background-color: white;
   border-radius: 5px;
   text-align: left;
