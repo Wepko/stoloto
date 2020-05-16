@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\OneGameModels;
 use App\Models\TwoGameModels;
+use App\Models\ThreeGameModels;
 use Illuminate\Http\Request;
 
 class AddTicketController extends Controller
@@ -79,6 +80,38 @@ class AddTicketController extends Controller
                     'circulation' => 1,
                     'ticketOne' => implode($arr11),
                     'ticketTwo' => implode($arr22)
+                ));
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'Войдите в аккаунт!');
+        }
+        else {
+            return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
+        }
+    }
+
+    public function threegame(Request $request) {
+
+        $value1 = '';
+
+        for ($i = 1; $i <= 1; $i++) {
+            for ($j = 1; $j <= 48; $j++) {
+                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+            }
+        }
+
+        $arr1 = [];
+
+        $arr1 = str_split($value1);
+
+        $arr11 = array_diff($arr1, array(" "));
+        
+        if (count($arr11) > 6 && count($arr11) < 15) {
+            if (Auth::check()) {
+                ThreeGameModels::insert(array(
+                    'user_id'  => Auth::user()->getId(),
+                    'circulation' => 1,
+                    'ticketOne' => implode($arr11)
                 ));
                 return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
             }

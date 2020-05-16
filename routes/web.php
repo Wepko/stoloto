@@ -34,6 +34,7 @@ Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
 Route::get('/logout', 'LKController@logout')->name('logout');
 Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->name('AddTicketValueOne');
 Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicketValueTwo');
+Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddTicketValueThree');
 
 Route::get('/ticket', function (){
   return view('ticket_sms');
