@@ -9,6 +9,7 @@ use App\Models\OneGameModels;
 use App\Models\TwoGameModels;
 use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
+use App\Models\FiveGameModels;
 use Illuminate\Http\Request;
 
 class AddTicketController extends Controller
@@ -156,5 +157,37 @@ class AddTicketController extends Controller
         }
     }
 
+
+    public function fivegame(Request $request) {
+
+        $value1 = '';
+
+        for ($i = 1; $i <= 1; $i++) {
+            for ($j = 1; $j <= 24; $j++) {
+                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+            }
+        }
+
+        $arr1 = [];
+
+        $arr1 = str_split($value1);
+
+        $arr11 = array_diff($arr1, array(" "));
+        
+        if (count($arr11) > 11) {
+            if (Auth::check()) {
+                FiveGameModels::insert(array(
+                    'user_id'  => Auth::user()->getId(),
+                    'circulation' => 1,
+                    'ticketOne' => implode($arr11)
+                ));
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'Войдите в аккаунт!');
+        }
+        else {
+            return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
+        }
+    }
 
 }
