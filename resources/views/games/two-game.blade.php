@@ -5,7 +5,7 @@
 <div class="two-game">
       <div class="container text-center">
         <div class="row game mt-150">
-          <p class="head-game">
+          <p class="head-game" style="color: black">
             <img src="img/5iz.png" width="150px" alt="">
             Купить билет лотереи «Гослото «5 из 36» <br>
           </p>
