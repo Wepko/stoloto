@@ -35,6 +35,7 @@ Route::get('/logout', 'LKController@logout')->name('logout');
 Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->name('AddTicketValueOne');
 Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicketValueTwo');
 Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddTicketValueThree');
+Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTicketValueFour');
 
 Route::get('/ticket', function (){
   return view('ticket_sms');

@@ -22,6 +22,7 @@
                     <div class="zone-one">
                       <div class="zone-header">Поле 1 <p></p></div>
                         <table class="table table-bordered">
+                        <tbody>
                         <tr>
                                         <td><label for="ticketOne_fieldOne1">1</label><input type="checkbox" name="ticket1_fieldOne1" id="ticketOne_fieldOne1" value="1"></td>
                                         <td><label for="ticketOne_fieldOne2">2</label><input type="checkbox" name="ticket1_fieldOne2" id="ticketOne_fieldOne2" value="2"></td>
@@ -67,20 +68,23 @@
                                         <td><label for="ticketOne_fieldOne34">34</label><input type="checkbox" name="ticket1_fieldOne34" id="ticketOne_fieldOne34" value="34"></td>
                                         <td><label for="ticketOne_fieldOne35">35</label><input type="checkbox" name="ticket1_fieldOne35" id="ticketOne_fieldOne35" value="35"></td>
                                         <td><label for="ticketOne_fieldOne36">36</label><input type="checkbox" name="ticket1_fieldOne36" id="ticketOne_fieldOne36" value="36"></td>
-                                        <td><label for="ticketOne_fieldOne33">37</label><input type="checkbox" name="ticket1_fieldOne37" id="ticketOne_fieldOne37" value="37"></td>
-                                        <td><label for="ticketOne_fieldOne34">38</label><input type="checkbox" name="ticket1_fieldOne38" id="ticketOne_fieldOne38" value="38"></td>
-                                        <td><label for="ticketOne_fieldOne35">39</label><input type="checkbox" name="ticket1_fieldOne39" id="ticketOne_fieldOne39" value="39"></td>
-                                        <td><label for="ticketOne_fieldOne36">40</label><input type="checkbox" name="ticket1_fieldOne40" id="ticketOne_fieldOne40" value="40"></td>
+                                        <td><label for="ticketOne_fieldOne37">37</label><input type="checkbox" name="ticket1_fieldOne37" id="ticketOne_fieldOne37" value="37"></td>
+                                        <td><label for="ticketOne_fieldOne38">38</label><input type="checkbox" name="ticket1_fieldOne38" id="ticketOne_fieldOne38" value="38"></td>
+                                        <td><label for="ticketOne_fieldOne39">39</label><input type="checkbox" name="ticket1_fieldOne39" id="ticketOne_fieldOne39" value="39"></td>
+                                        <td><label for="ticketOne_fieldOne40">40</label><input type="checkbox" name="ticket1_fieldOne40" id="ticketOne_fieldOne40" value="40"></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="ticketOne_fieldOne33">41</label><input type="checkbox" name="ticket1_fieldOne41" id="ticketOne_fieldOne41" value="41"></td>
-                                        <td><label for="ticketOne_fieldOne34">42</label><input type="checkbox" name="ticket1_fieldOne42" id="ticketOne_fieldOne42" value="42"></td>
-                                        <td><label for="ticketOne_fieldOne35">43</label><input type="checkbox" name="ticket1_fieldOne43" id="ticketOne_fieldOne43" value="43"></td>
-                                        <td><label for="ticketOne_fieldOne36">44</label><input type="checkbox" name="ticket1_fieldOne44" id="ticketOne_fieldOne44" value="44"></td>
-                                        <td><label for="ticketOne_fieldOne33">45</label><input type="checkbox" name="ticket1_fieldOne45" id="ticketOne_fieldOne45" value="45"></td>
-                                        <td><label for="ticketOne_fieldOne34">46</label><input type="checkbox" name="ticket1_fieldOne46" id="ticketOne_fieldOne46" value="46"></td>
-                                        <td><label for="ticketOne_fieldOne35">47</label><input type="checkbox" name="ticket1_fieldOne47" id="ticketOne_fieldOne47" value="47"></td>
-                                        <td><label for="ticketOne_fieldOne36">48</label><input type="checkbox" name="ticket1_fieldOne48" id="ticketOne_fieldOne48" value="48"></td>
+                                        <td><label for="ticketOne_fieldOne41">41</label><input type="checkbox" name="ticket1_fieldOne41" id="ticketOne_fieldOne41" value="41"></td>
+                                        <td><label for="ticketOne_fieldOne42">42</label><input type="checkbox" name="ticket1_fieldOne42" id="ticketOne_fieldOne42" value="42"></td>
+                                        <td><label for="ticketOne_fieldOne43">43</label><input type="checkbox" name="ticket1_fieldOne43" id="ticketOne_fieldOne43" value="43"></td>
+                                        <td><label for="ticketOne_fieldOne44">44</label><input type="checkbox" name="ticket1_fieldOne44" id="ticketOne_fieldOne44" value="44"></td>
+                                        <td><label for="ticketOne_fieldOne45">45</label><input type="checkbox" name="ticket1_fieldOne45" id="ticketOne_fieldOne45" value="45"></td>
+                                        <td><label for="ticketOne_fieldOne46">46</label><input type="checkbox" name="ticket1_fieldOne46" id="ticketOne_fieldOne46" value="46"></td>
+                                        <td><label for="ticketOne_fieldOne47">47</label><input type="checkbox" name="ticket1_fieldOne47" id="ticketOne_fieldOne47" value="47"></td>
+                                        <td><label for="ticketOne_fieldOne48">48</label><input type="checkbox" name="ticket1_fieldOne48" id="ticketOne_fieldOne48" value="48"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="ticketOne_fieldOne49">49</label><input type="checkbox" name="ticket1_fieldOne49" id="ticketOne_fieldOne49" value="49"></td>
                                     </tr>
                             </tbody>
                         </table> 

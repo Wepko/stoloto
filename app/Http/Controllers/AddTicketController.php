@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\OneGameModels;
 use App\Models\TwoGameModels;
 use App\Models\ThreeGameModels;
+use App\Models\FourGameModels;
 use Illuminate\Http\Request;
 
 class AddTicketController extends Controller
@@ -95,7 +96,7 @@ class AddTicketController extends Controller
         $value1 = '';
 
         for ($i = 1; $i <= 1; $i++) {
-            for ($j = 1; $j <= 48; $j++) {
+            for ($j = 1; $j <= 49; $j++) {
                 $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
         }
@@ -121,5 +122,39 @@ class AddTicketController extends Controller
             return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
         }
     }
+
+
+    public function fourgame(Request $request) {
+
+        $value1 = '';
+
+        for ($i = 1; $i <= 1; $i++) {
+            for ($j = 1; $j <= 45; $j++) {
+                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+            }
+        }
+
+        $arr1 = [];
+
+        $arr1 = str_split($value1);
+
+        $arr11 = array_diff($arr1, array(" "));
+        
+        if (count($arr11) > 5 && count($arr11) < 14) {
+            if (Auth::check()) {
+                FourGameModels::insert(array(
+                    'user_id'  => Auth::user()->getId(),
+                    'circulation' => 1,
+                    'ticketOne' => implode($arr11)
+                ));
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'Войдите в аккаунт!');
+        }
+        else {
+            return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
+        }
+    }
+
 
 }
