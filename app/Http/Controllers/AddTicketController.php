@@ -15,8 +15,8 @@ class AddTicketController extends Controller
         $value1 = '';
         $value2 = '';
 
-        for ($i = 1; $i <= 1; $i++) {
-            for ($j = 1; $j <=20; $j++) {
+        for ($i = 1; $i <= $request->input(); $i++) {
+            for ($j = 1; $j <= 20; $j++) {
                 $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j));
                 $value2 = $value2 . ' ' . strval($request->input('ticket' . $i . '_fieldTwo' . $j)); 
             }
@@ -32,14 +32,16 @@ class AddTicketController extends Controller
         $arr22 = array_diff($arr2, array(" "));
         
         if (count($arr11) > 3 && count($arr22) > 3) {
-            OneGameModels::insert(array(
-                #Добавить id пользователя
-                'user_id'  => 1,
-                'circulation' => 1,
-                'ticketOne' => implode($arr11),
-                'ticketTwo' => implode($arr22)
-              ));
-            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            if (Auth::check()) {
+                OneGameModels::insert(array(
+                    'user_id'  => Auth::user()->getId(),
+                    'circulation' => 1,
+                    'ticketOne' => implode($arr11),
+                    'ticketTwo' => implode($arr22)
+                ));
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'Войдите в аккаунт!');
         }
         else {
             return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');

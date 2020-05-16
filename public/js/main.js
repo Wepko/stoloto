@@ -15,5 +15,7 @@ function addTicket() {
 
     parent.appendChild(clone)
 
+
+
 }
 
