@@ -2,6 +2,12 @@
 
 @section('content')
 
+@if (Session::has('info'))
+  <div class="alert alert-success mt-5" role="alert">
+    {{   Session::get('info') }}
+  </div>
+  @endif
+
 <div class="two-game">
       <div class="container text-center">
         <div class="row game mt-150">
@@ -12,13 +18,13 @@
         </div>
 
           <div class="content-4_20">
-            <form action="{{ route('AddTicketValue') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
+            <form action="{{ route('AddTicketValueTwo') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
             @csrf
                 <div class="blocks-ticket" id="test">
                     <div class="card">
                         <div class="help-information">
-                            <p>Отметьте не менее 4 чисел в каждом поле.</p>
-                            <a href="#" class="btn btn-dark" onclick="addTicket()">Добавить билет</a>
+                            <p>Отметьте от 5 до 11 чисел в первом поле и от 1 до 4 во втором. Чем больше чисел отмечено — тем выше вероятность выигрыша.</p>
+                            <a href="#" class="btn btn-dark mb-5" onclick="addTicket()">Добавить билет</a>
                         </div>
                     
                         <div class="zone-worker">

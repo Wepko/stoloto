@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class AddTicketController extends Controller
 {
-    public function submit(Request $request) {
+    public function onegame(Request $request) {
 
         $value1 = '';
         $value2 = '';
@@ -47,4 +47,9 @@ class AddTicketController extends Controller
             return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
         }
     }
+
+    public function twogame(Request $request) {
+        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+    }
+
 }
