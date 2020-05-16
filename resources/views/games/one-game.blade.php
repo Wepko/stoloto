@@ -8,7 +8,7 @@
   @endif
 
 <div class="content-4_20">
-    <form action="{{ route('AddTicketValue') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
+    <form action="{{ route('AddTicketValueOne') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
     @csrf
         <div class="blocks-ticket" id="test">
             <div class="card">
@@ -75,7 +75,7 @@
                                 <td><label for="ticketOne_fieldTwo8">8</label><input type="checkbox" name="ticket1_fieldTwo8" id="ticketOne_fieldTwo8" value="8"></td>
                             </tr>
                             <tr>
-                                <td><label for="ticketOne_fieldTwo9">9</label><input type="checkbox" name="ticket1_fieldTwo9 id="ticketOne_fieldTwo9" value="9"></td>
+                                <td><label for="ticketOne_fieldTwo9">9</label><input type="checkbox" name="ticket1_fieldTwo9" id="ticketOne_fieldTwo9" value="9"></td>
                                 <td><label for="ticketOne_fieldTwo10">10</label><input type="checkbox" name="ticket1_fieldTwo10" id="ticketOne_fieldTwo10" value="10"></td>
                                 <td><label for="ticketOne_fieldTwo11">11</label><input type="checkbox" name="ticket1_fieldTwo11" id="ticketOne_fieldTwo11" value="11"></td>
                                 <td><label for="ticketOne_fieldOne12">12</label><input type="checkbox" name="ticket1_fieldTwo12" id="ticketOne_fieldTwo12" value="12"></td>
