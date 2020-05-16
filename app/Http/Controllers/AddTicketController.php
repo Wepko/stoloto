@@ -15,7 +15,7 @@ class AddTicketController extends Controller
         $value1 = '';
         $value2 = '';
 
-        for ($i = 1; $i <= $request->input(); $i++) {
+        for ($i = 1; $i <= 1; $i++) {
             for ($j = 1; $j <= 20; $j++) {
                 $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j));
                 $value2 = $value2 . ' ' . strval($request->input('ticket' . $i . '_fieldTwo' . $j)); 
