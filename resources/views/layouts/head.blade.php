@@ -280,7 +280,11 @@
 .zone-worker {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
+
+
+
 .zone-one, .zone-two {
     flex-basis: 15rem;
 }
@@ -320,6 +324,13 @@
     border-top: 1px solid #ccc;
     padding: 0.5rem 0;
 }
+
+.zone-worker-game5_36 {
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 </style>
 </head>

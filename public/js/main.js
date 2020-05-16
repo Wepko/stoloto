@@ -1,4 +1,4 @@
-let count = 0;
+let count = 0
 function addTicket() {
     count += 1
     const parent = document.getElementById('test')
@@ -10,7 +10,6 @@ function addTicket() {
 
     for (let tagInput of arrTagInput) {
           tagInput.name = `ticket${count + 1}_fieldOne`
-        console.log(tagInput)
     }
 
     parent.appendChild(clone)
