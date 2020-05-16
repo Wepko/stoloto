@@ -33,40 +33,40 @@
                                 <table class="table table-bordered">
                                     <tbody>
                                       <tr>
-                                        <td><label for="ticketOne_fieldOne1">1</label><input type="сheckbox" name="ticket1_fieldTwo1" id="ticketOne_fieldOne1" value="1"></td>
-                                        <td><label for="ticketOne_fieldOne2">2</label><input type="сheckbox" name="ticket1_fieldTwo2" id="ticketOne_fieldOne2" value="2"></td>
-                                        <td><label for="ticketOne_fieldOne3">3</label><input type="сheckbox" name="ticket1_fieldTwo3" id="ticketOne_fieldOne3" value="3"></td>
-                                        <td><label for="ticketOne_fieldOne4">4</label><input type="сheckbox" name="ticket1_fieldTwo4" id="ticketOne_fieldOne4" value="4"></td>
-                                        <td><label for="ticketOne_fieldOne5">5</label><input type="сheckbox" name="ticket1_fieldTwo5" id="ticketOne_fieldOne5" value="5"></td>
-                                        <td><label for="ticketOne_fieldOne6">6</label><input type="сheckbox" name="ticket1_fieldTwo6" id="ticketOne_fieldOne6" value="6"></td>
-                                        <td><label for="ticketOne_fieldOne7">7</label><input type="сheckbox" name="ticket1_fieldTwo7" id="ticketOne_fieldOne7" value="7"></td>
-                                        <td><label for="ticketOne_fieldOne8">8</label><input type="сheckbox" name="ticket1_fieldTwo8" id="ticketOne_fieldOne8" value="8"></td>
-                                        <td><label for="ticketOne_fieldOne9">9</label><input type="сheckbox" name="ticket1_fieldTwo9" id="ticketOne_fieldOne9" value="9"></td>
-                                        <td><label for="ticketOne_fieldOne10">10</label><input type="сheckbox" name="ticket1_fieldTwo10" id="ticketOne_fieldOne10" value="10"></td>
+                                        <td><label for="ticketOne_fieldOne1">1</label><input type="сheckbox" name="ticket1_fieldOne1" id="ticketOne_fieldOne1" value="1"></td>
+                                        <td><label for="ticketOne_fieldOne2">2</label><input type="сheckbox" name="ticket1_fieldOne2" id="ticketOne_fieldOne2" value="2"></td>
+                                        <td><label for="ticketOne_fieldOne3">3</label><input type="сheckbox" name="ticket1_fieldOne3" id="ticketOne_fieldOne3" value="3"></td>
+                                        <td><label for="ticketOne_fieldOne4">4</label><input type="сheckbox" name="ticket1_fieldOne4" id="ticketOne_fieldOne4" value="4"></td>
+                                        <td><label for="ticketOne_fieldOne5">5</label><input type="сheckbox" name="ticket1_fieldOne5" id="ticketOne_fieldOne5" value="5"></td>
+                                        <td><label for="ticketOne_fieldOne6">6</label><input type="сheckbox" name="ticket1_fieldOne6" id="ticketOne_fieldOne6" value="6"></td>
+                                        <td><label for="ticketOne_fieldOne7">7</label><input type="сheckbox" name="ticket1_fieldOne7" id="ticketOne_fieldOne7" value="7"></td>
+                                        <td><label for="ticketOne_fieldOne8">8</label><input type="сheckbox" name="ticket1_fieldOne8" id="ticketOne_fieldOne8" value="8"></td>
+                                        <td><label for="ticketOne_fieldOne9">9</label><input type="сheckbox" name="ticket1_fieldOne9" id="ticketOne_fieldOne9" value="9"></td>
+                                        <td><label for="ticketOne_fieldOne10">10</label><input type="сheckbox" name="ticket1_fieldOne10" id="ticketOne_fieldOne10" value="10"></td>
                                       </tr>
                                       <tr>
-                                        <td><label for="ticketOne_fieldOne11">11</label><input type="сheckbox" name="ticket1_fieldTwo11" id="ticketOne_fieldOne11" value="11"></td>
-                                        <td><label for="ticketOne_fieldOne12">12</label><input type="сheckbox" name="ticket1_fieldTwo12" id="ticketOne_fieldOne12" value="12"></td>
-                                        <td><label for="ticketOne_fieldOne13">13</label><input type="сheckbox" name="ticket1_fieldTwo13" id="ticketOne_fieldOne13" value="13"></td>
-                                        <td><label for="ticketOne_fieldOne14">14</label><input type="сheckbox" name="ticket1_fieldTwo14" id="ticketOne_fieldOne14" value="14"></td>
-                                        <td><label for="ticketOne_fieldOne15">15</label><input type="сheckbox" name="ticket1_fieldTwo15" id="ticketOne_fieldOne15" value="15"></td>
-                                        <td><label for="ticketOne_fieldOne16">16</label><input type="сheckbox" name="ticket1_fieldTwo16" id="ticketOne_fieldOne16" value="16"></td>
-                                        <td><label for="ticketOne_fieldOne17">17</label><input type="сheckbox" name="ticket1_fieldTwo17" id="ticketOne_fieldOne17" value="17"></td>
-                                        <td><label for="ticketOne_fieldOne18">18</label><input type="сheckbox" name="ticket1_fieldTwo18" id="ticketOne_fieldOne18" value="18"></td>
-                                        <td><label for="ticketOne_fieldOne19">19</label><input type="сheckbox" name="ticket1_fieldTwo19" id="ticketOne_fieldOne19" value="19"></td>
-                                        <td><label for="ticketOne_fieldOne20">20</label><input type="сheckbox" name="ticket1_fieldTwo20" id="ticketOne_fieldOne20" value="20"></td>
+                                        <td><label for="ticketOne_fieldOne11">11</label><input type="сheckbox" name="ticket1_fieldOne11" id="ticketOne_fieldOne11" value="11"></td>
+                                        <td><label for="ticketOne_fieldOne12">12</label><input type="сheckbox" name="ticket1_fieldOne12" id="ticketOne_fieldOne12" value="12"></td>
+                                        <td><label for="ticketOne_fieldOne13">13</label><input type="сheckbox" name="ticket1_fieldOne13" id="ticketOne_fieldOne13" value="13"></td>
+                                        <td><label for="ticketOne_fieldOne14">14</label><input type="сheckbox" name="ticket1_fieldOne14" id="ticketOne_fieldOne14" value="14"></td>
+                                        <td><label for="ticketOne_fieldOne15">15</label><input type="сheckbox" name="ticket1_fieldOne15" id="ticketOne_fieldOne15" value="15"></td>
+                                        <td><label for="ticketOne_fieldOne16">16</label><input type="сheckbox" name="ticket1_fieldOne16" id="ticketOne_fieldOne16" value="16"></td>
+                                        <td><label for="ticketOne_fieldOne17">17</label><input type="сheckbox" name="ticket1_fieldOne17" id="ticketOne_fieldOne17" value="17"></td>
+                                        <td><label for="ticketOne_fieldOne18">18</label><input type="сheckbox" name="ticket1_fieldOne18" id="ticketOne_fieldOne18" value="18"></td>
+                                        <td><label for="ticketOne_fieldOne19">19</label><input type="сheckbox" name="ticket1_fieldOne19" id="ticketOne_fieldOne19" value="19"></td>
+                                        <td><label for="ticketOne_fieldOne20">20</label><input type="сheckbox" name="ticket1_fieldOne20" id="ticketOne_fieldOne20" value="20"></td>
                                       </tr>
                                       <tr>
-                                        <td><label for="ticketOne_fieldOne21">21</label><input type="сheckbox" name="ticket1_fieldTwo21" id="ticketOne_fieldOne21" value="21"></td>
-                                        <td><label for="ticketOne_fieldOne22">22</label><input type="сheckbox" name="ticket1_fieldTwo22" id="ticketOne_fieldOne22" value="22"></td>
-                                        <td><label for="ticketOne_fieldOne23">23</label><input type="сheckbox" name="ticket1_fieldTwo23" id="ticketOne_fieldOne23" value="23"></td>
-                                        <td><label for="ticketOne_fieldOne24">24</label><input type="сheckbox" name="ticket1_fieldTwo24" id="ticketOne_fieldOne24" value="24"></td>
-                                        <td><label for="ticketOne_fieldOne25">25</label><input type="сheckbox" name="ticket1_fieldTwo25" id="ticketOne_fieldOne25" value="25"></td>
-                                        <td><label for="ticketOne_fieldOne26">26</label><input type="сheckbox" name="ticket1_fieldTwo26" id="ticketOne_fieldOne26" value="26"></td>
-                                        <td><label for="ticketOne_fieldOne27">27</label><input type="сheckbox" name="ticket1_fieldTwo27" id="ticketOne_fieldOne27" value="27"></td>
-                                        <td><label for="ticketOne_fieldOne28">28</label><input type="сheckbox" name="ticket1_fieldTwo28" id="ticketOne_fieldOne28" value="28"></td>
-                                        <td><label for="ticketOne_fieldOne29">29</label><input type="сheckbox" name="ticket1_fieldTwo29" id="ticketOne_fieldOne29" value="29"></td>
-                                        <td><label for="ticketOne_fieldOne30">30</label><input type="сheckbox" name="ticket1_fieldTwo30" id="ticketOne_fieldOne30" value="30"></td>
+                                        <td><label for="ticketOne_fieldOne21">21</label><input type="сheckbox" name="ticket1_fieldOne21" id="ticketOne_fieldOne21" value="21"></td>
+                                        <td><label for="ticketOne_fieldOne22">22</label><input type="сheckbox" name="ticket1_fieldOne22" id="ticketOne_fieldOne22" value="22"></td>
+                                        <td><label for="ticketOne_fieldOne23">23</label><input type="сheckbox" name="ticket1_fieldOne23" id="ticketOne_fieldOne23" value="23"></td>
+                                        <td><label for="ticketOne_fieldOne24">24</label><input type="сheckbox" name="ticket1_fieldOne24" id="ticketOne_fieldOne24" value="24"></td>
+                                        <td><label for="ticketOne_fieldOne25">25</label><input type="сheckbox" name="ticket1_fieldOne25" id="ticketOne_fieldOne25" value="25"></td>
+                                        <td><label for="ticketOne_fieldOne26">26</label><input type="сheckbox" name="ticket1_fieldOne26" id="ticketOne_fieldOne26" value="26"></td>
+                                        <td><label for="ticketOne_fieldOne27">27</label><input type="сheckbox" name="ticket1_fieldOne27" id="ticketOne_fieldOne27" value="27"></td>
+                                        <td><label for="ticketOne_fieldOne28">28</label><input type="сheckbox" name="ticket1_fieldOne28" id="ticketOne_fieldOne28" value="28"></td>
+                                        <td><label for="ticketOne_fieldOne29">29</label><input type="сheckbox" name="ticket1_fieldOne29" id="ticketOne_fieldOne29" value="29"></td>
+                                        <td><label for="ticketOne_fieldOne30">30</label><input type="сheckbox" name="ticket1_fieldOne30" id="ticketOne_fieldOne30" value="30"></td>
                                       </tr>
                                       <tr>
                                         <td><label for="ticketOne_fieldOne31">31</label><input type="сheckbox" name="ticket1_fieldTwo31" id="ticketOne_fieldOne31" value="31"></td>

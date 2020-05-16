@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\OneGameModels;
+use App\Models\TwoGameModels;
 use Illuminate\Http\Request;
 
 class AddTicketController extends Controller
@@ -53,7 +54,7 @@ class AddTicketController extends Controller
         $value1 = '';
         $value2 = '';
 
-        for ($i = 1;$i <= 1; $i++){
+        for ($i = 1; $i <= 1; $i++){
             for ($j = 1; $j <= 36; $j++) {
                 $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
@@ -71,9 +72,9 @@ class AddTicketController extends Controller
         $arr11 = array_diff($arr1, array(" "));
         $arr22 = array_diff($arr2, array(" "));
         
-        if (count($arr11) > 3 && count($arr22) > 3) {
+        if (count($arr11) > 4 && count($arr22) > 0) {
             if (Auth::check()) {
-                OneGameModels::insert(array(
+                TwoGameModels::insert(array(
                     'user_id'  => Auth::user()->getId(),
                     'circulation' => 1,
                     'ticketOne' => implode($arr11),
