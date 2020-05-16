@@ -54,12 +54,12 @@ class AddTicketController extends Controller
         $value1 = '';
         $value2 = '';
 
-        for ($i = 1; $i <= 1; $i++){
+        for ($i = 1; $i <= 1; $i++) {
             for ($j = 1; $j <= 36; $j++) {
                 $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
-            for ($t = 1; $t <= 4; $t++) {
-                $value2 = $value2 . ' ' . strval($request->input('ticket' . $i . '_fieldTwo' . $t));
+            for ($jj = 1; $jj <= 4; $jj++) {
+                $value2 = $value2 . ' ' . strval($request->input('ticket' . $i . '_fieldTwo' . $jj));
             }
         }
 

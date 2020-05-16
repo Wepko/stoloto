@@ -330,6 +330,10 @@
   flex-direction: column;
 }
 
+.active {
+  background: #12d25c;
+  transition: .5s;
+}
 
 
 </style>
