@@ -1,13 +1,20 @@
 @extends('layouts.head')
 @section('content')
 
+
+@if (Session::has('info'))
+  <div class="alert alert-success mt-5" role="alert">
+    {{   Session::get('info') }}
+  </div>
+  @endif
+
 <div class="content-4_20">
-    <form action="{{ route('AddTicketValueTwo') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
+    <form action="{{ route('AddTicketValueSix') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
     @csrf
         <div class="blocks-ticket" id="test">
             <div class="card">
                 <div class="help-information">
-                    <p>Отметьте от 7 до 14 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша.</p>
+                    <p>Отметьте 8 чисел в первом поле, и не менее 1 во втором</p>
                     <a href="#" class="btn btn-dark mb-5" onclick="addTicket()">Добавить билет</a>
                 </div>
             
@@ -43,8 +50,22 @@
                             </tbody>
                         </table> 
                     </div>
+                    <div class="zone-two">
+                              <div class="zone-header">Поле 2 <p></p></div>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                      <tr>
+                                      <td><label for="ticketOne_fieldTwo1">1</label><input type="checkbox" name="ticket1_fieldTwo1" id="ticketOne_fieldTwo1" value="1"></td>
+                                      <td><label for="ticketOne_fieldTwo2">2</label><input type="checkbox" name="ticket1_fieldTwo2" id="ticketOne_fieldTwo2" value="2"></td>
+                                      <td><label for="ticketOne_fieldTwo3">3</label><input type="checkbox" name="ticket1_fieldTwo3" id="ticketOne_fieldTwo3" value="3"></td>
+                                      <td><label for="ticketOne_fieldOne4">4</label><input type="checkbox" name="ticket1_fieldTwo4" id="ticketOne_fieldTwo4" value="4"></td>
+                                      </tr>
+                                    </tbody>
+                                </table> 
+                            </div>
 
                 </div>
+                
   
                 <div class="card-footer quick-panel">
                     <div class="btn btn-dark">1</div>

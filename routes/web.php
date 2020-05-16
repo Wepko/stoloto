@@ -37,6 +37,7 @@ Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicke
 Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddTicketValueThree');
 Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTicketValueFour');
 Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->name('AddTicketValueFive');
+Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->name('AddTicketValueSix');
 
 Route::get('/ticket', function (){
   return view('ticket_sms');
