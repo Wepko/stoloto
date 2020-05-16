@@ -325,11 +325,6 @@
     padding: 0.5rem 0;
 }
 
-.zone-worker-game5_36 {
-  display: flex;
-  flex-direction: column;
-}
-
 .active {
   background: #12d25c;
   transition: .5s;
