@@ -3,8 +3,7 @@ window.onload = () => {
         const itmesTd = document.querySelectorAll('td')
 
         for (let item of itmesTd) {
-            item.onclick = function(e) {
-                e.preventDefault()
+            item.onmousedown = function(e) {
                 this.classList.toggle('active')
             }
         }
