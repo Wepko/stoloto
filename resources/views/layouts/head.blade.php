@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}">
     <link rel="stylesheet" href="{{ asset('style.css')}}">
+  
   <style>
-
   body {
     position: relative;
   }
@@ -255,10 +255,6 @@
 }
 
 
-
-
-
-
 .content-4_20 {
     display: flex;
     flex-wrap: wrap;
@@ -339,9 +335,8 @@
   background: var(--gray-dark);
   border-color: var(--dark);
 }
-
-
 </style>
+
 </head>
   <body data-spy="scroll">
     <!-- START left - panel -->
