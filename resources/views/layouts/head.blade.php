@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}">
     <link rel="stylesheet" href="{{ asset('style.css')}}">
   <style>
+
+  body {
+    position: relative;
+  }
+
   .left_panel{
     font-weight: 400;
     font-size: 16px;
@@ -330,10 +335,15 @@
   transition: .5s;
 }
 
+.list-group-item.active {
+  background: var(--gray-dark);
+  border-color: var(--dark);
+}
+
 
 </style>
 </head>
-  <body>
+  <body data-spy="scroll">
     <!-- START left - panel -->
     <div class="left_panel">
       <div class="column">
@@ -393,7 +403,7 @@
 
 
     <!-- site-map -->
-    <div class="container text-center">
+    <div class="container">
       <!-- Modal -->
       <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document" style='width: 100%'>

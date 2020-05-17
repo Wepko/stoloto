@@ -1,13 +1,14 @@
 window.onload = () => {
+    
     (function clickSelect() {
         const itmesTd = document.querySelectorAll('td')
-
+        
         for (let item of itmesTd) {
             item.onmousedown = function(e) {
                 this.classList.toggle('active')
             }
         }
-
+        
     })()
 }
 
@@ -26,3 +27,9 @@ function addTicket() {
 
     parent.appendChild(clone)
 }
+
+
+
+$('[data-spy="scroll"]').each(function () {
+    var $spy = $(this).scrollspy('refresh')
+  })
