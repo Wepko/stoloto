@@ -123,8 +123,4 @@
     </form>
 </div>
 
-@if(Auth::user()->isAdmin())
-      <h1 class="mt-5">Панель администратора</h1>
-@endif
-
 @endsection
