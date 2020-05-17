@@ -39,6 +39,10 @@ Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTic
 Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->name('AddTicketValueFive');
 Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->name('AddTicketValueSix');
 
+Route::get('/admin', function (){
+  return view('admin-panel');
+})->name('admin');
+
 Route::get('/ticket', function (){
   return view('ticket_sms');
 })->name('ticket');

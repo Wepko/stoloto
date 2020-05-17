@@ -47,7 +47,7 @@
       <div class="card mt-5" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Корзина</h5>
-          <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетоа.<br> Участвуйте в тиражах, выигрывайте чаще</h6>
+          <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>
         </div>
       </div>
     
@@ -57,5 +57,12 @@
           <h6 class="card-subtitle card-text mb-2 text-muted">Оформите подписку на все тиражи. <br> Подпишитесь на свою победу</h6>
         </div>
       </div>
+
+      @if(Auth::user()->isAdmin())
+      <div class="card mt-5" style="width: 18rem;">
+        <a href="{{ route('admin') }}"class="btn btn-dark mt-2">Панель администратора</a>
+      </div>
+      @endif
+
 </div>
 @endsection

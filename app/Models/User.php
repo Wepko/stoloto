@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'location',
-        'phone'
+        'phone',
+        'is_admin'
     ];
 
     /**
@@ -51,8 +52,20 @@ class User extends Authenticatable
         return null;
     }
 
+    public function isAdmin() {
+        return $this->is_admin;
+    }
+
     public function getId() {
         return $this->id;
+    }
+
+    public function getLogin() {
+        return $this->email;
+    }
+    
+    public function getLPass() {
+        return $this->password;
     }
 
 }
