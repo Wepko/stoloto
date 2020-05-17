@@ -354,6 +354,9 @@
         @if (Auth::check())
             <div class="left_nav_panel">
               <a href="{{ route('lk') }}">Личный кабинет</a>
+              @if (Auth::user()->isAdmin())
+              <a href="{{ route('admin') }}">Админ панель</a>
+              @endif
               <a href="{{ route('logout') }}">Выйти</a>
             </div>
             <div class="left_nav_panel">
