@@ -54,12 +54,24 @@ $select.onchange = () => {
     arrOptions.forEach(item => {
         if (item.selected) {
             if (item.id == 'game-4_20') {
+                document.getElementById('valid').value = 1
                 $input.classList.remove('hide')
             }
             if (item.id == 'game-5_36') {
+                document.getElementById('valid').value = 2
                 $input.classList.remove('hide')
             }
+            if (item.id == 'game-7_49') {
+                document.getElementById('valid').value = 3
+            }
+            if (item.id == 'game-6_45') {
+                document.getElementById('valid').value = 4
+            }
+            if (item.id == 'game-12_24') {
+                document.getElementById('valid').value = 5
+            }
             if (item.id == 'game-rapido') {
+                document.getElementById('valid').value = 6
                 $input.classList.remove('hide')
             }
         }

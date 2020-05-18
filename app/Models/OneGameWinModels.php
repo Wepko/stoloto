@@ -11,5 +11,22 @@ class OneGameWinModels extends Model
      *
      * @var array
      */
-    protected $table = 'onegamewin';
+
+    protected $table = "onegamewin";
+
+    protected $fillable = [
+        'circulation',
+        'ticketOne',
+        'ticketTwo'
+    ];
+
+    public function circulation() {
+        return $this->circulation;
+    }
+    public function ticketOne() {
+        return $this->ticketOne;
+    }
+    public function ticketTwo() {
+        return $this->ticketTwo;
+    }
 }

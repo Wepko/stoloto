@@ -49,6 +49,10 @@ Route::post('/AddWinTicketValueFour', 'AddWinTicketController@fourgamewin')->nam
 Route::post('/AddWinTicketValueFive', 'AddWinTicketController@fivegamewin')->name('AddWinTicketValueFive');
 Route::post('/AddWinTicketValueSix', 'AddWinTicketController@sixgamewin')->name('AddWinTicketValueSix');
 
+//Проверка билетов
+Route::post('/ValidTicket', 'ValidTicketController@valid')->name('ValidTicketGame');
+Route::post('/ValidTicketOneGame', 'ValidTicketController@validOneGame')->name('ValidTicketOneGame');
+
 Route::get('/admin', function (){
   return view('admin-panel');
 })->name('admin');
