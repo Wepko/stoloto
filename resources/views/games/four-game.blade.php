@@ -111,4 +111,18 @@
     </form>
 </div>
 
+@if(Auth::check())
+    @if(Auth::user()->isAdmin())
+    <div class="content-4_20">
+        <form action="{{ route('AddWinTicketValueFour') }}" method="post" >
+        @csrf
+            <h1>Добавить выигрышный билет</h1>
+            <label>Поле 1</label>
+            <input type="number" class="form-control" name="TicketFourFieldOne" placeholder="Введите номера билетов"><br>
+            <input type="submit" class="btn btn-dark" value="Добавить">
+        </form>
+    </div>
+    @endif
+@endif()
+
 @endsection

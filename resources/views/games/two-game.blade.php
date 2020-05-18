@@ -124,6 +124,21 @@
       </div>
 </div>
 
+@if(Auth::check())
+    @if(Auth::user()->isAdmin())
+    <div class="content-4_20">
+        <form action="{{ route('AddWinTicketValueTwo') }}" method="post" >
+        @csrf
+            <h1>Добавить выигрышный билет</h1>
+            <label>Поле 1</label>
+            <input type="number" class="form-control" name="TicketTwoFieldOne" placeholder="Введите номера билетов"><br>
+            <label>Поле 2</label>
+            <input type="number" class="form-control" name="TicketTwoFieldTwo" placeholder="Введите номера билетов"><br>
+            <input type="submit" class="btn btn-dark" value="Добавить">
+        </form>
+    </div>
+    @endif
+@endif()
 
 
 @endsection
