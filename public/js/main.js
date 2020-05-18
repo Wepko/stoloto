@@ -1,15 +1,23 @@
-window.onload = () => {
-    
-    (function clickSelect() {
-        const itmesTd = document.querySelectorAll('td')
-        
-        for (let item of itmesTd) {
-            item.onmousedown = function(e) {
-                this.classList.toggle('active')
-            }
-        }
-        
-    })()
+function elt(name, attrs, ...children) {
+    const dom = document.createElement(name)
+
+    for (let attr of Object.keys(attrs)) {
+        dom.setAttribute(attr, attrs[attr])
+    }
+
+    for (let child of children) {
+        dom.append(child)
+    }
+
+    return dom
+}
+
+elt('div', {style: 'sdfa'}, 'sadf')
+
+const Table = {tr: 4, td: 8}; 
+
+function createGrid() {
+
 }
 
 let count = 0
@@ -33,3 +41,27 @@ function addTicket() {
 $('[data-spy="scroll"]').each(function () {
     var $spy = $(this).scrollspy('refresh')
   })
+
+
+
+  
+const $select = document.querySelector('#inputGroupSelect01')
+const $input = document.querySelector('input.hide')
+
+$select.onchange = () => {
+    const arrOptions = [...$select.options]
+    $input.classList.add('hide')
+    arrOptions.forEach(item => {
+        if (item.selected) {
+            if (item.id == 'game-4_20') {
+                $input.classList.remove('hide')
+            }
+            if (item.id == 'game-5_36') {
+                $input.classList.remove('hide')
+            }
+            if (item.id == 'game-rapido') {
+                $input.classList.remove('hide')
+            }
+        }
+    })
+}

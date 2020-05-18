@@ -6,7 +6,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/main.js')}}"></script>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css.map')}}">
@@ -224,6 +223,7 @@
 .game{
   margin-top: 100px;
 }
+
 .head-game{
   font-size: 34px;
   color: white;
@@ -243,11 +243,7 @@
   margin-top: 30px;
   padding: 40px 50px;
 }
-.active{
-  padding: 10px 5px;
-  background-color: white;
-  border-radius: 5px;
-}
+
 .in-main-game{
   background-color: white;
   border-radius: 5px;
@@ -291,17 +287,33 @@
 }
 .zone-worker tr > td {
   padding: 0;
+  position: relative;
 }
 
 .zone-worker tr > td:hover {
     background-color: #eee;
-
 }
 
 .table label {
   margin: 0;
-  padding: 1rem 1.75rem;
   cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 1.75rem;
+}
+
+input[type='checkbox'] {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+input[type='checkbox'] + label{
+ transition: .5s;
+}
+
+input[type='checkbox']:checked + label{
+  background: red;
 }
 
 .quick-panel {
@@ -312,6 +324,7 @@
     flex-grow: 0.3;
     padding: 1rem 2rem;
 }
+
 
 .inpt1,
 .inpt2 {
@@ -326,15 +339,15 @@
     padding: 0.5rem 0;
 }
 
-.active {
-  background: #12d25c;
-  transition: .5s;
-}
-
 .list-group-item.active {
   background: var(--gray-dark);
   border-color: var(--dark);
 }
+
+.hide {
+  display: none;
+}
+
 </style>
 
 </head>
@@ -502,6 +515,6 @@
       </div>
 
       @yield('content')
-
+      <script src="{{ asset('js/main.js')}}"></script>
     </body>
     </html>

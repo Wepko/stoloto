@@ -263,13 +263,7 @@
     cursor: pointer;
 }
 
-.table label {
-  margin: 0;
-  padding: 0;
-}
-.table input {
-  display: none;
-}
+
 
 .quick-panel {
     text-align: center;
