@@ -32,12 +32,22 @@ Route::get('/lk', function (){
 Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
 Route::get('/logout', 'LKController@logout')->name('logout');
+
+//добавление значения билетов пользователей
 Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->name('AddTicketValueOne');
 Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicketValueTwo');
 Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddTicketValueThree');
 Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTicketValueFour');
 Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->name('AddTicketValueFive');
 Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->name('AddTicketValueSix');
+
+//добавление значения выиграшных билетов
+Route::post('/AddWinTicketValueOne', 'AddWinTicketController@onegamewin')->name('AddWinTicketValueOne');
+Route::post('/AddWinTicketValueTwo', 'AddWinTicketController@twogamewin')->name('AddWinTicketValueTwo');
+Route::post('/AddWinTicketValueThree', 'AddWinTicketController@threegamewin')->name('AddWinTicketValueThree');
+Route::post('/AddWinTicketValueFour', 'AddWinTicketController@fourgamewin')->name('AddWinTicketValueFour');
+Route::post('/AddWinTicketValueFive', 'AddWinTicketController@fivegamewin')->name('AddWinTicketValueFive');
+Route::post('/AddWinTicketValueSix', 'AddWinTicketController@sixgamewin')->name('AddWinTicketValueSix');
 
 Route::get('/admin', function (){
   return view('admin-panel');
