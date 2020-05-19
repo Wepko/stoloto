@@ -1,4 +1,26 @@
-function elt(name, attrs, ...children) {
+// {
+    //     type: 'checkbox',
+    //     name: `ticket1_fieldOne${count}`,
+    //     id: `ticketOne_fieldOne${count}`,
+    //     value: `${count}`
+    // }
+    
+    class Tablegame {
+        constructor(tr, td, type) {
+        this.tr = tr
+        this.td = td
+        if (type == 'default') {
+            this.label = {
+
+            }
+            this.input = {
+                
+            }
+        }
+    }
+}
+
+function elt(name, attrs = {}, ...children) {
     const dom = document.createElement(name)
 
     for (let attr of Object.keys(attrs)) {
@@ -7,18 +29,41 @@ function elt(name, attrs, ...children) {
 
     for (let child of children) {
         dom.append(child)
+        console.log(child)
     }
 
     return dom
 }
 
-elt('div', {style: 'sdfa'}, 'sadf')
-
-const Table = {tr: 4, td: 8}; 
-
-function createGrid() {
-
+const Table = {
+    tr: 5,
+    td: 4,
+    input: {
+        type: 'checkbox',
+        name: `ticket1_fieldOne${count}`,
+        id: `ticketOne_fieldOne${count}`,
+        value: `${count}`
+    }
 }
+const $parent = document.getElementById('q')
+
+function createGrid(parent, obj_table) {
+    const table = elt('table', {class: 'table table-bordered'})
+    let count = 1
+    for (let i = 0; i < obj_table.tr; i++) {
+        const tr = elt('tr')
+        for (let j = 0; j < obj_table.td; j++) {
+            const td = elt('td', {}, elt('input', ), elt('label',{for: `ticketOne_fieldOne${count}`}, count))
+            tr.append(td)
+            count += 1
+        }
+        table.append(tr)
+    }
+    parent.append(table)
+    console.log(table)
+}
+
+createGrid($parent ,Table)
 
 let count = 0
 function addTicket() {
@@ -44,9 +89,11 @@ $('[data-spy="scroll"]').each(function () {
 
 
 
+
   
 const $select = document.querySelector('#inputGroupSelect01')
 const $input = document.querySelector('input.hide')
+const $valid = document.getElementById('valid')
 
 $select.onchange = () => {
     const arrOptions = [...$select.options]
@@ -54,26 +101,27 @@ $select.onchange = () => {
     arrOptions.forEach(item => {
         if (item.selected) {
             if (item.id == 'game-4_20') {
-                document.getElementById('valid').value = 1
+                $valid.value = 1
                 $input.classList.remove('hide')
             }
             if (item.id == 'game-5_36') {
-                document.getElementById('valid').value = 2
+                $valid.value = 2
                 $input.classList.remove('hide')
             }
             if (item.id == 'game-7_49') {
-                document.getElementById('valid').value = 3
+                $valid.value = 3
             }
             if (item.id == 'game-6_45') {
-                document.getElementById('valid').value = 4
+                $valid.value = 4
             }
             if (item.id == 'game-12_24') {
-                document.getElementById('valid').value = 5
+                $valid.value = 5
             }
             if (item.id == 'game-rapido') {
-                document.getElementById('valid').value = 6
+                $valid.value = 6
                 $input.classList.remove('hide')
             }
         }
     })
 }
+

@@ -22,7 +22,10 @@
   
   <style>
   body {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    height: 100vh;
   }
 
   .left_panel{
@@ -302,17 +305,17 @@
   padding: 1rem 1.75rem;
 }
 
-input[type='checkbox'] {
+table input[type='checkbox'] {
   opacity: 0;
-  z-index: -1;
+   z-index: -1;
   position: absolute;
 }
 
-input[type='checkbox'] + label{
+table input[type='checkbox'] + label{
  transition: .5s;
 }
 
-input[type='checkbox']:checked + label{
+table input[type='checkbox']:checked + label{
   background: red;
 }
 
@@ -414,11 +417,11 @@ input[type='checkbox']:checked + label{
 
 
     <!-- site-map -->
-    <div class="container">
+    <div class="container" >
       <!-- Modal -->
       <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document" style='width: 100%'>
-          <div class="modal-content sitemap" style="max-width: 1500px; min-width:1000px;">
+        <div class="modal-dialog w-100" style="max-width: 1500px; margin: .5rem auto" role="document" >
+          <div class="modal-content sitemap">
             <div class="modal-header" >
               <h5 class="modal-title" id="exampleModalLongTitle">Карта сайта</h5>
               <h5><br><br>Информационна поддержка: <b>8 900 555-55-55</b> </h5>
@@ -512,9 +515,167 @@ input[type='checkbox']:checked + label{
             </div>
           </div>
         </div>
-      </div>
-
+     </div>
       @yield('content')
+      <!-- Footer -->
+    </div>
+    <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4">
+
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-md-4 mx-auto">
+
+            <!-- Content -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+              consectetur
+              adipisicing elit.</p>
+
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none">
+
+          <!-- Grid column -->
+          <div class="col-md-2 mx-auto">
+
+            <!-- Links -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none">
+
+          <!-- Grid column -->
+          <div class="col-md-2 mx-auto">
+
+            <!-- Links -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none">
+
+          <!-- Grid column -->
+          <div class="col-md-2 mx-auto">
+
+            <!-- Links -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Footer Links -->
+
+      <hr>
+
+      <!-- Call to action -->
+      <ul class="list-unstyled list-inline text-center py-2">
+        <li class="list-inline-item">
+          <h5 class="mb-1">Register for free</h5>
+        </li>
+        <li class="list-inline-item">
+          <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+        </li>
+      </ul>
+      <!-- Call to action -->
+
+      <hr>
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+      <!-- Footer -->
       <script src="{{ asset('js/main.js')}}"></script>
-    </body>
-    </html>
+  </body>
+</html>
