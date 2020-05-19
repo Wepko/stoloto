@@ -40,6 +40,7 @@
       <div class="card mt-5" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">Мои билеты</h5>
+            
             <h6 class="card-subtitle  card-text mb-2 text-muted">Билетов с неполученными выйграшами нет</h6>
         </div>
     </div>

@@ -13,5 +13,4 @@ class LKController extends Controller
 
         return redirect()->route('home');
     }
-
 }
