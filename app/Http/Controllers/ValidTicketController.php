@@ -9,7 +9,6 @@ use DB;
 
 class ValidTicketController extends Controller
 {
-    
     public function validOneGame(Request $request) {
         if ($request->input('circulation') && $request->input('fieldOne') && $request->input('fieldTwo')) {
             if (DB::table('onegamewin')->where('circulation', $request->input('circulation'))->first()
