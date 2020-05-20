@@ -3,21 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css.map')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css.map')}}"> --}}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css.map')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css.map')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css.map')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css.map')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
+
     <link rel="stylesheet" href="{{ asset('style.css')}}">
   
   <style>
@@ -402,8 +400,8 @@ table input[type='checkbox']:checked + label{
     <a href="{{ route('one-game') }}"><p><img src="img/4iz.png" width="30px" alt=""> «Гослото «4 из 20»</p></a>
     <a href="{{ route('two-game') }}"><p><img src="img/5iz.png" width="30px" alt=""> «Гослото «5 из 36»</p></a>
     <a href="{{ route('three-game') }}"><p><img src="img/7iz.png" width="30px" alt=""> «Гослото «7 из 49»</p></a>
-    <a href="{{ route('four-game') }}"> <p><img src="img/6iz.png" width="30px" alt=""> «Гослото «6 из 45»</p></a>
-    <a href="{{ route('five-game') }}">  <p><img src="img/12iz.png" width="30px" alt=""> «Гослото «12 из 24»</p></a>
+    <a href="{{ route('four-game') }}"><p><img src="img/6iz.png" width="30px" alt=""> «Гослото «6 из 45»</p></a>
+    <a href="{{ route('five-game') }}"><p><img src="img/12iz.png" width="30px" alt=""> «Гослото «12 из 24»</p></a>
     <a href="{{ route('six-game') }}"><p><img src="img/rapido.png" width="30px" alt=""> «Рапидо»</p></a>
     <a href="{{ route('seven-game') }}"> <p><img src="img/top-3.png" width="30px" alt=""> «Топ - 3»</p></a>
 
@@ -676,6 +674,14 @@ table input[type='checkbox']:checked + label{
 
     </footer>
       <!-- Footer -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      {{-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+      <script src="{{ asset('js/bootstrap.bundle.min.js.map') }}"></script> --}}
+      <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+      {{-- <script src="{{ asset('js/bootstrap.min.js.map') }}"></script> --}}
+
+
       <script src="{{ asset('js/main.js')}}"></script>
   </body>
 </html>
