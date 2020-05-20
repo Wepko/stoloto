@@ -1,14 +1,22 @@
-function games() {
 
+function games() {
+    const $root = document.querySelector('#main')
+    const $blocksTicket = $root.querySelector('.blocks-ticket')
+    const $btnAddTicket = $root.querySelector('#addTicket') 
+    const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+    const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+    const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+    const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+    
     class Tablegame {
-        constructor(tr, td, field = "One", id = "1") {
+        constructor(tr, td, id = "1", field = "One",) {
             this.tr = tr
             this.td = td
-            this.field = field
             this.id = id
+            this.field = field
         }   
     }
-    
+
     function elt(name, attrs = {}, ...children) {
         const dom = document.createElement(name)
         
@@ -42,10 +50,10 @@ function games() {
     
                 const td = elt('td', {}, elt('input', {
                     type: 'checkbox',
-                    name: `ticket1_field${obj_table.field}${count}`,
-                    id: `ticketOne_field${obj_table.field}${count}`,
+                    name: `ticket${obj_table.id}_field${obj_table.field}${count}`,
+                    id: `ticket${obj_table.id}_field${obj_table.field}${count}`,
                     value: `${checkNumber(count)}`
-                }), elt('label',{for: `ticketOne_field${obj_table.field}${count}`}, count))
+                }), elt('label',{for: `ticket${obj_table.id}_field${obj_table.field}${count}`}, count))
                 tr.append(td)
                 count += 1
             }
@@ -54,36 +62,48 @@ function games() {
         parent.append(table)
     }
     
-    
-    
+    const createTicet = (function(){
+        let count = 1
+        return function(parentOne, parentTwo) {
+            createGrid(parentOne, new Tablegame(5, 4, count))
+            createGrid(parentTwo, new Tablegame(5, 4, count, "Two"))
+            return count++
+        }
+    }())
+
+    createTicet($parentfieldOne, $parentfieldTwo)
+
+
+
     // const Table = {
     //     tr: 5,
     //     td: 4,
     //     field: 'Two',
     //     id: '1'
     // }
-    const $parent = document.getElementById('zone-worker')
-    const $parentfieldOne = $parent.querySelector('.zone-one')
-    const $parentfieldTwo = $parent.querySelector('.zone-two')
-    
-    createGrid($parentfieldOne, new Tablegame(5, 4))
-    createGrid($parentfieldTwo, new Tablegame(5, 4, "Two"))
-    
-    let count = 0
-    function addTicket() {
-        count += 1
-        const parent = document.getElementById('test')
-        const elem = parent.querySelector('.card')
-        const clone = elem.cloneNode(true)
-    
-        const arrTagInput = [...clone.querySelectorAll('input')]
-    
-        for (let tagInput of arrTagInput) {
-              tagInput.name = `ticket${count + 1}_fieldOne`
-        }
-    
-        parent.appendChild(clone)
-    }
+
+
+    $btnAddTicket.addEventListener('click', function(e) {
+        e.preventDefault()
+
+        const zoneHeaders = $zoneHeaders.cloneNode(true)
+        const quickPanel = $quickPanel.cloneNode(true)
+
+        const fieldOne = elt('div', {class: 'zone-one'})
+        const fieldTwo = elt('div', {class: 'zone-two'})
+        createTicet(fieldOne, fieldTwo)
+        const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+
+        //
+        // elem.append(parentfieldOne, parentfieldTwo)
+        // block.append(elem)
+
+
+        const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+        
+        $blocksTicket.append(blockTicket)
+    })
+
 }
 
 function ticket() {
@@ -143,6 +163,7 @@ class Routing {
     }
 }
 
+//new Routing('/five-of-threety-six', games)
 new Routing('/four-of-twenty', games)
 new Routing('/ticket', ticket)
 new Routing('/valid', valid)

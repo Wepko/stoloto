@@ -264,6 +264,10 @@
     margin-right: 4rem;
 }
 
+.block-ticket {
+  margin-bottom: 1rem;
+}
+
 .help-information {
     display: flex;
     justify-content: space-around;
@@ -314,7 +318,7 @@ table input[type='checkbox'] + label{
 }
 
 table input[type='checkbox']:checked + label{
-  background: red;
+  background: var(--teal);
 }
 
 .quick-panel {
@@ -349,11 +353,49 @@ table input[type='checkbox']:checked + label{
   display: none;
 }
 
+
+
+
+/* ##########
+  #####Menu####
+  ###########
+*/
+
+@media (min-width: 768px) {
+            .navbar-container {
+                position: sticky;
+                top: 0;
+                overflow-y: auto;
+                height: 100vh;
+            }
+
+            .navbar-container .navbar {
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .navbar-container .navbar-collapse {
+                align-items: flex-start;
+            }
+
+            .navbar-container .nav {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+
+            .navbar-container .navbar-nav {
+                flex-direction: column !important;
+            }
+          }
 </style>
 
 </head>
   <body data-spy="scroll">
     <!-- START left - panel -->
+
     <div class="left_panel">
       <div class="column">
         <!-- Button trigger modal -->
@@ -394,6 +436,49 @@ table input[type='checkbox']:checked + label{
         @endif
       </div>
     </div>
+    {{-- <div class="left_panel">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 navbar-container bg-light">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <!-- Вертикальное меню -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-1">Ссылка 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-2">Ссылка 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-3">Ссылка 3</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-4">Ссылка 4</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#link-5">Ссылка 5</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-8 col-lg-9 content-container" style="background-color: #ffe0b2">
+                <h1 class="h3 text-center mt-5">Bootstrap 4 - Navbar (основное меню)</h1>
+                <h2 class="lead text-center">создание схлопывающегося вертикального меню</h2>
+                <hr class="mb-5">
+
+                <section >
+                    <p style="height: 5000px;">Контент...</p>
+                </section>
+            </div>
+        </div>
+    </div> --}}
     <!-- END left - panel -->
     <!-- START right - panel -->
     <div class="right_panel">
