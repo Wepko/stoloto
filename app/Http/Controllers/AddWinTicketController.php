@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\LKController;
 use App\Models\OneGameWinModels;
 use App\Models\TwoGameWinModels;
 use App\Models\ThreeGameWinModels;
 use App\Models\FourGameWinModels;
 use App\Models\FiveGameWinModels;
 use App\Models\SixGameWinModels;
+use App\Models\UserWinnerModels;
 use Illuminate\Http\Request;
 
 class AddWinTicketController extends Controller
