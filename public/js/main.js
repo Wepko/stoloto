@@ -1,13 +1,8 @@
 
-function games() {
-    const $root = document.querySelector('#main')
-    const $blocksTicket = $root.querySelector('.blocks-ticket')
-    const $btnAddTicket = $root.querySelector('#addTicket') 
-    const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
-    const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
-    const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
-    const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+function games(url) {
+    // Test -------------------
     
+    // end ---------------------
     class Tablegame {
         constructor(tr, td, id = "1", field = "One",) {
             this.tr = tr
@@ -47,7 +42,7 @@ function games() {
         for (let i = 0; i < obj_table.tr; i++) {
             const tr = elt('tr')
             for (let j = 0; j < obj_table.td; j++) {
-    
+                
                 const td = elt('td', {}, elt('input', {
                     type: 'checkbox',
                     name: `ticket${obj_table.id}_field${obj_table.field}${count}`,
@@ -61,50 +56,289 @@ function games() {
         }
         parent.append(table)
     }
-    
-    const createTicet = (function(){
-        let count = 1
-        return function(parentOne, parentTwo) {
-            createGrid(parentOne, new Tablegame(5, 4, count))
-            createGrid(parentTwo, new Tablegame(5, 4, count, "Two"))
-            return count++
-        }
-    }())
 
-    createTicet($parentfieldOne, $parentfieldTwo)
+    if (url == '/four-of-twenty') {
+        (function game4_20() {
 
-
-
-    // const Table = {
-    //     tr: 5,
-    //     td: 4,
-    //     field: 'Two',
-    //     id: '1'
-    // }
-
-
-    $btnAddTicket.addEventListener('click', function(e) {
-        e.preventDefault()
-
-        const zoneHeaders = $zoneHeaders.cloneNode(true)
-        const quickPanel = $quickPanel.cloneNode(true)
-
-        const fieldOne = elt('div', {class: 'zone-one'})
-        const fieldTwo = elt('div', {class: 'zone-two'})
-        createTicet(fieldOne, fieldTwo)
-        const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
-
-        //
-        // elem.append(parentfieldOne, parentfieldTwo)
-        // block.append(elem)
-
-
-        const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+            const $root = document.querySelector('#main')
+            const $blocksTicket = $root.querySelector('.blocks-ticket')
+            const $btnAddTicket = $root.querySelector('#addTicket') 
+            const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+            const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            
+            
+            const createTicet = (function(){
+                let count = 1
+                return function(parentOne, parentTwo) {
+                    createGrid(parentOne, new Tablegame(5, 4, count))
+                    createGrid(parentTwo, new Tablegame(5, 4, count, "Two"))
+                    return count++
+                }
+            }())
         
-        $blocksTicket.append(blockTicket)
-    })
+            createTicet($parentfieldOne, $parentfieldTwo)
+        
+            $btnAddTicket.addEventListener('click', function(e) {
+                e.preventDefault()
+        
+                const zoneHeaders = $zoneHeaders.cloneNode(true)
+                const quickPanel = $quickPanel.cloneNode(true)
+        
+                const fieldOne = elt('div', {class: 'zone-one'})
+                const fieldTwo = elt('div', {class: 'zone-two'})
+                createTicet(fieldOne, fieldTwo)
+                const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+        
+                //
+                // elem.append(parentfieldOne, parentfieldTwo)
+                // block.append(elem)
+        
+        
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                
+                $blocksTicket.append(blockTicket)
+            })
+        })()
+    }
 
+    if (url == '/five-of-threety-six') {
+        (function game5_36() {
+    
+            const $root = document.querySelector('#main')
+            const $blocksTicket = $root.querySelector('.blocks-ticket')
+            const $btnAddTicket = $root.querySelector('#addTicket') 
+            const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+            const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+            const $zoneHeaders = $blocksTicket.querySelector('.zone-header')
+            const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            
+            
+            const createTicet = (function(){
+                let count = 1
+                return function(parentOne, parentTwo) {
+                    createGrid(parentOne, new Tablegame(5, 8, count))
+                    createGrid(parentTwo, new Tablegame(1, 4, count, "Two"))
+                    return count++
+                }
+            }())
+        
+            createTicet($parentfieldOne, $parentfieldTwo)
+        
+            $btnAddTicket.addEventListener('click', function(e) {
+                e.preventDefault()
+        
+
+                const quickPanel = $quickPanel.cloneNode(true)
+        
+                const fieldOne = elt('div', {class: 'zone-one'})
+                const fieldTwo = elt('div', {class: 'zone-two'})
+                createTicet(fieldOne, fieldTwo)
+                const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+        
+                //
+                // elem.append(parentfieldOne, parentfieldTwo)
+                // block.append(elem)
+        
+        
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                
+                $blocksTicket.append(blockTicket)
+            })
+        }())
+    }
+
+    if (url == '/seven-of-fourty-nine') {
+        (function game7_49() {
+            console.log('sdaf')
+            const $root = document.querySelector('#main')
+            const $blocksTicket = $root.querySelector('.blocks-ticket')
+            const $btnAddTicket = $root.querySelector('#addTicket') 
+            const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+            const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            
+            
+            const createTicet = (function(){
+                let count = 1
+                return function(parentOne, parentTwo) {
+                    createGrid(parentOne, new Tablegame(5, 10, count))
+                    return count++
+                }
+            }())
+        
+            createTicet($parentfieldOne, $parentfieldTwo)
+        
+            $btnAddTicket.addEventListener('click', function(e) {
+                e.preventDefault()
+        
+                const zoneHeaders = $zoneHeaders.cloneNode(true)
+                const quickPanel = $quickPanel.cloneNode(true)
+        
+                const fieldOne = elt('div', {class: 'zone-one'})
+                const fieldTwo = elt('div', {class: 'zone-two'})
+                createTicet(fieldOne, fieldTwo)
+                const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+        
+                //
+                // elem.append(parentfieldOne, parentfieldTwo)
+                // block.append(elem)
+        
+        
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                
+                $blocksTicket.append(blockTicket)
+            })
+        })()
+    }
+
+    if (url == '/six-of-fourty-five') {
+        (function game6_45() {
+            const $root = document.querySelector('#main')
+            const $blocksTicket = $root.querySelector('.blocks-ticket')
+            const $btnAddTicket = $root.querySelector('#addTicket') 
+            const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+            const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            
+            
+            const createTicet = (function(){
+                let count = 1
+                return function(parentOne, parentTwo) {
+                    createGrid(parentOne, new Tablegame(5, 10, count))
+                    return count++
+                }
+            }())
+        
+            createTicet($parentfieldOne, $parentfieldTwo)
+        
+            $btnAddTicket.addEventListener('click', function(e) {
+                e.preventDefault()
+        
+                const zoneHeaders = $zoneHeaders.cloneNode(true)
+                const quickPanel = $quickPanel.cloneNode(true)
+        
+                const fieldOne = elt('div', {class: 'zone-one'})
+                const fieldTwo = elt('div', {class: 'zone-two'})
+                createTicet(fieldOne, fieldTwo)
+                const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+        
+                //
+                // elem.append(parentfieldOne, parentfieldTwo)
+                // block.append(elem)
+        
+        
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                
+                $blocksTicket.append(blockTicket)
+            })
+        })()
+    }
+
+    if (url == '/twenteen-of-twenty-four') {
+        (function game12_24() {
+
+            const $root = document.querySelector('#main')
+            const $blocksTicket = $root.querySelector('.blocks-ticket')
+            const $btnAddTicket = $root.querySelector('#addTicket') 
+            const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+            const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            
+            
+            const createTicet = (function(){
+                let count = 1
+                return function(parentOne, parentTwo) {
+                    createGrid(parentOne, new Tablegame(4, 6, count))
+                    return count++
+                }
+            }())
+        
+            createTicet($parentfieldOne, $parentfieldTwo)
+        
+            $btnAddTicket.addEventListener('click', function(e) {
+                e.preventDefault()
+        
+                const zoneHeaders = $zoneHeaders.cloneNode(true)
+                const quickPanel = $quickPanel.cloneNode(true)
+        
+                const fieldOne = elt('div', {class: 'zone-one'})
+                const fieldTwo = elt('div', {class: 'zone-two'})
+                createTicet(fieldOne, fieldTwo)
+                const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+        
+                //
+                // elem.append(parentfieldOne, parentfieldTwo)
+                // block.append(elem)
+        
+        
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                
+                $blocksTicket.append(blockTicket)
+            })
+        })()
+    }
+
+    if (url == '/rapido') {
+        (function rapido() {
+
+            const $root = document.querySelector('#main')
+            const $blocksTicket = $root.querySelector('.blocks-ticket')
+            const $btnAddTicket = $root.querySelector('#addTicket') 
+            const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+            const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            
+            const createTicet = (function(){
+                let count = 1
+                return function(parentOne, parentTwo) {
+                    createGrid(parentOne, new Tablegame(2, 10, count))
+                    createGrid(parentTwo, new Tablegame(1, 4, count, 'Two'))
+                    return count++
+                }
+            }())
+        
+            createTicet($parentfieldOne, $parentfieldTwo)
+        
+            $btnAddTicket.addEventListener('click', function(e) {
+                e.preventDefault()
+        
+                const zoneHeaders = $zoneHeaders.cloneNode(true)
+                const quickPanel = $quickPanel.cloneNode(true)
+        
+                const fieldOne = elt('div', {class: 'zone-one'})
+                const fieldTwo = elt('div', {class: 'zone-two'})
+                createTicet(fieldOne, fieldTwo)
+                const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+        
+                //
+                // elem.append(parentfieldOne, parentfieldTwo)
+                // block.append(elem)
+        
+        
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                
+                $blocksTicket.append(blockTicket)
+            })
+        })()
+    }
+
+    if (url == '/top-3') {
+
+    }
 }
+
+
+
+
+
+
+
 
 function ticket() {
     $('[data-spy="scroll"]').each(function () {
@@ -158,12 +392,17 @@ class Routing {
 
     start() {
         if (document.location.pathname == this.url) {
-            this.fn()
+            this.fn(this.url)
         }
     }
 }
 
-//new Routing('/five-of-threety-six', games)
+
+new Routing('/rapido', games)
+new Routing('/twenteen-of-twenty-four', games)
+new Routing('/six-of-fourty-five', games)
+new Routing('/seven-of-fourty-nine', games)
+new Routing('/five-of-threety-six', games)
 new Routing('/four-of-twenty', games)
 new Routing('/ticket', ticket)
 new Routing('/valid', valid)
