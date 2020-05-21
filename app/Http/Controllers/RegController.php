@@ -15,7 +15,7 @@ class RegController extends Controller
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|min:6',
             'confpass' => 'required|min:6',
-            //'validAge' => 'required'
+            'validAge' => 'required'
         ]);
 
         User::create([

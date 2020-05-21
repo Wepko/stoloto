@@ -52,7 +52,7 @@ Route::post('/AddWinTicketValueSix', 'AddWinTicketController@sixgamewin')->name(
 //Проверка билетов
 Route::post('/ValidTicket', 'ValidTicketController@valid')->name('ValidTicketGame');
 //Route::post('/ValidTicketOneGame', 'ValidTicketController@validOneGame')->name('ValidTicketOneGame');
-Route::post('/Winner', 'AdminController@goWinner')->name('Winner');
+Route::post('/Winner', 'AdminController@goWinnerOneGame')->name('WinnerOneGame');
 
 Route::get('/admin', function (){
   return view('admin-panel');

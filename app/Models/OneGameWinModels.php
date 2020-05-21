@@ -30,3 +30,4 @@ class OneGameWinModels extends Model
         return $this->ticketTwo;
     }
 }
+

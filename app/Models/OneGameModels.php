@@ -13,4 +13,13 @@ class OneGameModels extends Model
      * @var array
      */
     protected $table = 'onegame';
+
+    protected $fillable = [
+        'id',
+        'user_id',
+        'circulation',
+        'ticketOne',
+        'ticketTwo'
+    ];
 }
+

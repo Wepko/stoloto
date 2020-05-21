@@ -16,6 +16,7 @@ class CreateUserwinnerTable extends Migration
         Schema::create('userwinner', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
+            $table->integer('numberGame');
             //12 category
             $table->integer('win');
 

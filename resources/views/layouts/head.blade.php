@@ -602,7 +602,7 @@ table input[type='checkbox']:checked + label{
       @yield('content')
       <!-- Footer -->
     </div>
-    <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4">
+    <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4 mt-5">
 
       <!-- Footer Links -->
       <div class="container text-center text-md-left">
@@ -614,10 +614,8 @@ table input[type='checkbox']:checked + label{
           <div class="col-md-4 mx-auto">
 
             <!-- Content -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-              consectetur
-              adipisicing elit.</p>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ГОСЛОТО</h5>
+            <p>Сайт где ты сможешь поднять бабла не напрягаясь, выигрыш в каждом билете!</p>
 
           </div>
           <!-- Grid column -->
@@ -628,20 +626,20 @@ table input[type='checkbox']:checked + label{
           <div class="col-md-2 mx-auto">
 
             <!-- Links -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Меню</h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Главная</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">Билеты по СМС</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Трансляцию</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Проверка билетов</a>
               </li>
             </ul>
 
@@ -654,20 +652,20 @@ table input[type='checkbox']:checked + label{
           <div class="col-md-2 mx-auto">
 
             <!-- Links -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Игры</h5>
 
             <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
+            <li>
+                <a href="#!">Гослото 4 из 20</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">Гослото 5 из 36</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Гослото 7 из 49</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Гослото 6 из 45</a>
               </li>
             </ul>
 
@@ -680,21 +678,19 @@ table input[type='checkbox']:checked + label{
           <div class="col-md-2 mx-auto">
 
             <!-- Links -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">Игры</h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Гослото 12 из 24</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">Рапидо</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Топ 3</a>
               </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
+           
             </ul>
 
           </div>
@@ -711,10 +707,10 @@ table input[type='checkbox']:checked + label{
       <!-- Call to action -->
       <ul class="list-unstyled list-inline text-center py-2">
         <li class="list-inline-item">
-          <h5 class="mb-1">Register for free</h5>
+          <h5 class="mb-1">Начни прямо сейчас </h5>
         </li>
         <li class="list-inline-item">
-          <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+          <a href="#!" class="btn btn-danger btn-rounded">Регистрация!</a>
         </li>
       </ul>
       <!-- Call to action -->
@@ -753,7 +749,7 @@ table input[type='checkbox']:checked + label{
 
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        <a href="https://mdbootstrap.com/"> STOLOTO</a>
       </div>
       <!-- Copyright -->
 

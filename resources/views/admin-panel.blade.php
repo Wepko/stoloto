@@ -9,9 +9,12 @@
 
 @if(Auth::user()->isAdmin())
       <h1 class="mt-5">Панель администратора</h1>
-      <div class="card mt-5" style="width: 18rem;">
-        <a href="{{ route('Winner') }}"class="btn btn-dark mt-2">Начать разыгрыш</a>
-      </div>
+    
+        <form action= "{{ route('WinnerOneGame') }}" method="post">
+            @csrf
+            <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 4 из 20">
+        </form>
+      
 @endif
 
 @endsection
