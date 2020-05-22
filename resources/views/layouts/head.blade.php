@@ -602,7 +602,7 @@ table input[type='checkbox']:checked + label{
       @yield('content')
       <!-- Footer -->
     </div>
-    <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4 mt-5">
+    <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4">
 
       <!-- Footer Links -->
       <div class="container text-center text-md-left">
