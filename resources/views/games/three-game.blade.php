@@ -12,7 +12,7 @@
       <form action="{{ route('AddTicketValueThree') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
       @csrf
           <div class="blocks-ticket" id="test">
-              <div class="card">
+              <div class="block-ticket card">
                   <div class="help-information">
                       <p>Отметьте от 7 до 14 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша.</p>
                       <a href="#" class="btn btn-dark mb-5" id="addTicket">Добавить билет</a>

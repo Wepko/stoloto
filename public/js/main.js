@@ -1,8 +1,6 @@
 
 function games(url) {
-    // Test -------------------
-    
-    // end ---------------------
+
     class Tablegame {
         constructor(tr, td, offset = 0, id = "1", field = "One",) {
             this.tr = tr

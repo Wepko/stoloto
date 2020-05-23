@@ -390,6 +390,9 @@ table input[type='checkbox']:checked + label{
                 flex-direction: column !important;
             }
           }
+
+
+
 </style>
 
 </head>
@@ -444,9 +447,7 @@ table input[type='checkbox']:checked + label{
     <!-- site-map -->
 
 
-    <div class="logo" style="text-align: center">
-      <img src="img/crisis_logo.svg"  alt="">
-    </div>
+
 
     <!-- site-map -->
     <div class="container-fluid" >
@@ -549,37 +550,64 @@ table input[type='checkbox']:checked + label{
           </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-3 col-lg-2 navbar-container bg-light">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="#">Navbar</a>
+      <div class="row" id="wrapper">
+        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0789)" >
+            <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
+                <a class="navbar-brand" href="/">Столото</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbar">
+                <div class="collapse navbar-collapse w-100" id="navbar">
                     <!-- Вертикальное меню -->
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav w-100">
+                      <li class="nav-item">
+                          <a class="nav-link text-light btn btn-sm btn-dark" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
+                      </li>
+
+                      @if (Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link btn btn-light" data-toggle="modal" data-target="#exampleModalLong" href="#link-1">Ссылка 1</a>
+                            <a class="nav-link" href"{{ route('lk') }}">Личный кабинет</a>
+                            @if (Auth::user()->isAdmin())
+                            <a href="{{ route('admin') }}">Админ панель</a>
+                            @endif
+                            <a href="{{ route('logout') }}">Выйти</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#link-2">Ссылка 2</a>
+                          <a class="nav-link " href="{{ route('ticket') }}">Билеты по СМС</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#link-3">Ссылка 3</a>
+                          <a class="nav-link" href="{{ route('broadcast') }}">Трансляции</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#link-4">Ссылка 4</a>
+                          <a class="nav-link" href="{{ route('valid_ticket') }}">Проверка билетов</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#link-5">Ссылка 5</a>
-                        </li>
+                        @else 
+                          <li class="nav-item">
+                            <a class="nav-link waves-effect" href="{{ route('login') }}">Войти</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reg') }}">Регистрация</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ route('ticket') }}">Билеты по СМС</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{ route('broadcast') }}">Трансляции</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{ route('valid_ticket') }}">Проверка билетов</a>
+                          </li>
+                        @endif
                     </ul>
+
                 </div>
             </nav>
         </div>
         <div class="col-md-7 col-lg-8 content-container">
+          <div class="logo" style="text-align: center">
+            <img src="img/crisis_logo.svg"  alt="">
+          </div>
             @yield('content')
         </div>
         <div class="col-md-2 col-lg-2 content-container">
