@@ -5,8 +5,8 @@
     <h1 class="display-4">Участие по СМС. Инструкция, как купить билет</h1>
     <p class="lead">На этой странице мы расскажем, как покупать лотерейные билеты с помощью СМС. Выберите интересующий вас вопрос.</p>
   </div>
-  <div class="row">
-      <div class="col-4 ">      
+  <div class="row ">
+      <div class="col-4">      
           <div id="list-example" class="list-group"  data-target="#navbar-example">
             <a class="list-group-item list-group-item-action" href="#list-item-1">Кому доступен сервис?</a>
             <a class="list-group-item list-group-item-action" href="#list-item-2">В чём преимущество?</a>
@@ -19,7 +19,7 @@
             <a class="list-group-item list-group-item-action" href="#list-item-9">Что нужно знать о предоставлении услуги со стороны мобильных операторов?</a> 
           </div>
       </div>
-      <div class="col-8">
+      <div class="col-8" >
           <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
             <h4 id="list-item-1">Кому доступен сервис?</h4>
             <p>Сервис предоставляется абонентам «Мегафон», МТС, «Билайн» и Tele2.</p>

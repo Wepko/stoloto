@@ -66,6 +66,51 @@ function games(url) {
         parent.append(table)
     }
 
+    function random(field, type, countActiveCell, allCell) {
+        //own even rnd
+        const inputs = [...field.querySelectorAll('input')]
+
+        inputs.forEach(item => {
+            item.checked = false
+        })
+       
+        const arrInedexRnd = []
+        let rnd, flagRandom = null
+        for (let i = 0; i < countActiveCell; i++) {
+            if (type == 'rnd') { 
+                do {
+                    flagRandom = true
+                    rnd = Math.floor(Math.random() * allCell) 
+                    if (arrInedexRnd.includes(rnd))  flagRandom = false
+                } while (!flagRandom)
+                
+                arrInedexRnd.push(rnd)
+                inputs[arrInedexRnd[i]].checked = true
+            }
+            
+            if (type == 'odd') {
+                do {
+                    flagRandom = true
+                    rnd = Math.floor(Math.random() * allCell) 
+                    if (arrInedexRnd.includes(rnd) || rnd % 2 != 0)  flagRandom = false
+                } while (!flagRandom)
+                
+                arrInedexRnd.push(rnd)
+                inputs[arrInedexRnd[i]].checked = true
+            }
+            if (type == 'even') {
+                do {
+                    flagRandom = true
+                    rnd = Math.floor(Math.random() * allCell) 
+                    if (arrInedexRnd.includes(rnd) || rnd % 2 == 0)  flagRandom = false
+                } while (!flagRandom)
+                
+                arrInedexRnd.push(rnd)
+                inputs[arrInedexRnd[i]].checked = true
+            }
+        }
+    }
+
     if (url == '/four-of-twenty') {
         (function game4_20() {
 
@@ -77,6 +122,7 @@ function games(url) {
             const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
             
+            const arrBtns = [...$quickPanel.children]
             
             const createTicet = (function(){
                 let count = 1
@@ -86,15 +132,38 @@ function games(url) {
                     return count++
                 }
             }())
-        
+            
             createTicet($parentfieldOne, $parentfieldTwo)
-        
+            
+            arrBtns.forEach((item , index, arr) => {
+                switch(index) {
+                    case 0: 
+                        item.addEventListener('click', () => random($parentfieldOne, 'rnd', 4, 20)) 
+                        item.addEventListener('click', () => random($parentfieldTwo, 'rnd', 4, 20)) 
+                    break
+                    case 1:
+                        item.addEventListener('click', () => random($parentfieldOne, 'even', 4, 20)) 
+                        item.addEventListener('click', () => random($parentfieldTwo, 'even', 4, 20)) 
+                    break
+                    case 2:
+                        item.addEventListener('click', () => random($parentfieldOne, 'odd', 4, 20)) 
+                        item.addEventListener('click', () => random($parentfieldTwo, 'odd', 4, 20)) 
+                    break
+                    case 3:
+                        item.addEventListener('click', () => random($parentfieldOne)) 
+                        item.addEventListener('click', () => random($parentfieldTwo)) 
+                    break
+                }
+            })
+
             $btnAddTicket.addEventListener('click', function(e) {
                 e.preventDefault()
         
                 const zoneHeaders = $zoneHeaders.cloneNode(true)
                 const quickPanel = $quickPanel.cloneNode(true)
-        
+
+                const arrBtns = [...quickPanel.children]
+
                 const fieldOne = elt('div', {class: 'zone-one'})
                 const fieldTwo = elt('div', {class: 'zone-two'})
                 createTicet(fieldOne, fieldTwo)
@@ -104,7 +173,27 @@ function games(url) {
                 // elem.append(parentfieldOne, parentfieldTwo)
                 // block.append(elem)
         
-        
+                arrBtns.forEach((item , index, arr) => {
+                    switch(index) {
+                        case 0: 
+                            item.addEventListener('click', () => random(fieldOne, 'rnd', 4, 20)) 
+                            item.addEventListener('click', () => random(fieldTwo, 'rnd', 4, 20)) 
+                        break
+                        case 1:
+                            item.addEventListener('click', () => random(fieldOne, 'even', 4, 20)) 
+                            item.addEventListener('click', () => random(fieldTwo, 'even', 4, 20)) 
+                        break
+                        case 2:
+                            item.addEventListener('click', () => random(fieldOne, 'odd', 4, 20)) 
+                            item.addEventListener('click', () => random(fieldTwo, 'odd', 4, 20)) 
+                        break
+                        case 3:
+                            item.addEventListener('click', () => random(fieldOne)) 
+                            item.addEventListener('click', () => random(fieldTwo)) 
+                        break
+                    }
+                })
+
                 const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
                 
                 $blocksTicket.append(blockTicket)
@@ -123,7 +212,8 @@ function games(url) {
             const $zoneHeaders = $blocksTicket.querySelector('.zone-header')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
             
-            
+            const arrBtns = [...$quickPanel.children]
+
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
@@ -135,21 +225,63 @@ function games(url) {
         
             createTicet($parentfieldOne, $parentfieldTwo)
         
+            arrBtns.forEach((item , index) => {
+                switch(index) {
+                    case 0: 
+                        item.addEventListener('click', () => random($parentfieldOne, 'rnd', 5, 36)) 
+                        item.addEventListener('click', () => random($parentfieldTwo, 'rnd', 1, 4)) 
+                    break
+                    case 1:
+                        item.addEventListener('click', () => random($parentfieldOne, 'even', 5, 36)) 
+                        item.addEventListener('click', () => random($parentfieldTwo, 'even', 1, 4)) 
+                    break
+                    case 2:
+                        item.addEventListener('click', () => random($parentfieldOne, 'odd', 5, 36)) 
+                        item.addEventListener('click', () => random($parentfieldTwo, 'odd', 1, 4)) 
+                    break
+                    case 3:
+                        item.addEventListener('click', () => random($parentfieldOne)) 
+                        item.addEventListener('click', () => random($parentfieldTwo)) 
+                    break
+                }
+            })
+
+
             $btnAddTicket.addEventListener('click', function(e) {
                 e.preventDefault()
         
 
                 const quickPanel = $quickPanel.cloneNode(true)
         
-                const fieldOne = elt('div', {class: 'zone-one'})
-                const fieldTwo = elt('div', {class: 'zone-two'})
+                const fieldOne = elt('div', {class: 'zone-one'}, elt('div', {class: 'zone-header'}, 'Поле1'))
+                const fieldTwo = elt('div', {class: 'zone-two'}, elt('div', {class: 'zone-header'}, 'Поле2'))
                 createTicet(fieldOne, fieldTwo)
                 const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
-        
+                
+                const arrBtns = [...quickPanel.children]
                 //
                 // elem.append(parentfieldOne, parentfieldTwo)
                 // block.append(elem)
-        
+                arrBtns.forEach((item , index) => {
+                    switch(index) {
+                        case 0: 
+                            item.addEventListener('click', () => random(fieldOne, 'rnd', 5, 36)) 
+                            item.addEventListener('click', () => random(fieldTwo, 'rnd', 1, 4)) 
+                        break
+                        case 1:
+                            item.addEventListener('click', () => random(fieldOne, 'even', 5, 36)) 
+                            item.addEventListener('click', () => random(fieldTwo, 'even', 1, 4)) 
+                        break
+                        case 2:
+                            item.addEventListener('click', () => random(fieldOne, 'odd', 5, 36)) 
+                            item.addEventListener('click', () => random(fieldTwo, 'odd', 1, 4)) 
+                        break
+                        case 3:
+                            item.addEventListener('click', () => random(fieldOne)) 
+                            item.addEventListener('click', () => random(fieldTwo)) 
+                        break
+                    }
+                })
         
                 const blockTicket = elt('div', {class: 'block-ticket card'}, zoneWorker, quickPanel)
                 
@@ -182,7 +314,7 @@ function games(url) {
             $btnAddTicket.addEventListener('click', function(e) {
                 e.preventDefault()
         
-                const zoneHeaders = $zoneHeaders.cloneNode(true)
+                //const zoneHeaders = $zoneHeaders.cloneNode(true)
                 const quickPanel = $quickPanel.cloneNode(true)
         
                 const fieldOne = elt('div', {class: 'zone-one'})
@@ -195,7 +327,7 @@ function games(url) {
                 // block.append(elem)
         
         
-                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneWorker, quickPanel)
                 
                 $blocksTicket.append(blockTicket)
             })

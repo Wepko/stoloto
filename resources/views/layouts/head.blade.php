@@ -396,7 +396,7 @@ table input[type='checkbox']:checked + label{
   <body data-spy="scroll">
     <!-- START left - panel -->
 
-    <div class="left_panel">
+    {{-- <div class="left_panel">
       <div class="column">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalLong">
@@ -435,171 +435,169 @@ table input[type='checkbox']:checked + label{
             </div>
         @endif
       </div>
-    </div>
-    {{-- <div class="left_panel">
-      <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 col-lg-3 navbar-container bg-light">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <!-- Вертикальное меню -->
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#link-1">Ссылка 1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#link-2">Ссылка 2</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#link-3">Ссылка 3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#link-4">Ссылка 4</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#link-5">Ссылка 5</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-md-8 col-lg-9 content-container" style="background-color: #ffe0b2">
-                <h1 class="h3 text-center mt-5">Bootstrap 4 - Navbar (основное меню)</h1>
-                <h2 class="lead text-center">создание схлопывающегося вертикального меню</h2>
-                <hr class="mb-5">
-
-                <section >
-                    <p style="height: 5000px;">Контент...</p>
-                </section>
-            </div>
-        </div>
     </div> --}}
+
     <!-- END left - panel -->
     <!-- START right - panel -->
-    <div class="right_panel">
-    <a href="{{ route('one-game') }}"><p><img src="img/4iz.png" width="30px" alt=""> «Гослото «4 из 20»</p></a>
-    <a href="{{ route('two-game') }}"><p><img src="img/5iz.png" width="30px" alt=""> «Гослото «5 из 36»</p></a>
-    <a href="{{ route('three-game') }}"><p><img src="img/7iz.png" width="30px" alt=""> «Гослото «7 из 49»</p></a>
-    <a href="{{ route('four-game') }}"><p><img src="img/6iz.png" width="30px" alt=""> «Гослото «6 из 45»</p></a>
-    <a href="{{ route('five-game') }}"><p><img src="img/12iz.png" width="30px" alt=""> «Гослото «12 из 24»</p></a>
-    <a href="{{ route('six-game') }}"><p><img src="img/rapido.png" width="30px" alt=""> «Рапидо»</p></a>
-    <a href="{{ route('seven-game') }}"> <p><img src="img/top-3.png" width="30px" alt=""> «Топ - 3»</p></a>
 
-    </div>
     <!-- END right - panel -->
     <!-- site-map -->
+
 
     <div class="logo" style="text-align: center">
       <img src="img/crisis_logo.svg"  alt="">
     </div>
 
-
     <!-- site-map -->
-    <div class="container" >
+    <div class="container-fluid" >
       <!-- Modal -->
-      <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog w-100" style="max-width: 1500px; margin: .5rem auto" role="document" >
-          <div class="modal-content sitemap">
-            <div class="modal-header" >
-              <h5 class="modal-title" id="exampleModalLongTitle">Карта сайта</h5>
-              <h5><br><br>Информационна поддержка: <b>8 900 555-55-55</b> </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-header">
-              <div class="row">
-                <div class="col-md-4">
-                  <a href="{{ route('home') }}">Главная</a>
-                </div>
-                <div class="col-md-4">
-                  <a href="#">Гос.лотереи</a>
-                </div>
-                <div class="col-md-4">
-                  <a href="#">Лотереи в городе</a>
-                </div>
+        <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog w-100" style="max-width: 1500px; margin: .5rem auto" role="document" >
+            <div class="modal-content sitemap">
+              <div class="modal-header" >
+                <h5 class="modal-title" id="exampleModalLongTitle">Карта сайта</h5>
+                <h5><br><br>Информационна поддержка: <b>8 900 555-55-55</b> </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-3">
-                  <h2>Многомиллионные суперпризы</h2>
-                  <a href="#"><p>«Гослото «4 из 20»</p></a>
-                  <a href="#"><p>«Гослото «7 из 49»</p></a>
-                  <a href="#"><p>«Гослото «6 из 45»</p></a>
-                  <a href="#"><p>«Гослото «5 из 36»</p></a>
-                  <a href="#"><p>«Зодиак»</p></a>
-                  <a href="#"><p>«Спортлото Матчбол»</p></a>
-                </div>
-                <div class="col-md-3">
-                  <h2>Квартиры, автомобили, миллионы</h2>
-                  <a href="#"><p>«Русское лото»</p></a>
-                  <a href="#"><p>«Русское лото экспресс»</p></a>
-                  <a href="#"><p>«Жилищная лотерея»</p></a>
-                  <a href="#"><p>«Золотая подкова»</p></a>
-                  <a href="#"><p>«Бинго-75»</p></a>
-                  <a href="#"><p>«6 из 36»</p></a>
-                </div>
-                <div class="col-md-3">
-                  <h2>Справочник участника</h2>
-                  <a href="#"><p>Как купить билет на сайте</p></a>
-                  <a href="#"><p>Как получить выигрыш</p></a>
-                  <a href="#"><p>Вопрос-ответ</p></a>
-                  <a href="#"><p>Правовая информация</p></a>
-                  <a href="#"><p>Налогообложение</p></a>
-                  <a href="#"><p>Как не попасться мошенникам</p></a>
-                </div>
-
-
-                <div class="col-md-3">
-                  <h2>Полезные сервисы</h2>
-                  <a href="#"><p>Бонусная программа</p></a>
-                  <a href="#"><p>Подписка на лотерею</p></a>
-                  <a href="#"><p>Билет в подарок</p></a>
-                  <a href="#"><p>Система поощрений</p></a>
-                  <a href="#"><p>Пригласить друга</p></a>
-                  <a href="#"><p>Демо «Топ-3»</p></a>
-                </div>
-                </div>
+              <div class="modal-header">
                 <div class="row">
-                <div class="col-md-3">
-                  <h2>Лотереи в вашем мобильном</h2>
-                  <a href="#"><p>Мобильный сайт</p></a>
-                  <a href="#"><p>Приложения для iOS и Android</p></a>
-                  <a href="#"><p>Как купить билет по СМС</p></a>
+                  <div class="col-md-4">
+                    <a href="{{ route('home') }}">Главная</a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="#">Гос.лотереи</a>
+                  </div>
+                  <div class="col-md-4">
+                    <a href="#">Лотереи в городе</a>
+                  </div>
                 </div>
-                <div class="col-md-3">
-                  <h2>Билеты лотерей</h2>
-                  <a href="#"><p>Где купить</p></a>
-                  <a href="#"><p>Как проверить</p></a>
-                  <a href="#"><p>Как получить выигрыш</p></a>
-                  <a href="#"><p>Моментальные лотереи</p></a>
-                </div>
-                <div class="col-md-3">
-                  <a href="#"> <h3>Все о «***лото»</h3> </a>
-                  <a href="#"> <h3>Новости</h3> </a>
-                  <a href="#"> <h3>Победители</h3> </a>
-                </div>
-                <div class="col-md-3">
-                  <a href="#"> <h3>Пресс-центр</h3> </a>
-                  <a href="#"> <h3>Контакты</h3> </a>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-3">
+                    <h2>Многомиллионные суперпризы</h2>
+                    <a href="#"><p>«Гослото «4 из 20»</p></a>
+                    <a href="#"><p>«Гослото «7 из 49»</p></a>
+                    <a href="#"><p>«Гослото «6 из 45»</p></a>
+                    <a href="#"><p>«Гослото «5 из 36»</p></a>
+                    <a href="#"><p>«Зодиак»</p></a>
+                    <a href="#"><p>«Спортлото Матчбол»</p></a>
+                  </div>
+                  <div class="col-md-3">
+                    <h2>Квартиры, автомобили, миллионы</h2>
+                    <a href="#"><p>«Русское лото»</p></a>
+                    <a href="#"><p>«Русское лото экспресс»</p></a>
+                    <a href="#"><p>«Жилищная лотерея»</p></a>
+                    <a href="#"><p>«Золотая подкова»</p></a>
+                    <a href="#"><p>«Бинго-75»</p></a>
+                    <a href="#"><p>«6 из 36»</p></a>
+                  </div>
+                  <div class="col-md-3">
+                    <h2>Справочник участника</h2>
+                    <a href="#"><p>Как купить билет на сайте</p></a>
+                    <a href="#"><p>Как получить выигрыш</p></a>
+                    <a href="#"><p>Вопрос-ответ</p></a>
+                    <a href="#"><p>Правовая информация</p></a>
+                    <a href="#"><p>Налогообложение</p></a>
+                    <a href="#"><p>Как не попасться мошенникам</p></a>
+                  </div>
+
+
+                  <div class="col-md-3">
+                    <h2>Полезные сервисы</h2>
+                    <a href="#"><p>Бонусная программа</p></a>
+                    <a href="#"><p>Подписка на лотерею</p></a>
+                    <a href="#"><p>Билет в подарок</p></a>
+                    <a href="#"><p>Система поощрений</p></a>
+                    <a href="#"><p>Пригласить друга</p></a>
+                    <a href="#"><p>Демо «Топ-3»</p></a>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-md-3">
+                    <h2>Лотереи в вашем мобильном</h2>
+                    <a href="#"><p>Мобильный сайт</p></a>
+                    <a href="#"><p>Приложения для iOS и Android</p></a>
+                    <a href="#"><p>Как купить билет по СМС</p></a>
+                  </div>
+                  <div class="col-md-3">
+                    <h2>Билеты лотерей</h2>
+                    <a href="#"><p>Где купить</p></a>
+                    <a href="#"><p>Как проверить</p></a>
+                    <a href="#"><p>Как получить выигрыш</p></a>
+                    <a href="#"><p>Моментальные лотереи</p></a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#"> <h3>Все о «***лото»</h3> </a>
+                    <a href="#"> <h3>Новости</h3> </a>
+                    <a href="#"> <h3>Победители</h3> </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="#"> <h3>Пресс-центр</h3> </a>
+                    <a href="#"> <h3>Контакты</h3> </a>
+                  </div>
+
                 </div>
 
               </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button"  class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+              <div class="modal-footer">
+                <button type="button"  class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+              </div>
             </div>
           </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-lg-2 navbar-container bg-light">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <!-- Вертикальное меню -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light" data-toggle="modal" data-target="#exampleModalLong" href="#link-1">Ссылка 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#link-2">Ссылка 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#link-3">Ссылка 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#link-4">Ссылка 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#link-5">Ссылка 5</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-     </div>
-      @yield('content')
+        <div class="col-md-7 col-lg-8 content-container">
+            @yield('content')
+        </div>
+        <div class="col-md-2 col-lg-2 content-container">
+          <div class="right_panel">
+            <a href="{{ route('one-game') }}"><p><img src="img/4iz.png" width="30px" alt=""> «Гослото «4 из 20»</p></a>
+            <a href="{{ route('two-game') }}"><p><img src="img/5iz.png" width="30px" alt=""> «Гослото «5 из 36»</p></a>
+            <a href="{{ route('three-game') }}"><p><img src="img/7iz.png" width="30px" alt=""> «Гослото «7 из 49»</p></a>
+            <a href="{{ route('four-game') }}"><p><img src="img/6iz.png" width="30px" alt=""> «Гослото «6 из 45»</p></a>
+            <a href="{{ route('five-game') }}"><p><img src="img/12iz.png" width="30px" alt=""> «Гослото «12 из 24»</p></a>
+            <a href="{{ route('six-game') }}"><p><img src="img/rapido.png" width="30px" alt=""> «Рапидо»</p></a>
+            <a href="{{ route('seven-game') }}"> <p><img src="img/top-3.png" width="30px" alt=""> «Топ - 3»</p></a>
+      
+          </div>
+        </div>
+    </div>
+
+      
+    
       <!-- Footer -->
     </div>
     <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4">

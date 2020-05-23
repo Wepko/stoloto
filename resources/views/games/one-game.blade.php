@@ -32,7 +32,7 @@
                       
                     </div>
     
-                    <div class="card-footer quick-panel">
+                    <div class="card-footer quick-panel"    >
                         <div class="btn btn-dark">1</div>
                         <div class="btn btn-dark">2</div>
                         <div class="btn btn-dark">3</div>

@@ -15,7 +15,7 @@
               <div class="card">
                   <div class="help-information">
                       <p>Отметьте от 7 до 14 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша.</p>
-                      <a href="#" class="btn btn-dark mb-5" onclick="addTicket()">Добавить билет</a>
+                      <a href="#" class="btn btn-dark mb-5" id="addTicket">Добавить билет</a>
                   </div>
               
                   <div class="zone-worker">
