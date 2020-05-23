@@ -567,7 +567,7 @@ table input[type='checkbox']:checked + label{
 
                       @if (Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href"{{ route('lk') }}">Личный кабинет</a>
+                            <a class="nav-link" href="{{ route('lk') }}">Личный кабинет</a>
                             @if (Auth::user()->isAdmin())
                             <a href="{{ route('admin') }}">Админ панель</a>
                             @endif
