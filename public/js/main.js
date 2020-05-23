@@ -4,9 +4,10 @@ function games(url) {
     
     // end ---------------------
     class Tablegame {
-        constructor(tr, td, id = "1", field = "One",) {
+        constructor(tr, td, offset = 0, id = "1", field = "One",) {
             this.tr = tr
             this.td = td
+            this.offset = offset
             this.id = id
             this.field = field
         }   
@@ -42,18 +43,26 @@ function games(url) {
         for (let i = 0; i < obj_table.tr; i++) {
             const tr = elt('tr')
             for (let j = 0; j < obj_table.td; j++) {
-                
                 const td = elt('td', {}, elt('input', {
                     type: 'checkbox',
                     name: `ticket${obj_table.id}_field${obj_table.field}${count}`,
                     id: `ticket${obj_table.id}_field${obj_table.field}${count}`,
-                    value: `${checkNumber(count)}`
+                    value: `${checkNumber(count)}`,
                 }), elt('label',{for: `ticket${obj_table.id}_field${obj_table.field}${count}`}, count))
                 tr.append(td)
                 count += 1
             }
             table.append(tr)
         }
+
+        const td = [...table.querySelectorAll('td')]
+        td.forEach((item, index) => {
+            if (index + 1 > td.length - obj_table.offset) {
+                item.remove()
+ 
+            }
+        })
+        
         parent.append(table)
     }
 
@@ -72,8 +81,8 @@ function games(url) {
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
-                    createGrid(parentOne, new Tablegame(5, 4, count))
-                    createGrid(parentTwo, new Tablegame(5, 4, count, "Two"))
+                    createGrid(parentOne, new Tablegame(5, 4, 0, count))
+                    createGrid(parentTwo, new Tablegame(5, 4, 0, count, "Two"))
                     return count++
                 }
             }())
@@ -118,8 +127,8 @@ function games(url) {
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
-                    createGrid(parentOne, new Tablegame(5, 8, count))
-                    createGrid(parentTwo, new Tablegame(1, 4, count, "Two"))
+                    createGrid(parentOne, new Tablegame(5, 8, 4, count))
+                    createGrid(parentTwo, new Tablegame(1, 4, 0, count, "Two"))
                     return count++
                 }
             }())
@@ -142,7 +151,7 @@ function games(url) {
                 // block.append(elem)
         
         
-                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneWorker, quickPanel)
                 
                 $blocksTicket.append(blockTicket)
             })
@@ -151,7 +160,6 @@ function games(url) {
 
     if (url == '/seven-of-fourty-nine') {
         (function game7_49() {
-            console.log('sdaf')
             const $root = document.querySelector('#main')
             const $blocksTicket = $root.querySelector('.blocks-ticket')
             const $btnAddTicket = $root.querySelector('#addTicket') 
@@ -164,7 +172,7 @@ function games(url) {
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
-                    createGrid(parentOne, new Tablegame(5, 10, count))
+                    createGrid(parentOne, new Tablegame(5, 10, 1, count))
                     return count++
                 }
             }())
@@ -208,7 +216,7 @@ function games(url) {
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
-                    createGrid(parentOne, new Tablegame(5, 10, count))
+                    createGrid(parentOne, new Tablegame(5, 10, 5, count))
                     return count++
                 }
             }())
@@ -253,7 +261,7 @@ function games(url) {
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
-                    createGrid(parentOne, new Tablegame(4, 6, count))
+                    createGrid(parentOne, new Tablegame(4, 6, 0, count))
                     return count++
                 }
             }())
@@ -297,8 +305,8 @@ function games(url) {
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
-                    createGrid(parentOne, new Tablegame(2, 10, count))
-                    createGrid(parentTwo, new Tablegame(1, 4, count, 'Two'))
+                    createGrid(parentOne, new Tablegame(2, 10, 0, count))
+                    createGrid(parentTwo, new Tablegame(1, 4, 0, count, 'Two'))
                     return count++
                 }
             }())
@@ -332,11 +340,6 @@ function games(url) {
 
     }
 }
-
-
-
-
-
 
 
 
