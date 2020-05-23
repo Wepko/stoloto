@@ -391,10 +391,12 @@ table input[type='checkbox']:checked + label{
             }
           }
 
-
+          .card-block {
+            flex-basis: calc(33.333% - 2rem);
+            margin-right: 2rem;
+          }
 
 </style>
-
 </head>
   <body data-spy="scroll">
     <!-- START left - panel -->
@@ -562,17 +564,21 @@ table input[type='checkbox']:checked + label{
                     <!-- Вертикальное меню -->
                     <ul class="navbar-nav w-100">
                       <li class="nav-item">
-                          <a class="nav-link text-light btn btn-sm btn-dark" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
+                          <a class="nav-link text-danger" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
                       </li>
 
                       @if (Auth::check())
                         <li class="nav-item">
                             <a class="nav-link" href"{{ route('lk') }}">Личный кабинет</a>
-                            @if (Auth::user()->isAdmin())
-                            <a href="{{ route('admin') }}">Админ панель</a>
-                            @endif
-                            <a href="{{ route('logout') }}">Выйти</a>
                         </li>
+                            @if (Auth::user()->isAdmin())
+                            <li class="nav-item">
+                              <a lass="nav-link" href="{{ route('admin') }}">Админ панель</a>
+                            </li>
+                            @endif
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ route('logout') }}">Выйти</a>
+                            </li>
                         <li class="nav-item">
                           <a class="nav-link " href="{{ route('ticket') }}">Билеты по СМС</a>
                         </li>
