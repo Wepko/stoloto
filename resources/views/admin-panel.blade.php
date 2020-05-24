@@ -14,6 +14,10 @@
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 4 из 20">
         </form>
+        <form action= "{{ route('WinnerTwoGame') }}" method="post">
+            @csrf
+            <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 5 из 36">
+        </form>
       
 @endif
 

@@ -25,9 +25,7 @@ Route::get('/login', function (){
   return view('login');
 })->name('login');
 
-Route::get('/lk', function (){
-    return view('lk');
-})->name('lk');
+Route::get('/lk', 'LKController@index')->name('lk');
 
 Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
@@ -52,7 +50,8 @@ Route::post('/AddWinTicketValueSix', 'AddWinTicketController@sixgamewin')->name(
 //Проверка билетов
 Route::post('/ValidTicket', 'ValidTicketController@valid')->name('ValidTicketGame');
 //Route::post('/ValidTicketOneGame', 'ValidTicketController@validOneGame')->name('ValidTicketOneGame');
-Route::post('/Winner', 'AdminController@goWinnerOneGame')->name('WinnerOneGame');
+Route::post('/WinnerOne', 'AdminController@goWinnerOneGame')->name('WinnerOneGame');
+Route::post('/WinnerTwo', 'AdminController@goWinnerTwoGame')->name('WinnerTwoGame');
 
 Route::get('/admin', function (){
   return view('admin-panel');

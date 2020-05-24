@@ -17,8 +17,9 @@ class CreateUserwinnerTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->integer('numberGame');
+            $table->integer('circulation');
             //12 category
-            $table->integer('win');
+            $table->string('win');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

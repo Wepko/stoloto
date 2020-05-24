@@ -50,7 +50,15 @@
       </nav>
       <div class="tab-content w-100 p-4 border border-top-0 text-center" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>          
+        @if($userwinner)
+          @foreach ($userwinner as $user)
+            @if ($user->user_id == Auth::user()->getId())
+              <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра №{{$user->numberGame}}, Результат: {{ $user->win }}</h6>
+            @endif
+          @endforeach
+        @else
+          <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>     
+        @endif     
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>
