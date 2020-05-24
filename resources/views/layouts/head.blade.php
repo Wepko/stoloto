@@ -391,10 +391,12 @@ table input[type='checkbox']:checked + label{
             }
           }
 
-
+          .card-block {
+            flex-basis: calc(33.333% - 2rem);
+            margin-right: 2rem;
+          }
 
 </style>
-
 </head>
   <body data-spy="scroll">
     <!-- START left - panel -->
@@ -551,28 +553,33 @@ table input[type='checkbox']:checked + label{
       </div>
 
       <div class="row" id="wrapper">
-        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0789)" >
+        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
-                <a class="navbar-brand" href="/">Столото</a>
+                <a class="navbar-brand" href="/">СТОЛОТО</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse w-100" id="navbar">
                     <!-- Вертикальное меню -->
-                    <ul class="navbar-nav w-100">
+                    <ul class="navbar-nav w-100 mt-3">
                       <li class="nav-item">
-                          <a class="nav-link text-light btn btn-sm btn-dark" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
+                          <a class="nav-link text-danger" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
                       </li>
 
                       @if (Auth::check())
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('lk') }}">Личный кабинет</a>
-                            @if (Auth::user()->isAdmin())
-                            <a href="{{ route('admin') }}">Админ панель</a>
-                            @endif
-                            <a href="{{ route('logout') }}">Выйти</a>
                         </li>
+
+                            @if (Auth::user()->isAdmin())
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ route('admin') }}">Админ панель</a>
+                            </li>
+                            @endif
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{ route('logout') }}">Выйти</a>
+                            </li>
                         <li class="nav-item">
                           <a class="nav-link " href="{{ route('ticket') }}">Билеты по СМС</a>
                         </li>
