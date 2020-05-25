@@ -11,7 +11,14 @@ use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
 use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
+use App\Models\OneGameWinModels;
+use App\Models\TwoGameWinModels;
+use App\Models\ThreeGameWinModels;
+use App\Models\FourGameWinModels;
+use App\Models\FiveGameWinModels;
+use App\Models\SixGameWinModels;
 use Illuminate\Http\Request;
+use DB;
 
 class AddTicketController extends Controller
 {
@@ -35,12 +42,14 @@ class AddTicketController extends Controller
 
         $arr11 = array_diff($arr1, array(" "));
         $arr22 = array_diff($arr2, array(" "));
+
+        $count = DB::table('onegamewin')->max('circulation');
         
         if (count($arr11) > 3 && count($arr22) > 3) {
             if (Auth::check()) {
                 OneGameModels::insert(array(
                     'user_id'  => Auth::user()->getId(),
-                    'circulation' => 1,
+                    'circulation' => $count + 1,
                     'ticketOne' => implode($arr11),
                     'ticketTwo' => implode($arr22)
                 ));
@@ -75,12 +84,14 @@ class AddTicketController extends Controller
 
         $arr11 = array_diff($arr1, array(" "));
         $arr22 = array_diff($arr2, array(" "));
+
+        $count = DB::table('twogamewin')->max('circulation');
         
         if (count($arr11) > 4 && count($arr22) > 0) {
             if (Auth::check()) {
                 TwoGameModels::insert(array(
                     'user_id'  => Auth::user()->getId(),
-                    'circulation' => 1,
+                    'circulation' => $count + 1,
                     'ticketOne' => implode($arr11),
                     'ticketTwo' => implode($arr22)
                 ));
@@ -108,12 +119,14 @@ class AddTicketController extends Controller
         $arr1 = str_split($value1);
 
         $arr11 = array_diff($arr1, array(" "));
+
+        $count = DB::table('threegamewin')->max('circulation');
         
         if (count($arr11) > 6 && count($arr11) < 15) {
             if (Auth::check()) {
                 ThreeGameModels::insert(array(
                     'user_id'  => Auth::user()->getId(),
-                    'circulation' => 1,
+                    'circulation' => $count + 1,
                     'ticketOne' => implode($arr11)
                 ));
                 return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
@@ -141,12 +154,14 @@ class AddTicketController extends Controller
         $arr1 = str_split($value1);
 
         $arr11 = array_diff($arr1, array(" "));
+
+        $count = DB::table('fourgamewin')->max('circulation');
         
         if (count($arr11) > 5 && count($arr11) < 14) {
             if (Auth::check()) {
                 FourGameModels::insert(array(
                     'user_id'  => Auth::user()->getId(),
-                    'circulation' => 1,
+                    'circulation' => $count + 1,
                     'ticketOne' => implode($arr11)
                 ));
                 return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
@@ -174,12 +189,14 @@ class AddTicketController extends Controller
         $arr1 = str_split($value1);
 
         $arr11 = array_diff($arr1, array(" "));
+
+        $count = DB::table('fivegamewin')->max('circulation');
         
         if (count($arr11) > 11) {
             if (Auth::check()) {
                 FiveGameModels::insert(array(
                     'user_id'  => Auth::user()->getId(),
-                    'circulation' => 1,
+                    'circulation' => $count + 1,
                     'ticketOne' => implode($arr11)
                 ));
                 return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
@@ -213,12 +230,14 @@ class AddTicketController extends Controller
 
         $arr11 = array_diff($arr1, array(" "));
         $arr22 = array_diff($arr2, array(" "));
+
+        $count = DB::table('sixgamewin')->max('circulation');
         
         if (count($arr11) > 7 && count($arr22) > 0) {
             if (Auth::check()) {
                 SixGameModels::insert(array(
                     'user_id'  => Auth::user()->getId(),
-                    'circulation' => 1,
+                    'circulation' => $count + 1,
                     'ticketOne' => implode($arr11),
                     'ticketTwo' => implode($arr22)
                 ));

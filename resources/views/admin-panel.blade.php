@@ -18,6 +18,22 @@
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 5 из 36">
         </form>
+        <form action= "{{ route('WinnerThreeGame') }}" method="post">
+            @csrf
+            <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 7 из 49">
+        </form>
+        <form action= "{{ route('WinnerFourGame') }}" method="post">
+            @csrf
+            <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 6 из 45">
+        </form>
+        <form action= "{{ route('WinnerFiveGame') }}" method="post">
+            @csrf
+            <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 12 из 24">
+        </form>
+        <form action= "{{ route('WinnerSixGame') }}" method="post">
+            @csrf
+            <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш рапидо">
+        </form>
       
 @endif
 

@@ -53,7 +53,7 @@
         @if($userwinner)
           @foreach ($userwinner as $user)
             @if ($user->user_id == Auth::user()->getId())
-              <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра №{{$user->numberGame}}, Результат: {{ $user->win }}</h6>
+              <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра №{{$user->numberGame}}, Тираж №{{$user->circulation}} Результат: {{ $user->win }}</h6>
             @endif
           @endforeach
         @else

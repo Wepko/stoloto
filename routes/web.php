@@ -52,6 +52,10 @@ Route::post('/ValidTicket', 'ValidTicketController@valid')->name('ValidTicketGam
 //Route::post('/ValidTicketOneGame', 'ValidTicketController@validOneGame')->name('ValidTicketOneGame');
 Route::post('/WinnerOne', 'AdminController@goWinnerOneGame')->name('WinnerOneGame');
 Route::post('/WinnerTwo', 'AdminController@goWinnerTwoGame')->name('WinnerTwoGame');
+Route::post('/WinnerThree', 'AdminController@goWinnerThreeGame')->name('WinnerThreeGame');
+Route::post('/WinnerFour', 'AdminController@goWinnerFourGame')->name('WinnerFourGame');
+Route::post('/WinnerFive', 'AdminController@goWinnerFiveGame')->name('WinnerFiveGame');
+Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGame');
 
 Route::get('/admin', function (){
   return view('admin-panel');

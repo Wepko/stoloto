@@ -8,7 +8,7 @@
   @endif
 <main id='main'>
     <div class="content-4_20">
-        <form action="{{ route('AddTicketValueOne') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
+        <form action="{{ route('AddTicketValueOne') }}" method='post' style="display: flex; justify-content: space-between; width: 100%;">
         @csrf
             <div class="blocks-ticket " id="test">
                 <div class="block-ticket card">
