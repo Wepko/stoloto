@@ -25,7 +25,7 @@
                 
                     <div class="zone-worker" id="zone-worker">
                         <div class="zone-one" >
-    
+                            
                         </div>
                         <div class="zone-two">
     
