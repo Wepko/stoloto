@@ -23,7 +23,6 @@
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  width: 10%;
   height: 100%;
   padding-top: 5%;
 }
@@ -235,8 +234,6 @@
 }
 
 .blocks-ticket {
-    flex-grow: 1;
-    margin-right: 4rem;
 }
 
 .help-information {

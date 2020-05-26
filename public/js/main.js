@@ -1,13 +1,16 @@
 
 function games(url) {
 
+
+
     class Tablegame {
-        constructor(tr, td, offset = 0, id = "1", field = "One",) {
+        constructor(tr, td, offset = 0, id = "1", field = "One", type='default') {
             this.tr = tr
             this.td = td
             this.offset = offset
             this.id = id
             this.field = field
+            this.type = type
         }   
     }
 
@@ -38,6 +41,10 @@ function games(url) {
     function createGrid(parent, obj_table) {
         const table = elt('table', {class: 'table table-bordered'})
         let count = 1
+        const label = function (innerNumber) {
+            return elt('label',{for: `ticket${obj_table.id}_field${obj_table.field}${count}`}, innerNumber)
+        }
+
         for (let i = 0; i < obj_table.tr; i++) {
             const tr = elt('tr')
             for (let j = 0; j < obj_table.td; j++) {
@@ -46,7 +53,7 @@ function games(url) {
                     name: `ticket${obj_table.id}_field${obj_table.field}${count}`,
                     id: `ticket${obj_table.id}_field${obj_table.field}${count}`,
                     value: `${checkNumber(count)}`,
-                }), elt('label',{for: `ticket${obj_table.id}_field${obj_table.field}${count}`}, count))
+                }), obj_table.type == 'default' ? label(count) : label(i+1))
                 tr.append(td)
                 count += 1
             }
@@ -108,18 +115,104 @@ function games(url) {
             }
         }
     }
-
+    function valid(fieldOne, fieldTwo, itog) {
+        const inputsOne = [...fieldOne.querySelectorAll('input')]
+        const inputsTwo = [...fieldTwo.querySelectorAll('input')]
+        const inputs = [inputsOne, inputsTwo]
+        
+        
+        let countOne = 0
+        let countTwo = 0
+        inputsOne.forEach(input => {
+            input.addEventListener('click', function() {
+                if (this.checked == true) {
+                    countOne++
+                } else {
+                    countOne--
+                }
+                analiz(countOne, null)
+            })
+        })
+        
+        inputsTwo.forEach(input => {
+            input.addEventListener('click', function() {
+                if (this.checked == true) {
+                    countTwo++
+                } else {
+                    countTwo--
+                }
+                analiz(null, countTwo)
+            })
+        })
+        
+        
+        let activeNumberOne = 0
+        let activeNumberTwo = 0
+        
+        function analiz(countOne, countTwo) {
+            if (countOne !== null) {activeNumberOne = countOne}
+            if (countTwo !== null) {activeNumberTwo = countTwo}
+    
+            console.log(activeNumberOne, activeNumberTwo)
+    
+            function ifes(num1,num2, place, summ) {
+                if (activeNumberOne == num1 && activeNumberTwo == num2) {
+                    place.innerHTML = summ
+                    console.log('12')
+                }
+            }
+            switch(activeNumberTwo) {
+                case 4:
+                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index,) => {
+                        ifes(index, activeNumberTwo, itog, el * 200)
+                    })
+                break
+                case 5:
+                    [0, 0, 0, 0, 5, 25, 75, 175, 350, 126, 630].forEach((el, index,) => {
+                        ifes(index, activeNumberTwo, itog, el * 200)
+                    })
+                break
+                case 6:
+                    [0, 0, 0, 0, 15, 75, 225, 525, 1050, 2000].forEach((el, index,) => {
+                        ifes(index, activeNumberTwo, itog, el * 200)
+                    })
+                break
+                case 7:
+                    [0, 0, 0, 0, 35, 175, 525, 1225, 2000].forEach((el, index,) => {
+                        ifes(index, activeNumberTwo, itog, el * 200)
+                    })
+                break
+                case 8:
+                    [0, 0, 0, 0, 70, 350, 1050, 2000].forEach((el, index,) => {
+                        ifes(index, activeNumberTwo, itog, el * 200)
+                    })
+                break
+                case 9:
+                    [0, 0, 0, 0, 126, 630, 2000].forEach((el, index,) => {
+                        ifes(index, activeNumberTwo, itog, el * 200)
+                    })
+                break
+            }
+    
+        }
+        
+        
+    }
+    
     if (url == '/four-of-twenty') {
         (function game4_20() {
 
             const $root = document.querySelector('#main')
+
             const $blocksTicket = $root.querySelector('.blocks-ticket')
             const $btnAddTicket = $root.querySelector('#addTicket') 
             const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
             const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
-            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $zoneHeader = $blocksTicket.querySelector('.zone-header')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
-            
+            const $sum = $root.querySelector('#sum')
+            const $validTicketNumber = $root.querySelector('#validTicketNumber')
+
             const arrBtns = [...$quickPanel.children]
             
             const createTicet = (function(){
@@ -127,10 +220,11 @@ function games(url) {
                 return function(parentOne, parentTwo) {
                     createGrid(parentOne, new Tablegame(5, 4, 0, count))
                     createGrid(parentTwo, new Tablegame(5, 4, 0, count, "Two"))
+                    $validTicketNumber.value = count
+                    console.dir($validTicketNumber)
                     return count++
                 }
             }())
-            
             createTicet($parentfieldOne, $parentfieldTwo)
             
             arrBtns.forEach((item , index, arr) => {
@@ -157,13 +251,12 @@ function games(url) {
             $btnAddTicket.addEventListener('click', function(e) {
                 e.preventDefault()
         
-                const zoneHeaders = $zoneHeaders.cloneNode(true)
                 const quickPanel = $quickPanel.cloneNode(true)
 
                 const arrBtns = [...quickPanel.children]
 
-                const fieldOne = elt('div', {class: 'zone-one'})
-                const fieldTwo = elt('div', {class: 'zone-two'})
+                const fieldOne = elt('div', {class: 'zone-one'}, elt('div', {class: 'zone-header'}, "Поле 1"))
+                const fieldTwo = elt('div', {class: 'zone-two'}, elt('div', {class: 'zone-header'}, "Поле 2"))
                 createTicet(fieldOne, fieldTwo)
                 const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
         
@@ -192,10 +285,15 @@ function games(url) {
                     }
                 })
 
-                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneWorker, quickPanel)
                 
                 $blocksTicket.append(blockTicket)
             })
+
+
+
+            valid($parentfieldOne, $parentfieldTwo, $sum)
+
         })()
     }
 
@@ -466,8 +564,43 @@ function games(url) {
         })()
     }
 
-    if (url == '/top-3') {
+    if (url == '/top-4') {
+        (function rapido() {
 
+            const $root = document.querySelector('#main')
+            const $blocksTicket = $root.querySelector('.blocks-ticket')
+            const $btnAddTicket = $root.querySelector('#addTicket') 
+            const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
+            const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
+            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            
+            const createTicet = (function(){
+                let count = 1
+                return function(parentOne, parentTwo) {
+                    createGrid(parentOne, new Tablegame(9, 3, 0, count,'One', 'num'))
+                    return count++
+                }
+            }())
+        
+            createTicet($parentfieldOne, $parentfieldTwo)
+        
+            $btnAddTicket.addEventListener('click', function(e) {
+                e.preventDefault()
+        
+                const zoneHeaders = $zoneHeaders.cloneNode(true)
+                const quickPanel = $quickPanel.cloneNode(true)
+        
+                const fieldOne = elt('div', {class: 'zone-one'})
+                const fieldTwo = elt('div', {class: 'zone-two'})
+                createTicet(fieldOne, fieldTwo)
+                const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
+        
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                
+                $blocksTicket.append(blockTicket)
+            })
+        })()
     }
 }
 
@@ -530,7 +663,7 @@ class Routing {
     }
 }
 
-
+new Routing('/top-4', games)
 new Routing('/rapido', games)
 new Routing('/twenteen-of-twenty-four', games)
 new Routing('/six-of-fourty-five', games)

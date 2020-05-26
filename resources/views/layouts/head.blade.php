@@ -51,14 +51,18 @@
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  width: 10%;
   height: 100%;
   padding-top: 5%;
+  width: 13%;
+}
+.right_panel a {
+  padding: 5% 0;
+  padding-left: 4%;
+  color: #fff;
+  text-decoration: none;
 }
 .right_panel p{
   color: white;
-  padding: 5% 0;
-  padding-left: 4%;
   font-size: 15px;
 }
 .right_panel p:hover{
@@ -114,11 +118,6 @@
 }
 .home_gameblock{
   margin: 50px 0;
-}
-.home_gameblock .col-md-2{
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px 2px;
 }
 .red{
   background-color: rgb(55%, 11%, 11%, 0.9);
@@ -260,8 +259,7 @@
 }
 
 .blocks-ticket {
-    flex-grow: 1;
-    margin-right: 4rem;
+
 }
 
 .block-ticket {
@@ -270,13 +268,13 @@
 
 .help-information {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 1rem;
 }
 
-.zone-headers {
-    display: flex;
-    justify-content: space-around;
+.zone-header{
+   margin-bottom: 1rem;
 }
 
 .zone-worker {
@@ -354,6 +352,11 @@ table input[type='checkbox']:checked + label{
 }
 
 
+.card-block {
+  flex-basis: calc(33.333% - 2rem);
+  margin-right: 2rem;
+}
+
 
 
 /* ##########
@@ -362,39 +365,58 @@ table input[type='checkbox']:checked + label{
 */
 
 @media (min-width: 768px) {
-            .navbar-container {
-                position: sticky;
-                top: 0;
-                overflow-y: auto;
-                height: 100vh;
-            }
+  .navbar-container {
+      position: sticky;
+      top: 0;
+      overflow-y: auto;
+      height: 100vh;
+      z-index: 1000;
+  }
 
-            .navbar-container .navbar {
-                align-items: flex-start;
-                justify-content: flex-start;
-                flex-wrap: nowrap;
-                flex-direction: column;
-                height: 100%;
-            }
+  .navbar-container .navbar {
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      height: 100%;
+  }
 
-            .navbar-container .navbar-collapse {
-                align-items: flex-start;
-            }
+  .navbar-container .navbar-collapse {
+      align-items: flex-start;
+  }
 
-            .navbar-container .nav {
-                flex-direction: column;
-                flex-wrap: nowrap;
-            }
+  .navbar-container .nav {
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
 
-            .navbar-container .navbar-nav {
-                flex-direction: column !important;
-            }
-          }
+  .navbar-container .navbar-nav {
+      flex-direction: column !important;
+  }
+  
+  .right_panel {
+    display: block;
+  }
+}
 
-          .card-block {
-            flex-basis: calc(33.333% - 2rem);
-            margin-right: 2rem;
-          }
+@media (max-width: 768px) {
+  .right_panel {
+    display: none;
+  }
+
+}
+
+@media (max-width: 1400px) {
+  .right_panel {
+    text-align: center;
+    width: 5%
+  }
+  .medium-a {
+    display: none;
+  }
+
+}
+
 
 </style>
 </head>
@@ -555,7 +577,7 @@ table input[type='checkbox']:checked + label{
       <div class="row" id="wrapper">
         <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
-                <a class="navbar-brand" href="/">СТОЛОТО</a>
+                <a class="navbar-brand text-uppercase"  href="/">Столото</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -611,24 +633,22 @@ table input[type='checkbox']:checked + label{
                 </div>
             </nav>
         </div>
-        <div class="col-md-7 col-lg-8 content-container">
+        <div class="col-md-7 col-lg-9 col-xl-8 content-container">
           <div class="logo" style="text-align: center">
             <img src="img/crisis_logo.svg"  alt="">
           </div>
             @yield('content')
         </div>
-        <div class="col-md-2 col-lg-2 content-container">
+        <div class="col-md-2 col-lg-1 col-xl-2 content-container">
           <div class="right_panel">
-            <a href="{{ route('one-game') }}"><p><img src="img/4iz.png" width="30px" alt=""> «Гослото «4 из 20»</p></a>
-            <a href="{{ route('two-game') }}"><p><img src="img/5iz.png" width="30px" alt=""> «Гослото «5 из 36»</p></a>
-            <a href="{{ route('three-game') }}"><p><img src="img/7iz.png" width="30px" alt=""> «Гослото «7 из 49»</p></a>
-            <a href="{{ route('four-game') }}"><p><img src="img/6iz.png" width="30px" alt=""> «Гослото «6 из 45»</p></a>
-            <a href="{{ route('five-game') }}"><p><img src="img/12iz.png" width="30px" alt=""> «Гослото «12 из 24»</p></a>
-            <a href="{{ route('six-game') }}"><p><img src="img/rapido.png" width="30px" alt=""> «Рапидо»</p></a>
-            <a href="{{ route('seven-game') }}"> <p><img src="img/top-3.png" width="30px" alt=""> «Топ - 3»</p></a>
-      
+            <p><a  href="{{ route('one-game') }}"><img src="img/4iz.png" width="30px" alt=""><span class="medium-a">«Гослото «4 из 20»</span></a></p>
+            <p><a  href="{{ route('two-game') }}"><img src="img/5iz.png"  width="30px" alt=""><span class="medium-a">«Гослото «5 из 36»</span></a></p>
+            <p><a  href="{{ route('three-game') }}"><img src="img/7iz.png"  width="30px" alt=""><span class="medium-a">«Гослото «7 из 49»</span></a></p>
+            <p><a  href="{{ route('four-game') }}"><img src="img/6iz.png" width="30px"  alt=""><span class="medium-a">«Гослото «6 из 45»</span></a></p>
+            <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a">«Гослото «12 из 24»</span></a></p>
+            <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a">«Рапидо»</span></a></p>
+            <p><a  href="{{ route('seven-game') }}"><img src="img/top-3.png" width="30px"  alt=""><span class="medium-a">  «Топ - 3»</span></a></p>
           </div>
-        </div>
     </div>
 
       

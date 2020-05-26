@@ -87,8 +87,8 @@ Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richa
 </div>
 </div>
 
-<div class="home_gameblock">
-<div class="row text-center" style="width: 120%">
+<div class="home_gameblock container">
+<div class="row text-center">
 <div class="col-md-2 item item-orange c1">
 <div>
   <img src="img/123.png" class="item-img" alt="">
@@ -180,8 +180,8 @@ Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richa
 </div>
 </div>
 
-<div class="home_gameblock">
-<div class="row text-center" style="width: 120%">
+<div class="home_gameblock container">
+<div class="row text-center">
 <div class="col-md-2 item item-orange c1">
 <div>
 <img src="img/123.png" class="item-img" alt="">
@@ -274,8 +274,8 @@ Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richa
 </div>
 </div>
 
-<div class="home_gameblock">
-<div class="row text-center" style="width: 120%">
+<div class="home_gameblock container">
+<div class="row text-center">
 <div class="col-md-2 item item-orange c1">
 <div>
 <img src="img/123.png" class="item-img" alt="">
@@ -367,8 +367,8 @@ Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richa
 </div>
 </div>
 
-<div class="home_gameblock">
-<div class="row text-center" style="width: 120%">
+<div class="home_gameblock container">
+<div class="row text-center">
 <div class="col-md-2 item item-orange c1">
 <div>
 <img src="img/123.png" class="item-img" alt="">
