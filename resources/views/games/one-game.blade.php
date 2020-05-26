@@ -10,11 +10,12 @@
     <div class="content-4_20">
         <form action="{{ route('AddTicketValueOne') }}" method='post' style="display: flex; justify-content: space-between; width: 100%;">
         @csrf
+        <input type="number" name="valid" class="form-control valid" id="validTicketNumber" value="1" style="display:none">
             <div class="blocks-ticket " id="test">
                 <div class="block-ticket card">
                     <div class="help-information">
                         <p>Отметьте не менее 4 чисел в каждом поле.</p>
-                        <a href="#" class="btn btn-dark" id="addTicket">Добавить билет</a>
+                        <a href="#" class="btn btn-dark" onclick="addTicket()" id="addTicket">Добавить билет</a>
                     </div>
     
                     <div class="zone-headers">
