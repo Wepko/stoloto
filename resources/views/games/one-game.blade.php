@@ -6,7 +6,13 @@
     {{   Session::get('info') }}
   </div>
   @endif
+
 <main id='main'>
+    <div class="container">
+        <div class="alert alert-warning text-center" role="alert">
+            Призовой фонт этой игры <span> 5123525 руб</span>
+        </div>
+    </div>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
         @csrf
         <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
@@ -62,17 +68,17 @@
 
 @if(Auth::check())
     @if(Auth::user()->isAdmin())
-    <div class="content-4_20">
-        <form action="{{ route('AddWinTicketValueOne') }}" method="post" >
-        @csrf
+    <form action="{{ route('AddWinTicketValueOne') }}" method="post" >
+    @csrf
+        <div class="content-4_20">
             <h1>Добавить выигрышный билет</h1>
             <label>Поле 1</label>
             <input type="number" class="form-control" name="TicketOneFieldOne" placeholder="Введите номера билетов"><br>
             <label>Поле 2</label>
             <input type="number" class="form-control" name="TicketOneFieldTwo" placeholder="Введите номера билетов"><br>
             <input type="submit" class="btn btn-dark" value="Добавить">
-        </form>
-    </div>
+        </div>
+    </form>
     @endif
 @endif()
 
