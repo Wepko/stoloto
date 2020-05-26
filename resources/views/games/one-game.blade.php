@@ -9,6 +9,7 @@
 <main id='main'>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
         @csrf
+        <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
         <div class="container">
             <div class="row">
                 <div class="col-8">
@@ -21,10 +22,10 @@
                         
                             <div class="zone-worker" id="zone-worker">
                                 <div class="zone-one" >
-                                    <div class="zone-header">Поле 1 <p></p></div>
+                                    <div class="zone-header">Поле 1</div>
                                 </div>
                                 <div class="zone-two">
-                                    <div class="zone-header">Поле 2 <p></p></div>
+                                    <div class="zone-header">Поле 2</div>
                                 </div>
                               
                             </div>

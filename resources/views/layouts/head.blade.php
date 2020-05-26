@@ -259,8 +259,7 @@
 }
 
 .blocks-ticket {
-    flex-grow: 1;
-    margin-right: 4rem;
+
 }
 
 .block-ticket {
@@ -274,9 +273,8 @@
     margin: 1rem;
 }
 
-.zone-headers {
-    display: flex;
-    justify-content: space-around;
+.zone-header{
+   margin-bottom: 1rem;
 }
 
 .zone-worker {
@@ -577,7 +575,7 @@ table input[type='checkbox']:checked + label{
       </div>
 
       <div class="row" id="wrapper">
-        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0789)" >
+        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
                 <a class="navbar-brand text-uppercase"  href="/">Столото</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
@@ -586,18 +584,19 @@ table input[type='checkbox']:checked + label{
                 </button>
                 <div class="collapse navbar-collapse w-100" id="navbar">
                     <!-- Вертикальное меню -->
-                    <ul class="navbar-nav w-100">
+                    <ul class="navbar-nav w-100 mt-3">
                       <li class="nav-item">
                           <a class="nav-link text-danger" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
                       </li>
 
                       @if (Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href"{{ route('lk') }}">Личный кабинет</a>
+                            <a class="nav-link" href="{{ route('lk') }}">Личный кабинет</a>
                         </li>
+
                             @if (Auth::user()->isAdmin())
                             <li class="nav-item">
-                              <a lass="nav-link" href="{{ route('admin') }}">Админ панель</a>
+                              <a class="nav-link" href="{{ route('admin') }}">Админ панель</a>
                             </li>
                             @endif
                             <li class="nav-item">

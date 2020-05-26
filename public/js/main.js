@@ -208,10 +208,10 @@ function games(url) {
             const $btnAddTicket = $root.querySelector('#addTicket') 
             const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
             const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
-            const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
+            const $zoneHeader = $blocksTicket.querySelector('.zone-header')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
             const $sum = $root.querySelector('#sum')
-   
+            const $validTicketNumber = $root.querySelector('#validTicketNumber')
 
             const arrBtns = [...$quickPanel.children]
             
@@ -220,10 +220,11 @@ function games(url) {
                 return function(parentOne, parentTwo) {
                     createGrid(parentOne, new Tablegame(5, 4, 0, count))
                     createGrid(parentTwo, new Tablegame(5, 4, 0, count, "Two"))
+                    $validTicketNumber.value = count
+                    console.dir($validTicketNumber)
                     return count++
                 }
             }())
-            
             createTicet($parentfieldOne, $parentfieldTwo)
             
             arrBtns.forEach((item , index, arr) => {
@@ -250,13 +251,12 @@ function games(url) {
             $btnAddTicket.addEventListener('click', function(e) {
                 e.preventDefault()
         
-                const zoneHeaders = $zoneHeaders.cloneNode(true)
                 const quickPanel = $quickPanel.cloneNode(true)
 
                 const arrBtns = [...quickPanel.children]
 
-                const fieldOne = elt('div', {class: 'zone-one'})
-                const fieldTwo = elt('div', {class: 'zone-two'})
+                const fieldOne = elt('div', {class: 'zone-one'}, elt('div', {class: 'zone-header'}, "Поле 1"))
+                const fieldTwo = elt('div', {class: 'zone-two'}, elt('div', {class: 'zone-header'}, "Поле 2"))
                 createTicet(fieldOne, fieldTwo)
                 const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
         
@@ -285,7 +285,7 @@ function games(url) {
                     }
                 })
 
-                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneHeaders, zoneWorker, quickPanel)
+                const blockTicket = elt('div', {class: 'block-ticket card'}, zoneWorker, quickPanel)
                 
                 $blocksTicket.append(blockTicket)
             })

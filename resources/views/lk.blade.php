@@ -17,7 +17,7 @@
       <div class="card card-block" >
           <div class="card-body">
           <h5 class="card-title">Кошелек</h5>
-          <h6 class="card-subtitle  card-text mb-2 text-muted">0 руб</h6>
+          <h6 class="card-subtitle card-text mb-2 text-muted">0 руб</h6>
           <a href="#"class="btn btn-dark mt-2">Пополнить</a>
           </div>
       </div>
@@ -25,7 +25,7 @@
       <div class="card card-block">
         <div class="card-body">
           <h5 class="card-title">Промокоды</h5>
-          <h6 class="card-subtitle  card-text mb-2 text-muted">0 руб</h6>
+          <h6 class="card-subtitle card-text mb-2 text-muted">0 руб</h6>
           <a href="#" class="btn btn-dark mt-2">Добавить</a>
         </div>
       </div>
@@ -50,7 +50,15 @@
       </nav>
       <div class="tab-content w-100 p-4 border border-top-0 text-center" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>          
+        @if($userwinner)
+          @foreach ($userwinner as $user)
+            @if ($user->user_id == Auth::user()->getId())
+              <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра №{{$user->numberGame}}, Тираж №{{$user->circulation}} Результат: {{ $user->win }}</h6>
+            @endif
+          @endforeach
+        @else
+          <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>     
+        @endif     
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>
@@ -62,10 +70,11 @@
     </div>
   </div>
 
+
       @if(Auth::user()->isAdmin())
-      <div class="card mt-5" style="width: 18rem;">
+      <!--<div class=" mt-5" style="width: 18rem;">
         <a href="{{ route('admin') }}"class="btn btn-dark mt-2">Панель администратора</a>
-      </div>
+      </div>-->
       @endif
 
 </div>
