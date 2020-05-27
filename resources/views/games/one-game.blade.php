@@ -14,30 +14,11 @@
         </div>
     </div>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
-        @csrf
-        <input type="number" name="valid" class="form-control valid" id="validTicketNumber" value="1" style="display:none">
-            <div class="blocks-ticket " id="test">
-                <div class="block-ticket card">
-                    <div class="help-information">
-                        <p>Отметьте не менее 4 чисел в каждом поле.</p>
-                        <a href="#" class="btn btn-dark" onclick="addTicket()" id="addTicket">Добавить билет</a>
-                    </div>
-    
-                    <div class="zone-headers">
-                        <div class="zone-header">Поле 1 <p></p></div>
-                        <div class="zone-header">Поле 2 <p></p></div>
-                    </div>
-                
-                    <div class="zone-worker" id="zone-worker">
-                        <div class="zone-one" >
-                            
-                        </div>
-                        <div class="zone-two">
-    
+        @csrf   
         <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
                     <div class="blocks-ticket">
                         <div class="block-ticket card">
                             <div class="help-information">
@@ -64,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                     <div class="card panel-score box">
                         <img src="" alt="">
                         <div class="future-draw"></div>

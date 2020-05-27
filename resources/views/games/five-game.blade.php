@@ -17,12 +17,12 @@
       @csrf
         <div class=" container">
             <div class="row">
-                <div class="col-9">
+                <div class="col-12 col-md-12 col-xl-9">
                     <div class="blocks-ticket">
-                        <div class="card">
+                        <div class="block-ticket card">
                             <div class="help-information">
                                 <p>Выберите 12 чисел в игровом поле.</p>
-                                <a href="#" class="btn btn-dark mb-5" onclick="addTicket()">Добавить билет</a>
+                                <a href="#" class="btn btn-dark mb-5" id="addTicket">Добавить билет</a>
                             </div>
                         
                             <div class="zone-worker">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-12 col-xl-3">
                     <div class="card panel-score box">
                         <img src="" alt="">
                         <div class="future-draw"></div>
