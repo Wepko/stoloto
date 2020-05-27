@@ -17,7 +17,7 @@
       <div class="card card-block" >
           <div class="card-body">
           <h5 class="card-title">Кошелек</h5>
-          <h6 class="card-subtitle card-text mb-2 text-muted">0 руб</h6>
+          <h6 class="card-subtitle card-text mb-2 text-muted">{{Auth::user()->money()}} руб</h6>
           <a href="#"class="btn btn-dark mt-2">Пополнить</a>
           </div>
       </div>

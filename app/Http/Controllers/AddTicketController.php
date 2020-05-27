@@ -51,7 +51,7 @@ class AddTicketController extends Controller
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
                         'ticketOne' => implode($arr11),
-                        'ticketTwo' => implode($arr22)
+                        'ticketTwo' => implode($arr22),
                     ));
                 } 
                 else {
