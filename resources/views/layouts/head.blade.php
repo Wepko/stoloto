@@ -254,6 +254,16 @@
 }
 
 
+.title-game {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.title-game img{
+
+}
+
 .content-4_20 {
     display: flex;
     flex-wrap: wrap;
@@ -363,7 +373,11 @@ table input[type='checkbox']:checked + label{
 
 
 
-.shiny
+
+
+
+
+.shiny, .shiny-2
 {
   color: #F5C21B;
   background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
@@ -376,7 +390,9 @@ table input[type='checkbox']:checked + label{
   position: relative;
   text-transform: uppercase;
 }
-
+.shiny-2 {
+  font-size: 1.4em;
+}
 .shiny::before
 {
     background-position: -180px;
@@ -677,7 +693,7 @@ table input[type='checkbox']:checked + label{
       </div>
 
       <div class="row" id="wrapper">
-        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0)" >
+        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(255, 255, 255, 0.5)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
                 <a class="navbar-brand text-uppercase"   href="/">Золотая антилопа</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
@@ -730,14 +746,19 @@ table input[type='checkbox']:checked + label{
                             <a class="nav-link" href="{{ route('valid_ticket') }}">Проверка билетов</a>
                           </li>
                         @endif
-                    </ul>
 
+                        <a href="/four-of-twenty" class="mt-5 pt-5"><img src="img/banner.png" alt=""></a>
+                    </ul>
                 </div>
             </nav>
         </div>
         <div class="col-md-7 col-lg-9 col-xl-8 content-container">
           <div class="logo">
-            <p class="shiny"><span class="inner-shiny">Золотая антилопа</span></p>
+            <p class="shiny">
+              <span class="inner-shiny">Золотая антилопа</span>
+            </p><br>
+            <span  class="shiny-2 pb-3">Фонд: 10000000 руб</span>
+
           </div>
             @yield('content')
         </div>

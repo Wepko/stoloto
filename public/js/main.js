@@ -165,12 +165,27 @@ function games(url) {
             function ifes(num1,num2, place, summ) {
                 if (activeNumberOne == num1 && activeNumberTwo == num2) {
                     place.innerHTML = summ
-                    console.log('12')
                 }
             }
+
             switch(activeNumberTwo) {
+                case 1:
+                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
+                        ifes(index, activeNumberTwo, itog,0)
+                    })
+                break
+                case 2:
+                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
+                        ifes(index, activeNumberTwo, itog,0)
+                    })
+                break
+                case 3:
+                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
+                        ifes(index, activeNumberTwo, itog, 0)
+                    })
+                break
                 case 4:
-                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index,) => {
+                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
                         ifes(index, activeNumberTwo, itog, el * 200)
                     })
                 break
@@ -208,7 +223,7 @@ function games(url) {
     
     if (url == '/four-of-twenty') {
         (function game4_20() {
-
+            //console.dir(document.body.style.background ='#fe8933')
             const $root = document.querySelector('#main')
 
             const $blocksTicket = $root.querySelector('.blocks-ticket')
@@ -295,8 +310,6 @@ function games(url) {
                 
                 $blocksTicket.append(blockTicket)
             })
-
-
 
             valid($parentfieldOne, $parentfieldTwo, $sum)
 
@@ -601,7 +614,7 @@ function games(url) {
             
             const createTicet = (function(){
                 let count = 1
-                return function(parentOne, parentTwo) {
+                return function(parentOne) {
                     createGrid(parentOne, new Tablegame(9, 3, 0, count,'One', 'num'))
                     return count++
                 }
