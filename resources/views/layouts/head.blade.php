@@ -6,6 +6,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css.map')}}"> --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css')}}"> --}}
@@ -15,7 +16,6 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
-
     <link rel="stylesheet" href="{{ asset('style.css')}}">
   
   <style>
@@ -578,7 +578,7 @@ table input[type='checkbox']:checked + label{
     <!-- site-map -->
     <div class="container-fluid" >
       <!-- Modal -->
-        <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog w-100" style="max-width: 1500px; margin: .5rem auto" role="document" >
             <div class="modal-content sitemap">
               <div class="modal-header" >
@@ -753,6 +753,7 @@ table input[type='checkbox']:checked + label{
           </div>
         </div>    
       </div>
+    </div>
       <!-- Footer -->
     <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4">
 
