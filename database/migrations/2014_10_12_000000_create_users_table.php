@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('location')->nullable();
             $table->string('phone');
+            $table->biginteger('money')->default(0);
             $table->string('token_reset_password')->nullable();
             $table->boolean('is_admin')->default(0);
             $table->timestamps();

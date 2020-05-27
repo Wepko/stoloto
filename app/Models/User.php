@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'location',
         'phone',
+        'money',
         'is_admin'
     ];
 
@@ -50,6 +51,10 @@ class User extends Authenticatable
             return "{$this->first_name} {$this->last_name}";
         }
         return null;
+    }
+
+    public function money() {
+        return $this->money;
     }
 
     public function isAdmin() {

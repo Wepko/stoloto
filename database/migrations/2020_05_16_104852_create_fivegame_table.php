@@ -18,6 +18,7 @@ class CreateFivegameTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('circulation');
             $table->string('ticketOne');
+            $table->biginteger('price')->default(0);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

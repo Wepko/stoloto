@@ -10,12 +10,35 @@
 <main id='main'>
     <div class="container">
         <div class="alert alert-warning text-center" role="alert">
-            Призовой фонт этой игры <span> 5123525 руб</span>
+            Призовой фонд игры <span>5123525</span> рублей!
         </div>
     </div>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
+<<<<<<< Updated upstream
         @csrf   
         <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
+=======
+        @csrf
+        <input type="number" name="valid" class="form-control valid" id="validTicketNumber" value="1" style="display:none">
+            <div class="blocks-ticket " id="test">
+                <div class="block-ticket card">
+                    <div class="help-information">
+                        <p>Отметьте не менее 4 чисел в каждом поле.</p>
+                        <a href="#" class="btn btn-dark" onclick="addTicket()" id="addTicket">Добавить билет</a>
+                    </div>
+    
+                    <div class="zone-headers">
+                        <div class="zone-header">Поле 1 <p></p></div>
+                        <div class="zone-header">Поле 2 <p></p></div>
+                    </div>
+                
+                    <div class="zone-worker" id="zone-worker">
+                        <div class="zone-one" >
+                            
+                        </div>
+                        <div class="zone-two">
+ 
+>>>>>>> Stashed changes
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
@@ -53,6 +76,13 @@
                             <option value="1">1</option> 
                             <option value="2">2</option> 
                             <option value="3">3</option>
+                            <option value="4">4</option> 
+                            <option value="5">5</option> 
+                            <option value="6">6</option>
+                            <option value="7">7</option> 
+                            <option value="8">8</option> 
+                            <option value="9">9</option>
+                            <option value="10">10</option>
                         </select></p>
                     
                         <p class="inpt1">Билетов <span>0</span></p>

@@ -783,16 +783,16 @@ table input[type='checkbox']:checked + label{
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Главная</a>
+                <a href="{{route('home')}}">Главная</a>
               </li>
               <li>
-                <a href="#!">Билеты по СМС</a>
+                <a href="{{route('ticket')}}">Билеты по СМС</a>
               </li>
               <li>
-                <a href="#!">Трансляцию</a>
+                <a href="{{route('broadcast')}}">Трансляцию</a>
               </li>
               <li>
-                <a href="#!">Проверка билетов</a>
+                <a href="{{route('valid_ticket')}}">Проверка билетов</a>
               </li>
             </ul>
 
@@ -809,16 +809,16 @@ table input[type='checkbox']:checked + label{
 
             <ul class="list-unstyled">
             <li>
-                <a href="#!">Гослото 4 из 20</a>
+                <a href="{{route('one-game')}}">Гослото 4 из 20</a>
               </li>
               <li>
-                <a href="#!">Гослото 5 из 36</a>
+                <a href="{{route('two-game')}}">Гослото 5 из 36</a>
               </li>
               <li>
-                <a href="#!">Гослото 7 из 49</a>
+                <a href="{{route('three-game')}}">Гослото 7 из 49</a>
               </li>
               <li>
-                <a href="#!">Гослото 6 из 45</a>
+                <a href="{{route('four-game')}}">Гослото 6 из 45</a>
               </li>
             </ul>
 
@@ -835,13 +835,13 @@ table input[type='checkbox']:checked + label{
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Гослото 12 из 24</a>
+                <a href="{{route('five-game')}}">Гослото 12 из 24</a>
               </li>
               <li>
-                <a href="#!">Рапидо</a>
+                <a href="{{route('six-game')}}">Рапидо</a>
               </li>
               <li>
-                <a href="#!">Топ 3</a>
+                <a href="{{route('seven-game')}}">Топ 3</a>
               </li>
            
             </ul>
