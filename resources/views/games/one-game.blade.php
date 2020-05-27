@@ -14,10 +14,8 @@
         </div>
     </div>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
-<<<<<<< Updated upstream
         @csrf   
         <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
-=======
         @csrf
         <input type="number" name="valid" class="form-control valid" id="validTicketNumber" value="1" style="display:none">
             <div class="blocks-ticket " id="test">
@@ -37,8 +35,6 @@
                             
                         </div>
                         <div class="zone-two">
- 
->>>>>>> Stashed changes
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
