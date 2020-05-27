@@ -13,6 +13,16 @@
             Призовой фонд игры <span>5123525</span> рублей!
         </div>
     </div>
+    <div class="container">
+        <div class="title-game row">
+            <div class="col-2">
+                <img class="w-75" src="img/4iz.png" alt="">
+            </div>
+            <div class="col-10">
+                <h2>Купить билет лотереи «Гослото «4 из 20»</h2>
+            </div>
+        </div>
+    </div>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
         @csrf   
         <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">

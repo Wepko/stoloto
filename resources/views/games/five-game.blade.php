@@ -34,10 +34,10 @@
                             </div>
             
                             <div class="card-footer quick-panel">
-                                <div class="btn btn-dark">1</div>
-                                <div class="btn btn-dark">2</div>
-                                <div class="btn btn-dark">3</div>
-                                <div class="btn btn-dark">4</div>
+                                <div class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Случайные числа"><i class="fas fa-random"></i></div>
+                            <div class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Случайные четные числа"><i class="fas fa-random"></i></div>
+                            <div class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Случайные не четные числа"><i class="fas fa-random"></i></div>
+                            <div class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Удалить"><i class="fas fa-times"></i></div>
                             </div>
                         </div>
                     </div>
