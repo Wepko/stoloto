@@ -98,7 +98,6 @@
 }
 .item{
   border-radius: 10px;
-
 }
 .item-img{
   height: 70px;
@@ -224,6 +223,10 @@
   margin-top: 100px;
 }
 
+.logo {
+  text-align: center;
+}
+
 .head-game{
   font-size: 34px;
   color: white;
@@ -302,7 +305,7 @@
   cursor: pointer;
   width: 100%;
   text-align: center;
-  padding: 1rem 1.75rem;
+  padding: 2vmin 2.8vmin;
 }
 
 table input[type='checkbox'] {
@@ -359,6 +362,101 @@ table input[type='checkbox']:checked + label{
 
 
 
+
+.shiny
+{
+  color: #F5C21B;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.shiny::before
+{
+    background-position: -180px;
+    -webkit-animation: flare 5s infinite;
+  -webkit-animation-timing-function: linear;
+  background-image: linear-gradient(65deg, transparent 20%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 27%, transparent 27%, transparent 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  content: "Золотая антилопа";
+  color: #FFF;
+  display: block;
+  padding-right: 140px;
+  position: absolute;
+}
+
+.shiny::after
+{
+  content: "Золотая антилопа";
+  color: #FFF;
+  display: block;
+  position: absolute;
+  text-shadow: 0 1px #6E4414, 0 2px #6E4414, 0 3px #6E4414, 0 4px #6E4414, 0 5px #6E4414, 0 6px #6E4414, 0 7px #6E4414, 0 8px #6E4414, 0 9px #6E4414, 0 10px #6E4414;
+  top: 0;
+  z-index: -1;
+}
+
+.inner-shiny::after, .inner-shiny::before
+{
+        -webkit-animation: sparkle 5s infinite;
+  -webkit-animation-timing-function: linear;
+    background: #FFF;
+  border-radius: 100%;
+  box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 25px #FFF, 0 0 30px #FFF, 0 0 35px #FFF;
+  content: "";
+  display: block;
+  height: 10px;
+  opacity: 0.7;
+  position: absolute;
+  width: 10px;
+}
+
+.inner-shiny::before
+{
+    -webkit-animation-delay: 0.2s;
+  height: 7px;
+  left: 0.12em;
+  top: 0.8em;
+  width: 7px;
+}
+
+.inner-shiny::after
+{
+  top: 0.32em;
+  right: -5px;
+}
+
+@-webkit-keyframes flare
+{
+  0%   { background-position: -180px; }
+  30%  { background-position: 500px; }
+  100% { background-position: 500px; }
+}
+
+@-webkit-keyframes sparkle
+{
+  0%   { opacity: 0; }
+  30%  { opacity: 0; }
+  40%  { opacity: 0.8; }
+  60%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
 /* ##########
   #####Menu####
   ###########
@@ -398,6 +496,10 @@ table input[type='checkbox']:checked + label{
     display: block;
   }
 }
+
+
+
+
 
 @media (max-width: 768px) {
   .right_panel {
@@ -577,7 +679,7 @@ table input[type='checkbox']:checked + label{
       <div class="row" id="wrapper">
         <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(100, 100, 100, 0.0)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
-                <a class="navbar-brand text-uppercase"  href="/">Столото</a>
+                <a class="navbar-brand text-uppercase"   href="/">Золотая антилопа</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -634,8 +736,8 @@ table input[type='checkbox']:checked + label{
             </nav>
         </div>
         <div class="col-md-7 col-lg-9 col-xl-8 content-container">
-          <div class="logo" style="text-align: center">
-            <img src="img/crisis_logo.svg"  alt="">
+          <div class="logo">
+            <p class="shiny"><span class="inner-shiny">Золотая антилопа</span></p>
           </div>
             @yield('content')
         </div>
@@ -649,12 +751,9 @@ table input[type='checkbox']:checked + label{
             <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a">«Рапидо»</span></a></p>
             <p><a  href="{{ route('seven-game') }}"><img src="img/top-3.png" width="30px"  alt=""><span class="medium-a">  «Топ - 3»</span></a></p>
           </div>
-    </div>
-
-      
-    
+        </div>    
+      </div>
       <!-- Footer -->
-    </div>
     <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4">
 
       <!-- Footer Links -->
@@ -802,7 +901,7 @@ table input[type='checkbox']:checked + label{
 
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> STOLOTO</a>
+        <a href="#" class="text-uppercase">Золотая антилопа</a>
       </div>
       <!-- Copyright -->
 

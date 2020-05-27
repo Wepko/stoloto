@@ -8,6 +8,11 @@
   </div>
   @endif
 <main id="main">
+  <div class="container">
+    <div class="alert alert-warning text-center" role="alert">
+        Призовой фонт этой игры <span> 5123525 руб</span>
+    </div>
+  </div>
   <div class="two-game">
         <div class="container text-center">
           <div class="row game mt-150">
@@ -17,9 +22,12 @@
             </p>
           </div>
   
-            <div class="content-4_20">
-              <form action="{{ route('AddTicketValueTwo') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
-              @csrf
+          <form action="{{ route('AddTicketValueTwo') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
+          @csrf
+          <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
+            <div class="container content-4_20">
+              <div class="row">
+                <div class="col-12 col-md-12 col-lg-8">
                   <div class="blocks-ticket">
                       <div class="block-ticket card">
                           <div class="help-information">
@@ -34,7 +42,7 @@
                               </div>
                               <div class="zone-two">
                                 <div class="zone-header">Поле 2 <p></p></div>
-
+  
                               </div>
                           </div>
             
@@ -46,7 +54,8 @@
                           </div>
                       </div>
                   </div>
-                  
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
                   <div class="card panel-score box">
                       <img src="" alt="">
                       <div class="future-draw"></div>
@@ -61,8 +70,10 @@
                       <p class="inpt2">Сумма <strong>0</strong></p>
                       <button type="submit" class="btn btn-dark">Оплатить</button>
                   </div>
-              </form>
+                </div>
+              </div>
             </div>
+          </form>
         </div>
   </div>
 </main>
