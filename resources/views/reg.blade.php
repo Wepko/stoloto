@@ -1,7 +1,7 @@
 @extends('layouts.head')
 
 @section('content')
-<form class="mt-5" action="{{ route('reg-submit') }}" method="post" novalidate>
+{{-- <form class="mt-5" action="{{ route('reg-submit') }}" method="post" novalidate>
 @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Имя</label>
@@ -16,7 +16,7 @@
     @if ($errors->has('last_name'))
       <span class="help-block text-danger">{{ $errors->first('last_name') }}</span>
     @endif
-  </div>
+
   <div class="form-group">
     <label for="exampleInputEmail1">Телефон</label>
     <input type="number" name="phone" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" id="exampleInputEmail1" value="{{ Request::old('phone') ?: '' }}">
@@ -54,4 +54,87 @@
   </div>
   <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
 </form>
+ --}}
+
+
+
+<div class="card bg-light">
+  <article class="card-body mx-auto w-100" style="max-width: 400px;">
+    <h4 class="card-title mt-3 text-center">Регестрация</h4>
+    <p class="text-center">Начните с вашего бесплатного аккаунта</p>
+
+    <form class="" action="{{ route('reg-submit') }}" method="post" novalidate>
+    @csrf
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+        </div>
+        <input name="first_name" class="form-control {{ $errors->has('first_name') ? ' is-invalid' : '' }}" placeholder="Имя" type="text">
+        @if ($errors->has('first_name'))
+          <div class="help-block invalid-feedback ">{{ $errors->first('first_name') }}</div>
+        @endif
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+        </div>
+            <input name="last_name" class="form-control {{ $errors->has('last_name') ? ' is-invalid' : '' }}" placeholder="Фамилия" type="text">
+            @if ($errors->has('last_name'))
+              <div class="help-block invalid-feedback">{{ $errors->first('last_name') }}</div>
+           @endif
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        </div>
+          <input name="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email адресс" type="email">
+          @if ($errors->has('email'))
+            <div class="help-block invalid-feedback ">{{ $errors->first('email') }}</div>
+          @endif
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+        </div>
+        <input name="phone" class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="Номер телефона" type="text">
+        @if ($errors->has('phone'))
+          <div class="help-block invalid-feedback ">{{ $errors->first('phone') }}</div>
+        @endif
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+          <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Придумайте пароль" type="password">
+          @if ($errors->has('password'))
+            <div class="help-block invalid-feedback ">{{ $errors->first('password') }}</div>
+          @endif
+      </div> <!-- form-group// -->
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+          <input class="form-control {{ $errors->has('confpass') ? ' is-invalid' : '' }}" placeholder="Повторите пароль" type="password">
+          @if ($errors->has('confpass'))
+            <div class="help-block invalid-feedback ">{{ $errors->first('confpass') }}</div>
+          @endif
+      </div>
+      <div class="custom-control custom-checkbox mb-3">
+        <input type="checkbox" class="custom-control-input {{ $errors->has('validAge') ? ' is-invalid' : '' }}" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Мне есть 18 лет</label>
+        @if ($errors->has('validAge'))
+          <br><span class="help-block invalid-feedback">{{ $errors->first('validAge') }}</span>
+        @endif
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Создать аккаунт </button>
+      </div> 
+      <!-- form-group// -->      
+      <p class="text-center">У вас уже есть аккайунт? <a href="#">Войдите</a> </p>
+    </form>
+  </article>
+</div>
+
 @endsection
+
+

@@ -80,7 +80,6 @@ function games(url) {
     function random(field, type, countActiveCell, allCell) {
         //own even rnd
         const inputs = [...field.querySelectorAll('input')]
-
         inputs.forEach(item => {
             item.checked = false
         })
@@ -120,39 +119,16 @@ function games(url) {
                 inputs[arrInedexRnd[i]].checked = true
             }
         }
+        return countActiveCell
     }
-
-    function valid(fieldOne, fieldTwo, itog) {
+    
+    function valid(fieldOne, fieldTwo, itog, countres) {
         const inputsOne = [...fieldOne.querySelectorAll('input')]
         const inputsTwo = [...fieldTwo.querySelectorAll('input')]
-        const inputs = [inputsOne, inputsTwo]
         
-        
-        let countOne = 0
-        let countTwo = 0
-        inputsOne.forEach(input => {
-            input.addEventListener('click', function() {
-                if (this.checked == true) {
-                    countOne++
-                } else {
-                    countOne--
-                }
-                analiz(countOne, null)
-            })
-        })
-        
-        inputsTwo.forEach(input => {
-            input.addEventListener('click', function() {
-                if (this.checked == true) {
-                    countTwo++
-                } else {
-                    countTwo--
-                }
-                analiz(null, countTwo)
-            })
-        })
-        
-        
+        let countOne = 0 || countres
+        let countTwo = 0 || countres
+
         let activeNumberOne = 0
         let activeNumberTwo = 0
         
@@ -167,7 +143,6 @@ function games(url) {
                     place.innerHTML = summ
                 }
             }
-
             switch(activeNumberTwo) {
                 case 1:
                     [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
@@ -215,12 +190,34 @@ function games(url) {
                     })
                 break
             }
-    
         }
+        console.log(countOne, countTwo)
+        inputsOne.forEach(input => {
+            input.addEventListener('click', function() {
+                if (this.checked == true) {
+                    countOne++
+                } else {
+                    countOne--
+                }
+                analiz(countOne, null)
+            })
+        })
+        
+        inputsTwo.forEach(input => {
+            input.addEventListener('click', function() {
+                if (this.checked == true) {
+                    countTwo++
+                } else {
+                    countTwo--
+                }
+                analiz(null, countTwo)
+            })
+        })
         
         
     }
     
+
     if (url == '/four-of-twenty') {
         (function game4_20() {
             //console.dir(document.body.style.background ='#fe8933')
@@ -251,7 +248,9 @@ function games(url) {
             arrBtns.forEach((item , index, arr) => {
                 switch(index) {
                     case 0: 
-                        item.addEventListener('click', () => random($parentfieldOne, 'rnd', 4, 20)) 
+                        item.addEventListener('click', () => {
+                           const activeCell = random($parentfieldOne, 'rnd', 4, 20)
+                        }) 
                         item.addEventListener('click', () => random($parentfieldTwo, 'rnd', 4, 20)) 
                     break
                     case 1:
@@ -311,7 +310,7 @@ function games(url) {
                 $blocksTicket.append(blockTicket)
             })
 
-            valid($parentfieldOne, $parentfieldTwo, $sum)
+            valid($parentfieldOne, $parentfieldTwo, $sum, 0 )
 
         })()
     }
@@ -347,7 +346,9 @@ function games(url) {
             arrBtns.forEach((item , index) => {
                 switch(index) {
                     case 0: 
-                        item.addEventListener('click', () => random($parentfieldOne, 'rnd', 5, 36)) 
+                        item.addEventListener('click', () => {
+                            random($parentfieldOne, 'rnd', 5, 36)
+                        })
                         item.addEventListener('click', () => random($parentfieldTwo, 'rnd', 1, 4)) 
                     break
                     case 1:
