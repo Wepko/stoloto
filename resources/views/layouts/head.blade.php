@@ -537,6 +537,51 @@ table input[type='checkbox']:checked + label{
 }
 
 
+
+
+
+
+.masthead {
+  color: #000;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 35rem;
+  padding: 5rem 0 25rem 0;
+}
+
+.conatiner-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.card-main {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.card-tooltip {
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  color: #000;
+  transform: translateY(115px);
+  transition: .5s ease-in;
+}
+.card-main:hover .card-tooltip {
+  transform: translateY(0)
+}
+
+@media (max-width: 768px) {
+  .masthead h1{
+    margin-top: 10rem !important;
+  }
+}
+
+
+
 </style>
 </head>
   <body data-spy="scroll">
@@ -747,8 +792,6 @@ table input[type='checkbox']:checked + label{
                             <a class="nav-link" href="{{ route('valid_ticket') }}">Проверка билетов</a>
                           </li>
                         @endif
-
-                        <a href="/four-of-twenty" class="mt-5 pt-5"><img src="img/banner.png" alt=""></a>
                     </ul>
                 </div>
             </nav>
@@ -934,6 +977,7 @@ table input[type='checkbox']:checked + label{
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       {{-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
       <script src="{{ asset('js/bootstrap.bundle.min.js.map') }}"></script> --}}
+
       <script src="{{ asset('js/bootstrap.min.js') }}"></script>
       {{-- <script src="{{ asset('js/bootstrap.min.js.map') }}"></script> --}}
 

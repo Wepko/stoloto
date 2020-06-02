@@ -77,146 +77,170 @@ function games(url) {
         parent.append(table)
     }
 
-    function random(field, type, countActiveCell, allCell) {
-        //own even rnd
-        const inputs = [...field.querySelectorAll('input')]
-        inputs.forEach(item => {
-            item.checked = false
-        })
-       
-        const arrInedexRnd = []
-        let rnd, flagRandom = null
-        for (let i = 0; i < countActiveCell; i++) {
-            if (type == 'rnd') { 
-                do {
-                    flagRandom = true
-                    rnd = Math.floor(Math.random() * allCell) 
-                    if (arrInedexRnd.includes(rnd))  flagRandom = false
-                } while (!flagRandom)
-                
-                arrInedexRnd.push(rnd)
-                inputs[arrInedexRnd[i]].checked = true
-            }
-            
-            if (type == 'odd') {
-                do {
-                    flagRandom = true
-                    rnd = Math.floor(Math.random() * allCell) 
-                    if (arrInedexRnd.includes(rnd) || rnd % 2 != 0)  flagRandom = false
-                } while (!flagRandom)
-                
-                arrInedexRnd.push(rnd)
-                inputs[arrInedexRnd[i]].checked = true
-            }
-            if (type == 'even') {
-                do {
-                    flagRandom = true
-                    rnd = Math.floor(Math.random() * allCell) 
-                    if (arrInedexRnd.includes(rnd) || rnd % 2 == 0)  flagRandom = false
-                } while (!flagRandom)
-                
-                arrInedexRnd.push(rnd)
-                inputs[arrInedexRnd[i]].checked = true
-            }
-        }
-        return countActiveCell
-    }
-    
-    function valid(fieldOne, fieldTwo, itog, countres) {
-        const inputsOne = [...fieldOne.querySelectorAll('input')]
-        const inputsTwo = [...fieldTwo.querySelectorAll('input')]
-        
-        let countOne = 0 || countres
-        let countTwo = 0 || countres
+    (function() {
+        const summItog = []
+        const engineClick = (option) => {
+            const fieldOne = option.fieldOne
+            const fieldTwo = option.fieldTwo
+            const itog = option.itog
+            const inputsOne = [...fieldOne.querySelectorAll('input')]
+            const inputsTwo = [...fieldTwo.querySelectorAll('input')]
+            let countOne = 0
+            let countTwo = 0
+            let activeNumberOne, activeNumberTwo
+            const countActiveCell = option.countActiveCell
+            const allCell = option.allCell
 
-        let activeNumberOne = 0
-        let activeNumberTwo = 0
-        
-        function analiz(countOne, countTwo) {
-            if (countOne !== null) {activeNumberOne = countOne}
-            if (countTwo !== null) {activeNumberTwo = countTwo}
-    
-            console.log(activeNumberOne, activeNumberTwo)
-    
-            function ifes(num1,num2, place, summ) {
-                if (activeNumberOne == num1 && activeNumberTwo == num2) {
-                    place.innerHTML = summ
+            function rnd(feild, type) {
+                const inputs = feild
+                inputs.forEach(item => {
+                    item.checked = false
+                })
+
+                const arrInedexRnd = []
+                let rnd, flagRandom = null
+                for (let i = 0; i < countActiveCell; i++) {
+                    if (type == 'rnd') { 
+                        do {
+                            flagRandom = true
+                            rnd = Math.floor(Math.random() * allCell) 
+                            if (arrInedexRnd.includes(rnd))  flagRandom = false
+                        } while (!flagRandom)
+                        
+                        arrInedexRnd.push(rnd)
+                        inputs[arrInedexRnd[i]].checked = true
+                    }
+                    if (type == 'odd') {
+                        do {
+                            flagRandom = true
+                            rnd = Math.floor(Math.random() * allCell) 
+                            if (arrInedexRnd.includes(rnd) || rnd % 2 != 0)  flagRandom = false
+                        } while (!flagRandom)
+                        arrInedexRnd.push(rnd)
+                        inputs[arrInedexRnd[i]].checked = true
+                    }
+                    if (type == 'even') {
+                        do {
+                            flagRandom = true
+                            rnd = Math.floor(Math.random() * allCell) 
+                            if (arrInedexRnd.includes(rnd) || rnd % 2 == 0)  flagRandom = false
+                        } while (!flagRandom)
+                        arrInedexRnd.push(rnd)
+                        inputs[arrInedexRnd[i]].checked = true
+                    }
                 }
             }
-            switch(activeNumberTwo) {
-                case 1:
-                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
-                        ifes(index, activeNumberTwo, itog,0)
-                    })
-                break
-                case 2:
-                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
-                        ifes(index, activeNumberTwo, itog,0)
-                    })
-                break
-                case 3:
-                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
-                        ifes(index, activeNumberTwo, itog, 0)
-                    })
-                break
-                case 4:
-                    [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
-                        ifes(index, activeNumberTwo, itog, el * 200)
-                    })
-                break
-                case 5:
-                    [0, 0, 0, 0, 5, 25, 75, 175, 350, 126, 630].forEach((el, index,) => {
-                        ifes(index, activeNumberTwo, itog, el * 200)
-                    })
-                break
-                case 6:
-                    [0, 0, 0, 0, 15, 75, 225, 525, 1050, 2000].forEach((el, index,) => {
-                        ifes(index, activeNumberTwo, itog, el * 200)
-                    })
-                break
-                case 7:
-                    [0, 0, 0, 0, 35, 175, 525, 1225, 2000].forEach((el, index,) => {
-                        ifes(index, activeNumberTwo, itog, el * 200)
-                    })
-                break
-                case 8:
-                    [0, 0, 0, 0, 70, 350, 1050, 2000].forEach((el, index,) => {
-                        ifes(index, activeNumberTwo, itog, el * 200)
-                    })
-                break
-                case 9:
-                    [0, 0, 0, 0, 126, 630, 2000].forEach((el, index,) => {
-                        ifes(index, activeNumberTwo, itog, el * 200)
-                    })
-                break
+
+            function random(type) {
+                rnd(inputsOne, type)
+                rnd(inputsTwo, type)
+                countOne = 4
+                countTwo = 4
+                analiz()
+                console.log(countOne, countTwo)
+            }
+
+            console.log(countOne, countTwo)
+
+            inputsOne.forEach(input => {
+                input.addEventListener('click', function() {
+                    if (this.checked == true) {
+                        countOne++
+                    } else {
+                        countOne--
+                    }
+
+                    analiz()
+                    console.log("countOne", countOne)
+                })
+            })
+
+            inputsTwo.forEach(input => {
+                input.addEventListener('click', function() {
+                    if (this.checked == true) {
+                        countTwo++
+                    } else {
+                        countTwo--
+                    }
+
+                    analiz()
+                    console.log("countTwo", countTwo)
+                })
+            })
+
+
+            function analiz() {
+                if (countOne !== null) {activeNumberOne = countOne}
+                if (countTwo !== null) {activeNumberTwo = countTwo}
+        
+                console.log(activeNumberOne, activeNumberTwo)
+        
+                function ifes(num1,num2, place, summ) {
+                    if (activeNumberOne == num1 && activeNumberTwo == num2) {
+                        summItog.push(summ)
+                        console.log(summItog)
+                        place.innerHTML = summ
+                    } else {
+                        summItog.pop(summ)
+                    }
+                }
+                switch(activeNumberTwo) {
+                    case 1:
+                        [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
+                            ifes(index, activeNumberTwo, itog, 0)
+                        })
+                    break
+                    case 2:
+                        [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
+                            ifes(index, activeNumberTwo, itog,0)
+                        })
+                    break
+                    case 3:
+                        [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
+                            ifes(index, activeNumberTwo, itog, 0)
+                        })
+                    break
+                    case 4:
+                        [0, 0, 0, 0, 1, 5, 15, 35, 70, 126].forEach((el, index) => {
+                            ifes(index, activeNumberTwo, itog, el * 200)
+                        })
+                    break
+                    case 5:
+                        [0, 0, 0, 0, 5, 25, 75, 175, 350, 126, 630].forEach((el, index,) => {
+                            ifes(index, activeNumberTwo, itog, el * 200)
+                        })
+                    break
+                    case 6:
+                        [0, 0, 0, 0, 15, 75, 225, 525, 1050, 2000].forEach((el, index,) => {
+                            ifes(index, activeNumberTwo, itog, el * 200)
+                        })
+                    break
+                    case 7:
+                        [0, 0, 0, 0, 35, 175, 525, 1225, 2000].forEach((el, index,) => {
+                            ifes(index, activeNumberTwo, itog, el * 200)
+                        })
+                    break
+                    case 8:
+                        [0, 0, 0, 0, 70, 350, 1050, 2000].forEach((el, index,) => {
+                            ifes(index, activeNumberTwo, itog, el * 200)
+                        })
+                    break
+                    case 9:
+                        [0, 0, 0, 0, 126, 630, 2000].forEach((el, index,) => {
+                            ifes(index, activeNumberTwo, itog, el * 200)
+                        })
+                    break
+                }
+            }
+
+            return {
+                random
             }
         }
-        console.log(countOne, countTwo)
-        inputsOne.forEach(input => {
-            input.addEventListener('click', function() {
-                if (this.checked == true) {
-                    countOne++
-                } else {
-                    countOne--
-                }
-                analiz(countOne, null)
-            })
-        })
-        
-        inputsTwo.forEach(input => {
-            input.addEventListener('click', function() {
-                if (this.checked == true) {
-                    countTwo++
-                } else {
-                    countTwo--
-                }
-                analiz(null, countTwo)
-            })
-        })
-        
-        
-    }
-    
+
+        window.engineClick = engineClick;
+    })()
+
 
     if (url == '/four-of-twenty') {
         (function game4_20() {
@@ -233,7 +257,8 @@ function games(url) {
             const $validTicketNumber = $root.querySelector('#validTicketNumber')
 
             const arrBtns = [...$quickPanel.children]
-            
+ 
+
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
@@ -244,26 +269,31 @@ function games(url) {
                 }
             }())
             createTicet($parentfieldOne, $parentfieldTwo)
-            
+            const gameTest = engineClick({fieldOne: $parentfieldOne, fieldTwo: $parentfieldTwo, 
+                                            itog: $sum,
+                                          countActiveCell: 4, allCell: 20})
+
             arrBtns.forEach((item , index, arr) => {
                 switch(index) {
                     case 0: 
                         item.addEventListener('click', () => {
-                           const activeCell = random($parentfieldOne, 'rnd', 4, 20)
+                            gameTest.random('rnd')
                         }) 
-                        item.addEventListener('click', () => random($parentfieldTwo, 'rnd', 4, 20)) 
                     break
                     case 1:
-                        item.addEventListener('click', () => random($parentfieldOne, 'even', 4, 20)) 
-                        item.addEventListener('click', () => random($parentfieldTwo, 'even', 4, 20)) 
+                        item.addEventListener('click', () => {
+                            gameTest.random('even')
+                        }) 
                     break
                     case 2:
-                        item.addEventListener('click', () => random($parentfieldOne, 'odd', 4, 20)) 
-                        item.addEventListener('click', () => random($parentfieldTwo, 'odd', 4, 20)) 
+                        item.addEventListener('click', () => {
+                            gameTest.random('odd')
+                        }) 
                     break
                     case 3:
-                        item.addEventListener('click', () => random($parentfieldOne)) 
-                        item.addEventListener('click', () => random($parentfieldTwo)) 
+                        item.addEventListener('click', () => {
+                            gameTest.random()
+                        }) 
                     break
                 }
             })
@@ -278,6 +308,9 @@ function games(url) {
                 const fieldOne = elt('div', {class: 'zone-one'}, elt('div', {class: 'zone-header'}, "Поле 1"))
                 const fieldTwo = elt('div', {class: 'zone-two'}, elt('div', {class: 'zone-header'}, "Поле 2"))
                 createTicet(fieldOne, fieldTwo)
+                const gameTest = engineClick({fieldOne: fieldOne, fieldTwo: fieldTwo, 
+                    itog: $sum,
+                  countActiveCell: 4, allCell: 20})
                 const zoneWorker = elt('div', {class: 'zone-worker'}, fieldOne, fieldTwo)
         
                 //
@@ -287,8 +320,7 @@ function games(url) {
                 arrBtns.forEach((item , index, arr) => {
                     switch(index) {
                         case 0: 
-                            item.addEventListener('click', () => random(fieldOne, 'rnd', 4, 20)) 
-                            item.addEventListener('click', () => random(fieldTwo, 'rnd', 4, 20)) 
+                            item.addEventListener('click', () => gameTest.random('rnd'))  
                         break
                         case 1:
                             item.addEventListener('click', () => random(fieldOne, 'even', 4, 20)) 
@@ -683,6 +715,7 @@ function valid() {
         })
     }
 }
+
 
 
 class Routing {
