@@ -21,9 +21,20 @@
                         </div>
                     
                         <div class="zone-worker">
+                            <div class="zone-panel">
+                                <ul class="list-group">
+                                    <li class="list-group-item active"><span>Точно 3</span></li>
+                                    <li class="list-group-item"><span>Любые 3</span></li>
+                                    <li class="list-group-item"><span>Точно 3 + Любые 3</span></li>
+                                    <li class="list-group-item"><span>Первые 2 числа</span></li>
+                                    <li class="list-group-item"><span>Последние 2 числа</span></li>
+                                    <li class="list-group-item"><span>Любые 2</span></li>
+                                    <li class="list-group-item"><span>Точно 1</span></li>
+                                    <li class="list-group-item"><span>Комбо</span></li>
+                                </ul>
+                            </div>
                             <div class="zone-one">
                                 <div class="zone-header">Поле 1 <p></p></div>
-        
                             </div>
         
                         </div>
