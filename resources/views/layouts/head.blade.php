@@ -983,5 +983,6 @@ table input[type='checkbox']:checked + label{
 
 
       <script src="{{ asset('js/main.js')}}"></script>
+      <script src="{{ asset('js/maintest.js')}}"></script>
   </body>
 </html>

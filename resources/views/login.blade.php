@@ -49,7 +49,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
         </div>
-          <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Введите пароль" type="password">
+          <input name="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Введите пароль" type="password">
           @if ($errors->has('password'))
             <div class="help-block invalid-feedback ">{{ $errors->first('password') }}</div>
           @endif
@@ -59,7 +59,7 @@
           <button type="submit" class="btn btn-primary btn-block">Войти</button>
       </div> 
       <!-- form-group// -->      
-      <p class="text-center">У вас ещё нет аккайунта? <a href="#">Зарегистрироваться</a> </p>
+      <p class="text-center">У вас ещё нет аккайунта? <a href="{{ route('reg')}}">Зарегистрироваться</a> </p>
     </form>
   </article>
 </div>

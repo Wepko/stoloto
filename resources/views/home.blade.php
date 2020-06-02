@@ -13,7 +13,7 @@
     {{   Session::get('info') }}
   </div>
 @endif
-<!-- start home slider -->nb 
+<!-- start home slider --> 
 <header class="masthead">
   <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">

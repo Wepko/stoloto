@@ -28,17 +28,20 @@ class AddTicketController extends Controller
 
             $value1 = '';
             $value2 = '';
+            $price = 0;
+            $price1 = 0;
+            $price2 = 0;
 
             for ($j = 1; $j <= 20; $j++) {
-                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j));
-                $value2 = $value2 . ' ' . strval($request->input('ticket' . $i . '_fieldTwo' . $j)); 
+                $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j));
+                $value2 = $value2 . strval($request->input('ticket' . $i . '_fieldTwo' . $j)); 
             }
     
             $arr1 = [];
             $arr2 = [];
 
-            $arr1 = str_split($value1);
-            $arr2 = str_split($value2);
+            $arr1 = str_split($value1, 2);
+            $arr2 = str_split($value2, 2);
 
             $arr11 = array_diff($arr1, array(" "));
             $arr22 = array_diff($arr2, array(" "));
@@ -47,11 +50,27 @@ class AddTicketController extends Controller
             
             if (count($arr11) > 3 && count($arr22) > 3) {
                 if (Auth::check()) {
+
+                    $mas = [0,0,0,0,1,5,15,35];
+                    //двумерный
+
+                    for ($i = 1; $i <= 7; $i++) {
+                        if (count($arr11) == $i) {
+                            $price1 = 100 * $mas[$i];
+                        }
+                        if (count($arr22) == $i) {
+                            $price2 = 100 * $mas[$i];
+                        }
+                    } 
+
+                    $price = $price1 + $price2;
+
                     OneGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
                         'ticketOne' => implode($arr11),
                         'ticketTwo' => implode($arr22),
+                        'price' => $price
                     ));
                 } 
                 else {
@@ -67,26 +86,24 @@ class AddTicketController extends Controller
 
     public function twogame(Request $request) {
 
-       
-
         for ($i = 1; $i <= $request->input('valid'); $i++) {
 
             $value1 = '';
             $value2 = '';
 
             for ($j = 1; $j <= 36; $j++) {
-                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+                $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
             for ($jj = 1; $jj <= 4; $jj++) {
-                $value2 = $value2 . ' ' . strval($request->input('ticket' . $i . '_fieldTwo' . $jj));
+                $value2 = $value2 . strval($request->input('ticket' . $i . '_fieldTwo' . $jj));
             }
         
 
             $arr1 = [];
             $arr2 = [];
 
-            $arr1 = str_split($value1);
-            $arr2 = str_split($value2);
+            $arr1 = str_split($value1,2);
+            $arr2 = str_split($value2,2);
 
             $arr11 = array_diff($arr1, array(" "));
             $arr22 = array_diff($arr2, array(" "));
@@ -119,12 +136,12 @@ class AddTicketController extends Controller
         for ($i = 1; $i <= $request->input('valid'); $i++) {
             $value1 = '';
             for ($j = 1; $j <= 49; $j++) {
-                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+                $value1 = $value1  . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
 
             $arr1 = [];
 
-            $arr1 = str_split($value1);
+            $arr1 = str_split($value1,2);
 
             $arr11 = array_diff($arr1, array(" "));
 
@@ -157,12 +174,12 @@ class AddTicketController extends Controller
             $value1 = '';
 
             for ($j = 1; $j <= 45; $j++) {
-                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+                $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
         
             $arr1 = [];
 
-            $arr1 = str_split($value1);
+            $arr1 = str_split($value1,2);
 
             $arr11 = array_diff($arr1, array(" "));
 
@@ -192,12 +209,12 @@ class AddTicketController extends Controller
         for ($i = 1; $i <= $request->input('valid'); $i++) {
             $value1 = '';
             for ($j = 1; $j <= 24; $j++) {
-                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+                $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
 
             $arr1 = [];
 
-            $arr1 = str_split($value1);
+            $arr1 = str_split($value1,2);
 
             $arr11 = array_diff($arr1, array(" "));
 
@@ -228,18 +245,18 @@ class AddTicketController extends Controller
             $value2 = '';
 
             for ($j = 1; $j <= 20; $j++) {
-                $value1 = $value1 . ' ' . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+                $value1 = $value1  . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
             for ($jj = 1; $jj <= 4; $jj++) {
-                $value2 = $value2 . ' ' . strval($request->input('ticket' . $i . '_fieldTwo' . $jj));
+                $value2 = $value2  . strval($request->input('ticket' . $i . '_fieldTwo' . $jj));
             }
         
 
             $arr1 = [];
             $arr2 = [];
 
-            $arr1 = str_split($value1);
-            $arr2 = str_split($value2);
+            $arr1 = str_split($value1,2);
+            $arr2 = str_split($value2,2);
 
             $arr11 = array_diff($arr1, array(" "));
             $arr22 = array_diff($arr2, array(" "));
@@ -266,3 +283,5 @@ class AddTicketController extends Controller
     }
     
 }
+
+

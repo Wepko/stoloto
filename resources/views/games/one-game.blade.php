@@ -24,7 +24,7 @@
         </div>
     </div>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
-        @csrf   
+        @csrf
         <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
 
         <div class="container">

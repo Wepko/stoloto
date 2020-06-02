@@ -430,7 +430,7 @@ function games(url) {
                         break
                         case 3:
                             item.addEventListener('click', () => random(fieldOne)) 
-                            item.addEventListener('click', () => random(fieldTwo)) 
+                            item.addEventListener('click', () => random(fieldTwo))
                         break
                     }
                 })

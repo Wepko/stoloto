@@ -22,7 +22,7 @@ class ValidTicketController extends Controller
             $countOne = 0;
             $countTwo = 0;
             
-            if (OneGameWinModels::where('circulation', $request->input('circulation'))) {
+            if (OneGameWinModels::find($request->input('circulation'))) {
                 $ticketWin = OneGameWinModels::find($request->input('circulation'));
                 $ticketWinOne = $ticketWin["ticketOne"];
                 $ticketWinTwo = $ticketWin["ticketTwo"];
@@ -112,10 +112,10 @@ class ValidTicketController extends Controller
                 } else {
                     return redirect()->back()->with('info', 'Ваш билет не выйграл!!!');
                 }
+            } else {
+                return redirect()->back()->with('info', 'Розыгрыш еще не проводился');
             }
-            return redirect()->back()->with('info', 'Розыгрыш еще не проводился');
         }
-
         return redirect()->back()->with('info', 'Заполните поля!');
     }
 
@@ -126,7 +126,7 @@ class ValidTicketController extends Controller
             $countOne = 0;
             $countTwo = 0;
             
-            if (TwoGameWinModels::where('circulation', $request->input('circulation'))) {
+            if (TwoGameWinModels::find($request->input('circulation'))) {
                 $ticketWin = TwoGameWinModels::find($request->input('circulation'));
                 $ticketWinOne = $ticketWin["ticketOne"];
                 $ticketWinTwo = $ticketWin["ticketTwo"];
@@ -178,7 +178,7 @@ class ValidTicketController extends Controller
             $countOne = 0;
             $countTwo = 0;
             
-            if (ThreeGameWinModels::where('circulation', $request->input('circulation'))) {
+            if (ThreeGameWinModels::find($request->input('circulation'))) {
                 $ticketWin = ThreeGameWinModels::find($request->input('circulation'));
                 $ticketWinOne = $ticketWin["ticketOne"];
                 
@@ -224,7 +224,7 @@ class ValidTicketController extends Controller
             $countOne = 0;
             $countTwo = 0;
             
-            if (FourGameWinModels::where('circulation', $request->input('circulation'))) {
+            if (FourGameWinModels::find($request->input('circulation'))) {
                 $ticketWin = FourGameWinModels::find($request->input('circulation'));
                 $ticketWinOne = $ticketWin["ticketOne"];
                 
@@ -267,7 +267,7 @@ class ValidTicketController extends Controller
             $countOne = 0;
             $countTwo = 0;
             
-            if (FiveGameWinModels::where('circulation', $request->input('circulation'))) {
+            if (FiveGameWinModels::find($request->input('circulation'))) {
                 $ticketWin = FiveGameWinModels::find($request->input('circulation'));
                 $ticketWinOne = $ticketWin["ticketOne"];
                 
@@ -311,7 +311,7 @@ class ValidTicketController extends Controller
             $countOne = 0;
             $countTwo = 0;
             
-            if (SixGameWinModels::where('circulation', $request->input('circulation'))) {
+            if (SixGameWinModels::find($request->input('circulation'))) {
                 $ticketWin = SixGameWinModels::find($request->input('circulation'));
                 $ticketWinOne = $ticketWin["ticketOne"];
                 $ticketWinTwo = $ticketWin["ticketTwo"];
@@ -442,6 +442,9 @@ class ValidTicketController extends Controller
     }
 
     public function valid(Request $request) {
+        if ($request->input('valid') == 0) {
+            return redirect()->back()->with('info', 'Заполните поля!');
+        }
         if ($request->input('valid') == 1) {
             return ValidTicketController::validOneGame($request);
         }
