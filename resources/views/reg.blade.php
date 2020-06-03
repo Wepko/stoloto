@@ -1,7 +1,7 @@
 @extends('layouts.head')
 
 @section('content')
-{{-- <form class="mt-5" action="{{ route('reg-submit') }}" method="post" novalidate>
+<form class="mt-5" action="{{ route('reg-submit') }}" method="post" novalidate>
 @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Имя</label>
@@ -54,7 +54,12 @@
   </div>
   <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
 </form>
- --}}
+
+
+
+
+
+
 
 
 
@@ -63,7 +68,7 @@
     <h4 class="card-title mt-3 text-center">Регестрация</h4>
     <p class="text-center">Начните с вашего бесплатного аккаунта</p>
 
-    <form class="" action="{{ route('reg-submit') }}" method="post" novalidate>
+    <form class="">
     @csrf
       <div class="form-group input-group">
         <div class="input-group-prepend">
@@ -119,12 +124,9 @@
             <div class="help-block invalid-feedback ">{{ $errors->first('confpass') }}</div>
           @endif
       </div>
-      <div class="custom-control custom-checkbox mb-3">
-        <input type="checkbox" class="custom-control-input {{ $errors->has('validAge') ? ' is-invalid' : '' }}" id="customCheck1">
+      <div class="custom-control custom-checkbox mt-">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
         <label class="custom-control-label" for="customCheck1">Мне есть 18 лет</label>
-        @if ($errors->has('validAge'))
-          <br><span class="help-block invalid-feedback">{{ $errors->first('validAge') }}</span>
-        @endif
       </div>
       <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block"> Создать аккаунт </button>
