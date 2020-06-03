@@ -65,7 +65,7 @@
 
 <div class="card bg-light">
   <article class="card-body mx-auto w-100" style="max-width: 400px;">
-    <h4 class="card-title mt-3 text-center">Регестрация</h4>
+    <h4 class="card-title mt-3 text-center">Регистрация</h4>
     <p class="text-center">Начните с вашего бесплатного аккаунта</p>
 
     <form class="">
@@ -110,7 +110,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
         </div>
-          <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Придумайте пароль" type="password">
+          <input name="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Придумайте пароль" type="password">
           @if ($errors->has('password'))
             <div class="help-block invalid-feedback ">{{ $errors->first('password') }}</div>
           @endif
@@ -119,20 +119,25 @@
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
         </div>
-          <input class="form-control {{ $errors->has('confpass') ? ' is-invalid' : '' }}" placeholder="Повторите пароль" type="password">
+          <input name="confpass" class="form-control {{ $errors->has('confpass') ? ' is-invalid' : '' }}" placeholder="Повторите пароль" type="password">
           @if ($errors->has('confpass'))
             <div class="help-block invalid-feedback ">{{ $errors->first('confpass') }}</div>
           @endif
       </div>
+<<<<<<< HEAD
       <div class="custom-control custom-checkbox mt-">
         <input type="checkbox" class="custom-control-input" id="customCheck1">
+=======
+      <div class="custom-control custom-checkbox mb-3">
+        <input name="validAge" type="checkbox" class="custom-control-input {{ $errors->has('validAge') ? ' is-invalid' : '' }}" id="customCheck1">
+>>>>>>> 5d1948898491c18669ce63452a0d93719735c8e1
         <label class="custom-control-label" for="customCheck1">Мне есть 18 лет</label>
       </div>
       <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block"> Создать аккаунт </button>
       </div> 
       <!-- form-group// -->      
-      <p class="text-center">У вас уже есть аккайунт? <a href="#">Войдите</a> </p>
+      <p class="text-center">У вас уже есть аккайунт? <a href="{{ route('login') }}">Войдите</a> </p>
     </form>
   </article>
 </div>

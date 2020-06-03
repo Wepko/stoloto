@@ -16,7 +16,7 @@
     <form action="{{ route('AddTicketValueThree') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
     @csrf
     <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
-        <div class=" container">
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-md-12 col-xl-9">
                     <div class="blocks-ticket">

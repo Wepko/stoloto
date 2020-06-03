@@ -19,7 +19,8 @@ class OneGameModels extends Model
         'user_id',
         'circulation',
         'ticketOne',
-        'ticketTwo'
+        'ticketTwo',
+        'price'
     ];
 }
 

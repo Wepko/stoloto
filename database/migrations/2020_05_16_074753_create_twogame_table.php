@@ -19,6 +19,7 @@ class CreateTwogameTable extends Migration
             $table->integer('circulation');
             $table->string('ticketOne');
             $table->string('ticketTwo');
+            $table->biginteger('price');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

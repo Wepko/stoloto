@@ -29,12 +29,12 @@
             </div>
         </div>
         <div class="form-group">
-          <input type="number" class="form-control" name="circulation" placeholder="Номер тиража">
+          <input type="number" class="form-control" name="circulation" placeholder="Номер тиража" required>
         </div>
         <div class="form-group">
-            <input type="number" name="valid" class="form-control valid" id="valid" style="display:none" placeholder="valid number">
-            <input type="number" name="fieldOne" class="form-control" placeholder="Номер билета">
-            <input type="number" name="fieldTwo" class="form-control hide mt-2" placeholder="Номер билета">
+            <input type="number" name="valid" class="form-control valid" id="valid" style="display:none" placeholder="valid number" required>
+            <input type="number" name="fieldOne" class="form-control" placeholder="Номер билета" required>
+            <input type="number" name="fieldTwo" class="form-control hide mt-2" placeholder="Номер билета" required>
         </div>
         <button type="submit" class="btn btn-primary">Проверить</button>
       </form>
@@ -43,7 +43,7 @@
 <div class="card bg-light">
   <article class="card-body mx-auto w-100" style="max-width: 400px;">
     <h4 class="card-title mt-3 text-center">Проверить билет</h4>
-    <p class="text-center">Начните с вашего счисливого билета</p>
+    <p class="text-center">Начните с вашего счастливого билета</p>
 
     <form class="" action="{{ route('ValidTicketGame') }}" method="post" novalidate>
     @csrf     
