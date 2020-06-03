@@ -78,7 +78,6 @@ function games(url) {
     }
 
     (function() {
-        const summItog = []
         const engineClick = (option) => {
             const fieldOne = option.fieldOne
             const fieldTwo = option.fieldTwo
@@ -177,11 +176,7 @@ function games(url) {
         
                 function ifes(num1,num2, place, summ) {
                     if (activeNumberOne == num1 && activeNumberTwo == num2) {
-                        summItog.push(summ)
-                        console.log(summItog)
-                        place.innerHTML = summ
-                    } else {
-                        summItog.pop(summ)
+                        place.innerHTML = summ 
                     }
                 }
                 switch(activeNumberTwo) {
@@ -268,6 +263,7 @@ function games(url) {
                     return count++
                 }
             }())
+
             createTicet($parentfieldOne, $parentfieldTwo)
             const gameTest = engineClick({fieldOne: $parentfieldOne, fieldTwo: $parentfieldTwo, 
                                             itog: $sum,
@@ -522,7 +518,7 @@ function games(url) {
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
             const $validTicketNumber = $root.querySelector('#validTicketNumber')
             
-                console.log($btnAddTicket)
+            
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne) {
