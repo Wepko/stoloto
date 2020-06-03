@@ -51,8 +51,7 @@ class AddTicketController extends Controller
             if (count($arr11) > 3 && count($arr22) > 3) {
                 if (Auth::check()) {
 
-                    $mas = [0,0,0,0,1,5,15,35];
-                    //двумерный
+                    $mas = [0, 0, 0, 0, 1, 5, 15, 35, 70, 126];
 
                     for ($i = 1; $i <= 7; $i++) {
                         if (count($arr11) == $i) {
@@ -63,7 +62,12 @@ class AddTicketController extends Controller
                         }
                     } 
 
-                    $price = $price1 + $price2;
+                    if (count($arr11) == count($arr22)) {
+                        $price = ($price1 * ($price1 / 100)) + ($price2 * ($price2 / 100));
+                    }
+                    else {
+                        $price = ($price1 * 2) * ($price2 / 100);
+                    }
 
                     OneGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
@@ -90,6 +94,8 @@ class AddTicketController extends Controller
 
             $value1 = '';
             $value2 = '';
+            $price = 0;
+            $price1 = 0;
 
             for ($j = 1; $j <= 36; $j++) {
                 $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
@@ -111,12 +117,24 @@ class AddTicketController extends Controller
             $count = DB::table('twogamewin')->max('circulation');
             
             if (count($arr11) > 4 && count($arr22) > 0) {
-                if (Auth::check()) {
+                if (Auth::check()) { 
+
+                    $mas = [0, 0, 0, 0, 0, 1, 6, 21, 56, 126, 252, 462];
+
+                    for ($i = 1; $i <= 11; $i++) {
+                        if (count($arr11) == $i) {
+                            $price1 = 40 * $mas[$i];
+                        }
+                    } 
+
+                    $price = $price1 * count($arr22);
+
                     TwoGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
                         'ticketOne' => implode($arr11),
-                        'ticketTwo' => implode($arr22)
+                        'ticketTwo' => implode($arr22),
+                        'price' => $price
                     ));
                     
                 }
@@ -135,6 +153,9 @@ class AddTicketController extends Controller
 
         for ($i = 1; $i <= $request->input('valid'); $i++) {
             $value1 = '';
+            $price = 0;
+            $price1 = 0;
+
             for ($j = 1; $j <= 49; $j++) {
                 $value1 = $value1  . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
@@ -149,10 +170,22 @@ class AddTicketController extends Controller
             
             if (count($arr11) > 6 && count($arr11) < 15) {
                 if (Auth::check()) {
+
+                    $mas = [0, 0, 0, 0, 0, 0, 0, 1, 8, 36, 120, 330, 792, 1716, 3432, 6435, 11440];
+
+                    for ($i = 1; $i <= 14; $i++) {
+                        if (count($arr11) == $i) {
+                            $price1 = 25 * $mas[$i];
+                        }
+                    } 
+
+                    $price = $price1;
+
                     ThreeGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
-                        'ticketOne' => implode($arr11)
+                        'ticketOne' => implode($arr11),
+                        'price' => $price
                     )); 
                 } 
                 else {
@@ -172,6 +205,8 @@ class AddTicketController extends Controller
         for ($i = 1; $i <= $request->input('valid'); $i++) {
 
             $value1 = '';
+            $price = 0;
+            $price1 = 0;
 
             for ($j = 1; $j <= 45; $j++) {
                 $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
@@ -187,10 +222,24 @@ class AddTicketController extends Controller
             
             if (count($arr11) > 5 && count($arr11) < 14) {
                 if (Auth::check()) {
+
+                    $mas = [0,0,0,0,0,0,1,7,28,84,210,462,924,1716];
+
+                    for ($i = 1; $i <= 14; $i++) {
+                        if (count($arr11) == $i) {
+                            $price1 = 100 * $mas[$i];
+                        }
+                    } 
+
+                    $price = $price1;
+
+                    dd($price);
+
                     FourGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
-                        'ticketOne' => implode($arr11)
+                        'ticketOne' => implode($arr11),
+                        'price' => $price
                     ));
                 } else {
                     return redirect()->back()->with('info', 'Войдите в аккаунт!');
@@ -225,7 +274,8 @@ class AddTicketController extends Controller
                     FiveGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
-                        'ticketOne' => implode($arr11)
+                        'ticketOne' => implode($arr11),
+                        'price' => $price
                     ));
                 } else {
                     return redirect()->back()->with('info', 'Войдите в аккаунт!');
@@ -269,7 +319,8 @@ class AddTicketController extends Controller
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
                         'ticketOne' => implode($arr11),
-                        'ticketTwo' => implode($arr22)
+                        'ticketTwo' => implode($arr22),
+                        'price' => $price
                     ));
                 } else {
                     return redirect()->back()->with('info', 'Войдите в аккаунт!');
