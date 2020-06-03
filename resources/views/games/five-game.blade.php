@@ -15,6 +15,7 @@
       </div>
       <form action="{{ route('AddTicketValueFive') }}" method='post'>
       @csrf
+      <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
         <div class=" container">
             <div class="row">
                 <div class="col-12 col-md-12 col-xl-9">

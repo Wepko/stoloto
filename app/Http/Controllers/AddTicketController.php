@@ -233,8 +233,6 @@ class AddTicketController extends Controller
 
                     $price = $price1;
 
-                    dd($price);
-
                     FourGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
@@ -256,7 +254,11 @@ class AddTicketController extends Controller
     public function fivegame(Request $request) {
 
         for ($i = 1; $i <= $request->input('valid'); $i++) {
+
             $value1 = '';
+            $price = 0;
+            $price1 = 0;
+
             for ($j = 1; $j <= 24; $j++) {
                 $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
@@ -271,6 +273,9 @@ class AddTicketController extends Controller
             
             if (count($arr11) > 11) {
                 if (Auth::check()) {
+
+                    $price = 60;
+
                     FiveGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
@@ -293,12 +298,13 @@ class AddTicketController extends Controller
         for ($i = 1; $i <= 1; $i++) {
             $value1 = '';
             $value2 = '';
+            $price = 1;
 
             for ($j = 1; $j <= 20; $j++) {
-                $value1 = $value1  . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
+                $value1 = $value1 . strval($request->input('ticket' . $i . '_fieldOne' . $j)); 
             }
             for ($jj = 1; $jj <= 4; $jj++) {
-                $value2 = $value2  . strval($request->input('ticket' . $i . '_fieldTwo' . $jj));
+                $value2 = $value2 . strval($request->input('ticket' . $i . '_fieldTwo' . $jj));
             }
         
 
@@ -313,8 +319,11 @@ class AddTicketController extends Controller
 
             $count = DB::table('sixgamewin')->max('circulation');
             
-            if (count($arr11) > 7 && count($arr22) > 0) {
+            if (count($arr11) > 7 && count($arr11) < 9 && count($arr22) > 0) {
                 if (Auth::check()) {
+
+                    $price = 60 * count($arr22);
+
                     SixGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
