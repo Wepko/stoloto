@@ -520,12 +520,14 @@ function games(url) {
             const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
             const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            const $validTicketNumber = $root.querySelector('#validTicketNumber')
             
                 console.log($btnAddTicket)
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne) {
                     createGrid(parentOne, new Tablegame(5, 10, 5, count))
+                    $validTicketNumber.value = count
                     return count++
                 }
             }())
@@ -563,12 +565,14 @@ function games(url) {
             const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
             const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            const $validTicketNumber = $root.querySelector('#validTicketNumber')
             
             
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne) {
                     createGrid(parentOne, new Tablegame(4, 6, 0, count))
+                    $validTicketNumber.value = count
                     return count++
                 }
             }())
@@ -600,12 +604,14 @@ function games(url) {
             const $parentfieldOne = $blocksTicket.querySelector('.zone-one')
             const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            const $validTicketNumber = $root.querySelector('#validTicketNumber')
             
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne, parentTwo) {
                     createGrid(parentOne, new Tablegame(2, 10, 0, count))
                     createGrid(parentTwo, new Tablegame(1, 4, 0, count, 'Two'))
+                    $validTicketNumber.value = count
                     return count++
                 }
             }())
@@ -644,11 +650,13 @@ function games(url) {
             const $parentfieldTwo = $blocksTicket.querySelector('.zone-two')
             const $zoneHeaders = $blocksTicket.querySelector('.zone-headers')
             const $quickPanel = $blocksTicket.querySelector('.quick-panel')
+            const $validTicketNumber = $root.querySelector('#validTicketNumber')
             
             const createTicet = (function(){
                 let count = 1
                 return function(parentOne) {
                     createGrid(parentOne, new Tablegame(9, 3, 0, count,'One', 'num'))
+                    alidTicketNumber.value = count
                     return count++
                 }
             }())
