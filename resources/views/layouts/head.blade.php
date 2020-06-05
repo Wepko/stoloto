@@ -815,6 +815,7 @@ table input[type='checkbox']:checked + label{
             <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a">«Гослото «12 из 24»</span></a></p>
             <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a">«Рапидо»</span></a></p>
             <p><a  href="{{ route('seven-game') }}"><img src="img/top-3.png" width="30px"  alt=""><span class="medium-a">  «Топ - 3»</span></a></p>
+            <p><a  href="{{ route('speed-game') }}"><img src="img/top-3.png" width="30px"  alt=""><span class="medium-a">  «Быстрая игра»</span></a></p>
           </div>
         </div>    
       </div>
@@ -907,6 +908,9 @@ table input[type='checkbox']:checked + label{
               </li>
               <li>
                 <a href="{{route('seven-game')}}">Топ 3</a>
+              </li>
+              <li>
+                <a href="{{route('speed-game')}}">Быстрая игра</a>
               </li>
            
             </ul>

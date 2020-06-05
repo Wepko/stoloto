@@ -274,7 +274,7 @@ class AddTicketController extends Controller
             if (count($arr11) > 11) {
                 if (Auth::check()) {
 
-                    $price = 60;
+                    $price = 60 * $request->input('factor');
 
                     FiveGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
@@ -322,7 +322,7 @@ class AddTicketController extends Controller
             if (count($arr11) > 7 && count($arr11) < 9 && count($arr22) > 0) {
                 if (Auth::check()) {
 
-                    $price = 60 * count($arr22);
+                    $price = (60 * count($arr22)) * $request->input('factor');
 
                     SixGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),

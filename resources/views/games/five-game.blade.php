@@ -46,6 +46,17 @@
                 <div class="col-12 col-md-12 col-xl-3">
                     <div class="card panel-score box">
                         <img src="" alt="">
+                        <p class="inpt1">Множитель<select name="factor" id="factor">
+                            <option value="1">1</option> 
+                            <option value="2">2</option> 
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select></p>
                         <div class="future-draw"></div>
                         <p class="inpt1">Кол-во тиражей<select name="12" id="12">
                             <option value="1">1</option> 

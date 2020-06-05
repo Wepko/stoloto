@@ -27,6 +27,8 @@ Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddT
 Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTicketValueFour');
 Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->name('AddTicketValueFive');
 Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->name('AddTicketValueSix');
+Route::post('/AddTicketSpeedGameOne', 'SpeedGameController@OneSpeedGame')->name('OneSpeedGame');
+Route::post('/AddTicketSpeedGameRes', 'SpeedGameController@OneSpeedGameRes')->name('OneSpeedGameRes');
 
 //добавление значения выиграшных билетов
 Route::post('/AddWinTicketValueOne', 'AddWinTicketController@onegamewin')->name('AddWinTicketValueOne');
@@ -89,4 +91,8 @@ Route::get('/rapido', function (){
 Route::get('/top-4', function (){
   return view('games.seven-game');
 })->name('seven-game');
+
+Route::get('/speed-game', function (){
+  return view('games.speed-game');
+})->name('speed-game');
 
