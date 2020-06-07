@@ -75,6 +75,8 @@
             return table
         }
 
+        console.log(fields.length)
+
         function startGame() {
           const game = root.querySelector('.game')
 
@@ -189,7 +191,10 @@
                 } else {
                     price = (price1 * 2) * (price2 / 100)
                 }
-    
+
+                console.log(countInput[id-1])
+                console.log(countInput[id-1][0])
+
                 itog[id-1] = price
                 $itog.innerHTML = summa(itog)
             }
@@ -274,7 +279,7 @@
                         multiplierValue = el.value
                     }
                 })
-                console.log(multiplierValue)
+
                 let price = 0
 
                 if (countInput[id-1][0] == 8) {
@@ -290,9 +295,8 @@
         }
 
         function analiz(id, table, index) {
-
+            console.log(id, table, index)
             countInput[id-1][index] = 0
-  
             const inputs = [...table.querySelectorAll('input')]
             
             for (input of inputs) {
@@ -355,9 +359,8 @@
             return function() {
                 countId++
                 const blocksTicket = game.querySelector('.blocks-ticket')
-                console.log(blocksTicket)
                 const blockTicket = elt('div', {class : 'block-ticket card'})
-                console.log(blockTicket)
+
                    blockTicket.insertAdjacentHTML('afterbegin', `   
                           <div class="zone-worker">
                               <div class="zone-one">
@@ -381,8 +384,7 @@
 
                 fields.forEach((field, index) => {
                     const table = generateZone(blockTicket, nameZones[index], nameFields[index], field, countId)
-                    console.log(table)
-                    analiz(countId, table)
+                    analiz(countId, table, index)
 
                     const inputs = [...table.querySelectorAll('input')]
 
