@@ -79,7 +79,11 @@
 
         function startGame() {
           const game = root.querySelector('.game')
-
+            const zone2 = `<div class="zone-two">
+            <div class="zone-header">
+                поле2
+            </div>
+        </div>`
              game.insertAdjacentHTML('afterbegin', `   
               <div class="blocks-ticket">
                 <div class="block-ticket card">
@@ -93,11 +97,7 @@
                                 поле1
                             </div>
                         </div>
-                        <div class="zone-two">
-                            <div class="zone-header">
-                                поле2
-                            </div>
-                        </div>
+                       ${fields.length > 1 ? zone2 : ""}
                     </div>
                     <div class="card-footer quick-panel">
                         <div class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Случайные числа"><i class="fas fa-random"></i></div>
@@ -257,7 +257,12 @@
                         multiplierValue = el.value
                     }
                 })
-                console.log(multiplierValue)
+
+                console.log($multiplier, 'asd')
+                $multiplier.onchange = function() {
+                    valid(id)
+                }
+
                 let price = 0
                 if (countInput[id-1][0] == 12) {
                     price = 60 * multiplierValue
