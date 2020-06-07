@@ -20,6 +20,7 @@
           <div class="row">
               <div class="col-12 col-md-12 col-xl-9">
                   <div class="blocks-ticket" >
+                      <div class="game"></div>
                       <div class="block-ticket card">
                           <div class="help-information">
                               <p>Отметьте от 6 до 13 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша.</p>
@@ -55,7 +56,7 @@
                   
                       <p class="inpt1">Билетов <span>0</span></p>
                       <p class="inpt1">Комбинаций <span>0</span></p>
-                      <p class="inpt2">Сумма <strong>0</strong></p>
+                      <p class="inpt2">Сумма <strong id="sum">0</strong></p>
                       <button type="submit" class="btn btn-dark">Оплатить</button>
                   </div>
               </div>
