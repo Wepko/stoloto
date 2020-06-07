@@ -652,7 +652,7 @@ function games(url) {
                 let count = 1
                 return function(parentOne) {
                     createGrid(parentOne, new Tablegame(9, 3, 0, count,'One', 'num'))
-                    alidTicketNumber.value = count
+                    $validTicketNumber.value = count
                     return count++
                 }
             }())
