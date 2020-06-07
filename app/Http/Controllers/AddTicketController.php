@@ -50,7 +50,7 @@ class AddTicketController extends Controller
             
             if (count($arr11) > 3 && count($arr22) > 3) {
                 if (Auth::check()) {
-
+//.................................................................................
                     $mas = [0, 0, 0, 0, 1, 5, 15, 35, 70, 126];
 
                     for ($i = 1; $i <= 7; $i++) {
@@ -68,7 +68,7 @@ class AddTicketController extends Controller
                     else {
                         $price = ($price1 * 2) * ($price2 / 100);
                     }
-
+//................................................................................................
                     OneGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
