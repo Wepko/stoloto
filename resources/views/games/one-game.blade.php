@@ -30,31 +30,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                    <div class="blocks-ticket">
-                        <div class="block-ticket card">
-                            <div class="help-information">
-                                <p>Отметьте не менее 4 чисел в каждом поле.</p>
-                                <a href="#" class="btn btn-dark" id="addTicket">Добавить билет</a>
-                            </div>
-                        
-                            <div class="zone-worker" id="zone-worker">
-                                <div class="zone-one" >
-                                    <div class="zone-header">Поле 1</div>
-                                </div>
-                                <div class="zone-two">
-                                    <div class="zone-header">Поле 2</div>
-                                </div>
-                              
-                            </div>
-            
-                            <div class="card-footer quick-panel">
-                                <div class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Случайные числа"><i class="fas fa-random"></i></div>
-                                <div class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Случайные четные числа"><i class="fas fa-random"></i></div>
-                                <div class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Случайные не четные числа"><i class="fas fa-random"></i></div>
-                                <div class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Удалить"><i class="fas fa-times"></i></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="game">
                         
                     </div>

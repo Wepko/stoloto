@@ -584,6 +584,10 @@ table input[type='checkbox']:checked + label{
   }
 }
 
+.game {
+  margin: 0;
+}
+
 
 
 </style>

@@ -15,7 +15,7 @@
   </div>
   <div class="two-game">
         <div class="container text-center">
-          <div class="row game mt-150">
+          <div class="row mt-150">
             <p class="head-game" style="color: black">
               <img src="img/5iz.png" width="150px" alt="">
               Купить билет лотереи «Гослото «5 из 36» <br>
@@ -28,32 +28,7 @@
             <div class="container content-4_20">
               <div class="row">
                 <div class="col-12 col-md-12 col-lg-8">
-                  <div class="blocks-ticket">
-                      <div class="block-ticket card">
-                          <div class="help-information">
-                              <p>Отметьте от 5 до 11 чисел в первом поле и от 1 до 4 во втором. Чем больше чисел отмечено — тем выше вероятность выигрыша.</p>
-                              <a href="#" class="btn btn-dark mb-5" id="addTicket">Добавить билет</a>
-                          </div>
-                      
-                          <div class="zone-worker">
-                              <div class="zone-one">
-                                <div class="zone-header">Поле 1 <p></p></div>
-                                  
-                              </div>
-                              <div class="zone-two">
-                                <div class="zone-header">Поле 2 <p></p></div>
-  
-                              </div>
-                          </div>
-            
-                          <div class="card-footer quick-panel">
-                            <div class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Случайные числа"><i class="fas fa-random"></i></div>
-                            <div class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Случайные четные числа"><i class="fas fa-random"></i></div>
-                            <div class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Случайные не четные числа"><i class="fas fa-random"></i></div>
-                            <div class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Удалить"><i class="fas fa-times"></i></div>
-                          </div>
-                      </div>
-                  </div>
+                  <div class="game"></div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-4">
                   <div class="card panel-score box">
