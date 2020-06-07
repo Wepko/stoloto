@@ -258,7 +258,7 @@
                     }
                 })
 
-                console.log($multiplier, 'asd')
+      
                 $multiplier.onchange = function() {
                     valid(id)
                 }
@@ -284,6 +284,10 @@
                         multiplierValue = el.value
                     }
                 })
+
+                $multiplier.onchange = function() {
+                    valid(id)
+                }
 
                 let price = 0
 
