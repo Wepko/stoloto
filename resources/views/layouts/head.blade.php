@@ -326,11 +326,15 @@ table input[type='checkbox'] {
 }
 
 table input[type='checkbox'] + label{
- transition: .5s;
+ transition: .5s ease;
+ 
+
 }
 
 table input[type='checkbox']:checked + label{
   background: var(--teal);
+  color: #fff;
+  font-weight: bold;
 }
 
 .quick-panel {
@@ -985,8 +989,7 @@ table input[type='checkbox']:checked + label{
       <script src="{{ asset('js/bootstrap.min.js') }}"></script>
       {{-- <script src="{{ asset('js/bootstrap.min.js.map') }}"></script> --}}
 
-
+      <script src="{{ asset('js/game.js')}}"></script>
       <script src="{{ asset('js/main.js')}}"></script>
-      <script src="{{ asset('js/maintest.js')}}"></script>
   </body>
 </html>

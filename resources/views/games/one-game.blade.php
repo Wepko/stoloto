@@ -55,6 +55,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="game">
+                        
+                    </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                     <div class="card panel-score box">
