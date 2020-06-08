@@ -40,7 +40,6 @@ Route::post('/AddWinTicketValueSix', 'AddWinTicketController@sixgamewin')->name(
 
 //Проверка билетов
 Route::post('/ValidTicket', 'ValidTicketController@valid')->name('ValidTicketGame');
-//Route::post('/ValidTicketOneGame', 'ValidTicketController@validOneGame')->name('ValidTicketOneGame');
 Route::post('/WinnerOne', 'AdminController@goWinnerOneGame')->name('WinnerOneGame');
 Route::post('/WinnerTwo', 'AdminController@goWinnerTwoGame')->name('WinnerTwoGame');
 Route::post('/WinnerThree', 'AdminController@goWinnerThreeGame')->name('WinnerThreeGame');
@@ -87,10 +86,6 @@ Route::get('/twenteen-of-twenty-four', function (){
 Route::get('/rapido', function (){
   return view('games.six-game');
 })->name('six-game');
-
-Route::get('/top-4', function (){
-  return view('games.seven-game');
-})->name('seven-game');
 
 Route::get('/speed-game', function (){
   return view('games.speed-game');

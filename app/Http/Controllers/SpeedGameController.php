@@ -24,3 +24,4 @@ class SpeedGameController extends Controller
         }
     }
 }
+
