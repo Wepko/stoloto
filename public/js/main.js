@@ -1,9 +1,18 @@
 function game(url) {
     const $root = document.getElementById('main')
     const itog = $root.querySelector('#sum') 
+    const $nav = document.getElementById('nav') 
+
+    const navigation = [...$nav.querySelectorAll('a')]
+    navigation.forEach(el => {
+        el.style.color = "#fff"
+    })
+    function colorPicker(bg, text) {
+        document.body.style.background = bg
+    }
 
     if (url == '/four-of-twenty') {
-        console.log($root)
+        colorPicker('#fe8933')
         const game4_20 = games({
             root: $root,
             itog: itog,
@@ -11,21 +20,25 @@ function game(url) {
                     {tr: 5, td: 4, id: 1, offset: 0, activeCell: 4}],
             coefficient: [0, 0, 0, 0, 1, 5, 15, 35, 70, 126],
             minStoimos: 100,
-            type: 'game4_20'
+            type: 'game4_20',
+            infoField: 'Отметьте не менее 4 чисел в каждом поле. '
+            
         })
 
         game4_20.init()
     }
 
     if (url == '/five-of-threety-six') {
+        colorPicker('#50b848')
         const game5_36 = games({
             root: $root,
             itog: itog,
-            fields: [{tr: 4, td: 10, id: 1, offset: 4, activeCell:5},
+            fields: [{tr: 6, td: 7, id: 1, offset: 6, activeCell:5},
                      {tr: 1, td: 4, id: 1, offset: 0, activeCell: 1}],
             coefficient: [0, 0, 0, 0, 0, 1, 6, 21, 56, 126, 252, 462],
             minStoimos: 40,
-            type: 'game5_36'
+            type: 'game5_36',
+            infoField: 'Отметьте от 5 до 11 чисел в первом поле и от 1 до 4 во втором. Чем больше чисел отмечено — тем выше вероятность выигрыша.'
         })
 
         game5_36.init()
@@ -33,33 +46,37 @@ function game(url) {
 
  
     if (url == '/seven-of-fourty-nine') {
+        colorPicker('#eb3131')
         const game7_49 = games({
             root: $root,
             itog: itog,
             fields: [{tr: 7, td: 7, id: 1, offset: 0, activeCell: 7}],
             coefficient:  [0, 0, 0, 0, 0, 0, 0, 1, 8, 36, 120, 330, 792, 1716, 3432, 6435, 11440],
             minStoimos: 40, 
-            type: 'game7_49'
+            type: 'game7_49',
+            infoField: 'Отметьте от 7 до 14 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша'
         })
 
         game7_49.init()
     }
 
     if (url == '/six-of-fourty-five') {
+        colorPicker('#ffd925')
         const game6_45 = games({
             root: $root,
             itog: itog,
             fields: [{tr: 9, td: 5, id: 1, offset: 0, activeCell: 6}],
             coefficient: [0,0,0,0,0,0,1,7,28,84,210,462,924,1716],
             minStoimos: 40,
-            type: 'game6_45'
+            type: 'game6_45',
+            infoField: 'Отметьте от 6 до 13 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша.'
         })
 
         game6_45.init()
     }
 
     if (url == '/twenteen-of-twenty-four') {
-
+        colorPicker('#1d7dff')
         const game12_24 = games({
             root: $root,
             itog: itog,
@@ -67,6 +84,7 @@ function game(url) {
             coefficient: [],
             minStoimos: 40,
             type: 'game12_24',
+            infoField: 'Выберите 12 чисел в игровом поле.'
         })
 
         game12_24.init()
@@ -74,7 +92,7 @@ function game(url) {
 
     
     if (url == '/rapido') {
-
+        colorPicker('#036977')
         const rapido = games({
             root: $root,
             itog: itog,
@@ -82,6 +100,7 @@ function game(url) {
             coefficient: [],
             minStoimos: 40,
             type: 'rapido',
+            infoField: 'Первая часть поля Отметьте 8 чисел Вторая часть поля Отметьте не менее 1 числа'
         })
 
         rapido.init()

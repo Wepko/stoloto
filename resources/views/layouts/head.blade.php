@@ -588,6 +588,11 @@ table input[type='checkbox']:checked + label{
   margin: 0;
 }
 
+#main {
+  background: #FFF;
+  padding: 1rem;
+}
+
 
 
 </style>
@@ -747,7 +752,7 @@ table input[type='checkbox']:checked + label{
       </div>
 
       <div class="row" id="wrapper">
-        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(255, 255, 255, 0.5)" >
+        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(255, 255, 255, 0)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
                 <a class="navbar-brand text-uppercase"   href="/">Золотая антилопа</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
@@ -756,7 +761,7 @@ table input[type='checkbox']:checked + label{
                 </button>
                 <div class="collapse navbar-collapse w-100" id="navbar">
                     <!-- Вертикальное меню -->
-                    <ul class="navbar-nav w-100 mt-3">
+                    <ul class="navbar-nav w-100 mt-3 navigation" id="nav">
                       <li class="nav-item">
                           <a class="nav-link text-danger" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
                       </li>
@@ -841,7 +846,7 @@ table input[type='checkbox']:checked + label{
           <div class="col-md-4 mx-auto">
 
             <!-- Content -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ГОСЛОТО</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ЗОЛОТАЯ АНТИЛОПА</h5>
             <p>Сайт где ты сможешь поднять бабла не напрягаясь, выигрыш в каждом билете!</p>
 
           </div>
@@ -883,16 +888,16 @@ table input[type='checkbox']:checked + label{
 
             <ul class="list-unstyled">
             <li>
-                <a href="{{route('one-game')}}">Гослото 4 из 20</a>
+                <a href="{{route('one-game')}}">ЗОЛОТАЯ АНТИЛОПА 4 из 20</a>
               </li>
               <li>
-                <a href="{{route('two-game')}}">Гослото 5 из 36</a>
+                <a href="{{route('two-game')}}">ЗОЛОТАЯ АНТИЛОПА 5 из 36</a>
               </li>
               <li>
-                <a href="{{route('three-game')}}">Гослото 7 из 49</a>
+                <a href="{{route('three-game')}}">ЗОЛОТАЯ АНТИЛОПА 7 из 49</a>
               </li>
               <li>
-                <a href="{{route('four-game')}}">Гослото 6 из 45</a>
+                <a href="{{route('four-game')}}">ЗОЛОТАЯ АНТИЛОПА 6 из 45</a>
               </li>
             </ul>
 
@@ -909,7 +914,7 @@ table input[type='checkbox']:checked + label{
 
             <ul class="list-unstyled">
               <li>
-                <a href="{{route('five-game')}}">Гослото 12 из 24</a>
+                <a href="{{route('five-game')}}">ЗОЛОТАЯ АНТИЛОПА 12 из 24</a>
               </li>
               <li>
                 <a href="{{route('six-game')}}">Рапидо</a>

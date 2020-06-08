@@ -7,7 +7,7 @@
     {{   Session::get('info') }}
   </div>
   @endif
-<main id="main">
+<main id="main" class="card">
     <div class="container">
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span> 5123525 руб</span>
@@ -17,6 +17,12 @@
     @csrf
     <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
         <div class="container">
+            <div class="row mt-150">
+                <p class="head-game" style="color: black">
+                  <img src="img/rapido.png" width="150px" alt="">
+                  Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «Рапидо» <br>
+                </p>
+              </div>
             <div class="row">
                 <div class="col-12 col-md-12 col-xl-9">
                     <div class="game">

@@ -7,6 +7,7 @@
         const coefficient = option.coefficient
         const minStoimos = option.minStoimos
         const type =  option.type
+        const infoField = option.infoField
 
         class Tablegame {
             constructor(tr, td, offset = 0, id = "1", field = "One", type='default') {
@@ -75,7 +76,6 @@
             return table
         }
 
-        console.log(fields.length)
 
         function startGame() {
           const game = root.querySelector('.game')
@@ -88,7 +88,7 @@
               <div class="blocks-ticket">
                 <div class="block-ticket card">
                     <div class="help-information">
-                        <p>Отметьте не менее 4 чисел в каждом поле.</p>
+                        <p>${infoField}</p>
                         <a href="#" class="btn btn-dark" id="addTicket">Добавить билет</a>
                     </div>
                     <div class="zone-worker">
@@ -318,8 +318,6 @@
                 })
             }
         }
-
-
 
         const nameZones = ['zone-one','zone-two']
         const nameFields = ['One', 'Two']

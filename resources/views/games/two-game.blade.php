@@ -7,7 +7,7 @@
     {{   Session::get('info') }}
   </div>
   @endif
-<main id="main">
+<main id="main" class="card">
   <div class="container">
     <div class="alert alert-warning text-center" role="alert">
         Призовой фонт этой игры <span> 5123525 руб</span>
@@ -18,7 +18,7 @@
           <div class="row mt-150">
             <p class="head-game" style="color: black">
               <img src="img/5iz.png" width="150px" alt="">
-              Купить билет лотереи «Гослото «5 из 36» <br>
+              Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «5 из 36» <br>
             </p>
           </div>
   

@@ -7,7 +7,7 @@
   </div>
   @endif
 
-<main id='main'>
+<main id='main' class="card">
     <div class="container">
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонд игры <span>5123525</span> рублей!
@@ -19,7 +19,7 @@
                 <img class="w-75" src="img/4iz.png" alt="">
             </div>
             <div class="col-10">
-                <h2>Купить билет лотереи «Гослото «4 из 20»</h2>
+                <h2>Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «4 из 20»</h2>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
         <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
 
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
                     <div class="game">
                         
