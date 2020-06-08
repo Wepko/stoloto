@@ -7,6 +7,7 @@ function game(url) {
     navigation.forEach(el => {
         el.style.color = "#fff"
     })
+    
     function colorPicker(bg, text) {
         document.body.style.background = bg
     }

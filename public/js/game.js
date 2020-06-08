@@ -195,7 +195,8 @@
                 console.log(countInput[id-1])
                 console.log(countInput[id-1][0])
 
-                itog[id-1] = price
+
+                itog[id-1] = isNaN(price) ? 0 : price
                 $itog.innerHTML = summa(itog)
             }
 
@@ -345,7 +346,15 @@
                             this.randomBtn({btn, type: 'odd', inputs, id: idTicket, field, index})
                         break
                         case 3:
-                            this.randomBtn({btn, inputs , id: idTicket, field, index})
+                            btn.addEventListener('click', () => {
+                                console.log(field)
+                                inputs.forEach(item => {
+                                    item.checked = false
+                                })
+                                countInput[idTicket-1][index] = 0
+                                console.log(countInput)
+                                valid(idTicket)
+                            })
                         break
                     }
                 })
