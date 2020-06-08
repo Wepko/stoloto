@@ -6,6 +6,11 @@
     {{   Session::get('info') }}
   </div>
   @endif
+  @if (Session::has('res'))
+  <div class="alert alert-success mt-5" role="alert">
+    {{   Session::get('res') }}
+  </div>
+  @endif
 
 <main id="main">
     <div class="container">
@@ -43,6 +48,29 @@
                                         </tr>
                                     </tbody>
                                 </table>  
+                                @elseif (Session::has('res'))
+                                    <table class="table table-bordered" style="width:80%">
+                                        <tbody>
+                                            <tr>
+                                                <td><input type="checkbox" name="lot1" id="lot1" value="1"><label for="lot1">?</label></td>
+                                                <td><input type="checkbox" name="lot2" id="lot2" value="2"><label for="lot2">?</label></td>
+                                                <td><input type="checkbox" name="lot3" id="lot3" value="3"><label for="lot3">?</label></td>
+                                                <td><input type="checkbox" name="lot4" id="lot4" value="4"><label for="lot4">?</label></td>
+                                                <td><input type="checkbox" name="lot5" id="lot5" value="5"><label for="lot5">?</label></td>
+                                                <td><input type="checkbox" name="lot6" id="lot6" value="6"><label for="lot6">?</label></td>
+                                            </tr>
+                                        </tbody>
+                                    </table> 
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-xl-3">
+                                        <div class="card panel-score box">
+                                            <img src="" alt="">
+                                                <button type="submit" class="btn btn-dark">Сыграть еще</button>
+                                        </div>
+                                    </div>
                                 @endif
                             </div>
                         </div>
@@ -63,19 +91,5 @@
         </div>
     </form>
 </main>
-
-@if(Auth::check())
-    @if(Auth::user()->isAdmin())
-    <div class="content-4_20">
-        <form action="{{ route('AddWinTicketValueFive') }}" method="post" >
-        @csrf
-            <h1>Добавить выигрышный билет</h1>
-            <label>Поле 1</label>
-            <input type="number" class="form-control" name="TicketFiveFieldOne" placeholder="Введите номера билетов"><br>
-            <input type="submit" class="btn btn-dark" value="Добавить">
-        </form>
-    </div>
-    @endif
-@endif()
 
 @endsection
