@@ -91,3 +91,7 @@ Route::get('/speed-game', function (){
   return view('games.speed-game');
 })->name('speed-game');
 
+Route::get('/moment-game', function (){
+  return view('games.speed-game');
+})->name('moment-game');
+

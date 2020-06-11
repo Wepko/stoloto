@@ -1276,6 +1276,7 @@ Main components
             <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «12 из 24»</span></a></p>
             <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a">«Рапидо»</span></a></p>
             <p><a  href="{{ route('speed-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a">  «Быстрая игра»</span></a></p>
+            <p><a  href="{{ route('moment-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a">  «Моментальная игра»</span></a></p>
           </div>
         </div>    
       </div>
@@ -1368,6 +1369,9 @@ Main components
               </li>
               <li>
                 <a href="{{route('speed-game')}}">Быстрая игра</a>
+              </li>
+              <li>
+                <a href="{{route('moment-game')}}">Моментальная игра</a>
               </li>
            
             </ul>
