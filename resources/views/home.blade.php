@@ -26,7 +26,7 @@
     
 <section id="about" class="conatiner-card mb-5">
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{ route('speed-game') }}" class="d-block">
       <img class="card-img-top" src="img/fast_game-Card.png" alt="Card image cap">
       <div>
         <p class="card-new-title">Быстрая игра</p>
@@ -38,7 +38,7 @@
     </a>
   </div>
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{route('moment-game') }}" class="d-block">
       <img class="card-img-top" src="img/moment_game-Card.png" alt="Card image cap">
       <div>
         <p class="card-new-title">Моментальная игра</p>
@@ -50,7 +50,7 @@
     </a>
   </div>
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{route('one-game')}}" class="d-block">
       <img class="card-img-top" src="img/4_20card.png" alt="Card image cap">
       <div>
         <p class="card-new-title">Золотая Антилопа 4 из 20</p>
@@ -62,7 +62,7 @@
     </a>
   </div>
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{route('two-game')}}" class="d-block">
       <img class="card-img-top" src="img/5_36card.png" alt="Card image cap">
       <div class="text-white">
         <p class="card-new-title text-white">Золотая Антилопа 5 из 36</p>
@@ -76,13 +76,13 @@
 
 
   <div class="card-main card m-2" style="width: 100%;">
-    <a href="#" class="d-block">
+  <a href="{{ route('moment-game') }}" class="d-block">
       <img class="card-img-top" src="img/moment_game-banner.png" alt="Card image cap">
     </a>
   </div>
 
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{route('three-game')}}" class="d-block">
       <img class="card-img-top" src="img/7_49card.png" alt="Card image cap">
       <div class="text-white">
         <p class="card-new-title">Золотая Антилопа 7 из 49</p>
@@ -94,7 +94,7 @@
     </a>
   </div>
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{ route('four-game') }}" class="d-block">
       <img class="card-img-top" src="img/6_45card.png" alt="Card image cap">
       <div class="text-white">
         <p class="card-new-title">Золотая Антилопа 6 из 45</p>
@@ -106,7 +106,7 @@
     </a>
   </div>
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{route('five-game')}}" class="d-block">
       <img class="card-img-top" src="img/12_24card.png" alt="Card image cap">
       <div class="text-white">
         <p class="card-new-title">Золотая Антилопа 12 из 24</p>
@@ -118,7 +118,7 @@
     </a>
   </div>
   <div class="card-main card m-2" style="width: 18rem;">
-    <a href="#" class="d-block">
+    <a href="{{route('six-game')}}" class="d-block">
       <img class="card-img-top" src="img/rapido-card.png" alt="Card image cap">
       <div class="text-white">
         <p class="card-price">Билет от <span>60</span>Р</p>
