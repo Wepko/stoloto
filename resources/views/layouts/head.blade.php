@@ -232,8 +232,8 @@
 .head-game{
   font-size: 34px;
   color: white;
-  line-height: 1px;
 }
+
 .head-game a{
   font-size: 18px;
   color: black;
@@ -617,6 +617,10 @@ table input[type='checkbox']:checked + label{
 
 @media (max-width: 768px) {
   .img-media {
+    display: none;
+  }
+
+  .head-game-img {
     display: none;
   }
 }
@@ -1276,7 +1280,7 @@ Main components
             <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «12 из 24»</span></a></p>
             <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a">«Рапидо»</span></a></p>
             <p><a  href="{{ route('speed-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a">  «Быстрая игра»</span></a></p>
-            <p><a  href="{{ route('moment-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a">  «Моментальная игра»</span></a></p>
+            <p><a  href="{{ route('moment-game') }}"><img src="img/moment_game-logo.png" width="20px"  alt=""><span class="medium-a">  «Моментальная игра»</span></a></p>
           </div>
         </div>    
       </div>

@@ -18,9 +18,9 @@
   <div class=" d-flex align-items-center" style="padding: 2rem 0">
       <div class="mx-auto text-center" style="position: relative; width: 100%">
         <img src="img/Jackpot.png" class="img-media" style="width: 100%" alt="">
-        <img src="img/Jackpot-media2.png" class="img-media-reverse" style="width: 100%" alt="">
+        <img src="img/Jackpot-media2.png" class="img-media-reverse" style="width: 65%" alt="">
         <p class="img-media" style="position: absolute; top: 70px; left: 250px; color: #fff; font-weight: 800; font-size: 4vmax">12352 2523 Р</p>
-        <p class="img-media-reverse" style="position: absolute; top: 550px; left: 50px; color: #fff; font-weight: 800; font-size: 2rem">12352 2523 Р</p>
+        <p class="img-media-reverse" style="position: absolute; bottom: 40px; width: 100%; color: #fff; font-weight: 800; font-size: 2rem">12352 2523 Р</p>
       </div>
     </div>
     
@@ -30,7 +30,19 @@
       <img class="card-img-top" src="img/fast_game-Card.png" alt="Card image cap">
       <div>
         <p class="card-new-title">Быстрая игра</p>
-        <p class="card-price">Билет от <span>200</span>Р</p>
+        <p class="card-price">Билет от <span>20</span>Р</p>
+      </div>
+      <div class="card-body card-tooltip">
+        <p class="card-text">В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово ПРИЗ.</p>
+      </div>
+    </a>
+  </div>
+  <div class="card-main card m-2" style="width: 18rem;">
+    <a href="#" class="d-block">
+      <img class="card-img-top" src="img/moment_game-Card.png" alt="Card image cap">
+      <div>
+        <p class="card-new-title">Моментальная игра</p>
+        <p class="card-price">Билет от <span>100</span>Р</p>
       </div>
       <div class="card-body card-tooltip">
         <p class="card-text">В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово ПРИЗ.</p>
@@ -61,6 +73,14 @@
       </div>
     </a>
   </div>
+
+
+  <div class="card-main card m-2" style="width: 100%;">
+    <a href="#" class="d-block">
+      <img class="card-img-top" src="img/moment_game-banner.png" alt="Card image cap">
+    </a>
+  </div>
+
   <div class="card-main card m-2" style="width: 18rem;">
     <a href="#" class="d-block">
       <img class="card-img-top" src="img/7_49card.png" alt="Card image cap">
@@ -73,12 +93,6 @@
       </div>
     </a>
   </div>
-  <div class="card-main card m-2" style="width: 100%;">
-    <a href="#" class="d-block">
-      <img class="card-img-top" src="img/fast_game-banner.png" alt="Card image cap">
-    </a>
-  </div>
-
   <div class="card-main card m-2" style="width: 18rem;">
     <a href="#" class="d-block">
       <img class="card-img-top" src="img/6_45card.png" alt="Card image cap">
@@ -155,7 +169,7 @@
         
       </ul> <!-- cd-testimonials -->
     
-      <a href="#0" class="cd-see-all">See all</a>
+      <a href="#0" class="cd-see-all">Посмотреть все комментарии</a>
     </div> <!-- cd-testimonials-wrapper -->
     
     <div class="cd-testimonials-all">

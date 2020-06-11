@@ -16,7 +16,7 @@
     <div class="container">
         <div class="title-game row">
             <div class="col-2">
-                <img class="w-75" src="img/4iz.png" alt="">
+                <img class="w-75 head-game-img" src="img/4iz.png" alt="">
             </div>
             <div class="col-10">
                 <h2>Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «4 из 20»</h2>
