@@ -25,6 +25,7 @@
     flex-direction: column;
     position: relative;
     height: 100vh;
+    background: var(--blue)
   }
 
   .left_panel{
@@ -593,6 +594,453 @@ table input[type='checkbox']:checked + label{
   padding: 1rem;
 }
 
+.card-new-title {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  width: 100%;
+  color: #000;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.card-price {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .img-media {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .img-media-reverse {
+    display: none;
+  }
+}
+
+a {
+  color: #fff!important;
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  display: flex;
+}
+
+
+
+/*
+888888888888888888888888888888
+8888888888888888888888888888888
+8888888888888888888888888888888
+          COMENTARIEEEE start
+88888888888888888888888888888888888
+888888888888888888888888888888888
+888888888888888888888888888888
+*/
+
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+.cd-testimonials-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  background-color: #39393c;
+  margin: 2em auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 20px 40px 70px;
+  z-index: 1;
+}
+.cd-testimonials-wrapper::after {
+  /* quotation mark */
+  content: '\201C';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  padding-top: 8px;
+  margin-left: -25px;
+  background: rgba(32, 32, 34, 0.9);
+  font-family: "Georgia", serif;
+  color: white;
+  font-size: 70px;
+  font-size: 4.375rem;
+  text-align: center;
+  /* visible on big devices only */
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .cd-testimonials-wrapper {
+    margin: 4em auto;
+    padding: 64px 50px 114px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-testimonials-wrapper::after {
+    /* quotation mark visible */
+    display: block;
+  }
+}
+
+.cd-testimonials {
+  color: white;
+  text-align: center;
+}
+.cd-testimonials:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-testimonials > li {
+  position: absolute;
+  opacity: 0;
+}
+.cd-testimonials > li:first-child {
+  position: relative;
+  opacity: 1;
+}
+.cd-testimonials p {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  padding: 0 14px;
+}
+@media only screen and (min-width: 768px) {
+  .cd-testimonials p {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-testimonials p {
+    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 1.6;
+  }
+}
+
+.cd-author img, .cd-author .cd-author-info {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cd-author img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 5px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.cd-author .cd-author-info {
+  text-align: left;
+  line-height: 1.2;
+}
+.cd-author .cd-author-info li:first-child {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.cd-author .cd-author-info li:last-child {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #6b6b70;
+}
+@media only screen and (min-width: 768px) {
+  .cd-author img {
+    width: 50px;
+    height: 50px;
+  }
+  .cd-author .cd-author-info {
+    line-height: 1.4;
+  }
+  .cd-author .cd-author-info li:first-child {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-author .cd-author-info li:last-child {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+
+.flex-direction-nav li {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  top: 0;
+}
+.flex-direction-nav li:first-child {
+  left: 0;
+}
+.flex-direction-nav li:last-child {
+  right: 0;
+}
+.flex-direction-nav li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.no-touch .flex-direction-nav li a:hover {
+  background-color: #323234;
+}
+.flex-direction-nav li a::before, .flex-direction-nav li a::after {
+  /* left and right arrows in css only */
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 13px;
+  background-color: white;
+}
+.flex-direction-nav li a::before {
+  -webkit-transform: translateY(-35px) rotate(45deg);
+  -moz-transform: translateY(-35px) rotate(45deg);
+  -ms-transform: translateY(-35px) rotate(45deg);
+  -o-transform: translateY(-35px) rotate(45deg);
+  transform: translateY(-35px) rotate(45deg);
+}
+.flex-direction-nav li a::after {
+  -webkit-transform: translateY(-27px) rotate(-45deg);
+  -moz-transform: translateY(-27px) rotate(-45deg);
+  -ms-transform: translateY(-27px) rotate(-45deg);
+  -o-transform: translateY(-27px) rotate(-45deg);
+  transform: translateY(-27px) rotate(-45deg);
+}
+.flex-direction-nav li:last-child a::before {
+  -webkit-transform: translateY(-35px) rotate(-45deg);
+  -moz-transform: translateY(-35px) rotate(-45deg);
+  -ms-transform: translateY(-35px) rotate(-45deg);
+  -o-transform: translateY(-35px) rotate(-45deg);
+  transform: translateY(-35px) rotate(-45deg);
+}
+.flex-direction-nav li:last-child a::after {
+  -webkit-transform: translateY(-27px) rotate(45deg);
+  -moz-transform: translateY(-27px) rotate(45deg);
+  -ms-transform: translateY(-27px) rotate(45deg);
+  -o-transform: translateY(-27px) rotate(45deg);
+  transform: translateY(-27px) rotate(45deg);
+}
+@media only screen and (min-width: 768px) {
+  .flex-direction-nav li {
+    width: 50px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .flex-direction-nav li a::before, .flex-direction-nav li a::after {
+    background-color: #5e5e63;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  .flex-direction-nav li a:hover::before, .flex-direction-nav li a:hover::after {
+    background-color: white;
+  }
+}
+
+.cd-see-all {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #252527;
+  text-align: center;
+  text-transform: uppercase;
+  color: #6b6b70;
+  font-weight: 700;
+  font-size: 12px;
+  font-size: 0.75rem;
+  -webkit-transition: color, 0.2s;
+  -moz-transition: color, 0.2s;
+  transition: color, 0.2s;
+}
+.no-touch .cd-see-all:hover {
+  color: #79b6e4;
+}
+
+.cd-testimonials-all {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-testimonials-all .cd-testimonials-all-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.cd-testimonials-all .cd-testimonials-all-wrapper > ul {
+  width: 90%;
+  max-width: 1170px;
+  margin: 4em auto;
+}
+.cd-testimonials-all .cd-testimonials-all-wrapper > ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-testimonials-all .cd-testimonials-item {
+  margin-bottom: 2em;
+  opacity: 0;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translate3d(0, 0, 0) scale(0.4);
+  -moz-transform: translate3d(0, 0, 0) scale(0.4);
+  -ms-transform: translate3d(0, 0, 0) scale(0.4);
+  -o-transform: translate3d(0, 0, 0) scale(0.4);
+  transform: translate3d(0, 0, 0) scale(0.4);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .3s, opacity .3s;
+  -moz-transition: -moz-transform .3s, opacity .3s;
+  transition: transform .3s, opacity .3s;
+}
+.cd-testimonials-all p {
+  position: relative;
+  background: #79b6e4;
+  color: white;
+  padding: 2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  border-radius: 0.25em;
+  margin-bottom: 1em;
+}
+.cd-testimonials-all p::after {
+  /* creating the triangle in css */
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 2em;
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  border-top-color: #79b6e4;
+}
+.cd-testimonials-all .cd-author {
+  text-align: left;
+  margin-left: 1.5em;
+}
+.cd-testimonials-all .cd-author img {
+  box-shadow: 0 0 0 transparent;
+}
+.cd-testimonials-all.is-visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-testimonials-all.is-visible .cd-testimonials-item {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  -moz-transform: translate3d(0, 0, 0) scale(1);
+  -ms-transform: translate3d(0, 0, 0) scale(1);
+  -o-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+@media only screen and (min-width: 768px) {
+  .cd-testimonials-all .cd-testimonials-item {
+    width: 46%;
+    margin: 0 2% 3em;
+  }
+  .cd-testimonials-all .cd-author {
+    margin-left: 1em;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-testimonials-all .cd-testimonials-item {
+    width: 30%;
+    margin: 0 1.6666% 3em;
+  }
+}
+
+.close-btn {
+  position: fixed;
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 5%;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.close-btn::before, .close-btn::after {
+  /* close icon in css */
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  top: 8px;
+  left: 19px;
+  background-color: #39393c;
+}
+.close-btn::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close-btn::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+
+
+/*
+888888888888888888888888888888
+8888888888888888888888888888888
+8888888888888888888888888888888
+          COMENTARIEEEE end
+88888888888888888888888888888888888
+888888888888888888888888888888888
+888888888888888888888888888888
+*/
+
+
+
 
 
 </style>
@@ -821,19 +1269,19 @@ table input[type='checkbox']:checked + label{
         </div>
         <div class="col-md-2 col-lg-1 col-xl-2 content-container">
           <div class="right_panel">
-            <p><a  href="{{ route('one-game') }}"><img src="img/4iz.png" width="30px" alt=""><span class="medium-a">«Гослото «4 из 20»</span></a></p>
-            <p><a  href="{{ route('two-game') }}"><img src="img/5iz.png"  width="30px" alt=""><span class="medium-a">«Гослото «5 из 36»</span></a></p>
-            <p><a  href="{{ route('three-game') }}"><img src="img/7iz.png"  width="30px" alt=""><span class="medium-a">«Гослото «7 из 49»</span></a></p>
-            <p><a  href="{{ route('four-game') }}"><img src="img/6iz.png" width="30px"  alt=""><span class="medium-a">«Гослото «6 из 45»</span></a></p>
-            <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a">«Гослото «12 из 24»</span></a></p>
+            <p><a  href="{{ route('one-game') }}"><img src="img/4iz.png" width="30px" alt=""><span class="medium-a">Золотая антилопа «4 из 20»</span></a></p>
+            <p><a  href="{{ route('two-game') }}"><img src="img/5iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «5 из 36»</span></a></p>
+            <p><a  href="{{ route('three-game') }}"><img src="img/7iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «7 из 49»</span></a></p>
+            <p><a  href="{{ route('four-game') }}"><img src="img/6iz.png" width="30px"  alt=""><span class="medium-a">Золотая антилопа «6 из 45»</span></a></p>
+            <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «12 из 24»</span></a></p>
             <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a">«Рапидо»</span></a></p>
-            <p><a  href="{{ route('speed-game') }}"><img src="img/top-3.png" width="30px"  alt=""><span class="medium-a">  «Быстрая игра»</span></a></p>
+            <p><a  href="{{ route('speed-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a">  «Быстрая игра»</span></a></p>
           </div>
         </div>    
       </div>
     </div>
       <!-- Footer -->
-    <footer style="margin-top: auto" class="page-footer font-small stylish-color-dark pt-4">
+    <footer style="margin-top: auto; color: #fff" class="page-footer font-small stylish-color-dark pt-4">
 
       <!-- Footer Links -->
       <div class="container text-center text-md-left">
@@ -842,7 +1290,7 @@ table input[type='checkbox']:checked + label{
         <div class="row">
 
           <!-- Grid column -->
-          <div class="col-md-4 mx-auto">
+          <div class="col-md-3 mx-auto">
 
             <!-- Content -->
             <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ЗОЛОТАЯ АНТИЛОПА</h5>
@@ -880,7 +1328,7 @@ table input[type='checkbox']:checked + label{
           <hr class="clearfix w-100 d-md-none">
 
           <!-- Grid column -->
-          <div class="col-md-2 mx-auto">
+          <div class="col-md-3 mx-auto">
 
             <!-- Links -->
             <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Игры</h5>
@@ -906,10 +1354,10 @@ table input[type='checkbox']:checked + label{
           <hr class="clearfix w-100 d-md-none">
 
           <!-- Grid column -->
-          <div class="col-md-2 mx-auto">
+          <div class="col-md-3 mx-auto">
 
             <!-- Links -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white">Игры</h5>
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Игры</h5>
 
             <ul class="list-unstyled">
               <li>
@@ -993,6 +1441,9 @@ table input[type='checkbox']:checked + label{
 
       <script src="{{ asset('js/bootstrap.min.js') }}"></script>
       {{-- <script src="{{ asset('js/bootstrap.min.js.map') }}"></script> --}}
+      <script src="{{ asset ('js/jquery-2.1.1.js')}}"></script>
+      <script src="{{ asset('js/masonry.pkgd.min.js')}}"></script>
+      <script src="{{ asset ('js/jquery.flexslider-min.js')}}"></script>
 
       <script src="{{ asset('js/game.js')}}"></script>
       <script src="{{ asset('js/main.js')}}"></script>
