@@ -15,64 +15,59 @@
 @endif
 
 
-  <div class=" d-flex align-items-center" style="padding: 2rem 0">
+  <div class="main-banner d-flex align-items-center" style="padding: 2rem 0">
+    <section class="banner slider">
       <div class="mx-auto text-center" style="position: relative; width: 100%">
         <img src="img/Jackpot.png" class="img-media" style="width: 100%" alt="">
-        <img src="img/Jackpot-media2.png" class="img-media-reverse" style="width: 65%" alt="">
+        {{-- <img src="img/Jackpot-media2.png" class="img-media-reverse" style="width: 65%" alt=""> --}}
         <p class="img-media" style="position: absolute; top: 70px; left: 250px; color: #fff; font-weight: 800; font-size: 4vmax">12352 2523 Р</p>
-        <p class="img-media-reverse" style="position: absolute; bottom: 40px; width: 100%; color: #fff; font-weight: 800; font-size: 2rem">12352 2523 Р</p>
+        {{-- <p class="img-media-reverse" style="position: absolute; bottom: 40px; width: 100%; color: #fff; font-weight: 800; font-size: 2rem">12352 2523 Р</p> --}}
       </div>
+    
+    </section>
     </div>
     
 <section id="about" class="conatiner-card mb-5">
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{ route('speed-game') }}" class="d-block">
-      <img class="card-img-top" src="img/fast_game-Card.png" alt="Card image cap">
-      <div>
-        <p class="card-new-title">Быстрая игра</p>
-        <p class="card-price">Билет от <span>20</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово ПРИЗ.</p>
-      </div>
-    </a>
-  </div>
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{route('moment-game') }}" class="d-block">
-      <img class="card-img-top" src="img/moment_game-Card.png" alt="Card image cap">
-      <div>
-        <p class="card-new-title">Моментальная игра</p>
-        <p class="card-price">Билет от <span>100</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово ПРИЗ.</p>
-      </div>
-    </a>
-  </div>
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{route('one-game')}}" class="d-block">
-      <img class="card-img-top" src="img/4_20card.png" alt="Card image cap">
-      <div>
-        <p class="card-new-title">Золотая Антилопа 4 из 20</p>
-        <p class="card-price">Билет от <span>200</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">Отметьте не менее 4 чисел в каждом поле.</p>
-      </div>
-    </a>
-  </div>
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{route('two-game')}}" class="d-block">
-      <img class="card-img-top" src="img/5_36card.png" alt="Card image cap">
-      <div class="text-white">
-        <p class="card-new-title text-white">Золотая Антилопа 5 из 36</p>
-        <p class="card-price text-white">Билет от <span>40</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">Отметьте от 5 до 11 чисел в первом поле и от 1 до 4 во втором. </p>
-      </div>
-    </a>
-  </div>
+  <section class="regular slider">
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{ route('speed-game') }}" class="d-block">
+        <img class="card-img-top" src="img/fast_game-Card.png" alt="Card image cap">
+        <div>
+          <p class="card-new-title">Быстрая игра</p>
+          <p class="card-price">Билет от <span>20</span>Р</p>
+        </div>
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('moment-game') }}" class="d-block">
+        <img class="card-img-top" src="img/moment_game-Card.png" alt="Card image cap">
+        <div>
+          <p class="card-new-title">Моментальная игра</p>
+          <p class="card-price">Билет от <span>100</span>Р</p>
+        </div>
+
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('one-game')}}" class="d-block">
+        <img class="card-img-top" src="img/4_20card.png" alt="Card image cap">
+        <div>
+          <p class="card-new-title">Золотая Антилопа 4 из 20</p>
+          <p class="card-price">Билет от <span>200</span>Р</p>
+        </div>
+
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('two-game')}}" class="d-block">
+        <img class="card-img-top" src="img/5_36card.png" alt="Card image cap">
+        <div class="text-white">
+          <p class="card-new-title text-white">Золотая Антилопа 5 из 36</p>
+          <p class="card-price text-white">Билет от <span>40</span>Р</p>
+        </div>
+      </a>
+    </div>
+  </section>
 
 
   <div class="card-main card m-2" style="width: 100%;">
@@ -80,56 +75,43 @@
       <img class="card-img-top" src="img/moment_game-banner.png" alt="Card image cap">
     </a>
   </div>
-
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{route('three-game')}}" class="d-block">
-      <img class="card-img-top" src="img/7_49card.png" alt="Card image cap">
-      <div class="text-white">
-        <p class="card-new-title">Золотая Антилопа 7 из 49</p>
-        <p class="card-price">Билет от <span>25</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">Отметьте от 7 до 14 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша</p>
-      </div>
-    </a>
-  </div>
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{ route('four-game') }}" class="d-block">
-      <img class="card-img-top" src="img/6_45card.png" alt="Card image cap">
-      <div class="text-white">
-        <p class="card-new-title">Золотая Антилопа 6 из 45</p>
-        <p class="card-price">Билет от <span>100</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">Отметьте от 6 до 13 чисел. Чем больше чисел отмечено — тем выше вероятность выигрыша.</p>
-      </div>
-    </a>
-  </div>
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{route('five-game')}}" class="d-block">
-      <img class="card-img-top" src="img/12_24card.png" alt="Card image cap">
-      <div class="text-white">
-        <p class="card-new-title">Золотая Антилопа 12 из 24</p>
-        <p class="card-price">Билет от <span>60</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">Выберите 12 чисел в игровом поле. </p>
-      </div>
-    </a>
-  </div>
-  <div class="card-main card m-2" style="width: 18rem;">
-    <a href="{{route('six-game')}}" class="d-block">
-      <img class="card-img-top" src="img/rapido-card.png" alt="Card image cap">
-      <div class="text-white">
-        <p class="card-price">Билет от <span>60</span>Р</p>
-      </div>
-      <div class="card-body card-tooltip">
-        <p class="card-text">Первая часть поля Отметьте 8 чисел Вторая часть поля Отметьте не менее 1 числа
-
-        </p>
-      </div>
-    </a>
-  </div>
+  <section class="regular slider">  
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('three-game')}}" class="d-block">
+        <img class="card-img-top" src="img/7_49card.png" alt="Card image cap">
+        <div class="text-white">
+          <p class="card-new-title">Золотая Антилопа 7 из 49</p>
+          <p class="card-price">Билет от <span>25</span>Р</p>
+        </div>
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{ route('four-game') }}" class="d-block">
+        <img class="card-img-top" src="img/6_45card.png" alt="Card image cap">
+        <div class="text-white">
+          <p class="card-new-title">Золотая Антилопа 6 из 45</p>
+          <p class="card-price">Билет от <span>100</span>Р</p>
+        </div>
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('five-game')}}" class="d-block">
+        <img class="card-img-top" src="img/12_24card.png" alt="Card image cap">
+        <div class="text-white">
+          <p class="card-new-title">Золотая Антилопа 12 из 24</p>
+          <p class="card-price">Билет от <span>60</span>Р</p>
+        </div>
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('six-game')}}" class="d-block">
+        <img class="card-img-top" src="img/rapido-card.png" alt="Card image cap">
+        <div class="text-white">
+          <p class="card-price">Билет от <span>60</span>Р</p>
+        </div>
+      </a>
+    </div>
+  </section>
 
   <div class="comment">
     <div class="cd-testimonials-wrapper cd-container">
