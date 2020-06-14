@@ -1,14 +1,13 @@
 @extends('layouts.head')
 
 @section('content')
-<<
 
 <div class="card bg-light">
   <article class="card-body mx-auto w-100" style="max-width: 400px;">
     <h4 class="card-title mt-3 text-center">Регистрация</h4>
     <p class="text-center">Начните с вашего бесплатного аккаунта</p>
 
-    <form class="">
+    <form class="" action="{{ route('reg-submit') }}" method="post" novalidate>
     @csrf
       <div class="form-group input-group">
         <div class="input-group-prepend">

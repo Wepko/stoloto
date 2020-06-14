@@ -1057,6 +1057,7 @@ Main components
     width: 50px;
   }
 }
+
 @media only screen and (min-width: 1170px) {
   .flex-direction-nav li a::before, .flex-direction-nav li a::after {
     background-color: #5e5e63;
@@ -1193,6 +1194,11 @@ Main components
     margin-left: 1em;
   }
 }
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    display: none;
+  }
+}
 @media only screen and (min-width: 1170px) {
   .cd-testimonials-all .cd-testimonials-item {
     width: 30%;
@@ -1259,46 +1265,7 @@ Main components
   <body data-spy="scroll">
     <!-- START left - panel -->
 
-    {{-- <div class="left_panel">
-      <div class="column">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalLong">
-          Карта
-        </button>
-        @if (Auth::check())
-            <div class="left_nav_panel">
-              <a href="{{ route('lk') }}">Личный кабинет</a>
-              @if (Auth::user()->isAdmin())
-              <a href="{{ route('admin') }}">Админ панель</a>
-              @endif
-              <a href="{{ route('logout') }}">Выйти</a>
-            </div>
-            <div class="left_nav_panel">
-              <a href="{{ route('ticket') }}">Билеты по СМС</a>
-            </div>
-            <div class="left_nav_panel">
-              <a href="{{ route('broadcast') }}">Трансляции</a>
-            </div>
-            <div class="left_nav_panel">
-              <a href="{{ route('valid_ticket') }}">Проверка билетов</a>
-            </div>
-        @else
-            <div class="left_nav_panel">
-              <a href="{{ route('login') }}">Войти</a>
-              <a href="{{ route('reg') }}">Регистрация</a>
-            </div>
-            <div class="left_nav_panel">
-              <a href="{{ route('ticket') }}">Билеты по СМС</a>
-            </div>
-            <div class="left_nav_panel">
-            <a href="{{ route('broadcast') }}">Трансляции</a>
-            </div>
-            <div class="left_nav_panel">
-              <a href="{{ route('valid_ticket') }}">Проверка билетов</a>
-            </div>
-        @endif
-      </div>
-    </div> --}}
+    
 
     <!-- END left - panel -->
     <!-- START right - panel -->
@@ -1413,7 +1380,7 @@ Main components
       <div class="row" id="wrapper">
         <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(255, 255, 255, 0)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
-                <a class="navbar-brand text-uppercase"   href="/">Золотая антилопа</a>
+                <a class="navbar-brand text-uppercase"   href="{{ route('home')}}">Золотая антилопа</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -1439,9 +1406,6 @@ Main components
                               <a class="nav-link" href="{{ route('logout') }}">Выйти</a>
                             </li>
                         <li class="nav-item">
-                          <a class="nav-link " href="{{ route('ticket') }}">Билеты по СМС</a>
-                        </li>
-                        <li class="nav-item">
                           <a class="nav-link" href="{{ route('broadcast') }}">Трансляции</a>
                         </li>
                         <li class="nav-item">
@@ -1453,9 +1417,6 @@ Main components
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="{{ route('reg') }}">Регистрация</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ route('ticket') }}">Билеты по СМС</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="{{ route('broadcast') }}">Трансляции</a>
@@ -1471,7 +1432,7 @@ Main components
         <div class="col-md-7 col-lg-9 col-xl-8 content-container">
           <div class="logo">
             <p class="shiny">
-              <span class="inner-shiny">Золотая антилопа</span>
+              <span class="inner-shiny"><a href="{{ route('home') }}">Золотая антилопа</a></span>
             </p><br>
             <span  class="shiny-2 pb-3">Фонд: 10000000 руб</span>
 
@@ -1522,9 +1483,6 @@ Main components
             <ul class="list-unstyled">
               <li>
                 <a href="{{route('home')}}">Главная</a>
-              </li>
-              <li>
-                <a href="{{route('ticket')}}">Билеты по СМС</a>
               </li>
               <li>
                 <a href="{{route('broadcast')}}">Трансляцию</a>
@@ -1604,7 +1562,7 @@ Main components
           <h5 class="mb-1">Начни прямо сейчас </h5>
         </li>
         <li class="list-inline-item">
-          <a href="#!" class="btn btn-danger btn-rounded">Регистрация!</a>
+          <a href="{{ route('reg') }}" class="btn btn-danger btn-rounded">Регистрация!</a>
         </li>
       </ul>
       <!-- Call to action -->
