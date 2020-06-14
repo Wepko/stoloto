@@ -1380,7 +1380,7 @@ Main components
       <div class="row" id="wrapper">
         <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(255, 255, 255, 0)" >
             <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
-                <a class="navbar-brand text-uppercase"   href="{{ route('home')}}">Золотая антилопа</a>
+                <a class="navbar-brand text-uppercase" align="left"  style=" font-size: 16px"  href="{{ route('home')}}">Золотая антилопа</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -1437,7 +1437,6 @@ Main components
             </p>
             </a><br>
             <span  class="shiny-2 pb-3">Фонд: 10000000 руб</span>
-
           </div>
             @yield('content')
         </div>

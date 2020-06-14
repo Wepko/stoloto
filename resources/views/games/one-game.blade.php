@@ -10,7 +10,7 @@
 <main id='main' class="card">
     <div class="container">
         <div class="alert alert-warning text-center" role="alert">
-            Призовой фонд игры <span>5123525</span> рублей!
+            Призовой фонд игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
     </div>
     <div class="container">
@@ -25,8 +25,7 @@
     </div>
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
         @csrf
-        <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
-
+        <input type="number" name="valid" value="1" class="form-control valid d-none" id="validTicketNumber">
         <div class="container">
             <div class="row ">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">

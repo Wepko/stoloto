@@ -22,5 +22,6 @@ class OneGameModels extends Model
         'ticketTwo',
         'price'
     ];
+
 }
 

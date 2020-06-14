@@ -1,3 +1,8 @@
+
+function add() {
+    document.getElementById('validTicketNumber').value += parseInt(1)
+}
+
 function game(url) {
     const $root = document.getElementById('main')
     const itog = $root.querySelector('#sum') 
@@ -25,7 +30,6 @@ function game(url) {
             infoField: 'Отметьте не менее 4 чисел в каждом поле. '
             
         })
-
         game4_20.init()
     }
 

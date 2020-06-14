@@ -89,7 +89,7 @@
                 <div class="block-ticket card">
                     <div class="help-information">
                         <p>${infoField}</p>
-                        <a href="#" class="btn btn-dark" id="addTicket">Добавить билет</a>
+                        <a href="#" class="btn btn-dark" onclick="add()" id="addTicket">Добавить билет</a>
                     </div>
                     <div class="zone-worker">
                         <div class="zone-one">

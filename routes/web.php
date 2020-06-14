@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\OneGameModels;
 
 Route::get('/', function () {
     return view('home');
@@ -64,7 +65,8 @@ Route::get('/valid', function (){
 })->name('valid_ticket');
 
 Route::get('/four-of-twenty', function (){
-  return view('games.one-game');
+  $fond = OneGameModels::sum('price');
+  return view('games.one-game', ['fond' => $fond]);
 })->name('one-game');
 
 Route::get('/five-of-threety-six', function (){
