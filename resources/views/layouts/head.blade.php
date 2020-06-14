@@ -1431,9 +1431,11 @@ Main components
         </div>
         <div class="col-md-7 col-lg-9 col-xl-8 content-container">
           <div class="logo">
+          <a href="{{ route('home') }}">
             <p class="shiny">
-              <span class="inner-shiny"><a href="{{ route('home') }}">Золотая антилопа</a></span>
-            </p><br>
+              <span class="inner-shiny">Золотая антилопа</span>
+            </p>
+            </a><br>
             <span  class="shiny-2 pb-3">Фонд: 10000000 руб</span>
 
           </div>

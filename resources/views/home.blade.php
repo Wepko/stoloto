@@ -18,9 +18,9 @@
   <div class="main-banner d-flex align-items-center" style="padding: 2rem 0">
     <section class="banner slider">
       <div class="mx-auto text-center" style="position: relative; width: 100%">
-        <img src="img/Jackpot.png" class="img-media"  style="width: 100%;" alt="">
+        <img src="img/Jackpot1.png" class="img-media"  style="width: 100%;" alt="">
         {{-- <img src="img/Jackpot-media2.png" class="img-media-reverse" style="width: 65%" alt=""> --}}
-        <p class="img-media" style="position: absolute; top: 70px; left: 250px; color: #fff; font-weight: 800; font-size: 4vmax">12352 2523 Р</p>
+        {{--<p class="img-media" style="position: absolute; top: 120px; left: 220px; color: #fff; font-weight: 800; font-size: 4vmax">12352 2523 Р</p>--}}
         {{-- <p class="img-media-reverse" style="position: absolute; bottom: 40px; width: 100%; color: #fff; font-weight: 800; font-size: 2rem">12352 2523 Р</p> --}}
       </div>
     
