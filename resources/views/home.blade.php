@@ -113,6 +113,36 @@
     </div>
   </section>
 
+  <section class="regular slider">  
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('two-game')}}" class="d-block">
+        <img class="card-img-top" src="img/5_36card.png" alt="Card image cap">
+        <div class="text-white">
+          <p class="card-new-title">Золотая Антилопа 5 из 36</p>
+          <p class="card-price">Билет от <span>25</span>Р</p>
+        </div>
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('one-game')}}" class="d-block">
+        <img class="card-img-top" src="img/4_20card.png" alt="Card image cap">
+        <div>
+          <p class="card-new-title">Золотая Антилопа 4 из 20</p>
+          <p class="card-price">Билет от <span>200</span>Р</p>
+        </div>
+      </a>
+    </div>
+    <div class="card-main card m-2" style="width: 18rem;">
+      <a href="{{route('six-game')}}" class="d-block">
+        <img class="card-img-top" src="img/rapido-card.png" alt="Card image cap">
+        <div class="text-white">
+          <p class="card-new-title">Рапидо</p>
+          <p class="card-price">Билет от <span>60</span>Р</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <div class="comment">
     <div class="cd-testimonials-wrapper cd-container">
       <ul class="cd-testimonials">
