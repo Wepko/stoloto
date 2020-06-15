@@ -17,6 +17,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('style.css')}}">
   
   <style>
@@ -246,7 +247,7 @@ html, body {
   background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
   padding-top: 5%;
-  width: 13%;
+  width: 15%;
 }
 .right_panel a {
   padding: 5% 0;
@@ -581,14 +582,14 @@ table input[type='checkbox']:checked + label{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 2em;
-  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
   position: relative;
   text-transform: uppercase;
 }
 .shiny-2 {
-  font-size: 1.4em;
+  font-size: 1.8em;
 }
 .shiny::before
 {
@@ -1436,20 +1437,20 @@ Main components
               <span class="inner-shiny">Золотая антилопа</span>
             </p>
             </a><br>
-            <span  class="shiny-2 pb-3">Фонд: 10000000 руб</span>
+            <span  class="shiny-2 pb-3">Фонд: 10000000 рублей</span>
           </div>
             @yield('content')
         </div>
         <div class="col-md-2 col-lg-1 col-xl-2 content-container">
           <div class="right_panel">
-            <p><a  href="{{ route('one-game') }}"><img src="img/4iz.png" width="30px" alt=""><span class="medium-a">Золотая антилопа «4 из 20»</span></a></p>
-            <p><a  href="{{ route('two-game') }}"><img src="img/5iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «5 из 36»</span></a></p>
-            <p><a  href="{{ route('three-game') }}"><img src="img/7iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «7 из 49»</span></a></p>
-            <p><a  href="{{ route('four-game') }}"><img src="img/6iz.png" width="30px"  alt=""><span class="medium-a">Золотая антилопа «6 из 45»</span></a></p>
-            <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a">Золотая антилопа «12 из 24»</span></a></p>
-            <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a">«Рапидо»</span></a></p>
-            <p><a  href="{{ route('speed-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a">  «Быстрая игра»</span></a></p>
-            <p><a  href="{{ route('moment-game') }}"><img src="img/moment_game-logo.png" width="20px"  alt=""><span class="medium-a">  «Моментальная игра»</span></a></p>
+            <p><a  href="{{ route('one-game') }}"><img src="img/4iz.png" width="30px" alt=""><span class="medium-a"> Золотая антилопа «4 из 20»</span></a></p>
+            <p><a  href="{{ route('two-game') }}"><img src="img/5iz.png"  width="30px" alt=""><span class="medium-a"> Золотая антилопа «5 из 36»</span></a></p>
+            <p><a  href="{{ route('three-game') }}"><img src="img/7iz.png"  width="30px" alt=""><span class="medium-a"> Золотая антилопа «7 из 49»</span></a></p>
+            <p><a  href="{{ route('four-game') }}"><img src="img/6iz.png" width="30px"  alt=""><span class="medium-a"> Золотая антилопа «6 из 45»</span></a></p>
+            <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a"> Золотая антилопа «12 из 24»</span></a></p>
+            <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a"> «Рапидо»</span></a></p>
+            <p><a  href="{{ route('speed-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a"> «Быстрая игра»</span></a></p>
+            <p><a  href="{{ route('moment-game') }}"><img src="img/moment_game-logo.png" width="20px"  alt=""><span class="medium-a"> «Моментальная игра»</span></a></p>
           </div>
         </div>    
       </div>
