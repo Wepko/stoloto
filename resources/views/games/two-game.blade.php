@@ -10,7 +10,7 @@
 <main id="main" class="card">
   <div class="container">
     <div class="alert alert-warning text-center" role="alert">
-        Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span>
+        Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!
     </div>
   </div>
   <div class="two-game">

@@ -10,7 +10,7 @@
 <main id="main">
     <div class="container" calss="card">
         <div class="alert alert-warning text-center" role="alert">
-            Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span>
+            Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
       </div>
       <form action="{{ route('AddTicketValueFive') }}" method='post'>
