@@ -10,7 +10,7 @@
 <main id="main" class="card">
   <div class="container">
     <div class="alert alert-warning text-center" role="alert">
-        Призовой фонт этой игры <span> 5123525 руб</span>
+        Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span>
     </div>
   </div>
   <div class="two-game">
@@ -24,7 +24,7 @@
   
           <form action="{{ route('AddTicketValueTwo') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
           @csrf
-          <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
+          <input type="number" name="valid" value="1" class="form-control valid d-none" id="validTicketNumber">
             <div class="container content-4_20">
               <div class="row">
                 <div class="col-12 col-md-12 col-lg-8">

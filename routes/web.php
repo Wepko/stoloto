@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\OneGameModels;
+use App\Models\TwoGameModels;
+use App\Models\ThreeGameModels;
+use App\Models\FourGameModels;
+use App\Models\FiveGameModels;
+use App\Models\SixGameModels;
 
 Route::get('/', function () {
     return view('home');
@@ -70,23 +75,28 @@ Route::get('/four-of-twenty', function (){
 })->name('one-game');
 
 Route::get('/five-of-threety-six', function (){
-  return view('games.two-game');
+  $fond = TwoGameModels::sum('price');
+  return view('games.two-game', ['fond' => $fond]);
 })->name('two-game');
 
 Route::get('/seven-of-fourty-nine', function (){
-  return view('games.three-game');
+  $fond = ThreeGameModels::sum('price');
+  return view('games.three-game', ['fond' => $fond]);
 })->name('three-game');
 
 Route::get('/six-of-fourty-five', function (){
-  return view('games.four-game');
+  $fond = FourGameModels::sum('price');
+  return view('games.four-game', ['fond' => $fond]);
 })->name('four-game');
 
 Route::get('/twenteen-of-twenty-four', function (){
-  return view('games.five-game');
+  $fond = FiveGameModels::sum('price');
+  return view('games.five-game', ['fond' => $fond]);
 })->name('five-game');
 
 Route::get('/rapido', function (){
-  return view('games.six-game');
+  $fond = SixGameModels::sum('price');
+  return view('games.six-game', ['fond' => $fond]);
 })->name('six-game');
 
 Route::get('/speed-game', function (){

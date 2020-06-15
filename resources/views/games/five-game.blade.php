@@ -10,12 +10,12 @@
 <main id="main">
     <div class="container" calss="card">
         <div class="alert alert-warning text-center" role="alert">
-            Призовой фонт этой игры <span> 5123525 руб</span>
+            Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span>
         </div>
       </div>
       <form action="{{ route('AddTicketValueFive') }}" method='post'>
       @csrf
-      <input type="number" name="valid" class="form-control valid d-none" id="validTicketNumber">
+      <input type="number" name="valid" value="1" class="form-control valid d-none" id="validTicketNumber">
         <div class=" container">
             <div class="row mt-150">
                 <p class="head-game" style="color: black">
