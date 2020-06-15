@@ -789,17 +789,17 @@ table input[type='checkbox']:checked + label{
 
 .card-new-title {
   position: absolute;
-  bottom: 70px;
+  bottom: 50px;
   left: 0;
   width: 100%;
   color: #000;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
 .card-price {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 0;
   width: 100%;
   color: #000;

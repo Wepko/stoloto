@@ -33,8 +33,6 @@ Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddT
 Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTicketValueFour');
 Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->name('AddTicketValueFive');
 Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->name('AddTicketValueSix');
-Route::post('/AddTicketSpeedGameOne', 'SpeedGameController@OneSpeedGame')->name('OneSpeedGame');
-Route::post('/AddTicketSpeedGameRes', 'SpeedGameController@OneSpeedGameRes')->name('OneSpeedGameRes');
 
 //добавление значения выиграшных билетов
 Route::post('/AddWinTicketValueOne', 'AddWinTicketController@onegamewin')->name('AddWinTicketValueOne');
