@@ -1,5 +1,6 @@
 @extends('layouts.head')
 @section('content')
+<br><br><br>
   @if (Session::has('info'))
   <div class="alert alert-danger mt-5" role="alert">
     {{   Session::get('info') }}

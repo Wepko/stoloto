@@ -1,7 +1,5 @@
 
-function add() {
-    document.getElementById('validTicketNumber').value += parseInt(1)
-}
+
 
 function game(url) {
     const $root = document.getElementById('main')

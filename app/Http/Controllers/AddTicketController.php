@@ -23,7 +23,8 @@ use DB;
 class AddTicketController extends Controller
 {
     public function onegame(Request $request) {
-        for ($i = 1; $i <= strlen($request->input('valid')); $i++) {
+
+        for ($i = 1; $i <= $request->input('valid'); $i++) {
 
             $value1 = '';
             $value2 = '';
@@ -66,6 +67,7 @@ class AddTicketController extends Controller
                     else {
                         $price = ($price1 * 2) * ($price2 / 100);
                     }
+
                     OneGameModels::insert(array(
                         'user_id'  => Auth::user()->getId(),
                         'circulation' => $count + 1,
@@ -87,7 +89,7 @@ class AddTicketController extends Controller
 
     public function twogame(Request $request) {
 
-        for ($i = 1; $i <= strlen($request->input('valid')); $i++) {
+        for ($i = 1; $i <= $request->input('valid'); $i++) {
 
             $value1 = '';
             $value2 = '';
@@ -148,7 +150,7 @@ class AddTicketController extends Controller
 
     public function threegame(Request $request) {
 
-        for ($i = 1; $i <= strlen($request->input('valid')); $i++) {
+        for ($i = 1; $i <= $request->input('valid'); $i++) {
             $value1 = '';
             $price = 0;
             $price1 = 0;
@@ -199,7 +201,7 @@ class AddTicketController extends Controller
 
     public function fourgame(Request $request) {
 
-        for ($i = 1; $i <= strlen($request->input('valid')); $i++) {
+        for ($i = 1; $i <= $request->input('valid'); $i++) {
 
             $value1 = '';
             $price = 0;
@@ -250,7 +252,7 @@ class AddTicketController extends Controller
 
     public function fivegame(Request $request) {
 
-        for ($i = 1; $i <= strlen($request->input('valid')); $i++) {
+        for ($i = 1; $i <= $request->input('valid'); $i++) {
 
             $value1 = '';
             $price = 0;
@@ -292,7 +294,7 @@ class AddTicketController extends Controller
 
     public function sixgame(Request $request) {
 
-        for ($i = 1; $i <= strlen($request->input('valid')); $i++) {
+        for ($i = 1; $i <= $request->input('valid'); $i++) {
             $value1 = '';
             $value2 = '';
             $price = 1;

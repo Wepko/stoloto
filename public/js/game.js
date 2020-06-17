@@ -1,3 +1,5 @@
+
+
 (function() {
     const games = (option) => {
         const root = option.root
@@ -89,7 +91,7 @@
                 <div class="block-ticket card">
                     <div class="help-information">
                         <p>${infoField}</p>
-                        <a href="#" class="btn btn-dark" onclick="add()" style="color: white!important" id="addTicket">Добавить билет</a>
+                        <a href="#" class="btn btn-dark"  style="color: white!important" id="addTicket">Добавить билет</a>
                     </div>
                     <div class="zone-worker">
                         <div class="zone-one">
@@ -363,6 +365,7 @@
             
             const addTicket = game.querySelector('#addTicket')
             addTicket.addEventListener('click', (e) => {
+                document.getElementById('validTicketNumber').value++
                 e.preventDefault()
                 this.doubleTable() 
             })

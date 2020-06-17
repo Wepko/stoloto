@@ -1,7 +1,7 @@
 @extends('layouts.head')
 @section('content')
 
-
+<br><br><br>
 @if (Session::has('info'))
   <div class="alert alert-success mt-5" role="alert">
     {{   Session::get('info') }}
@@ -13,7 +13,7 @@
             Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
     </div>
-    <form action="{{ route('AddTicketValueSix') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
+    <form action="{{ route('AddTicketValueSix') }}" method='post' >
     @csrf
     <input type="number" name="valid" value="1" class="form-control valid d-none" id="validTicketNumber">
         <div class="container">
