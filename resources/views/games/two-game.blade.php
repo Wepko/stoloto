@@ -18,7 +18,7 @@
           <div class="row mt-150">
             <p class="head-game" style="color: black">
               <img  class="head-game-img" src="img/5iz.png" width="150px" alt="">
-              Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «5 из 36»
+              <h2>Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «5 из 36»</h2>
             </p>
           </div>
   

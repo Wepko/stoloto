@@ -17,7 +17,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('style.css')}}">
   
   <style>
@@ -35,7 +35,7 @@
 html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-sefif;
+      font-family: 'Ubuntu', sans-serif;
     }
 
     * {
@@ -253,7 +253,7 @@ html, body {
 .right_panel a {
   padding: 5% 0;
   padding-left: 4%;
-  color: #fff;
+  color: #fff!important;
   text-decoration: none;
 }
 .right_panel p{
@@ -523,6 +523,10 @@ table input[type='checkbox'] + label{
  transition: .5s ease;
  
 
+}
+
+a {
+  color: black!important
 }
 
 table input[type='checkbox']:checked + label{
@@ -841,7 +845,7 @@ table input[type='checkbox']:checked + label{
 }
 
 a {
-  color: #fff!important;
+  color: black;
 }
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
@@ -1258,10 +1262,6 @@ Main components
 888888888888888888888888888888
 */
 
-
-
-
-
 </style>
 </head>
   <body data-spy="scroll">
@@ -1380,9 +1380,9 @@ Main components
       </div>
 
       <div class="row" id="wrapper">
-        <div class="col-md-3 col-lg-2 navbar-container"  style="background: rgba(255, 255, 255, 0)" >
-            <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation">
-                <a class="navbar-brand text-uppercase" align="left"  style=" font-size: 16px"  href="{{ route('home')}}">Золотая антилопа</a>
+        <div class="col-md-3 col-lg-2 navbar-container" style="padding: 0;">
+            <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation" style="background-color: #E7E7F9;">
+                <a class="navbar-brand text-uppercase" align="left"  style="font-size: 16px; color: black!important"  href="{{ route('home')}}">Золотая антилопа</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -1396,50 +1396,51 @@ Main components
 
                       @if (Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('lk') }}">Личный кабинет</a>
+                            <a class="nav-link" href="{{ route('lk') }}" style="color: black!important">Личный кабинет</a>
                         </li>
 
                             @if (Auth::user()->isAdmin())
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('admin') }}">Админ панель</a>
+                              <a class="nav-link" href="{{ route('admin') }}" style="color: black!important">Админ панель</a>
                             </li>
                             @endif
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('logout') }}">Выйти</a>
+                              <a class="nav-link" href="{{ route('logout') }}" style="color: black!important">Выйти</a>
                             </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('broadcast') }}">Трансляции</a>
+                          <a class="nav-link" href="{{ route('broadcast') }}" style="color: black!important">Трансляции</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ route('valid_ticket') }}">Проверка билетов</a>
+                          <a class="nav-link" href="{{ route('valid_ticket') }}" style="color: black!important">Проверка билетов</a>
                         </li>
                         @else 
                           <li class="nav-item">
-                            <a class="nav-link waves-effect" href="{{ route('login') }}">Войти</a>
+                            <a class="nav-link waves-effect" href="{{ route('login') }}" style="color: black!important">Войти</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reg') }}">Регистрация</a>
+                            <a class="nav-link" href="{{ route('reg') }}" style="color: black!important">Регистрация</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{ route('broadcast') }}">Трансляции</a>
+                            <a class="nav-link" href="{{ route('broadcast') }}" style="color: black!important">Трансляции</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{ route('valid_ticket') }}">Проверка билетов</a>
+                            <a class="nav-link" href="{{ route('valid_ticket') }}" style="color: black!important">Проверка билетов</a>
                           </li>
                         @endif
                     </ul>
                 </div>
             </nav>
+          
         </div>
         <div class="col-md-7 col-lg-9 col-xl-8 content-container">
-          <div class="logo">
+          {{--<div class="logo">
           <a href="{{ route('home') }}">
             <p class="shiny">
               <span class="inner-shiny">Золотая антилопа</span>
             </p>
             </a><br>
             <span  class="shiny-2 pb-3">Фонд: 10000000 рублей</span>
-          </div>
+          </div>--}}
             @yield('content')
         </div>
         <div class="col-md-2 col-lg-1 col-xl-2 content-container">

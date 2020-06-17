@@ -20,7 +20,7 @@
             <div class="row mt-150">
                 <p class="head-game" style="color: black">
                   <img src="img/rapido.png" class="head-game-img" width="150px" alt="">
-                  Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «Рапидо» <br>
+                  <h2>Купить билет лотереи «ЗОЛОТАЯ АНТИЛОПА «Рапидо»</h2> <br>
                 </p>
               </div>
             <div class="row">

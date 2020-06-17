@@ -7,11 +7,6 @@ function game(url) {
     const $root = document.getElementById('main')
     const itog = $root.querySelector('#sum') 
     const $nav = document.getElementById('nav') 
-
-    const navigation = [...$nav.querySelectorAll('a')]
-    navigation.forEach(el => {
-        el.style.color = "#fff"
-    })
     
     function colorPicker(bg, text) {
         document.body.style.background = bg
