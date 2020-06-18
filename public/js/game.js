@@ -179,6 +179,7 @@
             if (type == 'game4_20') {
                 const mas = coefficient
                 let price, price1, price2 = 0
+                let combinations = 0
                 for (let i = 1; i <= 7; i++) {
                     if (countInput[id-1][0] == i) {
                         price1 = 100 * mas[i]
@@ -199,6 +200,7 @@
 
 
                 itog[id-1] = isNaN(price) ? 0 : price
+                document.getElementById('combinations').textContent = price / 200
                 $itog.innerHTML = summa(itog)
             }
 
@@ -215,6 +217,7 @@
                 price = price1 * countInput[id-1][1];
                 console.log(price)
                 itog[id-1] = price
+                document.getElementById('combinations').textContent = price / 40
                 $itog.innerHTML = summa(itog)
             }
 
@@ -231,6 +234,7 @@
 
                 price = price1
                 itog[id-1] = price
+                document.getElementById('combinations').textContent = price / 25
                 $itog.innerHTML = summa(itog)
             }
            
@@ -247,6 +251,7 @@
                 price = price1;
 
                 itog[id-1] = price
+                document.getElementById('combinations').textContent = price / 100
                 $itog.innerHTML = summa(itog)
             }
 
@@ -274,6 +279,7 @@
                 }
 
                 itog[id-1] = price
+                document.getElementById('combinations').textContent = price / 60
                 $itog.innerHTML = summa(itog)
             }
 
@@ -301,6 +307,7 @@
                 }
                 console.log(price)
                 itog[id-1] = price
+                document.getElementById('combinations').textContent = price / 60
                 $itog.innerHTML = summa(itog)
             }
 
@@ -364,8 +371,13 @@
             }) 
             
             const addTicket = game.querySelector('#addTicket')
+            var h = 1
             addTicket.addEventListener('click', (e) => {
-                document.getElementById('validTicketNumber').value++
+                if (h < 5) {
+                    h++
+                    document.getElementById('validTicketNumber').value++
+                }
+                document.getElementById('numberTickets').textContent = h
                 e.preventDefault()
                 this.doubleTable() 
             })

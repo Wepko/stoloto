@@ -40,8 +40,8 @@
                             <option value="3">3</option>
                         </select></p>
                     
-                        <p class="inpt1">Билетов <span>0</span></p>
-                        <p class="inpt1">Комбинаций <span>0</span></p>
+                        <p class="inpt1">Билетов <span id="numberTickets">1</span></p>
+                        <p class="inpt1">Комбинаций <span id="combinations">0</span></p>
                         <p class="inpt2">Сумма <strong id="sum">0</strong></p>
                         <button type="submit" class="btn btn-dark">Оплатить</button>
                     </div>

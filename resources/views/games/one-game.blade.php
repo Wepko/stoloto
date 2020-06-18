@@ -9,6 +9,9 @@
 
 <main id='main' class="card mt-5">
     <div class="container">
+            <p style="text-align: center; font-size: 33px">До розыгрыша: 
+                
+            </p>
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонд игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
@@ -51,8 +54,8 @@
                             <option value="10">10</option>
                         </select></p>
                     
-                        <p class="inpt1">Билетов <span>0</span></p>
-                        <p class="inpt1">Комбинаций <span>0</span></p>
+                        <p class="inpt1">Билетов <span id="numberTickets">1</span></p>
+                        <p class="inpt1">Комбинаций <span id="combinations">0</span></p>
                         <p class="inpt2" >Сумма <strong id="sum">0</strong></p>
                         <button type="submit" class="btn btn-dark">Оплатить</button>
                     </div>
@@ -64,17 +67,19 @@
 
 @if(Auth::check())
     @if(Auth::user()->isAdmin())
-    <form action="{{ route('AddWinTicketValueOne') }}" method="post" >
-    @csrf
-        <div class="content-4_20">
-            <h1>Добавить выигрышный билет</h1>
-            <label>Поле 1</label>
-            <input type="number" class="form-control" name="TicketOneFieldOne" placeholder="Введите номера билетов"><br>
-            <label>Поле 2</label>
-            <input type="number" class="form-control" name="TicketOneFieldTwo" placeholder="Введите номера билетов"><br>
-            <input type="submit" class="btn btn-dark" value="Добавить">
-        </div>
-    </form>
+    <main id='main' class="card mt-5">
+        <form action="{{ route('AddWinTicketValueOne') }}" method="post" >
+        @csrf
+            <div class="content-4_20">
+                <h1>Добавить выигрышный билет</h1>
+                <label>Поле 1</label>
+                <input type="number" class="form-control" name="TicketOneFieldOne" placeholder="Введите номера билетов"><br><br>
+                <label>Поле 2</label>
+                <input type="number" class="form-control" name="TicketOneFieldTwo" placeholder="Введите номера билетов"><br><br>
+                <input type="submit" class="btn btn-dark" value="Добавить">
+            </div>
+        </form>
+    </main>
     @endif
 @endif()
 
