@@ -69,32 +69,38 @@ Route::get('/valid', function (){
 
 Route::get('/four-of-twenty', function (){
   $fond = OneGameModels::sum('price');
-  return view('games.one-game', ['fond' => $fond]);
+  $circulation = OneGameModels::max('circulation');
+  return view('games.one-game', ['fond' => $fond], ['circulation' => $circulation]);
 })->name('one-game');
 
 Route::get('/five-of-threety-six', function (){
   $fond = TwoGameModels::sum('price');
-  return view('games.two-game', ['fond' => $fond]);
+  $circulation = TwoGameModels::max('circulation');
+  return view('games.two-game', ['fond' => $fond], ['circulation' => $circulation]);
 })->name('two-game');
 
 Route::get('/seven-of-fourty-nine', function (){
   $fond = ThreeGameModels::sum('price');
-  return view('games.three-game', ['fond' => $fond]);
+  $circulation = ThreeGameModels::max('circulation');
+  return view('games.three-game', ['fond' => $fond], ['circulation' => $circulation]);
 })->name('three-game');
 
 Route::get('/six-of-fourty-five', function (){
   $fond = FourGameModels::sum('price');
-  return view('games.four-game', ['fond' => $fond]);
+  $circulation = FourGameModels::max('circulation');
+  return view('games.four-game', ['fond' => $fond], ['circulation' => $circulation]);
 })->name('four-game');
 
 Route::get('/twenteen-of-twenty-four', function (){
   $fond = FiveGameModels::sum('price');
-  return view('games.five-game', ['fond' => $fond]);
+  $circulation = FiveGameModels::max('circulation');
+  return view('games.five-game', ['fond' => $fond], ['circulation' => $circulation]);
 })->name('five-game');
 
 Route::get('/rapido', function (){
   $fond = SixGameModels::sum('price');
-  return view('games.six-game', ['fond' => $fond]);
+  $circulation = SixGameModels::max('circulation');
+  return view('games.six-game', ['fond' => $fond], ['circulation' => $circulation]);
 })->name('six-game');
 
 Route::get('/speed-game', function (){

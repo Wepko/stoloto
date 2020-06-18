@@ -7,8 +7,8 @@
   </div>
   @endif
 
-<main id="main">
-    <div class="container" calss="card">
+<main id="main" class="card mt-5">
+    <div class="container" class="card mt-5">
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
@@ -33,6 +33,7 @@
                 <div class="col-12 col-md-12 col-xl-3">
                     <div class="card panel-score box">
                         <img src="" alt="">
+                        <p class="inpt1">Номер тиража: {{ $circulation ?? '1' }}</p>
                         <p class="inpt1">Множитель<select name="factor" id="factor">
                             <option value="1">1</option> 
                             <option value="2">2</option> 

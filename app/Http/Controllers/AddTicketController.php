@@ -52,12 +52,12 @@ class AddTicketController extends Controller
                 if (Auth::check()) {
                     $mas = [0, 0, 0, 0, 1, 5, 15, 35, 70, 126];
 
-                    for ($i = 1; $i <= 7; $i++) {
-                        if (count($arr11) == $i) {
-                            $price1 = 100 * $mas[$i];
+                    for ($ii = 1; $ii <= 7; $ii++) {
+                        if (count($arr11) == $ii) {
+                            $price1 = 100 * $mas[$ii];
                         }
-                        if (count($arr22) == $i) {
-                            $price2 = 100 * $mas[$i];
+                        if (count($arr22) == $ii) {
+                            $price2 = 100 * $mas[$ii];
                         }
                     } 
 
@@ -120,9 +120,9 @@ class AddTicketController extends Controller
 
                     $mas = [0, 0, 0, 0, 0, 1, 6, 21, 56, 126, 252, 462];
 
-                    for ($i = 1; $i <= 11; $i++) {
-                        if (count($arr11) == $i) {
-                            $price1 = 40 * $mas[$i];
+                    for ($ii = 1; $ii <= 11; $ii++) {
+                        if (count($arr11) == $ii) {
+                            $price1 = 40 * $mas[$ii];
                         }
                     } 
 
@@ -172,9 +172,9 @@ class AddTicketController extends Controller
 
                     $mas = [0, 0, 0, 0, 0, 0, 0, 1, 8, 36, 120, 330, 792, 1716, 3432, 6435, 11440];
 
-                    for ($i = 1; $i <= 14; $i++) {
-                        if (count($arr11) == $i) {
-                            $price1 = 25 * $mas[$i];
+                    for ($ii = 1; $i <= 14; $ii++) {
+                        if (count($arr11) == $ii) {
+                            $price1 = 25 * $mas[$ii];
                         }
                     } 
 
@@ -224,9 +224,9 @@ class AddTicketController extends Controller
 
                     $mas = [0,0,0,0,0,0,1,7,28,84,210,462,924,1716];
 
-                    for ($i = 1; $i <= 14; $i++) {
-                        if (count($arr11) == $i) {
-                            $price1 = 100 * $mas[$i];
+                    for ($ii = 1; $ii <= 14; $ii++) {
+                        if (count($arr11) == $ii) {
+                            $price1 = 100 * $mas[$ii];
                         }
                     } 
 

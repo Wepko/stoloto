@@ -40,7 +40,7 @@
       </form>
 </div> --}}
 
-<div class="card bg-light">
+<div class="card bg-light mt-5">
   <article class="card-body mx-auto w-100" style="max-width: 400px;">
     <h4 class="card-title mt-3 text-center">Проверить билет</h4>
     <p class="text-center">Начните с вашего счастливого билета</p>

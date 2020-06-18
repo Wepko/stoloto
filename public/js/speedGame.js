@@ -132,6 +132,8 @@ function validGame(number) {
             `<div class="alert alert-success text-center" role="alert">
                 Вы проиграли...
             </div>`)
+            document.getElementById('runGame').style.display = 'none'
+            document.getElementById('restartGame').style.display = 'inline'
         }
     } else {
         if (h == 5) {
@@ -148,11 +150,15 @@ function validGame(number) {
                 zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">
                                                             Вы выйграли!
                                                         </div>`)
+                document.getElementById('runGame').style.display = 'none'
+                document.getElementById('restartGame').style.display = 'inline'
             }
             else {
                 zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">
                                                             Вы проиграли...
                                                         </div>`)
+                document.getElementById('runGame').style.display = 'none'
+                document.getElementById('restartGame').style.display = 'inline'
             }
         }
     }

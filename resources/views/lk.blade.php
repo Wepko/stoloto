@@ -7,18 +7,18 @@
         </div>
     @endif
 
-<h1>Личный кабинет</h1>
-<p>Добро пожаловать {{ Auth::user()->getName() }}</p>
+<h1 align="center" class="mt-5" style="color: white">Личный кабинет</h1>
+<h4 align="center" style="color: white">Добро пожаловать {{ Auth::user()->getName() }}</h4>
 
 
 <div class="content-4_20">
-  <div class="container">
+  <div class="container" >
     <div class="row w-100">
       <div class="card card-block" >
           <div class="card-body">
           <h5 class="card-title">Кошелек</h5>
           <h6 class="card-subtitle card-text mb-2 text-muted">{{Auth::user()->money()}} руб</h6>
-          <a href="#"class="btn btn-dark mt-2">Пополнить</a>
+          <a href="#"class="btn btn-dark mt-2" style="color: white!important">Пополнить</a>
           </div>
       </div>
       
@@ -26,7 +26,7 @@
         <div class="card-body">
           <h5 class="card-title">Промокоды</h5>
           <h6 class="card-subtitle card-text mb-2 text-muted">0 руб</h6>
-          <a href="#" class="btn btn-dark mt-2">Добавить</a>
+          <a href="#" class="btn btn-dark mt-2" style="color: white!important">Добавить</a>
         </div>
       </div>
     
@@ -34,13 +34,13 @@
         <div class="card-body">
           <h5 class="card-title">Бонус</h5>
           <h6 class="card-subtitle card-text mb-2 text-muted">0</h6>
-          <a href="#" class="btn btn-dark mt-2">Особые программы</a>
+          <a href="#" class="btn btn-dark mt-2" style="color: white!important">Особые программы</a>
         </div>
       </div>
 
     </div>
 
-    <div class="row w-100 mt-4 ">
+    <div class="row w-100 mt-4 " style="background-color: white">
       <nav class="w-100">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Мои билеты</a>
@@ -51,11 +51,13 @@
       <div class="tab-content w-100 p-4 border border-top-0 text-center" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         @if($userwinner)
-          @foreach ($userwinner as $user)
+          @forelse ($userwinner as $user)
             @if ($user->user_id == Auth::user()->getId())
               <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра №{{$user->numberGame}}, Тираж №{{$user->circulation}} Результат: {{ $user->win }}</h6>
             @endif
-          @endforeach
+          @empty  
+          <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Результатов пока нету</h6>
+          @endforelse
         @else
           <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>     
         @endif     
