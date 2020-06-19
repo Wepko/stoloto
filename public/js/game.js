@@ -10,7 +10,7 @@
         const minStoimos = option.minStoimos
         const type =  option.type
         const infoField = option.infoField
-
+pull
         class Tablegame {
             constructor(tr, td, offset = 0, id = "1", field = "One", type='default') {
                 this.tr = tr

@@ -24,8 +24,10 @@ class AddTicketController extends Controller
 {
     public function onegame(Request $request) {
 
+        $aer = 0;
         for ($i = 1; $i <= $request->input('valid'); $i++) {
-
+            
+            $aer++;
             $value1 = '';
             $value2 = '';
             $price = 0;
@@ -46,9 +48,11 @@ class AddTicketController extends Controller
             $arr11 = array_diff($arr1, array(" "));
             $arr22 = array_diff($arr2, array(" "));
 
+            
+           
             $count = DB::table('onegamewin')->max('circulation');
             
-            if (count($arr11) > 3 && count($arr22) > 3) {
+            if (count($arr11) > 3 && count($arr22) > 3 ) {
                 if (Auth::check()) {
                     $mas = [0, 0, 0, 0, 1, 5, 15, 35, 70, 126];
 
@@ -77,14 +81,17 @@ class AddTicketController extends Controller
                     ));
                 } 
                 else {
-                    return redirect()->back()->with('info', 'Войдите в аккаунт!');
+                    dd('error - 1 ');
+                    //return redirect()->back()->with('info', 'Войдите в аккаунт!');
                 }
             }
             else {
-                return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
+                
+                //return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
-        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+        dd($aer);
+        //return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
     }
 
     public function twogame(Request $request) {
@@ -251,9 +258,9 @@ class AddTicketController extends Controller
 
 
     public function fivegame(Request $request) {
-
+        $aer = 0;
         for ($i = 1; $i <= $request->input('valid'); $i++) {
-
+            $aer++;
             $value1 = '';
             $price = 0;
             $price1 = 0;
