@@ -1,7 +1,4 @@
-const { replace } = require("lodash");
-
 function onegame() {
-
     var time = document.getElementById('datetime').value
 
     time = time.replace(/-/g, '/').replace(/T/g, " ")
@@ -24,4 +21,5 @@ function onegame() {
     });
 
     alert('Таймер добавлен' + " " + time);
+
 }

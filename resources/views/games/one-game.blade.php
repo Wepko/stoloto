@@ -66,7 +66,6 @@
     </form>
 </main>
 
-
 @if(Auth::check())
     @if(Auth::user()->isAdmin())
     <main id='main' class="card mt-5">
