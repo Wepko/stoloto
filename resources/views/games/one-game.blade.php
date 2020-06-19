@@ -10,7 +10,7 @@
 <main id='main' class="card mt-5">
     <div class="container">
         <div class="countdown">
-            Limited Time Only!
+            До розыгрыша:
             <span id="clock"></span>
           </div>
         <div class="alert alert-warning text-center" role="alert">
@@ -66,7 +66,9 @@
     </form>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"></script>
+
 <script>
+
     $('#clock').countdown('2020/10/10 12:34:56')
     .on('update.countdown', function(event) {
     var format = '%H:%M:%S';
@@ -83,6 +85,7 @@
         .parent().addClass('disabled');
     });
 </script>
+
 @if(Auth::check())
     @if(Auth::user()->isAdmin())
     <main id='main' class="card mt-5">
