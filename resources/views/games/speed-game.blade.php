@@ -12,7 +12,7 @@
   </div>
   @endif
 
-<main id="main">
+<main id="main" class="mt-5">
     <div class="container">
         <div class="alert alert-warning text-center" role="alert">
             Быстрая игра
@@ -42,6 +42,7 @@
                         <p class="inpt2" id="summa">Сумма <strong>20</strong></p>
                         <button type="submit" class="btn btn-dark" id='payGame' onclick="createGame()">Оплатить</button>
                         <button type="submit" class="btn btn-dark" id='runGame' style='display: none' onclick="runGame()">Начать</button>
+                        <button type="submit" class="btn btn-dark" id='restartGame' style='display: none' onclick="location.reload()">Начать заново</button>
                     </div>
                 </div>
              </div>

@@ -8,12 +8,20 @@
     @endif
 
 @if(Auth::user()->isAdmin())
-      <h1 class="mt-5">Панель администратора</h1>
-    
-        <form action= "{{ route('WinnerOneGame') }}" method="post">
-            @csrf
-            <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 4 из 20">
-        </form>
+      <h1 class="mt-5" style="color: white">Панель администратора</h1>
+        <div class="card mt-3">
+            <p class='inpt1'>Добавьте таймер для обратного отсчета до розыгрыша игры</p>
+            <form action="#" method="post">
+                <label>Добавить таймер</label><br>
+                <input id="datetime" type="datetime-local" name="timer"><br>
+                <input type="submit" class="btn btn-dark mt-1"  value="Добавить таймер">
+            </form>
+            <p class='inpt1'>Чтобы начать розыгрыш обязательно надо сначала добавить выйгрышный билет. Добавить его можно в игре.</p>
+            <form action= "{{ route('WinnerOneGame') }}" method="post">
+                @csrf
+                <input type="submit" class="btn btn-dark mt-1"  value="Начать разыгрыш 4 из 20">
+            </form>
+        </div>
         <form action= "{{ route('WinnerTwoGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 5 из 36">

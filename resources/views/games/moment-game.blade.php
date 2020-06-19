@@ -12,7 +12,7 @@
   </div>
   @endif
 
-<main id="main">
+<main id="main" class="mt-5">
     <div class="container">
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span> 5123525 руб</span>

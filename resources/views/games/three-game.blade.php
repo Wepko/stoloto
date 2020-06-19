@@ -7,7 +7,7 @@
     {{   Session::get('info') }}
   </div>
   @endif
-<main id="main" class="card">
+<main id="main" class="card mt-5">
     <div class="container">
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!
@@ -33,14 +33,15 @@
                     <div class="card panel-score box">
                         <img src="" alt="">
                         <div class="future-draw"></div>
+                        <p class="inpt1">Номер тиража: {{ $circulation ?? '1' }}</p>
                         <p class="inpt1">Кол-во тиражей<select name="12" id="12">
                             <option value="1">1</option> 
                             <option value="2">2</option> 
                             <option value="3">3</option>
                         </select></p>
                     
-                        <p class="inpt1">Билетов <span>0</span></p>
-                        <p class="inpt1">Комбинаций <span>0</span></p>
+                        <p class="inpt1">Билетов <span id="numberTickets">1</span></p>
+                        <p class="inpt1">Комбинаций <span id="combinations">0</span></p>
                         <p class="inpt2">Сумма <strong id="sum">0</strong></p>
                         <button type="submit" class="btn btn-dark">Оплатить</button>
                     </div>

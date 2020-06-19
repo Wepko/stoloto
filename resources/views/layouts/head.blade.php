@@ -17,6 +17,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
+
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('style.css')}}">
   
