@@ -1,9 +1,8 @@
 function onegame() {
     var time = document.getElementById('datetime').value
 
-    time = time.replace(/-/g, ':').replace(/T/g, " ")
+    time = time.replace(/ /g, ':').replace(/T/g, " ")
 
-    console.log(time);
     // $('#clock').countdown('2020/10/10 12:34:56')
     // .on('update.countdown', function(event) {
     // var format = '%H:%M:%S';
