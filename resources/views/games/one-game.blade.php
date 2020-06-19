@@ -65,7 +65,7 @@
         </div>
     </form>
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"></script>
+
 
 @if(Auth::check())
     @if(Auth::user()->isAdmin())

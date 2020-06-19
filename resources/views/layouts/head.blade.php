@@ -1662,5 +1662,6 @@ Main components
       <script src="{{ asset('js/game.js')}}"></script>
       <script src="{{ asset('js/main.js')}}"></script>
       <script src="{{ asset('js/timer.js')}}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"></script>
   </body>
 </html>

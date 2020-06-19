@@ -3,9 +3,11 @@ const { replace } = require("lodash");
 function onegame() {
 
     var time = document.getElementById('datetime').value
-    alert(time)
 
-    $('#clock').countdown('2020/10/10 12:34:56')
+    time = time.replace(/-/g, '/').replace(/T/g, " ")
+    time = time + ":00"
+    
+    $('#clock').countdown(time)
     .on('update.countdown', function(event) {
     var format = '%H:%M:%S';
     if(event.offset.totalDays > 0) {
@@ -19,6 +21,7 @@ function onegame() {
     .on('finish.countdown', function(event) {
     $(this).html('This offer has expired!')
         .parent().addClass('disabled');
-
     });
+
+    alert('Таймер добавлен' + " " + time);
 }
