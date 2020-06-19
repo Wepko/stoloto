@@ -9,9 +9,10 @@
 
 <main id='main' class="card mt-5">
     <div class="container">
-            <div align='center'>
-            <span id="countdown-example"></span>
-            </div>
+        <div class="countdown">
+            Limited Time Only!
+            <span id="clock"></span>
+          </div>
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонд игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
@@ -64,7 +65,25 @@
         </div>
     </form>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"></script>
+<script>
+    $('#clock').countdown('2020/10/10 12:34:56')
+.on('update.countdown', function(event) {
+  var format = '%H:%M:%S';
+  if(event.offset.totalDays > 0) {
+    format = '%-d day%!d ' + format;
+  }
+  if(event.offset.weeks > 0) {
+    format = '%-w week%!w ' + format;
+  }
+  $(this).html(event.strftime(format));
+})
+.on('finish.countdown', function(event) {
+  $(this).html('This offer has expired!')
+    .parent().addClass('disabled');
 
+});
+</script>
 @if(Auth::check())
     @if(Auth::user()->isAdmin())
     <main id='main' class="card mt-5">
