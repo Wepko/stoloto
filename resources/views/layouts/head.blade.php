@@ -18,6 +18,9 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('style.css')}}">
   
