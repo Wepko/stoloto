@@ -1263,6 +1263,39 @@ Main components
 888888888888888888888888888888
 */
 
+.countdown-title {
+  color: black;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+.countdown {
+  font-family: sans-serif;
+  color: black;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+.countdown-number {
+  padding: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.countdown-time {
+  padding: 15px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.countdown-text {
+  display: block;
+  padding-top: 5px;
+  font-size: 16px;
+}
+
 </style>
 </head>
   <body data-spy="scroll">
@@ -1625,5 +1658,6 @@ Main components
       <script src="{{ asset('js/slick.min.js')}}"></script>
       <script src="{{ asset('js/game.js')}}"></script>
       <script src="{{ asset('js/main.js')}}"></script>
+      <script src="{{ asset('js/timer.js')}}"></script>
   </body>
 </html>

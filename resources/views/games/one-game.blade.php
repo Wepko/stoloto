@@ -9,9 +9,26 @@
 
 <main id='main' class="card mt-5">
     <div class="container">
-            <p style="text-align: center; font-size: 33px">До розыгрыша: 
-                
-            </p>
+            <div align='center'>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-number">
+                        <span class="days countdown-time"></span>
+                        <span class="countdown-text">Дней</span>
+                    </div>
+                    <div class="countdown-number">
+                        <span class="hours countdown-time"></span>
+                        <span class="countdown-text">Часов</span>
+                    </div>
+                    <div class="countdown-number">
+                        <span class="minutes countdown-time"></span>
+                        <span class="countdown-text">Минут</span>
+                    </div>
+                    <div class="countdown-number">
+                        <span class="seconds countdown-time"></span>
+                        <span class="countdown-text">Секунд</span>
+                    </div>
+                </div>
+            </div>
         <div class="alert alert-warning text-center" role="alert">
             Призовой фонд игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
