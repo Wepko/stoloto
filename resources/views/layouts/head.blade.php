@@ -17,8 +17,6 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('style.css')}}">

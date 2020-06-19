@@ -381,8 +381,6 @@
                 e.preventDefault()
                 this.doubleTable() 
             })
-
-
         }
 
         const doubleTable = (function() {
