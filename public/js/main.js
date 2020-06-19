@@ -1,9 +1,29 @@
 "use strict";
 
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function game(url) {
-  const $root = document.getElementById('main');
-  const itog = $root.querySelector('#sum');
-  const $nav = document.getElementById('nav');
+  var $root = document.getElementById('main');
+  var itog = $root.querySelector('#sum');
+  var $nav = document.getElementById('nav');
 
   function colorPicker(bg, text) {
     document.body.style.background = bg;
@@ -11,7 +31,7 @@ function game(url) {
 
   if (url == '/four-of-twenty') {
     colorPicker('#fe8933');
-    const game4_20 = games({
+    var game4_20 = games({
       root: $root,
       itog: itog,
       fields: [{
@@ -37,7 +57,7 @@ function game(url) {
 
   if (url == '/five-of-threety-six') {
     colorPicker('#50b848');
-    const game5_36 = games({
+    var game5_36 = games({
       root: $root,
       itog: itog,
       fields: [{
@@ -63,7 +83,7 @@ function game(url) {
 
   if (url == '/seven-of-fourty-nine') {
     colorPicker('#eb3131');
-    const game7_49 = games({
+    var game7_49 = games({
       root: $root,
       itog: itog,
       fields: [{
@@ -83,7 +103,7 @@ function game(url) {
 
   if (url == '/six-of-fourty-five') {
     colorPicker('#ffd925');
-    const game6_45 = games({
+    var game6_45 = games({
       root: $root,
       itog: itog,
       fields: [{
@@ -103,7 +123,7 @@ function game(url) {
 
   if (url == '/twenteen-of-twenty-four') {
     colorPicker('#1d7dff');
-    const game12_24 = games({
+    var game12_24 = games({
       root: $root,
       itog: itog,
       fields: [{
@@ -123,7 +143,7 @@ function game(url) {
 
   if (url == '/rapido') {
     colorPicker('#036977');
-    const rapido = games({
+    var rapido = games({
       root: $root,
       itog: itog,
       fields: [{
@@ -199,14 +219,15 @@ function ticket() {
 }
 
 function valid() {
-  const $select = document.querySelector('#inputGroupSelect01');
-  const $input = document.querySelector('input.hide');
-  const $valid = document.getElementById('valid');
+  var $select = document.querySelector('#inputGroupSelect01');
+  var $input = document.querySelector('input.hide');
+  var $valid = document.getElementById('valid');
 
-  $select.onchange = () => {
-    const arrOptions = [...$select.options];
+  $select.onchange = function () {
+    var arrOptions = _toConsumableArray($select.options);
+
     $input.classList.add('hide');
-    arrOptions.forEach(item => {
+    arrOptions.forEach(function (item) {
       if (item.selected) {
         if (item.id == 'game-4_20') {
           $valid.value = 1;
@@ -239,20 +260,26 @@ function valid() {
   };
 }
 
-class Routing {
-  constructor(url, fn) {
+var Routing = /*#__PURE__*/function () {
+  function Routing(url, fn) {
+    _classCallCheck(this, Routing);
+
     this.url = url;
     this.fn = fn;
     this.start();
   }
 
-  start() {
-    if (document.location.pathname == this.url) {
-      this.fn(this.url);
+  _createClass(Routing, [{
+    key: "start",
+    value: function start() {
+      if (document.location.pathname == this.url) {
+        this.fn(this.url);
+      }
     }
-  }
+  }]);
 
-}
+  return Routing;
+}();
 
 new Routing('/top-4', game);
 new Routing('/rapido', game);
