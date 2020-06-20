@@ -67,7 +67,8 @@
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"></script>
 <script>
-    var time = '2020/06/20 15:45:00'
+    var time = "{{ $time ?? '2020/06/20 15:45:00' }}"
+    
     $('#clock').countdown(time)
     .on('update.countdown', function(event) {
     var format = '%H:%M:%S';

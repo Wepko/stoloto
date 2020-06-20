@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\OneGameModels;
+use App\Models\OneGameTimerModels;
 use App\Models\TwoGameModels;
 use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
@@ -51,6 +52,8 @@ Route::post('/WinnerFour', 'AdminController@goWinnerFourGame')->name('WinnerFour
 Route::post('/WinnerFive', 'AdminController@goWinnerFiveGame')->name('WinnerFiveGame');
 Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGame');
 
+Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->name('TimerOneGame');
+
 Route::get('/admin', function (){
   return view('admin-panel');
 })->name('admin');
@@ -70,6 +73,10 @@ Route::get('/valid', function (){
 Route::get('/four-of-twenty', function (){
   $fond = OneGameModels::sum('price');
   $circulation = OneGameModels::max('circulation');
+  if (OneGameTimerModels::max('time')) {
+    $time = OneGameTimerModels::max('time');
+    return view('games.one-game', ['fond' => $fond], ['circulation' => $circulation], ['time' => $time]);
+  }
   return view('games.one-game', ['fond' => $fond], ['circulation' => $circulation]);
 })->name('one-game');
 
