@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
     var time = document.getElementById('datetime').value
 
@@ -22,3 +23,5 @@
     });
 
  
+=======
+>>>>>>> 0e1d73546f5498f66e0e1dc52812b1cd918741bc
