@@ -13,3 +13,4 @@ class OneGameTimerModels extends Model
         'time'
     ];
 }
+
