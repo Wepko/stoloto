@@ -1,468 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.css.map')}}"> --}}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.css.map')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css.map')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css.map')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css.map')}}"> --}}
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('style.css')}}">
-  
-  <style>
-
-
-    /*******************************************
-    **********************
-    ***********
-    * SLick js css  startt***********************
-    **********************************
-    *************** */
-    
-
-/* Slider */
-html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Ubuntu', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    .slider {
-        width: 100%;
-
-    }
-
-    .slick-slide {
-      margin: 0px 20px;
-    }
-
-    .slick-slide img {
-      width: 100%;
-    }
-
-    .slick-prev:before,
-    .slick-next:before {
-      color: black;
-    }
-
-
-    .slick-slide {
-      transition: all ease-in-out .3s;
-      
-    }
-    
-    .slick-active {
-      
-    }
-
-    .slick-current {
-      
-    }
-
-    .slick-prev {
-      display: none!important;
-    }
-
-    .slick-next {
-      display: none!important;
-    } 
-
-
-
-
-.slick-slider
-{
-    position: relative;
-
-    display: block;
-    box-sizing: border-box;
-
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -ms-touch-action: pan-y;
-        touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list
-{
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    margin: 0;
-    padding: 0;
-}
-.slick-list:focus
-{
-    outline: none;
-}
-.slick-list.dragging
-{
-    cursor: pointer;
-    cursor: hand;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list
-{
-    -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-}
-
-.slick-track
-{
-    position: relative;
-    top: 0;
-    left: 0;
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.slick-track:before,
-.slick-track:after
-{
-    display: table;
-
-    content: '';
-}
-.slick-track:after
-{
-    clear: both;
-}
-.slick-loading .slick-track
-{
-    visibility: hidden;
-}
-
-.slick-slide
-{
-    display: none;
-    float: left;
-
-    height: 100%;
-    min-height: 1px;
-}
-[dir='rtl'] .slick-slide
-{
-    float: right;
-}
-.slick-slide img
-{
-    display: block;
-}
-.slick-slide.slick-loading img
-{
-    display: none;
-}
-.slick-slide.dragging img
-{
-    pointer-events: none;
-}
-.slick-initialized .slick-slide
-{
-    display: block;
-}
-.slick-loading .slick-slide
-{
-    visibility: hidden;
-}
-.slick-vertical .slick-slide
-{
-    display: block;
-
-    height: auto;
-
-    border: 1px solid transparent;
-}
-.slick-arrow.slick-hidden {
-    display: none;
-}
-
-
-    /*******************************************
-    **********************
-    ***********
-    * SLick js css  end***********************
-    **********************************
-    *************** */
-    
-
-  body {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: 100vh;
-    background: var(--blue)
-  }
-
-  .left_panel{
-    font-weight: 400;
-    font-size: 16px;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 5%;
-    z-index: 7;
-    padding-top: 7%;
-    padding-left: 2%;
-}
-.left_panel p{
-   text-decoration: underline;
-}
-.left_nav_panel{
-  margin-top: 30%;
-}
-.left_panel p:hover{
-  color: red;
-}
-.right_panel{
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  height: 100%;
-  padding-top: 5%;
-  width: 15%;
-}
-.right_panel a {
-  padding: 5% 0;
-  padding-left: 4%;
-  color: #fff!important;
-  text-decoration: none;
-}
-.right_panel p{
-  color: white;
-  font-size: 15px;
-}
-.right_panel p:hover{
-  background-color: rgba(0, 0, 0, 0.2);
-}
-.home_slider{
-  margin: 2% 0;
-}
-.home_numbers p{
-  font-size: 36px;
-    font-weight: 500;
-}
-.modal-header .col-md-4 a{
-  color: rgba(0, 0, 0, 0.8);
-}
-.modal-body .col-md-3 a{
-  color: rgba(0, 0, 0, 0.8);
-}
-.modal-body .row{
-  margin-top: 20px;
-}
-.a{
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 400;
-  font-size: 20px;
-  text-decoration: underline;
-}
-.a:hover{
-  color: red;
-}
-.item-orange{
-  background-color: rgba(255, 115, 0, 0.9);
-}
-.item{
-  border-radius: 10px;
-}
-.item-img{
-  height: 70px;
-  margin: 20px;
-}
-.item:hover{
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.item:hover .item-img{
-  transform: scale(1.2);
-}
-.item-text{
-  color: white;
-}
-.item:hover .item-text{
-  transform: scale(1.05);
-}
-.home_gameblock{
-  margin: 50px 0;
-}
-.red{
-  background-color: rgb(55%, 11%, 11%, 0.9);
-}
-.blue{
-  background-color: rgba(8, 69, 150, 0.9);
-}
-.orange{
-  background-color: rgba(255, 115, 0, 0.9);
-}
-.green{
-   background-color: rgba(16, 130, 19, 0.9);
-}
-.dark{
-  background-color: rgba(8, 10, 8, 0.9);
-}
-.fiolet{
-  background-color: rgba(86, 23, 120, 0.9);
-}
-.pink{
-  background-color: rgba(173, 0, 142, 0.9);
-}
-.carGames{
-  height: 400px;
-  border-radius: 20px;
-}
-.imgGames{
-  width: 30%;
-}
-.carGame{
-  margin: 100px 0;
-}
-
-
-.md-modal {
-  margin: auto;
-	position: fixed;
-	top: 100px;
-	left: 0;
-  right: 0;
-	width: 50%;
-	max-width: 630px;
-	min-width: 320px;
-	height: auto;
-	z-index: 2000;
-	visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.md-show {
-	visibility: visible;
-}
-
-.md-overlay {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	visibility: hidden;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	opacity: 0;
-	background: rgba(#e4f0e3, 0.8);
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.md-show ~ .md-overlay {
-	opacity: 1;
-	visibility: visible;
-}
-
-.md-effect-12 .md-content {
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	-ms-transform: scale(0.8);
-	transform: scale(0.8);
-	opacity: 0;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.md-show.md-effect-12 ~ .md-overlay {
-	background-color: #e4f0e3;
-}
-
-.md-effect-12 .md-content h3,
-.md-effect-12 .md-content {
-	background: transparent;
-}
-
-.md-show.md-effect-12 .md-content {
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	transform: scale(1);
-	opacity: 1;
-}
-.game{
-  margin-top: 100px;
-}
-
-.logo {
-  text-align: center;
-}
-
-.head-game{
-  font-size: 34px;
-  color: white;
-}
-
-.head-game a{
-  font-size: 18px;
-  color: black;
-}
-.head-game a:hover{
-  color: red;
-}
-.main-game{
-  background-color: rgba(232, 232, 232, 1);
-  height: 100px;
-  border-radius: 8px;
-  margin-top: 30px;
-  padding: 40px 50px;
-}
-
-.in-main-game{
-  background-color: white;
-  border-radius: 5px;
-  text-align: left;
-}
-
-
-.title-game {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.title-game img{
-
-}
-
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
+	<style>
+		
 .content-4_20 {
     display: flex;
     flex-wrap: wrap;
@@ -529,10 +74,6 @@ table input[type='checkbox'] + label{
 
 }
 
-a {
-  color: black!important
-}
-
 table input[type='checkbox']:checked + label{
   background: var(--teal);
   color: #fff;
@@ -548,1119 +89,163 @@ table input[type='checkbox']:checked + label{
     padding: 1rem 2rem;
 }
 
-
-.inpt1,
-.inpt2 {
-    display: flex;
-    justify-content: space-around;
-}
-
-.inpt2 {
-    font-size: 18px;
-    font-weight: bold;
-    border-top: 1px solid #ccc;
-    padding: 0.5rem 0;
-}
-
-.list-group-item.active {
-  background: var(--gray-dark);
-  border-color: var(--dark);
-}
-
-.hide {
-  display: none;
-}
-
-
-.card-block {
-  flex-basis: calc(33.333% - 2rem);
-  margin-right: 2rem;
-}
-
-
-
-
-
-
-
-
-.shiny, .shiny-2
-{
-  color: #F5C21B;
-  background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3em;
-  font-weight: bold;
-  position: relative;
-  text-transform: uppercase;
-}
-.shiny-2 {
-  font-size: 1.8em;
-}
-.shiny::before
-{
-    background-position: -180px;
-    -webkit-animation: flare 5s infinite;
-  -webkit-animation-timing-function: linear;
-  background-image: linear-gradient(65deg, transparent 20%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 27%, transparent 27%, transparent 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  content: "Золотая антилопа";
-  color: #FFF;
-  display: block;
-  padding-right: 140px;
-  position: absolute;
-}
-
-.shiny::after
-{
-  content: "Золотая антилопа";
-  color: #FFF;
-  display: block;
-  position: absolute;
-  text-shadow: 0 1px #6E4414, 0 2px #6E4414, 0 3px #6E4414, 0 4px #6E4414, 0 5px #6E4414, 0 6px #6E4414, 0 7px #6E4414, 0 8px #6E4414, 0 9px #6E4414, 0 10px #6E4414;
-  top: 0;
-  z-index: -1;
-}
-
-.inner-shiny::after, .inner-shiny::before
-{
-        -webkit-animation: sparkle 5s infinite;
-  -webkit-animation-timing-function: linear;
-    background: #FFF;
-  border-radius: 100%;
-  box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 25px #FFF, 0 0 30px #FFF, 0 0 35px #FFF;
-  content: "";
-  display: block;
-  height: 10px;
-  opacity: 0.7;
-  position: absolute;
-  width: 10px;
-}
-
-.inner-shiny::before
-{
-    -webkit-animation-delay: 0.2s;
-  height: 7px;
-  left: 0.12em;
-  top: 0.8em;
-  width: 7px;
-}
-
-.inner-shiny::after
-{
-  top: 0.32em;
-  right: -5px;
-}
-
-@-webkit-keyframes flare
-{
-  0%   { background-position: -180px; }
-  30%  { background-position: 500px; }
-  100% { background-position: 500px; }
-}
-
-@-webkit-keyframes sparkle
-{
-  0%   { opacity: 0; }
-  30%  { opacity: 0; }
-  40%  { opacity: 0.8; }
-  60%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-
-
-
-
-
-
-
-
-/* ##########
-  #####Menu####
-  ###########
-*/
-
-@media (min-width: 768px) {
-  .navbar-container {
-      position: sticky;
-      top: 0;
-      overflow-y: auto;
-      height: 100vh;
-      z-index: 1000;
-  }
-
-  .navbar-container .navbar {
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      flex-direction: column;
-      height: 100%;
-  }
-
-  .navbar-container .navbar-collapse {
-      align-items: flex-start;
-  }
-
-  .navbar-container .nav {
-      flex-direction: column;
-      flex-wrap: nowrap;
-  }
-
-  .navbar-container .navbar-nav {
-      flex-direction: column !important;
-  }
-  
-  .right_panel {
-    display: block;
-  }
-}
-
-
-
-
-
-@media (max-width: 768px) {
-  .right_panel {
-    display: none;
-  }
-
-}
-
-@media (max-width: 1400px) {
-  .right_panel {
-    text-align: center;
-    width: 5%
-  }
-  .medium-a {
-    display: none;
-  }
-
-}
-
-
-
-
-
-
-.masthead {
-  color: #000;
-  height: 100vh;
-  position: relative;
-  width: 100%;
-  min-height: 35rem;
-  padding: 5rem 0 25rem 0;
-}
-
-.conatiner-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center
-}
-
-.card-main {
-  position: relative;
-  overflow: hidden;
-
-}
-
-.card-tooltip {
-  position: absolute;
-  bottom: 0;
-  background: #fff;
-  color: #000;
-  transform: translateY(115px);
-  transition: .5s ease-in;
-}
-.card-main:hover .card-tooltip {
-  transform: translateY(0)
-}
-
-@media (max-width: 768px) {
-  .masthead h1{
-    margin-top: 10rem !important;
-  }
-}
-
-.game {
-  margin: 0;
-}
-
-#main {
-  background: #FFF;
-  padding: 1rem;
-}
-
-.card-new-title {
-  position: absolute;
-  bottom: 50px;
-  left: 0;
-  width: 100%;
-  color: #000;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-.card-price {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  width: 100%;
-  color: #000;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .img-media {
-    top: 20px!important;
-    left: 70px!important;
-  }
-
-  .main-banner {
-    padding: 1rem 0;
-  }
-
-  .card-new-title {
-    bottom: 0;
-    font-size: 9px;
-  }
-
-  .card-price {
-    bottom: 22px;
-    font-size: 11px;
-  }
-
-  .head-game-img {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-
-  .img-media-reverse {
-    display: none;
-  }
-}
-
-a {
-  color: black;
-}
-
-.carousel-item-next, .carousel-item-prev, .carousel-item.active {
-  display: flex;
-}
-
-
-
-/*
-888888888888888888888888888888
-8888888888888888888888888888888
-8888888888888888888888888888888
-          COMENTARIEEEE start
-88888888888888888888888888888888888
-888888888888888888888888888888888
-888888888888888888888888888888
-*/
-
-
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-.cd-testimonials-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 850px;
-  background-color: #39393c;
-  margin: 2em auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding: 20px 40px 70px;
-  z-index: 1;
-}
-.cd-testimonials-wrapper::after {
-  /* quotation mark */
-  content: '\201C';
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  padding-top: 8px;
-  margin-left: -25px;
-  background: rgba(32, 32, 34, 0.9);
-  font-family: "Georgia", serif;
-  color: white;
-  font-size: 70px;
-  font-size: 4.375rem;
-  text-align: center;
-  /* visible on big devices only */
-  display: none;
-}
-@media only screen and (min-width: 768px) {
-  .cd-testimonials-wrapper {
-    margin: 4em auto;
-    padding: 64px 50px 114px;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-testimonials-wrapper::after {
-    /* quotation mark visible */
-    display: block;
-  }
-}
-
-.cd-testimonials {
-  color: white;
-  text-align: center;
-}
-.cd-testimonials:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.cd-testimonials > li {
-  position: absolute;
-  opacity: 0;
-}
-.cd-testimonials > li:first-child {
-  position: relative;
-  opacity: 1;
-}
-.cd-testimonials p {
-  font-family: "Georgia", serif;
-  font-style: italic;
-  line-height: 1.4;
-  margin-bottom: 1em;
-  padding: 0 14px;
-}
-@media only screen and (min-width: 768px) {
-  .cd-testimonials p {
-    font-size: 22px;
-    font-size: 1.375rem;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-testimonials p {
-    font-size: 26px;
-    font-size: 1.625rem;
-    line-height: 1.6;
-  }
-}
-
-.cd-author img, .cd-author .cd-author-info {
-  display: inline-block;
-  vertical-align: middle;
-}
-.cd-author img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 5px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-}
-.cd-author .cd-author-info {
-  text-align: left;
-  line-height: 1.2;
-}
-.cd-author .cd-author-info li:first-child {
-  font-size: 14px;
-  font-size: 0.875rem;
-}
-.cd-author .cd-author-info li:last-child {
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: #6b6b70;
-}
-@media only screen and (min-width: 768px) {
-  .cd-author img {
-    width: 50px;
-    height: 50px;
-  }
-  .cd-author .cd-author-info {
-    line-height: 1.4;
-  }
-  .cd-author .cd-author-info li:first-child {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-  .cd-author .cd-author-info li:last-child {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
-}
-
-.flex-direction-nav li {
-  position: absolute;
-  height: 100%;
-  width: 40px;
-  top: 0;
-}
-.flex-direction-nav li:first-child {
-  left: 0;
-}
-.flex-direction-nav li:last-child {
-  right: 0;
-}
-.flex-direction-nav li a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  /* image replacement */
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  -webkit-transition: background-color 0.2s;
-  -moz-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-}
-.no-touch .flex-direction-nav li a:hover {
-  background-color: #323234;
-}
-.flex-direction-nav li a::before, .flex-direction-nav li a::after {
-  /* left and right arrows in css only */
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 2px;
-  height: 13px;
-  background-color: white;
-}
-.flex-direction-nav li a::before {
-  -webkit-transform: translateY(-35px) rotate(45deg);
-  -moz-transform: translateY(-35px) rotate(45deg);
-  -ms-transform: translateY(-35px) rotate(45deg);
-  -o-transform: translateY(-35px) rotate(45deg);
-  transform: translateY(-35px) rotate(45deg);
-}
-.flex-direction-nav li a::after {
-  -webkit-transform: translateY(-27px) rotate(-45deg);
-  -moz-transform: translateY(-27px) rotate(-45deg);
-  -ms-transform: translateY(-27px) rotate(-45deg);
-  -o-transform: translateY(-27px) rotate(-45deg);
-  transform: translateY(-27px) rotate(-45deg);
-}
-.flex-direction-nav li:last-child a::before {
-  -webkit-transform: translateY(-35px) rotate(-45deg);
-  -moz-transform: translateY(-35px) rotate(-45deg);
-  -ms-transform: translateY(-35px) rotate(-45deg);
-  -o-transform: translateY(-35px) rotate(-45deg);
-  transform: translateY(-35px) rotate(-45deg);
-}
-.flex-direction-nav li:last-child a::after {
-  -webkit-transform: translateY(-27px) rotate(45deg);
-  -moz-transform: translateY(-27px) rotate(45deg);
-  -ms-transform: translateY(-27px) rotate(45deg);
-  -o-transform: translateY(-27px) rotate(45deg);
-  transform: translateY(-27px) rotate(45deg);
-}
-@media only screen and (min-width: 768px) {
-  .flex-direction-nav li {
-    width: 50px;
-  }
-}
-
-@media only screen and (min-width: 1170px) {
-  .flex-direction-nav li a::before, .flex-direction-nav li a::after {
-    background-color: #5e5e63;
-    -webkit-transition: background-color 0.2s;
-    -moz-transition: background-color 0.2s;
-    transition: background-color 0.2s;
-  }
-  .flex-direction-nav li a:hover::before, .flex-direction-nav li a:hover::after {
-    background-color: white;
-  }
-}
-
-.cd-see-all {
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  background-color: #252527;
-  text-align: center;
-  text-transform: uppercase;
-  color: #6b6b70;
-  font-weight: 700;
-  font-size: 12px;
-  font-size: 0.75rem;
-  -webkit-transition: color, 0.2s;
-  -moz-transition: color, 0.2s;
-  transition: color, 0.2s;
-}
-.no-touch .cd-see-all:hover {
-  color: #79b6e4;
-}
-
-.cd-testimonials-all {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  z-index: 2;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
-  -moz-transition: opacity .3s 0s, visibility 0s .3s;
-  transition: opacity .3s 0s, visibility 0s .3s;
-}
-.cd-testimonials-all .cd-testimonials-all-wrapper {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.cd-testimonials-all .cd-testimonials-all-wrapper > ul {
-  width: 90%;
-  max-width: 1170px;
-  margin: 4em auto;
-}
-.cd-testimonials-all .cd-testimonials-all-wrapper > ul:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.cd-testimonials-all .cd-testimonials-item {
-  margin-bottom: 2em;
-  opacity: 0;
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translate3d(0, 0, 0) scale(0.4);
-  -moz-transform: translate3d(0, 0, 0) scale(0.4);
-  -ms-transform: translate3d(0, 0, 0) scale(0.4);
-  -o-transform: translate3d(0, 0, 0) scale(0.4);
-  transform: translate3d(0, 0, 0) scale(0.4);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform .3s, opacity .3s;
-  -moz-transition: -moz-transform .3s, opacity .3s;
-  transition: transform .3s, opacity .3s;
-}
-.cd-testimonials-all p {
-  position: relative;
-  background: #79b6e4;
-  color: white;
-  padding: 2em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.4;
-  border-radius: 0.25em;
-  margin-bottom: 1em;
-}
-.cd-testimonials-all p::after {
-  /* creating the triangle in css */
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 2em;
-  height: 0;
-  width: 0;
-  border: 8px solid transparent;
-  border-top-color: #79b6e4;
-}
-.cd-testimonials-all .cd-author {
-  text-align: left;
-  margin-left: 1.5em;
-}
-.cd-testimonials-all .cd-author img {
-  box-shadow: 0 0 0 transparent;
-}
-.cd-testimonials-all.is-visible {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-  -moz-transition: opacity .3s 0s, visibility 0s 0s;
-  transition: opacity .3s 0s, visibility 0s 0s;
-}
-.cd-testimonials-all.is-visible .cd-testimonials-item {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0) scale(1);
-  -moz-transform: translate3d(0, 0, 0) scale(1);
-  -ms-transform: translate3d(0, 0, 0) scale(1);
-  -o-transform: translate3d(0, 0, 0) scale(1);
-  transform: translate3d(0, 0, 0) scale(1);
-}
-@media only screen and (min-width: 768px) {
-  .cd-testimonials-all .cd-testimonials-item {
-    width: 46%;
-    margin: 0 2% 3em;
-  }
-  .cd-testimonials-all .cd-author {
-    margin-left: 1em;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .navbar-brand {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-testimonials-all .cd-testimonials-item {
-    width: 30%;
-    margin: 0 1.6666% 3em;
-  }
-}
-
-.close-btn {
-  position: fixed;
-  display: block;
-  width: 40px;
-  height: 40px;
-  top: 10px;
-  right: 5%;
-  /* image replacement */
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-}
-.close-btn::before, .close-btn::after {
-  /* close icon in css */
-  content: '';
-  position: absolute;
-  display: inline-block;
-  width: 2px;
-  height: 24px;
-  top: 8px;
-  left: 19px;
-  background-color: #39393c;
-}
-.close-btn::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.close-btn::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-
-
-/*
-888888888888888888888888888888
-8888888888888888888888888888888
-8888888888888888888888888888888
-          COMENTARIEEEE end
-88888888888888888888888888888888888
-888888888888888888888888888888888
-888888888888888888888888888888
-*/
-
-.countdown-title {
-  color: black;
-  font-weight: 100;
-  font-size: 40px;
-  margin: 40px 0px 20px;
-}
-
-.countdown {
-  font-family: sans-serif;
-  color: black;
-  font-weight: 100;
-  text-align: center;
-  font-size: 30px;
-}
-
-.countdown-number {
-  padding: 10px;
-  border-radius: 3px;
-  display: inline-block;
-}
-
-.countdown-time {
-  padding: 15px;
-  border-radius: 3px;
-  display: inline-block;
-}
-
-.countdown-text {
-  display: block;
-  padding-top: 5px;
-  font-size: 16px;
-}
-
-</style>
+	</style>
 </head>
-  <body data-spy="scroll">
-    <!-- START left - panel -->
+  <body style="display: flex; flex-direction: column; height: 100vh;">
 
-    
-
-    <!-- END left - panel -->
-    <!-- START right - panel -->
-
-    <!-- END right - panel -->
-    <!-- site-map -->
-
-
-
-
-    <!-- site-map -->
-    <div class="container-fluid" >
-      <!-- Modal -->
-      <div class="modal fade"  id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog w-100" style="max-width: 1500px; margin: .5rem auto" role="document" >
-            <div class="modal-content sitemap">
-              <div class="modal-header" >
-                <h5 class="modal-title" id="exampleModalLongTitle">Карта сайта</h5>
-                <h5><br><br>Информационна поддержка: <b>8 900 555-55-55</b> </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-header">
-                <div class="row">
-                  <div class="col-md-4">
-                    <a href="{{ route('home') }}">Главная</a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">Гос.лотереи</a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">Лотереи в городе</a>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-md-3">
-                    <h2>Многомиллионные суперпризы</h2>
-                    <a href="#"><p>«Гослото «4 из 20»</p></a>
-                    <a href="#"><p>«Гослото «7 из 49»</p></a>
-                    <a href="#"><p>«Гослото «6 из 45»</p></a>
-                    <a href="#"><p>«Гослото «5 из 36»</p></a>
-                    <a href="#"><p>«Зодиак»</p></a>
-                    <a href="#"><p>«Спортлото Матчбол»</p></a>
-                  </div>
-                  <div class="col-md-3">
-                    <h2>Квартиры, автомобили, миллионы</h2>
-                    <a href="#"><p>«Русское лото»</p></a>
-                    <a href="#"><p>«Русское лото экспресс»</p></a>
-                    <a href="#"><p>«Жилищная лотерея»</p></a>
-                    <a href="#"><p>«Золотая подкова»</p></a>
-                    <a href="#"><p>«Бинго-75»</p></a>
-                    <a href="#"><p>«6 из 36»</p></a>
-                  </div>
-                  <div class="col-md-3">
-                    <h2>Справочник участника</h2>
-                    <a href="#"><p>Как купить билет на сайте</p></a>
-                    <a href="#"><p>Как получить выигрыш</p></a>
-                    <a href="#"><p>Вопрос-ответ</p></a>
-                    <a href="#"><p>Правовая информация</p></a>
-                    <a href="#"><p>Налогообложение</p></a>
-                    <a href="#"><p>Как не попасться мошенникам</p></a>
-                  </div>
-
-
-                  <div class="col-md-3">
-                    <h2>Полезные сервисы</h2>
-                    <a href="#"><p>Бонусная программа</p></a>
-                    <a href="#"><p>Подписка на лотерею</p></a>
-                    <a href="#"><p>Билет в подарок</p></a>
-                    <a href="#"><p>Система поощрений</p></a>
-                    <a href="#"><p>Пригласить друга</p></a>
-                    <a href="#"><p>Демо «Топ-3»</p></a>
-                  </div>
-                  </div>
-                  <div class="row">
-                  <div class="col-md-3">
-                    <h2>Лотереи в вашем мобильном</h2>
-                    <a href="#"><p>Мобильный сайт</p></a>
-                    <a href="#"><p>Приложения для iOS и Android</p></a>
-                    <a href="#"><p>Как купить билет по СМС</p></a>
-                  </div>
-                  <div class="col-md-3">
-                    <h2>Билеты лотерей</h2>
-                    <a href="#"><p>Где купить</p></a>
-                    <a href="#"><p>Как проверить</p></a>
-                    <a href="#"><p>Как получить выигрыш</p></a>
-                    <a href="#"><p>Моментальные лотереи</p></a>
-                  </div>
-                  <div class="col-md-3">
-                    <a href="#"> <h3>Все о «***лото»</h3> </a>
-                    <a href="#"> <h3>Новости</h3> </a>
-                    <a href="#"> <h3>Победители</h3> </a>
-                  </div>
-                  <div class="col-md-3">
-                    <a href="#"> <h3>Пресс-центр</h3> </a>
-                    <a href="#"> <h3>Контакты</h3> </a>
-                  </div>
-
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button"  class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-              </div>
-            </div>
-          </div>
-      </div>
-
-      <div class="row" id="wrapper">
-        <div class="col-md-3 col-lg-2 navbar-container" style="padding: 0;">
-            <nav class="navbar navbar-expand-md navbar-light" id="sidebar-wrapper" role="navigation" style="background-color: #E7E7F9;">
-                <a class="navbar-brand text-uppercase" align="left"  style="font-size: 16px; color: black!important"  href="{{ route('home')}}">Золотая антилопа</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse w-100" id="navbar">
-                    <!-- Вертикальное меню -->
-                    <ul class="navbar-nav w-100 mt-3 navigation" id="nav">
-                      <li class="nav-item">
-                          <a class="nav-link text-danger" style="width: 100px" data-toggle="modal"  data-target="#exampleModalLong" href="#">Меню</a>
-                      </li>
-
-                      @if (Auth::check())
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('lk') }}" style="color: black!important">Личный кабинет</a>
-                        </li>
-
-                            @if (Auth::user()->isAdmin())
-                            <li class="nav-item">
-                              <a class="nav-link" href="{{ route('admin') }}" style="color: black!important">Админ панель</a>
-                            </li>
-                            @endif
-                            <li class="nav-item">
-                              <a class="nav-link" href="{{ route('logout') }}" style="color: black!important">Выйти</a>
-                            </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ route('broadcast') }}" style="color: black!important">Трансляции</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ route('valid_ticket') }}" style="color: black!important">Проверка билетов</a>
-                        </li>
-                        @else 
-                          <li class="nav-item">
-                            <a class="nav-link waves-effect" href="{{ route('login') }}" style="color: black!important">Войти</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('reg') }}" style="color: black!important">Регистрация</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('broadcast') }}" style="color: black!important">Трансляции</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{ route('valid_ticket') }}" style="color: black!important">Проверка билетов</a>
-                          </li>
-                        @endif
-                    </ul>
-                </div>
-            </nav>
-          
-        </div>
-        <div class="col-md-7 col-lg-9 col-xl-8 content-container">
-          {{--<div class="logo">
+  <header class="header">
+		<div class="container">
+			<div class="menu">
+				<div class="menu__logo">
           <a href="{{ route('home') }}">
-            <p class="shiny">
-              <span class="inner-shiny">Золотая антилопа</span>
-            </p>
-            </a><br>
-            <span  class="shiny-2 pb-3">Фонд: 10000000 рублей</span>
-          </div>--}}
-            @yield('content')
-        </div>
-        <div class="col-md-2 col-lg-1 col-xl-2 content-container">
-          <div class="right_panel">
-            <p><a  href="{{ route('one-game') }}"><img src="img/4iz.png" width="30px" alt=""><span class="medium-a"> Золотая антилопа «4 из 20»</span></a></p>
-            <p><a  href="{{ route('two-game') }}"><img src="img/5iz.png"  width="30px" alt=""><span class="medium-a"> Золотая антилопа «5 из 36»</span></a></p>
-            <p><a  href="{{ route('three-game') }}"><img src="img/7iz.png"  width="30px" alt=""><span class="medium-a"> Золотая антилопа «7 из 49»</span></a></p>
-            <p><a  href="{{ route('four-game') }}"><img src="img/6iz.png" width="30px"  alt=""><span class="medium-a"> Золотая антилопа «6 из 45»</span></a></p>
-            <p><a  href="{{ route('five-game') }}"><img src="img/12iz.png"  width="30px" alt=""><span class="medium-a"> Золотая антилопа «12 из 24»</span></a></p>
-            <p><a  href="{{ route('six-game') }}"><img src="img/rapido.png"  width="30px" alt=""><span class="medium-a"> «Рапидо»</span></a></p>
-            <p><a  href="{{ route('speed-game') }}"><img src="img/fast_game.png" width="25px"  alt=""><span class="medium-a"> «Быстрая игра»</span></a></p>
-            <p><a  href="{{ route('moment-game') }}"><img src="img/moment_game-logo.png" width="20px"  alt=""><span class="medium-a"> «Моментальная игра»</span></a></p>
-          </div>
-        </div>    
-      </div>
-    </div>
-      <!-- Footer -->
-    <footer style="margin-top: auto; color: #fff" class="page-footer font-small stylish-color-dark pt-4">
-
-      <!-- Footer Links -->
-      <div class="container text-center text-md-left">
-
-        <!-- Grid row -->
-        <div class="row">
-
-          <!-- Grid column -->
-          <div class="col-md-3 mx-auto">
-
-            <!-- Content -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ЗОЛОТАЯ АНТИЛОПА</h5>
-            <p>Сайт где ты сможешь поднять бабла не напрягаясь, выигрыш в каждом билете!</p>
-
-          </div>
-          <!-- Grid column -->
-
-          <hr class="clearfix w-100 d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-2 mx-auto">
-
-            <!-- Links -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Меню</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="{{route('home')}}">Главная</a>
-              </li>
-              <li>
-                <a href="{{route('broadcast')}}">Трансляцию</a>
-              </li>
-              <li>
-                <a href="{{route('valid_ticket')}}">Проверка билетов</a>
-              </li>
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-          <hr class="clearfix w-100 d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-3 mx-auto">
-
-            <!-- Links -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Игры</h5>
-
-            <ul class="list-unstyled">
-            <li>
-                <a href="{{route('one-game')}}">ЗОЛОТАЯ АНТИЛОПА 4 из 20</a>
-              </li>
-              <li>
-                <a href="{{route('two-game')}}">ЗОЛОТАЯ АНТИЛОПА 5 из 36</a>
-              </li>
-              <li>
-                <a href="{{route('three-game')}}">ЗОЛОТАЯ АНТИЛОПА 7 из 49</a>
-              </li>
-              <li>
-                <a href="{{route('four-game')}}">ЗОЛОТАЯ АНТИЛОПА 6 из 45</a>
-              </li>
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-          <hr class="clearfix w-100 d-md-none">
-
-          <!-- Grid column -->
-          <div class="col-md-3 mx-auto">
-
-            <!-- Links -->
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Игры</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="{{route('five-game')}}">ЗОЛОТАЯ АНТИЛОПА 12 из 24</a>
-              </li>
-              <li>
-                <a href="{{route('six-game')}}">Рапидо</a>
-              </li>
-              <li>
-                <a href="{{route('speed-game')}}">Быстрая игра</a>
-              </li>
-              <li>
-                <a href="{{route('moment-game')}}">Моментальная игра</a>
-              </li>
-           
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-      </div>
-      <!-- Footer Links -->
-
-      <hr>
-
-      <!-- Call to action -->
-      <ul class="list-unstyled list-inline text-center py-2">
-        <li class="list-inline-item">
-          <h5 class="mb-1">Начни прямо сейчас </h5>
-        </li>
-        <li class="list-inline-item">
-          <a href="{{ route('reg') }}" class="btn btn-danger btn-rounded">Регистрация!</a>
-        </li>
-      </ul>
-      <!-- Call to action -->
-
-      <hr>
-
-      <!-- Social buttons -->
-      <ul class="list-unstyled list-inline text-center">
-        <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1">
-            <i class="fab fa-facebook-f"> </i>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				viewBox="0 0 1920 1081" style="enable-background:new 0 0 1920 1081;" fill="#fff" xml:space="preserve">
+				<style type="text/css">
+				.st0{font-family:'MullerRegularItalic';}
+				.st1{font-size:261.3255px;}
+				.st2{font-family:'MullerBoldItalic';}
+				.st3{font-size:175.2642px;}
+				</style>
+				<text transform="matrix(0.9971 0 0 1 468.8291 708.7861)" class="st0 st1">ЗОЛОТАЯ</text>
+				<text transform="matrix(0.9971 0 0 1 736.668 905.5762)" class="st2 st3">АНТИЛОПА</text>
+				<path d="M167.34,767.68c51.54,98.87,140.11,168.95,247.45,182.25c93.56,11.59,173.53-23.39,238.66-88.1
+				c26.37-26.2,8.09-71-29.07-71.45c-77.42-0.95-162.61-24.35-207.8-71.51c-69.77-72.81-40.33-235.04,6.19-320.86
+				c3.54-6.53,13.44-16.82,15.87-15.69c41.59,19.37,81.95,41.42,123.78,60.18c13.58,6.09,37.77,11.5,44.39,4.75
+				c9.9-10.1,16.19-34.8,10.49-46.95c-14.51-30.95-37.52-57.78-55.08-87.48c-8.37-14.17-40.88-32.12,1.28-46.27
+				c2.53-0.85,5.94-5.78,5.35-7.71c-0.89-2.91-4.71-6.49-7.7-6.93c-38.49-5.72-53.44-33.49-69.77-65.26
+				c-29.68-57.74-93.51-106.29-125.97-132.21c34.91,42.99,77.17,95.45,85.41,140.3c-2.23-2-152.65-133.78-155.71-134.35
+				c1.74,2.75,75.39,110.39,109.31,162.22c2.08,3.18,0.75,20.16-16.32,22.62c-17.13,2.47-82.42,38.33-28.52,52.2
+				c0.41,0.11-96.76,98.83-133.2,180.97c-24.38,54.95-44.7,115.06-52.09,175.8C168.42,702.31,169.13,738.31,167.34,767.68z"/>
+            </svg>
           </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1">
-            <i class="fab fa-twitter"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-gplus mx-1">
-            <i class="fab fa-google-plus-g"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-li mx-1">
-            <i class="fab fa-linkedin-in"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-dribbble mx-1">
-            <i class="fab fa-dribbble"> </i>
-          </a>
-        </li>
-      </ul>
-      <!-- Social buttons -->
+				</div>
+				<nav class="menu__navigation">
+					<ul class="menu__list">
+						<li class="menu__item"><a href="{{ route('valid_ticket') }}" class="menu__el"><svg class="menu__icon" width="35" height="23" id="Capa_1" enable-background="new 0 0 512 512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m497 91h-482c-8.284 0-15 6.716-15 15v300c0 8.284 6.716 15 15 15h482c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15-8.271 0-15-6.729-15-15s6.729-15 15-15c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15-8.271 0-15-6.729-15-15s6.729-15 15-15c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15-8.271 0-15-6.729-15-15s6.729-15 15-15c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15zm-15 32.57c-17.461 6.191-30 22.874-30 42.43s12.539 36.239 30 42.43v5.141c-17.461 6.191-30 22.874-30 42.43s12.539 36.239 30 42.43v5.141c-17.461 6.191-30 22.874-30 42.43s12.539 36.239 30 42.43v2.568h-121v-45c0-8.284-6.716-15-15-15s-15 6.716-15 15v45h-301v-270h301v45c0 8.284 6.716 15 15 15s15-6.716 15-15v-45h121z"/><path d="m136.352 240.507-5.403 31.498c-2.097 12.229 10.774 21.592 21.765 15.813l28.286-14.871 28.287 14.871c10.902 5.73 23.875-3.503 21.765-15.813l-5.403-31.498 22.885-22.307c8.887-8.662 3.973-23.8-8.313-25.585l-31.626-4.595-14.144-28.658c-5.494-11.129-21.407-11.132-26.902 0l-14.144 28.658-31.626 4.595c-12.28 1.785-17.203 16.92-8.313 25.585zm29.171-23.933c4.886-.71 9.108-3.779 11.294-8.206l4.183-8.475 4.183 8.475c2.186 4.427 6.408 7.496 11.294 8.206l9.353 1.359-6.768 6.597c-3.536 3.446-5.149 8.411-4.314 13.277l1.598 9.314-8.364-4.397c-4.37-2.297-9.59-2.298-13.961 0l-8.364 4.397 1.598-9.314c.835-4.866-.778-9.832-4.314-13.277l-6.768-6.597z"/><path d="m256 331h-150c-8.284 0-15 6.716-15 15s6.716 15 15 15h150c8.284 0 15-6.716 15-15s-6.716-15-15-15z"/><path d="m346 211c-8.284 0-15 6.716-15 15v60c0 8.284 6.716 15 15 15s15-6.716 15-15v-60c0-8.284-6.716-15-15-15z"/><path d="m406 361c8.284 0 15-6.716 15-15v-180c0-8.284-6.716-15-15-15s-15 6.716-15 15v180c0 8.284 6.716 15 15 15z"/></g></svg>Проверка билетов</a></li>
+						<li class="menu__item"><a href="{{ route('broadcast') }}" class="menu__el"><svg class="menu__icon" width="29" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M15.54,14.54a1,1,0,0,1-.71-.3,1,1,0,0,1,0-1.41,4,4,0,0,0,0-5.66,1,1,0,0,1,1.41-1.41,6,6,0,0,1,0,8.48A1,1,0,0,1,15.54,14.54Z" /><path d="M18.36,17.36a1,1,0,0,1-.7-.29,1,1,0,0,1,0-1.41,8,8,0,0,0,0-11.32,1,1,0,0,1,1.41-1.41,10,10,0,0,1,0,14.14A1,1,0,0,1,18.36,17.36Z"/><path d="M8.46,14.54a1,1,0,0,1-.7-.3,6,6,0,0,1,0-8.48A1,1,0,0,1,9.17,7.17a4,4,0,0,0,0,5.66,1,1,0,0,1,0,1.41A1,1,0,0,1,8.46,14.54Z"  /><path d="M5.64,17.36a1,1,0,0,1-.71-.29,10,10,0,0,1,0-14.14A1,1,0,1,1,6.34,4.34a8,8,0,0,0,0,11.32,1,1,0,0,1,0,1.41A1,1,0,0,1,5.64,17.36Z"  /><path d="M14,10a2,2,0,0,0-4,0,2,2,0,0,0,1,1.72V20a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10Z"  /></svg>Трансляция</a></li>
+						<li class="menu__item"><a href="{{ route('reg') }}" class="menu__el"><svg class="menu__icon" height="18px" width="18px" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g  fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g id="Core" transform="translate(-549.000000, -45.000000)"><g id="check-box-outline" transform="translate(549.000000, 45.000000)"><path d="M4.9,7.1 L3.5,8.5 L8,13 L18,3 L16.6,1.6 L8,10.2 L4.9,7.1 L4.9,7.1 Z M16,16 L2,16 L2,2 L12,2 L12,0 L2,0 C0.9,0 0,0.9 0,2 L0,16 C0,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,8 L16,8 L16,16 L16,16 Z" id="Shape"/></g></g></g></svg>Регистрация</a></li>
+						<li class="menu__item">
+							<a href="{{ route('login') }}" class="menu__el"> <svg class="menu__icon" width="21" height="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								viewBox="0 0 67 67" style="enable-background:new 0 0 67 67;" xml:space="preserve">
+						<g>
+							<g>
+								<path d="M4.25,35h39.899L33.86,45.478c-0.781,0.78-0.781,2.142-0.001,2.923c0.391,0.391,0.902,0.634,1.415,0.634
+									c0.512,0,1.023-0.171,1.414-0.562l12.815-12.801c0.375-0.375,0.586-0.878,0.586-1.408s-0.211-1.036-0.586-1.411l-0.608-0.607
+									c-0.138-0.2-0.312-0.374-0.513-0.511L36.689,20.042c-0.781-0.781-2.048-0.781-2.828,0c-0.781,0.781-0.781,1.856,0,2.638L42.373,31
+									H4.25c-1.104,0-2,0.896-2,2S3.146,35,4.25,35z"/>
+								<path d="M64.75,59.281V9.541C64.75,4.747,60.842,0,56.003,0H30.002c-4.744,0-9.252,4.576-9.252,9.541v11.84c0,1.104,0.896,2,2,2
+									s2-0.896,2-2V9.541C24.75,6.792,27.471,4,30.002,4h26.001c2.647,0,4.747,2.937,4.747,5.541v49.74c0,2.663-2.203,3.719-4.747,3.719
+									H30.002c-2.365,0-5.252-0.887-5.252-3.719v-11.9c0-1.104-0.896-2-2-2s-2,0.896-2,2v11.9c0,4.693,4.181,7.719,9.252,7.719h26.001
+									C61.188,67,64.75,63.823,64.75,59.281z"/>
+							</g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+									</g></svg>Вход
+								</a>
+					</li>
+					</ul>
+				</nav>
+				<div class="menu__humburger">
+					<svg height="12px" version="1.1" viewBox="0 0 18 12" width="18px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g  fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g   id="Core" transform="translate(-87.000000, -342.000000)"><g id="menu" transform="translate(87.000000, 342.000000)"><path d="M0,12 L18,12 L18,10 L0,10 L0,12 L0,12 Z M0,7 L18,7 L18,5 L0,5 L0,7 L0,7 Z M0,0 L0,2 L18,2 L18,0 L0,0 L0,0 Z" id="Shape"/></g></g></g></svg>
+				</div>
+			</div>
 
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="#" class="text-uppercase">Золотая антилопа</a>
-      </div>
-      <!-- Copyright -->
 
-    </footer>
-      <!-- Footer -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      {{-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-      <script src="{{ asset('js/bootstrap.bundle.min.js.map') }}"></script> --}}
 
-      <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-      {{-- <script src="{{ asset('js/bootstrap.min.js.map') }}"></script> --}}
-      <script src="{{ asset ('js/jquery-2.1.1.js')}}"></script>
-      {{-- <script src="{{ asset('js/masonry.pkgd.min.js')}}"></script>
-      <script src="{{ asset ('js/jquery.flexslider-min.js')}}"></script> --}}
-      <script src="{{ asset('js/slick.min.js')}}"></script>
-      <script src="{{ asset('js/game.js')}}"></script>
-      <script src="{{ asset('js/main.js')}}"></script>
-      <script src="{{ asset('js/timer.js')}}"></script>
-  </body>
+ 
+	@yield('content')
+
+  <footer class="footer" style="margin-top: auto;">
+			<div class="footer__wrapper">		
+				<div class="footer__links">
+					<div class="container">
+						<div class="link">
+							<div class="row">
+								<div class="col-sm-12 col-lg-4 link__main">
+									<h3>Золотая антилопа</h3>
+									<p>Прибыльный доход без рисков и усилий. Выигрыш ждет тебяв каждом билете!</p>
+								</div>
+								<div class="col-sm-12 col-lg-2 link__menu">
+									<h3>Меню</h3>
+									<ul>
+										<li><a href="{{ route('home') }}">Главная</a></li>
+										<li><a href="{{ route('broadcast') }}">Трансляция</a></li>
+										<li><a href="{{ route('valid_ticket') }}">Проверка</a></li>
+									</ul>
+								</div>
+								<div class="col-sm-12 col-lg-2 link__game">
+									<h3>Игры</h3>
+									<ul>
+										<li><a href="{{ route('six-game') }}">Рапидо</a></li>
+										<li><a href="{{ route('speed-game') }}">Быстрая игра</a></li>
+										<li><a href="{{ route('moment-game') }}">Моментальная игра</a></li>
+									</ul>
+								</div>
+								<div class="col-sm-12 col-lg-4 link-games">
+									<ul>
+										<li><a href="{{ route('one-game') }}">ЗОЛОТАЯ АНТИЛОПА 4 из 20</a></li>
+										<li><a href="{{ route('two-game') }}">ЗОЛОТАЯ АНТИЛОПА 5 из 36</a></li>
+										<li><a href="{{ route('three-game') }}">ЗОЛОТАЯ АНТИЛОПА 7 из 49</a></li>
+										<li><a href="{{ route('four-game') }}">ЗОЛОТАЯ АНТИЛОПА 6 из 45</a></li>
+										<li><a href="{{ route('five-game') }}">ЗОЛОТАЯ АНТИЛОПА 12 из 24</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__starter">
+					<p>Начни прямо сейчас</p>
+					<a href="{ route('reg') }}" class="btn-access">Регистрация</a>
+				</div>
+				<div class="footer__social-list-ico">
+					<img src="img/Icons/facebook.svg" alt="">
+					<img src="img/Icons/twitter.svg" alt="">
+					<img src="img/Icons/googlePlus.svg" alt="">
+					<img src="img/Icons/linkedin.svg" alt="">
+					<img src="img/Icons/dribbble.svg" alt="">
+				</div>
+				<div class="footer__copyright">
+					<p>© 2020 Copyright: ЗОЛОТАЯ АНТИЛОПА</p>
+				</div>
+			</div>	
+	
+		</footer>
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="{{ asset('js/app.min.js') }}"></script>
+ 
+	<script src="{{ asset('js/game.js')}}"></script>
+  <script src="{{ asset('js/main.js')}}"></script>
+</body>
 </html>

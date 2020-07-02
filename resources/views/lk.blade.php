@@ -6,7 +6,8 @@
             {{   Session::get('info') }}
         </div>
     @endif
-
+  </div>
+</header>
 <h1 align="center" class="mt-5" style="color: white">Личный кабинет</h1>
 <h4 align="center" style="color: white">Добро пожаловать {{ Auth::user()->getName() }}</h4>
 

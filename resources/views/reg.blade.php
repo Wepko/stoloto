@@ -1,6 +1,9 @@
 @extends('layouts.head')
 
 @section('content')
+
+</div>
+</header>
 <br><br><br>
 <div class="card bg-light">
   <article class="card-body mx-auto w-100" style="max-width: 400px;">

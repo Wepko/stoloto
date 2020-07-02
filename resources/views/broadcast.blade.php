@@ -1,6 +1,7 @@
 @extends('layouts.head')
 @section('content')
-
+</div>
+</header>
 <main role="main" class="mt-5">
 
     <!-- Main jumbotron for a primary marketing message or call to action -->

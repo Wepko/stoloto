@@ -7,7 +7,8 @@
         </div>
     @endif
 
-
+  </div>
+</header>
 {{-- <h1>Проверить билет</h1>
 <div class="col-5 mt-5">
     <form action="{{ route('ValidTicketGame') }}" method="post">
