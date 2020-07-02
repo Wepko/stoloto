@@ -8,10 +8,11 @@
   </div>
   @endif
 <main id="main" class="card mt-5">
-    <div class="container">
-        <div class="alert alert-warning text-center" role="alert">
+<div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>
+    <div class="container">
+
       </div>
     <form action="{{ route('AddTicketValueThree') }}" method='post' style="display: flex; justify-content-space-between; width: 100%;">
     @csrf
@@ -64,5 +65,6 @@
     </div>
     @endif
 @endif()
-
+</div>
+</header>
 @endsection

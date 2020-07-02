@@ -123,10 +123,59 @@ table input[type='checkbox']:checked + label{
 					<ul class="menu__list">
 						<li class="menu__item"><a href="{{ route('valid_ticket') }}" class="menu__el"><svg class="menu__icon" width="35" height="23" id="Capa_1" enable-background="new 0 0 512 512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m497 91h-482c-8.284 0-15 6.716-15 15v300c0 8.284 6.716 15 15 15h482c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15-8.271 0-15-6.729-15-15s6.729-15 15-15c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15-8.271 0-15-6.729-15-15s6.729-15 15-15c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15-8.271 0-15-6.729-15-15s6.729-15 15-15c8.284 0 15-6.716 15-15v-30c0-8.284-6.716-15-15-15zm-15 32.57c-17.461 6.191-30 22.874-30 42.43s12.539 36.239 30 42.43v5.141c-17.461 6.191-30 22.874-30 42.43s12.539 36.239 30 42.43v5.141c-17.461 6.191-30 22.874-30 42.43s12.539 36.239 30 42.43v2.568h-121v-45c0-8.284-6.716-15-15-15s-15 6.716-15 15v45h-301v-270h301v45c0 8.284 6.716 15 15 15s15-6.716 15-15v-45h121z"/><path d="m136.352 240.507-5.403 31.498c-2.097 12.229 10.774 21.592 21.765 15.813l28.286-14.871 28.287 14.871c10.902 5.73 23.875-3.503 21.765-15.813l-5.403-31.498 22.885-22.307c8.887-8.662 3.973-23.8-8.313-25.585l-31.626-4.595-14.144-28.658c-5.494-11.129-21.407-11.132-26.902 0l-14.144 28.658-31.626 4.595c-12.28 1.785-17.203 16.92-8.313 25.585zm29.171-23.933c4.886-.71 9.108-3.779 11.294-8.206l4.183-8.475 4.183 8.475c2.186 4.427 6.408 7.496 11.294 8.206l9.353 1.359-6.768 6.597c-3.536 3.446-5.149 8.411-4.314 13.277l1.598 9.314-8.364-4.397c-4.37-2.297-9.59-2.298-13.961 0l-8.364 4.397 1.598-9.314c.835-4.866-.778-9.832-4.314-13.277l-6.768-6.597z"/><path d="m256 331h-150c-8.284 0-15 6.716-15 15s6.716 15 15 15h150c8.284 0 15-6.716 15-15s-6.716-15-15-15z"/><path d="m346 211c-8.284 0-15 6.716-15 15v60c0 8.284 6.716 15 15 15s15-6.716 15-15v-60c0-8.284-6.716-15-15-15z"/><path d="m406 361c8.284 0 15-6.716 15-15v-180c0-8.284-6.716-15-15-15s-15 6.716-15 15v180c0 8.284 6.716 15 15 15z"/></g></svg>Проверка билетов</a></li>
 						<li class="menu__item"><a href="{{ route('broadcast') }}" class="menu__el"><svg class="menu__icon" width="29" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M15.54,14.54a1,1,0,0,1-.71-.3,1,1,0,0,1,0-1.41,4,4,0,0,0,0-5.66,1,1,0,0,1,1.41-1.41,6,6,0,0,1,0,8.48A1,1,0,0,1,15.54,14.54Z" /><path d="M18.36,17.36a1,1,0,0,1-.7-.29,1,1,0,0,1,0-1.41,8,8,0,0,0,0-11.32,1,1,0,0,1,1.41-1.41,10,10,0,0,1,0,14.14A1,1,0,0,1,18.36,17.36Z"/><path d="M8.46,14.54a1,1,0,0,1-.7-.3,6,6,0,0,1,0-8.48A1,1,0,0,1,9.17,7.17a4,4,0,0,0,0,5.66,1,1,0,0,1,0,1.41A1,1,0,0,1,8.46,14.54Z"  /><path d="M5.64,17.36a1,1,0,0,1-.71-.29,10,10,0,0,1,0-14.14A1,1,0,1,1,6.34,4.34a8,8,0,0,0,0,11.32,1,1,0,0,1,0,1.41A1,1,0,0,1,5.64,17.36Z"  /><path d="M14,10a2,2,0,0,0-4,0,2,2,0,0,0,1,1.72V20a1,1,0,0,0,2,0V11.72A2,2,0,0,0,14,10Z"  /></svg>Трансляция</a></li>
-						<li class="menu__item"><a href="{{ route('reg') }}" class="menu__el"><svg class="menu__icon" height="18px" width="18px" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g  fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g id="Core" transform="translate(-549.000000, -45.000000)"><g id="check-box-outline" transform="translate(549.000000, 45.000000)"><path d="M4.9,7.1 L3.5,8.5 L8,13 L18,3 L16.6,1.6 L8,10.2 L4.9,7.1 L4.9,7.1 Z M16,16 L2,16 L2,2 L12,2 L12,0 L2,0 C0.9,0 0,0.9 0,2 L0,16 C0,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,8 L16,8 L16,16 L16,16 Z" id="Shape"/></g></g></g></svg>Регистрация</a></li>
-						<li class="menu__item">
-							<a href="{{ route('login') }}" class="menu__el"> <svg class="menu__icon" width="21" height="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								viewBox="0 0 67 67" style="enable-background:new 0 0 67 67;" xml:space="preserve">
+						
+						@if(Auth::check())
+							<li class="menu__item"><a href="{{ route('lk') }}" class="menu__el"><svg class="menu__icon" height="18px" width="18px" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g  fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g id="Core" transform="translate(-549.000000, -45.000000)"><g id="check-box-outline" transform="translate(549.000000, 45.000000)"><path d="M4.9,7.1 L3.5,8.5 L8,13 L18,3 L16.6,1.6 L8,10.2 L4.9,7.1 L4.9,7.1 Z M16,16 L2,16 L2,2 L12,2 L12,0 L2,0 C0.9,0 0,0.9 0,2 L0,16 C0,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,8 L16,8 L16,16 L16,16 Z" id="Shape"/></g></g></g></svg>Кабинет</a></li>
+							<li class="menu__item"><a href="{{ route('login') }}" class="menu__el"> <svg class="menu__icon" width="21" height="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 67 67" style="enable-background:new 0 0 67 67;" xml:space="preserve">
+						
+						<g>
+							<g>
+								<path d="M4.25,35h39.899L33.86,45.478c-0.781,0.78-0.781,2.142-0.001,2.923c0.391,0.391,0.902,0.634,1.415,0.634
+									c0.512,0,1.023-0.171,1.414-0.562l12.815-12.801c0.375-0.375,0.586-0.878,0.586-1.408s-0.211-1.036-0.586-1.411l-0.608-0.607
+									c-0.138-0.2-0.312-0.374-0.513-0.511L36.689,20.042c-0.781-0.781-2.048-0.781-2.828,0c-0.781,0.781-0.781,1.856,0,2.638L42.373,31
+									H4.25c-1.104,0-2,0.896-2,2S3.146,35,4.25,35z"/>
+								<path d="M64.75,59.281V9.541C64.75,4.747,60.842,0,56.003,0H30.002c-4.744,0-9.252,4.576-9.252,9.541v11.84c0,1.104,0.896,2,2,2
+									s2-0.896,2-2V9.541C24.75,6.792,27.471,4,30.002,4h26.001c2.647,0,4.747,2.937,4.747,5.541v49.74c0,2.663-2.203,3.719-4.747,3.719
+									H30.002c-2.365,0-5.252-0.887-5.252-3.719v-11.9c0-1.104-0.896-2-2-2s-2,0.896-2,2v11.9c0,4.693,4.181,7.719,9.252,7.719h26.001
+									C61.188,67,64.75,63.823,64.75,59.281z"/>
+							</g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+						</g>
+						<g>
+									</g></svg>Выйти
+								</a>
+					</li>
+						@else
+							<li class="menu__item"><a href="{{ route('reg') }}" class="menu__el"><svg class="menu__icon" height="18px" width="18px" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g  fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g id="Core" transform="translate(-549.000000, -45.000000)"><g id="check-box-outline" transform="translate(549.000000, 45.000000)"><path d="M4.9,7.1 L3.5,8.5 L8,13 L18,3 L16.6,1.6 L8,10.2 L4.9,7.1 L4.9,7.1 Z M16,16 L2,16 L2,2 L12,2 L12,0 L2,0 C0.9,0 0,0.9 0,2 L0,16 C0,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,8 L16,8 L16,16 L16,16 Z" id="Shape"/></g></g></g></svg>Регистрация</a></li>
+							<li class="menu__item"><a href="{{ route('login') }}" class="menu__el"> <svg class="menu__icon" width="21" height="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 67 67" style="enable-background:new 0 0 67 67;" xml:space="preserve">
+						
 						<g>
 							<g>
 								<path d="M4.25,35h39.899L33.86,45.478c-0.781,0.78-0.781,2.142-0.001,2.923c0.391,0.391,0.902,0.634,1.415,0.634
@@ -171,6 +220,7 @@ table input[type='checkbox']:checked + label{
 									</g></svg>Вход
 								</a>
 					</li>
+					@endif
 					</ul>
 				</nav>
 				<div class="menu__humburger">
@@ -224,7 +274,7 @@ table input[type='checkbox']:checked + label{
 				</div>
 				<div class="footer__starter">
 					<p>Начни прямо сейчас</p>
-					<a href="{ route('reg') }}" class="btn-access">Регистрация</a>
+					<a href="{{ route('reg') }}" class="btn-access">Регистрация</a>
 				</div>
 				<div class="footer__social-list-ico">
 					<img src="img/Icons/facebook.svg" alt="">
