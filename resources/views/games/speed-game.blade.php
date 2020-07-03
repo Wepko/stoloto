@@ -13,10 +13,11 @@
   @endif
 
 <main id="main" class="mt-5">
-    <div class="container">
-        <div class="alert alert-warning text-center" role="alert">
+<div class="alert alert-warning text-center" role="alert">
             Быстрая игра
         </div>
+    <div class="container">
+
         <div id="addRes"></div>
     </div>
         <div class=" container">
@@ -47,7 +48,9 @@
                 </div>
              </div>
         </div>
-
+<br><br><br><br><br><br>
 </main>
+</div>
+</header>
 <script src="{{ asset('js/speedGame.js')}}"></script>
 @endsection

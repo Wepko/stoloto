@@ -47,7 +47,7 @@
 		</div>
 		<div class="special-offer__wrapper">
 			<div class="special-offer__images">
-				<img src="images/Boy-man.png" alt="">
+				<img src="img/Boy-man.png" alt="">
 			</div>
 			<div class="special-offer__content">
 				<div class="special-offer__title">Специальное предложение!</div>
@@ -62,7 +62,7 @@
 					</div>
 					<div class="special-offer__info-block">
 						<h3>Каждые две недели  накопленную сумму 
-							<span>делим поровну</span> меджу всеми участниками!</h3>
+							<span>делим поровну</span> между всеми участниками!</h3>
 						<p>Всё что вам нужно сделать, это купить билет и указать цифры, которые 
 							по вашему мнению должны выйграть. Если вы угадали от трёх цифр 
 							в вашем билете - поздравляем, приз ваш! </p>

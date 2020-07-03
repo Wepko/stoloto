@@ -8,8 +8,8 @@
     @endif
   </div>
 </header>
-<h1 align="center" class="mt-5" style="color: white">Личный кабинет</h1>
-<h4 align="center" style="color: white">Добро пожаловать {{ Auth::user()->getName() }}</h4>
+<h1 align="center"  >Личный кабинет</h1>
+<h4 align="center" >Добро пожаловать {{ Auth::user()->getName() }}</h4>
 
 
 <div class="content-4_20">
@@ -19,7 +19,7 @@
           <div class="card-body">
           <h5 class="card-title">Кошелек</h5>
           <h6 class="card-subtitle card-text mb-2 text-muted">{{Auth::user()->money()}} руб</h6>
-          <a href="#"class="btn btn-dark mt-2" style="color: white!important">Пополнить</a>
+          <a href="#"class="btn btn-dark mt-2" >Пополнить</a>
           </div>
       </div>
       
@@ -27,7 +27,7 @@
         <div class="card-body">
           <h5 class="card-title">Промокоды</h5>
           <h6 class="card-subtitle card-text mb-2 text-muted">0 руб</h6>
-          <a href="#" class="btn btn-dark mt-2" style="color: white!important">Добавить</a>
+          <a href="#" class="btn btn-dark mt-2" >Добавить</a>
         </div>
       </div>
     
@@ -35,13 +35,13 @@
         <div class="card-body">
           <h5 class="card-title">Бонус</h5>
           <h6 class="card-subtitle card-text mb-2 text-muted">0</h6>
-          <a href="#" class="btn btn-dark mt-2" style="color: white!important">Особые программы</a>
+          <a href="#" class="btn btn-dark mt-2" >Особые программы</a>
         </div>
       </div>
 
     </div>
 
-    <div class="row w-100 mt-4 " style="background-color: white">
+    <div class="row w-100 mt-4 " >
       <nav class="w-100">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Мои билеты</a>

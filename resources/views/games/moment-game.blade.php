@@ -13,10 +13,11 @@
   @endif
 
 <main id="main" class="mt-5">
-    <div class="container">
-        <div class="alert alert-warning text-center" role="alert">
+<div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span> 5123525 руб</span>
         </div>
+    <div class="container">
+
       </div>
       @if (Session::has('good'))
         <form action="{{ route('OneSpeedGameRes') }}" method='post'>
@@ -90,6 +91,8 @@
             </div>
         </div>
     </form>
-</main>
+</main>  
+</div>
+</header>
 
 @endsection

@@ -2,7 +2,7 @@
 @section('content')
 <br><br><br>
   @if (Session::has('info'))
-  <div class="alert alert-danger mt-5" role="alert">
+  <div class="alert alert-danger mt-5" style=" margin:auto; width:100%; text-align: center;" role="alert">
     {{   Session::get('info') }}
   </div>
   @endif
@@ -10,7 +10,7 @@
 </header>
 
 <div class="card bg-light">
-  <article class="card-body mx-auto w-100" style="max-width: 400px;">
+  <article class="card-body mx-auto w-100" style="max-width: 800px;">
     <h4 class="card-title mt-3 text-center">Авторизация</h4>
     <p class="text-center">Начните с вашего бесплатного аккаунта</p>
 
@@ -51,6 +51,4 @@
 
 </div> 
 <!--container end.//-->
-
-<br><br>
 @endsection
