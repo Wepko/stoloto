@@ -250,7 +250,7 @@ function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Con
         var _price5,
             _price6 = 0;
 
-        for (i = 1; i <= 14; i++) {
+        for (var i = 1; i <= 14; i++) {
           if (countInput[id - 1][0] == i) {
             _price6 = 100 * _mas3[i];
           }
