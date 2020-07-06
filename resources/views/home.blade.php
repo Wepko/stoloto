@@ -36,7 +36,7 @@
 			<div class="jackpot__wrapper">
 				<strong class="jackpot__title">Текущий Jackpot</strong>
 				<div class="jackpot__total">
-					<div class="jackpot__element"></div>
+					<div class="jackpot__element">1</div>
 					<div class="jackpot__element">7</div>
 					<div class="jackpot__element">5</div>
 					<div class="jackpot__element">0</div>
