@@ -1,12 +1,12 @@
 @extends('layouts.head')
-
 @section('content')
 
 @if (Session::has('info'))
   <div class="alert alert-success mt-5" role="alert">
     {{   Session::get('info') }}
   </div>
-  @endif
+@endif
+
 <main id="main" class="card mt-5">
 <div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!

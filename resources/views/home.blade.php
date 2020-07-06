@@ -121,8 +121,8 @@
 		   					<div class="game-card-big__price">Билет от 20р</div>
 		   					<div class="game-card-big__images"><img src="img/Happy guy.jpg" alt=""></div>
 		   					<div class="game-card-big__btns">
-		   						<a href="" class="btn-orange mr-3">Играть сейчас</a>
-		   						<a href="" class="btn-orange-revers">Узнать подробнее</a>
+		   						<a href="{{ route('speed-game') }}" class="btn-orange mr-3">Играть сейчас</a>
+		   						<a href="#" class="btn-orange-revers">Узнать подробнее</a>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -133,8 +133,8 @@
 		   					<div class="game-card-big__price">Билет от 100р</div>
 		   					<div class="game-card-big__images"><img src="img/Happy girl.jpg" alt=""></div>
 		   					<div class="game-card-big__btns">
-		   						<a href="" class="btn-orange mr-3">Играть сейчас</a>
-		   						<a href="" class="btn-orange-revers">Узнать подробнее</a>
+		   						<a href="{{ route('moment-game') }}" class="btn-orange mr-3">Играть сейчас</a>
+		   						<a href="#" class="btn-orange-revers">Узнать подробнее</a>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -147,7 +147,7 @@
 	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа 4 из 20</div>
 	   						<div class="game-card-middle__price">Билет от 200р</div>
-	   						<div class="game-card-middle__btn"><a href="" class="btn-access btn-active  pl-5 pr-5">Играть</a></div>
+	   						<div class="game-card-middle__btn"><a href="{{ route('one-game') }}" class="btn-access btn-active  pl-5 pr-5">Играть</a></div>
 	   						<div class="game-card-middle__images">
 	   							<img src="img/Balls 4-20.jpg" alt="">
 	   						</div>
@@ -156,9 +156,9 @@
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
 	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
-	   						<div class="game-card-middle__name-game">Золотая антилопа 4 из 20</div>
-	   						<div class="game-card-middle__price">Билет от 200р</div>
-	   						<div class="game-card-middle__btn"><a href="" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
+	   						<div class="game-card-middle__name-game">Золотая антилопа 5 из 36</div>
+	   						<div class="game-card-middle__price">Билет от 40р</div>
+	   						<div class="game-card-middle__btn"><a href="{{ route('two-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
 	   						<div class="game-card-middle__images">
 	   							<img src="img/Balls 7-49.jpg" alt="">
 	   						</div>
@@ -167,9 +167,9 @@
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
 	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
-	   						<div class="game-card-middle__name-game">Золотая антилопа 4 из 20</div>
-	   						<div class="game-card-middle__price">Билет от 200р</div>
-	   						<div class="game-card-middle__btn"><a href="" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
+	   						<div class="game-card-middle__name-game">Золотая антилопа 7 из 49</div>
+	   						<div class="game-card-middle__price">Билет от 25р</div>
+	   						<div class="game-card-middle__btn"><a href="{{ route('three-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
 	   						<div class="game-card-middle__images">
 	   							<img src="img/Balls 5-45.jpg" alt="">
 	   						</div>
@@ -180,9 +180,9 @@
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
 	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
-	   						<div class="game-card-middle__name-game">Золотая антилопа 4 из 20</div>
+	   						<div class="game-card-middle__name-game">Золотая антилопа 6 из 45</div>
 	   						<div class="game-card-middle__price">Билет от 200р</div>
-	   						<div class="game-card-middle__btn"><a href="" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
+	   						<div class="game-card-middle__btn"><a href="{{ route('four-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
 	   						<div class="game-card-middle__images">
 	   							<img src="img/Balls 4-20.jpg" alt="">
 	   						</div>
@@ -191,9 +191,9 @@
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
 	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
-	   						<div class="game-card-middle__name-game">Золотая антилопа 4 из 20</div>
-	   						<div class="game-card-middle__price">Билет от 200р</div>
-	   						<div class="game-card-middle__btn"><a href="" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
+	   						<div class="game-card-middle__name-game">Золотая антилопа 12 из 24</div>
+	   						<div class="game-card-middle__price">Билет от 60р</div>
+	   						<div class="game-card-middle__btn"><a href="{{ route('five-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
 	   						<div class="game-card-middle__images">
 	   							<img src="img/Balls 7-49.jpg" alt="">
 	   						</div>
@@ -202,9 +202,9 @@
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
 	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
-	   						<div class="game-card-middle__name-game">Золотая антилопа 4 из 20</div>
-	   						<div class="game-card-middle__price">Билет от 200р</div>
-	   						<div class="game-card-middle__btn"><a href="" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
+	   						<div class="game-card-middle__name-game">Золотая антилопа Рапидо</div>
+	   						<div class="game-card-middle__price">Билет от 60р</div>
+	   						<div class="game-card-middle__btn"><a href="{{ route('six-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
 	   						<div class="game-card-middle__images">
 	   							<img src="img/Balls 5-45.jpg" alt="">
 	   						</div>
