@@ -8,11 +8,6 @@
 <!-- logo -->
 
 <!-- logo -->
-@if (Session::has('info'))
-  <div class="alert alert-success mt-5" role="alert">
-    {{   Session::get('info') }}
-  </div>
-@endif
 <div class="preview">
 	<div class="preview__content">
 		<p class="preview__text">Сыграй, чтобы осуществить свою мечту!</p>

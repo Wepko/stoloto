@@ -19,7 +19,10 @@
           <div class="card-body">
           <h5 class="card-title">Кошелек</h5>
           <h6 class="card-subtitle card-text mb-2 text-muted">{{Auth::user()->money()}} руб</h6>
-          <a href="#"class="btn btn-dark mt-2" >Пополнить</a>
+          <form action="{{ route('refill') }}" method="POST">
+            @csrf
+            <input type="submit" class="btn btn-dark mt-2" value="Пополнить">
+          </form>
           </div>
       </div>
       

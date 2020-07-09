@@ -53,6 +53,7 @@ Route::post('/WinnerFive', 'AdminController@goWinnerFiveGame')->name('WinnerFive
 Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGame');
 
 Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->name('TimerOneGame');
+Route::post('/refill', 'LKController@refill')->name('refill');
 
 Route::get('/admin', function (){
   return view('admin-panel');
