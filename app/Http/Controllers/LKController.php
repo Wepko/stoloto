@@ -16,6 +16,27 @@ class LKController extends Controller
 {
 
     public function index() {
+
+        $billPayments = new \Qiwi\Api\BillPayments('eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6IjdkN2MyMmI1LWJjMTctNDU1Zi04NTdjLTExYjA1OTI1YTgyZCIsInVzZXJfaWQiOiI3OTYyNjg1MzQ1OCIsInNlY3JldCI6IjRjN2UzZjkxMjg5YTEwYTg3NTRiYjY0MDU1NTMyMGU1OTQ2NjBjZWE2ZTdhZjlkYTQyMWQ2NGU3ZmVjOGM0ODUifX0=');
+        
+        if (DB::table('refill')->where('user_id', Auth::user()->getId())->get()) {
+            $refill = DB::table('refill')->where('user_id', Auth::user()->getId())->get();
+            foreach ($refill as $ref) {
+                $billId = $ref->id;
+                /** @var \Qiwi\Api\BillPayments $billPayments */
+                $response = $billPayments->getBillInfo($billId);
+            
+                if ($response["status"]["value"] == "PAID") {
+                    $model = User::where('id', '=', Auth::user()->getId())->first();
+                    
+                    $money = strval(intval(Auth::user()->money()) + intval($response["amount"]["value"]));
+                    $model->money = $money;
+                    $model->save();
+
+                    DB::table('refill')->where('id', $ref->id)->delete();
+                }
+            }
+        }
         return view('lk', ['userwinner' => UserWinnerModels::all()]);
     }
 
@@ -48,24 +69,6 @@ class LKController extends Controller
 
         //echo $link;
         return redirect($link);
-    }
-
-    public function refillStatus(Request $request) {
-        
-        $billId = $request->input("billId");
-
-        /** @var \Qiwi\Api\BillPayments $billPayments */
-        $response = $billPayments->getBillInfo($billId);
-
-        $arr = json_decode($response);
-        
-        if($arr["status"]["value"] == "PAID") {
-            $model = User::where('id', '=', Auth::user()->getId())->first();
-            $price = strval(intval(user['money']) + intval($arr["amount"]["value"]));
-            $model->money = $price;
-            $model->save();
-        }
-        
     }
 
 }
