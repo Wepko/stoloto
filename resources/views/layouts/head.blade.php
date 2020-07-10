@@ -312,7 +312,7 @@ table input[type='checkbox']:checked + label{
 							</div>
 							<div class="footer__starter">
 								<p>Начни прямо сейчас</p>
-								<a href="{ route('reg') }}" class="btn-access">Регистрация</a>
+								<a href="{{ route('reg') }}" class="btn-access">Регистрация</a>
 							</div>
 							<div class="footer__social-list-ico">
 								<img src="img/Icons/facebook.svg" alt="">
