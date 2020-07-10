@@ -27,6 +27,7 @@ Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
 Route::get('/logout', 'LKController@logout')->name('logout');
 
+
 //добавление значения билетов пользователей
 Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->name('AddTicketValueOne');
 Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicketValueTwo');
@@ -53,7 +54,9 @@ Route::post('/WinnerFive', 'AdminController@goWinnerFiveGame')->name('WinnerFive
 Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGame');
 
 Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->name('TimerOneGame');
+
 Route::get('/refill', 'LKController@refill')->name('refill');
+Route::post('/refillStatus', 'LKController@refillStatus')->name('refillStatus');
 
 Route::get('/admin', function (){
   return view('admin-panel');
