@@ -17,12 +17,14 @@
     <div class="row w-100">
       <div class="card card-block" >
           <div class="card-body">
-          <h5 class="card-title">Кошелек</h5>
-          <h6 class="card-subtitle card-text mb-2 text-muted">{{Auth::user()->money()}} руб</h6>
-          <form action="{{ route('refill') }}" method="POST">
-            @csrf
-            <input type="submit" class="btn btn-dark mt-2" value="Пополнить">
-          </form>
+            <h5 class="card-title">Кошелек</h5>
+            <h6 class="card-subtitle card-text mb-2 text-muted">{{Auth::user()->money()}} руб</h6>
+          
+            <form action="{{ route('refill') }}" method="get">
+              @csrf
+              <input type="number" name="price" placeholder="Сумма" style="border: 1px solid black" min="0" class="btn mt-2">
+              <input type="submit" class="btn btn-dark mt-2" value="Пополнить">
+            </form>
           </div>
       </div>
       
@@ -75,13 +77,6 @@
       </div>
     </div>
   </div>
-
-
-      @if(Auth::user()->isAdmin())
-      <!--<div class=" mt-5" style="width: 18rem;">
-        <a href="{{ route('admin') }}"class="btn btn-dark mt-2">Панель администратора</a>
-      </div>-->
-      @endif
 
 </div>
 @endsection
