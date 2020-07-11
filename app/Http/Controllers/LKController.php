@@ -38,7 +38,6 @@ class LKController extends Controller
                 }
                 if ($response["status"]["value"] == "WAITING") {
                     $billPayments->cancelBill($billId);
-                    DB::table('refill')->where('id', $ref->id)->delete();
                 }
             }
         }

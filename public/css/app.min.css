@@ -4104,5 +4104,9 @@ body {
       -webkit-appearance: none;
   }
 
+  .hide {
+    display: none;
+  }
+
 
     
