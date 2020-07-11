@@ -17,5 +17,6 @@ class RefillModels extends Model
         'id',
         'user_id',
         'price',
+        'status'
     ];
 }

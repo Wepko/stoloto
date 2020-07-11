@@ -22,7 +22,7 @@
           
             <form action="{{ route('refill') }}" method="get">
               @csrf
-              <input type="number" name="price" placeholder="Сумма" style="border: 1px solid black" min="0" class="btn mt-2">
+              <input type="number" name="price" placeholder="Сумма" style="border: 1px solid black" class="btn mt-2">
               <input type="submit" class="btn btn-dark mt-2" value="Пополнить">
             </form>
           </div>

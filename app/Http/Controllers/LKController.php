@@ -27,19 +27,29 @@ class LKController extends Controller
                 $billId = $ref->id;
                 /** @var \Qiwi\Api\BillPayments $billPayments */
                 $response = $billPayments->getBillInfo($billId);
+
                 if ($response["status"]["value"] == "PAID") {
                     $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
+                        
                     $money = strval(intval(Auth::user()->money()) + intval($response["amount"]["value"]));
                     $model->money = $money;
                     $model->save();
 
-                    DB::table('refill')->where('id', $ref->id)->delete();
-                }
-                if ($response["status"]["value"] == "WAITING") {
+                    $refill_model = RefillModels::where('id', '=', $ref->id)->first();
+                    $refill_model->status = "PAID";
+                    $refill_model->save();
+
                     $billPayments->cancelBill($billId);
                 }
-            }
+
+                if ($response["status"]["value"] == "WAITING") {
+                    $billPayments->cancelBill($billId);
+                    
+                    $refill_model = RefillModels::where('id', '=', $ref->id)->first();
+                    $refill_model->status = "CANCELED";
+                    $refill_model->save();
+                }
+            } 
         }
         return view('lk', ['userwinner' => UserWinnerModels::all()]);
     }
@@ -57,7 +67,8 @@ class LKController extends Controller
 
         RefillModels::insert(array(
             'user_id'  => Auth::user()->getId(),
-            'price' => $request->input('price')
+            'price' => $request->input('price'),
+            'status' => "WAITING"
         ));
 
         $publicKey = '2S7mpWSvB93qSAr7uYNu2Vvnd2pTVzxEviw6chKKbG9xyy9pcxcvrmne6c6m7cUabcbN8Gnkjk77SEeN2YVBjf2bWuqw15YpX498gZpHhZZ32mxbfN9SmUVRUnNZGG4ucyHkByAyivprASsyt8xT7jw6BT35LDVBPEEYu4RLRFrfMS9JL6WcUMiduJMUAAoWip5q91t5aQGRX9J24EDrx8vhp9H25eS5a4';
