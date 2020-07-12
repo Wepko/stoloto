@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\UserWinnerModels;
 use App\Models\RefillModels;
 use App\Models\OutputModels;
+use App\Models\TwoGameModels;
 use Illuminate\Http\Request;
 use DB;
 require "BillPayments.php";
@@ -56,7 +57,8 @@ class LKController extends Controller
                 }
             } 
         }
-        return view('lk', ['userwinner' => UserWinnerModels::all()]);
+        return view('lk', ['userwinner' => UserWinnerModels::all()], 
+                            ['usertwogame' => TwoGameModels::all()]);
     }
 
     public function logout(){

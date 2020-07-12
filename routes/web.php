@@ -9,14 +9,13 @@ use App\Models\FourGameModels;
 use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
 use App\Models\OutputModels;
+use App\Models\FondModels;
 
 Route::get('/', function () {
-  $fond = strval(intval(OneGameModels::sum('price')) 
-          + intval(TwoGameModels::sum('price'))
-          + intval(ThreeGameModels::sum('price'))
-          + intval(FourGameModels::sum('price'))
-          + intval(FiveGameModels::sum('price'))
-          + intval(SixGameModels::sum('price')));
+
+  $fondModels = FondModels::where('id', '=', 1)->first();
+
+  $fond = $fondModels->fond;
 
   $pre = "";
   $max1 = 6;
@@ -69,6 +68,7 @@ Route::post('/WinnerThree', 'AdminController@goWinnerThreeGame')->name('WinnerTh
 Route::post('/WinnerFour', 'AdminController@goWinnerFourGame')->name('WinnerFourGame');
 Route::post('/WinnerFive', 'AdminController@goWinnerFiveGame')->name('WinnerFiveGame');
 Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGame');
+Route::post('/distribution', 'AdminController@distribution')->name('distribution');
 
 Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->name('TimerOneGame');
 

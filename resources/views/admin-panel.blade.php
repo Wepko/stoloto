@@ -58,6 +58,13 @@
           <h6 class="card-subtitle  card-text mb-2 text-muted ">Счетов нету</h6>     
         @endif  
       </div>
+      <div class="mt-5"> 
+        <h1>Распределение джекпота</h1>
+        <form action= "{{ route('distribution') }}" method="post">
+          @csrf
+          <input type="submit" class="btn btn-dark mt-2" value="Начать распределение">
+      </form>
+      </div>
 @endif
     </div>
 @endsection

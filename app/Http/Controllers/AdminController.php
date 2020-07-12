@@ -14,13 +14,45 @@ use App\Models\ThreeGameWinModels;
 use App\Models\ThreeGameModels;
 use App\Models\FourGameWinModels;
 use App\Models\FourGameModels;
+use App\Models\FiveGameWinModels;
+use App\Models\FiveGameModels;
 use App\Models\SixGameWinModels;
 use App\Models\SixGameModels;
+use App\Models\FondModels;
 use Illuminate\Http\Request;
 use DB; 
 
 class AdminController extends Controller
 {
+
+    public function distribution() {
+        $fond = strval(intval(OneGameModels::sum('price')) 
+          + intval(TwoGameModels::sum('price'))
+          + intval(ThreeGameModels::sum('price'))
+          + intval(FourGameModels::sum('price'))
+          + intval(FiveGameModels::sum('price'))
+          + intval(SixGameModels::sum('price')));
+        
+        $countUsers = User::count('id');
+        
+        $fond = strval(intval($fond / $countUsers));
+
+        $users = User::all();
+
+        foreach ($users as $user) {
+            $model = User::where('id', '=', $user->id)->first();
+            $money = strval(intval($user->money()) + intval($fond));
+            $model->money = $money;
+            $model->save();
+        }
+
+        $model = FondModels::where('id', '=', 1)->first();
+        $model->fond = 0;
+        $model->save();
+
+        return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
+    }
+
     public function goWinnerOneGame() {
         $i = 1;
         $countOne = 0;
@@ -171,20 +203,20 @@ class AdminController extends Controller
                     $win = 'Вы выйграли суперприз!';
                     $winMoney = $fond * 0.3;
                 }
-                else {
+                if ($countOne != 5 && $countTwo != 1) {
                     if ($countOne == 2) {
                         $win = 'Вы выйграли 20 рублей!';
                         $winMoney = 20;
                     }
-                    else if ($countOne == 3) {
+                    if ($countOne == 3) {
                         $win = 'Вы выйграли 100 рублей!';
                         $winMoney = 100;
                     }
-                    else if ($countOne == 4) {
+                    if ($countOne == 4) {
                         $win = 'Вы выйграли 300 рублей!';
                         $winMoney = 300;
                     }
-                    else if ($countOne == 5) {
+                    if ($countOne == 5) {
                         $win = 'Вы выйграли приз!';
                         $winMoney = $fond * 0.1;
                     }

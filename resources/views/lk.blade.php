@@ -86,7 +86,17 @@
         @endif     
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>
+          @if($usertwogame)
+            @forelse ($usertwogame as $user)
+              @if ($user->user_id == Auth::user()->getId())
+                <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Номер билета {{$user->id}}, Тираж №{{$user->circulation}} Поле1: {{ $user->ticketOne }} Поле2: {{ $user->ticketTwo }}</h6>
+              @endif
+            @empty  
+              <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>
+            @endforelse
+          @else
+            <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>    
+          @endif     
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           <h6 class="card-subtitle card-text mb-2 text-muted">Оформите подписку на все тиражи. <br> Подпишитесь на свою победу</h6>

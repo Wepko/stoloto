@@ -17,6 +17,7 @@ use App\Models\ThreeGameWinModels;
 use App\Models\FourGameWinModels;
 use App\Models\FiveGameWinModels;
 use App\Models\SixGameWinModels;
+use App\Models\FondModels;
 use Illuminate\Http\Request;
 use DB;
 
@@ -153,6 +154,17 @@ class AddTicketController extends Controller
                             'ticketTwo' => implode($arr22),
                             'price' => $price / 2
                         ));
+
+                        if (FondModels::count('id') == 0) {
+                            FondModels::insert(array(
+                                'fond' => $price / 2
+                            ));
+                        }
+                        else {
+                            $fondModels = FondModels::where('id', '=', 1)->first();
+                            $fondModels->fond = $fondModels->fond + $price / 2;
+                            $fondModels->save();
+                        }
                     }
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
