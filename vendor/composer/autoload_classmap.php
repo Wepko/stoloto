@@ -34,6 +34,7 @@ return array(
     'App\\Models\\OneGameModels' => $baseDir . '/app/Models/OneGameModels.php',
     'App\\Models\\OneGameTimerModels' => $baseDir . '/app/Models/OneGameTimerModels.php',
     'App\\Models\\OneGameWinModels' => $baseDir . '/app/Models/OneGameWinModels.php',
+    'App\\Models\\RefillModels' => $baseDir . '/app/Models/RefillModels.php',
     'App\\Models\\SixGameModels' => $baseDir . '/app/Models/SixGameModels.php',
     'App\\Models\\SixGameWinModels' => $baseDir . '/app/Models/SixGameWinModels.php',
     'App\\Models\\ThreeGameModels' => $baseDir . '/app/Models/ThreeGameModels.php',

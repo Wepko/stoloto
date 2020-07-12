@@ -18,13 +18,13 @@ class LKController extends Controller
     public function index() {
 
         $billPayments = new \Qiwi\Api\BillPayments('eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6IjdkN2MyMmI1LWJjMTctNDU1Zi04NTdjLTExYjA1OTI1YTgyZCIsInVzZXJfaWQiOiI3OTYyNjg1MzQ1OCIsInNlY3JldCI6ImM2ZmVmNDBmYWM1ZTU1MDZkYmQyODk0OTJkODIzNmM2NTZlM2I5YjU5MTgzNDA2YmIzYzQ0ZmEwZTI2NWQ3Y2QifX0=');
-        
+
         if (DB::table('refill')->where('user_id', Auth::user()->getId())->get()) {
             
             $refill = DB::table('refill')->where('user_id', Auth::user()->getId())->get();
 
             foreach ($refill as $ref) {
-                $billId = $ref->id;
+                $billId = $ref->billId;
                 /** @var \Qiwi\Api\BillPayments $billPayments */
                 $response = $billPayments->getBillInfo($billId);
 
@@ -40,6 +40,8 @@ class LKController extends Controller
                     $refill_model->save();
 
                     $billPayments->cancelBill($billId);
+
+                    RefillModels::where('billId', '=', $ref->billId)->delete();
                 }
 
                 if ($response["status"]["value"] == "WAITING") {
@@ -48,6 +50,8 @@ class LKController extends Controller
                     $refill_model = RefillModels::where('id', '=', $ref->id)->first();
                     $refill_model->status = "CANCELED";
                     $refill_model->save();
+                    
+                    RefillModels::where('billId', '=', $ref->billId)->delete();
                 }
             } 
         }
@@ -63,10 +67,12 @@ class LKController extends Controller
     public function refill(Request $request) {
 
         $billPayments = new \Qiwi\Api\BillPayments('eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6IjdkN2MyMmI1LWJjMTctNDU1Zi04NTdjLTExYjA1OTI1YTgyZCIsInVzZXJfaWQiOiI3OTYyNjg1MzQ1OCIsInNlY3JldCI6ImM2ZmVmNDBmYWM1ZTU1MDZkYmQyODk0OTJkODIzNmM2NTZlM2I5YjU5MTgzNDA2YmIzYzQ0ZmEwZTI2NWQ3Y2QifX0=');
-        $count = DB::table('refill')->max('id');
+
+        $billId = $billPayments->generateId();
 
         RefillModels::insert(array(
             'user_id'  => Auth::user()->getId(),
+            'billId' => $billId,
             'price' => $request->input('price'),
             'status' => "WAITING"
         ));
@@ -76,7 +82,7 @@ class LKController extends Controller
         $params = [
             'publicKey' => $publicKey,
             'amount' => $request->input('price'),
-            'billId' => $count + 1,
+            'billId' => $billId,
             'successUrl' => 'http://win-1.ru/lk',
         ];
 

@@ -10,7 +10,23 @@ use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
 
 Route::get('/', function () {
-    return view('home');
+  $fond = strval((intval(OneGameModels::sum('price')) 
+          + intval(TwoGameModels::sum('price'))
+          + intval(ThreeGameModels::sum('price'))
+          + intval(FourGameModels::sum('price'))
+          + intval(FiveGameModels::sum('price'))
+          + intval(SixGameModels::sum('price')))/2);
+
+  $pre = "";
+  $max1 = 6;
+  $count = strlen($fond);
+  $max1 = intval($max1) - intval($count);
+  for ($i = 1; $i<=$max1; $i++)
+    $pre = $pre . "0";
+
+  $fond = $pre . $fond;
+
+  return view('home', ['fond' => $fond]);
 })->name('home');
 
 Route::get('/reg', function (){

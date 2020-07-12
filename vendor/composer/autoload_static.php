@@ -518,6 +518,7 @@ class ComposerStaticInit2af4a0930f15dda3dae9006c6152d4d8
         'App\\Models\\OneGameModels' => __DIR__ . '/../..' . '/app/Models/OneGameModels.php',
         'App\\Models\\OneGameTimerModels' => __DIR__ . '/../..' . '/app/Models/OneGameTimerModels.php',
         'App\\Models\\OneGameWinModels' => __DIR__ . '/../..' . '/app/Models/OneGameWinModels.php',
+        'App\\Models\\RefillModels' => __DIR__ . '/../..' . '/app/Models/RefillModels.php',
         'App\\Models\\SixGameModels' => __DIR__ . '/../..' . '/app/Models/SixGameModels.php',
         'App\\Models\\SixGameWinModels' => __DIR__ . '/../..' . '/app/Models/SixGameWinModels.php',
         'App\\Models\\ThreeGameModels' => __DIR__ . '/../..' . '/app/Models/ThreeGameModels.php',

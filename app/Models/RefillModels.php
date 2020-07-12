@@ -16,6 +16,7 @@ class RefillModels extends Model
     protected $fillable = [
         'id',
         'user_id',
+        'billId',
         'price',
         'status'
     ];

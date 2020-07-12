@@ -16,6 +16,7 @@ class CreateRefillTable extends Migration
         Schema::create('refill', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
+            $table->string('billId');
             $table->string('price'); 
             $table->string('status');
             

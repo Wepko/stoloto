@@ -3,7 +3,7 @@
 
     @if (Session::has('info'))
         <div class="alert alert-success mt-5" role="alert">
-            {{   Session::get('info') }}
+            {{ Session::get('info') }}
         </div>
     @endif
   </div>
@@ -18,7 +18,7 @@
       <div class="card card-block" >
           <div class="card-body">
             <h5 class="card-title">Кошелек</h5>
-            <h6 class="card-subtitle card-text mb-2 text-muted">{{Auth::user()->money()}} руб</h6>
+            <h6 class="card-subtitle card-text mb-2 text-muted">{{ Auth::user()->money() }} руб</h6>
           
             <form action="{{ route('refill') }}" method="get">
               @csrf
