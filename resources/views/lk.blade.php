@@ -8,23 +8,40 @@
     @endif
   </div>
 </header>
-<h1 align="center"  >Личный кабинет</h1>
-<h4 align="center" >Добро пожаловать {{ Auth::user()->getName() }}</h4>
+
 
 
 <div class="content-4_20">
   <div class="container" >
-    <div class="row w-100">
+    <h1>Личный кабинет</h1>
+    <h4>Добро пожаловать {{ Auth::user()->getName() }}</h4>
+    <div class="row w-100 mt-5">
       <div class="card card-block" >
           <div class="card-body">
             <h5 class="card-title">Кошелек</h5>
             <h6 class="card-subtitle card-text mb-2 text-muted">{{ Auth::user()->money() }} руб</h6>
           
+
             <form action="{{ route('refill') }}" method="get">
               @csrf
-              <input type="number" name="price" placeholder="Сумма" style="border: 1px solid black" class="btn mt-2">
-              <input type="submit" class="btn btn-dark mt-2" value="Пополнить">
+              <input type="number" name="price" placeholder="Сумма" style="border: 1px solid black" class="btn mt-2 w-100">
+              @if ($errors->has('price'))
+                <p style="color: red">{{ $errors->first('price') }}</p>
+              @endif
+              <input type="submit" class="btn btn-dark mt-2 w-100" value="Пополнить">
             </form>
+            
+            <form action="{{ route('output') }}" method="post" class="mt-5">
+              @csrf
+              <input type="number" name="price" placeholder="Сумма" style="border: 1px solid black" class="btn mt-2 w-100">
+              <input type="text" name="card" placeholder="Номер карты" style="border: 1px solid black" class="btn mt-2 w-100">
+              @if ($errors->has('price'))
+                <p style="color: red">{{ $errors->first('price') }}</p>
+              @endif
+              <input type="submit" class="btn btn-dark mt-2 w-100" value="Вывести">
+            </form>
+
+
           </div>
       </div>
       

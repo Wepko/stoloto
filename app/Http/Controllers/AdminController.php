@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\UserWinnerModels;
 use App\Models\OneGameWinModels;
@@ -138,9 +140,77 @@ class AdminController extends Controller
         $i = 1;
         $countOne = 0;
         $countTwo = 0;
-        $win = 0;
+        $fond = TwoGameModels::sum('price');
+        $winMoney = 0;
 
-        while (true) {
+        $tickets = DB::table('twogame')->where('circulation', TwoGameWinModels::max('circulation'))->get();
+        $ticketWin = DB::table('twogamewin')->where('circulation', TwoGameWinModels::max('circulation'))->first();
+
+        $ticketWinOne = $ticketWin->ticketOne;
+        $ticketWinTwo = $ticketWin->ticketTwo;
+
+        foreach ($tickets as $ticket) {
+
+            //ticket user
+            $ticketOne = $ticket->ticketOne;
+            $ticketTwo = $ticket->ticketTwo;
+
+            $ticketWinOneArr = str_split($ticketWinOne, 2);
+            $ticketWinTwoArr = str_split($ticketWinTwo, 2);
+            $ticketOneArr = str_split($ticketOne, 2);
+            $ticketTwoArr = str_split($ticketTwo, 2);
+
+            $countOneArr = array_intersect($ticketWinOneArr, $ticketOneArr);
+            $countTwoArr = array_intersect($ticketWinTwoArr, $ticketTwoArr);
+
+            $countOne = count($countOneArr);
+            $countTwo = count($countTwoArr);
+
+            if ($countOne > 1) {
+                if ($countOne == 5 && $countTwo == 1) {
+                    $win = 'Вы выйграли суперприз!';
+                    $winMoney = $fond * 0.3;
+                }
+                else {
+                    if ($countOne == 2) {
+                        $win = 'Вы выйграли 20 рублей!';
+                        $winMoney = 20;
+                    }
+                    else if ($countOne == 3) {
+                        $win = 'Вы выйграли 100 рублей!';
+                        $winMoney = 100;
+                    }
+                    else if ($countOne == 4) {
+                        $win = 'Вы выйграли 300 рублей!';
+                        $winMoney = 300;
+                    }
+                    else if ($countOne == 5) {
+                        $win = 'Вы выйграли приз!';
+                        $winMoney = $fond * 0.1;
+                    }
+                } 
+            } 
+            else {
+                $win = 'Ваш билет не выйграл!!!';
+            }
+
+            $model = User::where('id', '=', $ticket->user_id)->first();
+            
+            $money = strval(intval($model->money) + intval($winMoney));
+            $model->money = $money;
+            $model->save();
+
+            UserWinnerModels::insert(array(
+                'user_id' => $ticket->user_id,
+                'numberGame' => 2,
+                'circulation' => $ticket->circulation,
+                'win' => $win
+            ));
+        }
+
+        return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
+
+        /*while (true) {
             if (TwoGameModels::find($i)) {
                 $tickets = TwoGameModels::find($i);
 
@@ -165,25 +235,36 @@ class AdminController extends Controller
                 if ($countOne != 0) {
                     if ($countOne == 5 && $countTwo == 1) {
                         $win = 'Вы выйграли суперприз!';
+                        $winMoney = $fond * 0.3;
                     }
                     if ($countTwo == 0) {
                         if ($countOne == 2) {
-                            $win = 'Вы выйграли 40 рублей!';
+                            $win = 'Вы выйграли 20 рублей!';
+                            $winMoney = 20;
                         }
                         if ($countOne == 3) {
-                            $win = 'Вы выйграли 400 рублей!';
+                            $win = 'Вы выйграли 100 рублей!';
+                            $winMoney = 100;
                         }
                         if ($countOne == 4) {
-                            $win = 'Вы выйграли 4000 рублей!';
+                            $win = 'Вы выйграли 300 рублей!';
+                            $winMoney = 300;
                         }
                         if ($countOne == 5) {
                             $win = 'Вы выйграли приз!';
+                            $winMoney = $fond * 0.1;
                         }
                     }
                 } 
                 else {
                     $win = 'Ваш билет не выйграл!!!';
                 }
+
+                $model = User::where('id', '=', $tickets['user_id'])->first();
+                
+                $money = strval(intval($model->money) + intval($winMoney));
+                $model->money = $money;
+                $model->save();
 
                 UserWinnerModels::insert(array(
                     'user_id' => $tickets['user_id'],
@@ -197,7 +278,7 @@ class AdminController extends Controller
             }
             $i++;
         }   
-        return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
+        return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');*/
     }
 
     public function goWinnerThreeGame() {

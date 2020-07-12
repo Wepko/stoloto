@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\UserWinnerModels;
 use App\Models\RefillModels;
+use App\Models\OutputModels;
 use Illuminate\Http\Request;
 use DB;
 require "BillPayments.php";
@@ -66,6 +67,10 @@ class LKController extends Controller
 
     public function refill(Request $request) {
 
+        $this->validate($request, [
+            'price' => 'required'
+        ]);
+
         $billPayments = new \Qiwi\Api\BillPayments('eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6IjdkN2MyMmI1LWJjMTctNDU1Zi04NTdjLTExYjA1OTI1YTgyZCIsInVzZXJfaWQiOiI3OTYyNjg1MzQ1OCIsInNlY3JldCI6ImM2ZmVmNDBmYWM1ZTU1MDZkYmQyODk0OTJkODIzNmM2NTZlM2I5YjU5MTgzNDA2YmIzYzQ0ZmEwZTI2NWQ3Y2QifX0=');
 
         $billId = $billPayments->generateId();
@@ -90,6 +95,29 @@ class LKController extends Controller
 
         //echo $link;
         return redirect($link);
+    }
+
+    public function output(Request $request) {
+
+        $this->validate($request, [
+            'price' => 'required',
+            'card' => 'required'
+        ]);
+
+        if (Auth::user()->money() >= $request->input('price')) {
+
+            OutputModels::insert(array(
+                'user_id'  => Auth::user()->getId(),
+                'cardNumber' => $request->input('card'),
+                'price' => $request->input('price'),
+                'status' => "WAITING"
+            ));
+    
+            return redirect()->back()->with('info', 'Проходит модерация. Средства зачислятся в течение суток!');
+        }
+        else {
+            return redirect()->back()->with('info', 'У вас нету столько средств!');
+        }
     }
 
 }

@@ -8,14 +8,15 @@ use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
 use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
+use App\Models\OutputModels;
 
 Route::get('/', function () {
-  $fond = strval((intval(OneGameModels::sum('price')) 
+  $fond = strval(intval(OneGameModels::sum('price')) 
           + intval(TwoGameModels::sum('price'))
           + intval(ThreeGameModels::sum('price'))
           + intval(FourGameModels::sum('price'))
           + intval(FiveGameModels::sum('price'))
-          + intval(SixGameModels::sum('price')))/2);
+          + intval(SixGameModels::sum('price')));
 
   $pre = "";
   $max1 = 6;
@@ -72,9 +73,10 @@ Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGam
 Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->name('TimerOneGame');
 
 Route::get('/refill', 'LKController@refill')->name('refill');
+Route::post('/refill', 'LKController@output')->name('output');
 
 Route::get('/admin', function (){
-  return view('admin-panel');
+  return view('admin-panel', ['useroutputs' => OutputModels::all()]);
 })->name('admin');
 
 Route::get('/ticket', function (){

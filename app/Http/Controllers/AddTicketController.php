@@ -77,7 +77,7 @@ class AddTicketController extends Controller
                             'circulation' => $count + 1,
                             'ticketOne' => implode($arr11),
                             'ticketTwo' => implode($arr22),
-                            'price' => $price
+                            'price' => $price / 2
                         ));
 
                         $model = User::where('id', '=', Auth::user()->getId())->first();
@@ -104,9 +104,9 @@ class AddTicketController extends Controller
     }
 
     public function twogame(Request $request) {
-
-        for ($i = 1; $i <= $request->input('valid'); $i++) {
-
+        $mon = 0;
+        for ($i = 1; $i <= intval($request->input('valid')); $i++) {
+            
             $value1 = '';
             $value2 = '';
             $price = 0;
@@ -145,20 +145,14 @@ class AddTicketController extends Controller
                     $price = $price1 * count($arr22);
 
                     if (Auth::user()->money() >= $price) {
+                        $mon = $mon + $price;
                         TwoGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
                             'ticketOne' => implode($arr11),
                             'ticketTwo' => implode($arr22),
-                            'price' => $price
+                            'price' => $price / 2
                         ));
-
-                        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-                        $money = strval(intval(Auth::user()->money()) - intval($price));
-                        $model->money = $money;
-                        
-                        $model->save();
                     }
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
@@ -172,6 +166,14 @@ class AddTicketController extends Controller
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
+
+        $model = User::where('id', '=', Auth::user()->getId())->first();
+                    
+        $money = strval(intval(Auth::user()->money()) - intval($mon));
+        $model->money = $money;
+                        
+        $model->save();
+
         return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
     }
 
@@ -213,7 +215,7 @@ class AddTicketController extends Controller
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
                             'ticketOne' => implode($arr11),
-                            'price' => $price
+                            'price' => $price / 2
                         )); 
 
                         $model = User::where('id', '=', Auth::user()->getId())->first();
@@ -277,7 +279,7 @@ class AddTicketController extends Controller
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
                             'ticketOne' => implode($arr11),
-                            'price' => $price
+                            'price' => $price / 2
                         ));
 
                         $model = User::where('id', '=', Auth::user()->getId())->first();
@@ -332,7 +334,7 @@ class AddTicketController extends Controller
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
                             'ticketOne' => implode($arr11),
-                            'price' => $price
+                            'price' => $price / 2
                         ));
 
                         $model = User::where('id', '=', Auth::user()->getId())->first();
@@ -393,7 +395,7 @@ class AddTicketController extends Controller
                             'circulation' => $count + 1,
                             'ticketOne' => implode($arr11),
                             'ticketTwo' => implode($arr22),
-                            'price' => $price
+                            'price' => $price / 2
                         ));
 
                         $model = User::where('id', '=', Auth::user()->getId())->first();

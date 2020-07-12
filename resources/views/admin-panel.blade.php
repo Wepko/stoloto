@@ -1,6 +1,8 @@
 @extends('layouts.head')
 @section('content')
-
+</div>
+</header>
+<div style="width:80%; margin: auto; margin-bottom:100px;">
     @if (Session::has('info'))
         <div class="alert alert-success mt-5" role="alert">
             {{   Session::get('info') }}
@@ -8,8 +10,8 @@
     @endif
 
 @if(Auth::user()->isAdmin())
-      <h1 class="mt-5" style="color: white">Панель администратора</h1>
-        <div class="card mt-3">
+      <h1 class="mt-5">Панель администратора</h1>
+        <div class="card mt-3" style="padding: 20px;">
             <p class='inpt1'>Добавьте таймер для обратного отсчета до розыгрыша игры</p>
             <form action= "{{ route('TimerOneGame') }}" method="post">
             @csrf
@@ -43,7 +45,19 @@
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш рапидо">
         </form>
-      
+      <div class="mt-5"> 
+        <h1>Модерация</h1>
+        <br><br><br>
+        @if($useroutputs)
+          @forelse ($useroutputs as $user)
+            <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Номер карты {{ $user->cardNumber }} Сумма {{ $user->price }}</h6>
+          @empty  
+            <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Счетов пока нету</h6>
+          @endforelse
+        @else
+          <h6 class="card-subtitle  card-text mb-2 text-muted ">Счетов нету</h6>     
+        @endif  
+      </div>
 @endif
-
+    </div>
 @endsection
