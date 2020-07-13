@@ -15,7 +15,7 @@ Route::get('/', function () {
 
   if ($fondModels = FondModels::where('id', '=', 1)->first()) {
     $fondModels = FondModels::where('id', '=', 1)->first();
-    $fond = $fondModels->fond;
+    $fond = intval($fondModels->fond);
   }
   else  
     $fond = 0;

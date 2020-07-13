@@ -53,123 +53,151 @@ class AdminController extends Controller
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
+
     public function goWinnerOneGame() {
-        $i = 1;
+
         $countOne = 0;
         $countTwo = 0;
         $win = 0;
 
-        while (true) {
-            if (OneGameModels::find($i)) {
-                $tickets = OneGameModels::find($i);
+        $fond = TwoGameModels::sum('price');
+        $winMoney = 0;
 
-                $ticketWin = OneGameWinModels::find($tickets['circulation']);
-                $ticketWinOne = $ticketWin["ticketOne"];
-                $ticketWinTwo = $ticketWin["ticketTwo"];
+        $tickets = DB::table('twogame')->where('circulation', TwoGameWinModels::max('circulation'))->get();
+        $ticketWin = DB::table('twogamewin')->where('circulation', TwoGameWinModels::max('circulation'))->first();
 
-                $ticketOne = $tickets['ticketOne'];
-                $ticketTwo = $tickets['ticketTwo'];
+        $ticketWinOne = $ticketWin->ticketOne;
+        $ticketWinTwo = $ticketWin->ticketTwo;
 
-                $ticketWinOneArr = str_split($ticketWinOne, 2);
-                $ticketWinTwoArr = str_split($ticketWinTwo, 2);
-                $ticketOneArr = str_split($ticketOne, 2);
-                $ticketTwoArr = str_split($ticketTwo, 2);
+        foreach ($tickets as $ticket) {
 
-                $countOneArr = array_intersect($ticketWinOneArr, $ticketOneArr);
-                $countTwoArr = array_intersect($ticketWinTwoArr, $ticketTwoArr);
+            //ticket user
+            $ticketOne = $ticket->ticketOne;
+            $ticketTwo = $ticket->ticketTwo;
 
-                $countOne = count($countOneArr);
-                $countTwo = count($countTwoArr);
+            $ticketWinOneArr = str_split($ticketWinOne, 2);
+            $ticketWinTwoArr = str_split($ticketWinTwo, 2);
+            $ticketOneArr = str_split($ticketOne, 2);
+            $ticketTwoArr = str_split($ticketTwo, 2);
 
-                if ($countOne != 0 || $countTwo != 0) {
-                    if ($countOne == 0 && $countTwo != 0) {
-                        if ($countTwo == 2) {
-                            $win = 'Вы выйграли 12 категорию';
-                        }
-                        if ($countTwo == 3) {
-                            $win = 'Вы выйграли 9 категорию';
-                        }
-                        if ($countTwo == 4) {
-                            $win = 'Вы выйграли 5 категорию';
-                        }
+            $countOneArr = array_intersect($ticketWinOneArr, $ticketOneArr);
+            $countTwoArr = array_intersect($ticketWinTwoArr, $ticketTwoArr);
+
+            $countOne = count($countOneArr);
+            $countTwo = count($countTwoArr);
+
+            if ($countOne != 0 || $countTwo != 0) {
+                if ($countOne == 0 && $countTwo != 0) {
+                    if ($countTwo == 2) {
+                        $win = 'Вы выйграли 12 категорию';
+                        $winMoney = $fond * 0.01;
                     }
-                    if ($countOne != 0 && $countTwo == 0) {
-                        if ($countOne == 2) {
-                            $win = 'Вы выйграли 12 категорию';
-                        }
-                        if ($countOne == 3) {
-                            $win = 'Вы выйграли 9 категорию';
-                        }
-                        if ($countOne == 4) {
-                            $win = 'Вы выйграли 5 категорию';
-                        }
+                    if ($countTwo == 3) {
+                        $win = 'Вы выйграли 9 категорию';
+                        $winMoney = $fond * 0.03;
                     }
-                    if ($countOne == 4 && $countTwo == 4) {
-                        $win = 'Вы выйграли 1 категорию';
-                    }
-                    if ($countOne == 4 && $countTwo == 3) {
-                        $win = 'Вы выйграли 2 категорию';
-                    }
-                    if ($countOne == 3 && $countTwo == 4) {
-                        $win = 'Вы выйграли 2 категорию';
-                    }
-                    if ($countOne == 4 && $countTwo == 2) {
-                        $win = 'Вы выйграли 3 категорию';
-                    }
-                    if ($countOne == 2 && $countTwo == 4) {
-                        $win = 'Вы выйграли 3 категорию';
-                    }
-                    if ($countOne == 4 && $countTwo == 1) {
-                        $win = 'Вы выйграли 4 категорию';
-                    }
-                    if ($countOne == 1 && $countTwo == 4) {
-                        $win = 'Вы выйграли 4 категорию';
-                    }
-                    if ($countOne == 3 && $countTwo == 3) {
+                    if ($countTwo == 4) {
                         $win = 'Вы выйграли 5 категорию';
+                        $winMoney = $fond * 0.07;
                     }
-                    if ($countOne == 3 && $countTwo == 2) {
-                        $win = 'Вы выйграли 7 категорию';
-                    }
-                    if ($countOne == 2 && $countTwo == 3) {
-                        $win = 'Вы выйграли 7 категорию';
-                    }
-                    if ($countOne == 3 && $countTwo == 1) {
-                        $win = 'Вы выйграли 8 категорию';
-                    }
-                    if ($countOne == 1 && $countTwo == 3) {
-                        $win = 'Вы выйграли 8 категорию';
-                    }
-                    if ($countOne == 2 && $countTwo == 2) {
-                        $win = 'Вы выйграли 10 категорию';
-                    }
-                    if ($countOne == 2 && $countTwo == 1) {
-                        $win = 'Вы выйграли 11 категорию';
-                    }
-                    if ($countOne == 1 && $countTwo == 2) {
-                        $win = 'Вы выйграли 11 категорию';
-                    }
-                } else {
-                    $win =  0;
                 }
+                if ($countOne != 0 && $countTwo == 0) {
+                    if ($countOne == 2) {
+                        $win = 'Вы выйграли 12 категорию';
+                        $winMoney = $fond * 0.01;
+                    }
+                    if ($countOne == 3) {
+                        $win = 'Вы выйграли 9 категорию';
+                        $winMoney = $fond * 0.03;
+                    }
+                    if ($countOne == 4) {
+                        $win = 'Вы выйграли 5 категорию';
+                        $winMoney = $fond * 0.07;
+                    }
+                }
+                if ($countOne == 4 && $countTwo == 4) {
+                    $win = 'Вы выйграли 1 категорию';
+                    $winMoney = $fond * 0.08;
+                }
+                if ($countOne == 4 && $countTwo == 3) {
+                    $win = 'Вы выйграли 2 категорию';
+                    $winMoney = $fond * 0.1;
+                }
+                if ($countOne == 3 && $countTwo == 4) {
+                    $win = 'Вы выйграли 2 категорию';
+                    $winMoney = $fond * 0.1;
+                }
+                if ($countOne == 4 && $countTwo == 2) {
+                    $win = 'Вы выйграли 3 категорию';
+                    $winMoney = $fond * 0.09;
+                }
+                if ($countOne == 2 && $countTwo == 4) {
+                    $win = 'Вы выйграли 3 категорию';
+                    $winMoney = $fond * 0.09;
+                }
+                if ($countOne == 4 && $countTwo == 1) {
+                    $win = 'Вы выйграли 4 категорию';
+                    $winMoney = $fond * 0.08;
+                }
+                if ($countOne == 1 && $countTwo == 4) {
+                    $win = 'Вы выйграли 4 категорию';
+                    $winMoney = $fond * 0.08;
+                }
+                if ($countOne == 3 && $countTwo == 3) {
+                    $win = 'Вы выйграли 5 категорию';
+                    $winMoney = $fond * 0.05;
+                }
+                if ($countOne == 3 && $countTwo == 2) {
+                    $win = 'Вы выйграли 7 категорию';
+                    $winMoney = $fond * 0.04;
+                }
+                if ($countOne == 2 && $countTwo == 3) {
+                    $win = 'Вы выйграли 7 категорию';
+                    $winMoney = $fond * 0.04;
+                }
+                if ($countOne == 3 && $countTwo == 1) {
+                    $win = 'Вы выйграли 8 категорию';
+                    $winMoney = $fond * 0.03;
+                }
+                if ($countOne == 1 && $countTwo == 3) {
+                    $win = 'Вы выйграли 8 категорию';
+                    $winMoney = $fond * 0.03;
+                }
+                if ($countOne == 2 && $countTwo == 2) {
+                    $win = 'Вы выйграли 10 категорию';
+                    $winMoney = 0;
+                }
+                if ($countOne == 2 && $countTwo == 1) {
+                    $win = 'Вы выйграли 11 категорию';
+                    $winMoney = $fond * 0.02;
+                }
+                if ($countOne == 1 && $countTwo == 2) {
+                    $win = 'Вы выйграли 11 категорию';
+                    $winMoney = $fond * 0.02;
+                }
+            } 
+            else 
+                $win =  0;
 
-                UserWinnerModels::insert(array(
-                    'user_id' => $tickets['user_id'],
-                    'numberGame' => 1,
-                    'circulation' => $tickets['circulation'],
-                    'win' => $win
-                ));
-            }
-            else {
-                break;
-            }
-            $i++;
-        }   
+            $model = User::where('id', '=', $ticket->user_id)->first();
+            
+            $money = strval(intval($model->money) + intval($winMoney));
+            $model->money = $money;
+            $model->save();
+
+            UserWinnerModels::insert(array(
+                'user_id' => $ticket->user_id,
+                'numberGame' => 1,
+                'circulation' => $ticket->circulation,
+                'win' => $win
+            ));
+
+        }
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
     public function goWinnerTwoGame() {
-        $i = 1;
+
         $countOne = 0;
         $countTwo = 0;
         $fond = TwoGameModels::sum('price');
@@ -491,10 +519,10 @@ class AdminController extends Controller
                     }
                     if ($countOne == 6 && $countTwo == 0) {
                         $win = 'Вы выйграли 1000 рублей!';
-                        $winMoney = 0;
+                        $winMoney = 1000;
                     }
                     if ($countOne == 6 && $countTwo == 1) {
-                        $win = 'Вы выйграли 4500 рублей!';
+                        $win = 'Вы выйграли 1000 рублей!';
                         $winMoney = 1000;
                     }
                     if ($countOne == 7 && $countTwo == 0) {
@@ -503,11 +531,11 @@ class AdminController extends Controller
                     }
                     if ($countOne == 7 && $countTwo == 1) {
                         $win = 'Вы выйграли 2500 рублей!';
-                        $winMoney = 2500;
+                        $winMoney = 2000;
                     }
                     if ($countOne == 8 && $countTwo == 0) {
                         $win = 'Вы выйграли 5000 рублей!';
-                        $winMoney = 5000;
+                        $winMoney = 3000;
                     }
                     if ($countOne == 8 && $countTwo == 1) {
                         $win = 'Вы выйграли суперприз!';
