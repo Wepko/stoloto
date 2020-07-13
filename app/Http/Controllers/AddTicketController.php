@@ -24,7 +24,7 @@ use DB;
 class AddTicketController extends Controller
 {
     public function onegame(Request $request) {
-
+        $mon = 0;
         $aer = 0;
         for ($i = 1; $i <= $request->input('valid'); $i++) {
             
@@ -73,6 +73,8 @@ class AddTicketController extends Controller
                         $price = ($price1 * 2) * ($price2 / 100);
                     }
                     if (Auth::user()->money() >= $price) {
+                        $mon = $mon + $price;
+
                         OneGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
@@ -81,12 +83,17 @@ class AddTicketController extends Controller
                             'price' => $price / 2
                         ));
 
-                        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-                        $money = strval(intval(Auth::user()->money()) - intval($price));
-                        $model->money = $money;
-                        
-                        $model->save();
+                        if (FondModels::count('id') == 0) {
+                            FondModels::insert(array(
+                                'fond' => $price / 2
+                            ));
+                        }
+                        else {
+                            $fondModels = FondModels::where('id', '=', 1)->first();
+                            $fondModels->fond = $fondModels->fond + $price / 2;
+                            $fondModels->save();
+                        }
+
                     } 
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
@@ -101,6 +108,14 @@ class AddTicketController extends Controller
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
+        
+        $model = User::where('id', '=', Auth::user()->getId())->first();
+                    
+        $money = strval(intval(Auth::user()->money()) - intval($mon));
+        $model->money = $money;
+        
+        $model->save();
+
         return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
     }
 
@@ -191,7 +206,8 @@ class AddTicketController extends Controller
 
 
     public function threegame(Request $request) {
-
+        $mon = 0;
+        
         for ($i = 1; $i <= $request->input('valid'); $i++) {
             $value1 = '';
             $price = 0;
@@ -214,7 +230,7 @@ class AddTicketController extends Controller
 
                     $mas = [0, 0, 0, 0, 0, 0, 0, 1, 8, 36, 120, 330, 792, 1716, 3432, 6435, 11440];
 
-                    for ($ii = 1; $i <= 14; $ii++) {
+                    for ($ii = 1; $ii <= 14; $ii++) {
                         if (count($arr11) == $ii) {
                             $price1 = 25 * $mas[$ii];
                         }
@@ -223,6 +239,7 @@ class AddTicketController extends Controller
                     $price = $price1;
 
                     if (Auth::user()->money() >= $price) {
+                        $mon = $mon + $price;
                         ThreeGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
@@ -230,12 +247,16 @@ class AddTicketController extends Controller
                             'price' => $price / 2
                         )); 
 
-                        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-                        $money = strval(intval(Auth::user()->money()) - intval($price));
-                        $model->money = $money;
-                        
-                        $model->save();
+                        if (FondModels::count('id') == 0) {
+                            FondModels::insert(array(
+                                'fond' => $price / 2
+                            ));
+                        }
+                        else {
+                            $fondModels = FondModels::where('id', '=', 1)->first();
+                            $fondModels->fond = $fondModels->fond + $price / 2;
+                            $fondModels->save();
+                        }
                     }
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
@@ -249,12 +270,20 @@ class AddTicketController extends Controller
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
+
+        $model = User::where('id', '=', Auth::user()->getId())->first();
+                    
+        $money = strval(intval(Auth::user()->money()) - intval($mon));
+        $model->money = $money;
+                        
+        $model->save();
+
         return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
     }
 
 
     public function fourgame(Request $request) {
-
+        $mon = 0;
         for ($i = 1; $i <= $request->input('valid'); $i++) {
 
             $value1 = '';
@@ -287,6 +316,8 @@ class AddTicketController extends Controller
                     $price = $price1;
 
                     if (Auth::user()->money() >= $price) {
+                        $mon = $mon + $price;
+
                         FourGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
@@ -294,12 +325,16 @@ class AddTicketController extends Controller
                             'price' => $price / 2
                         ));
 
-                        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-                        $money = strval(intval(Auth::user()->money()) - intval($price));
-                        $model->money = $money;
-                        
-                        $model->save();
+                        if (FondModels::count('id') == 0) {
+                            FondModels::insert(array(
+                                'fond' => $price / 2
+                            ));
+                        }
+                        else {
+                            $fondModels = FondModels::where('id', '=', 1)->first();
+                            $fondModels->fond = $fondModels->fond + $price / 2;
+                            $fondModels->save();
+                        }
                     }
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
@@ -312,12 +347,21 @@ class AddTicketController extends Controller
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
+        $model = User::where('id', '=', Auth::user()->getId())->first();
+                    
+        $money = strval(intval(Auth::user()->money()) - intval($mon));
+        $model->money = $money;
+        
+        $model->save();
+
         return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
     }
 
 
     public function fivegame(Request $request) {
         $aer = 0;
+        $mon = 0;
+
         for ($i = 1; $i <= $request->input('valid'); $i++) {
             $aer++;
             $value1 = '';
@@ -342,6 +386,8 @@ class AddTicketController extends Controller
                     $price = 60 * $request->input('factor');
 
                     if (Auth::user()->money() >= $price) {
+                        $mon = $mon + $price;
+
                         FiveGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
@@ -349,12 +395,16 @@ class AddTicketController extends Controller
                             'price' => $price / 2
                         ));
 
-                        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-                        $money = strval(intval(Auth::user()->money()) - intval($price));
-                        $model->money = $money;
-                        
-                        $model->save();
+                        if (FondModels::count('id') == 0) {
+                            FondModels::insert(array(
+                                'fond' => $price / 2
+                            ));
+                        }
+                        else {
+                            $fondModels = FondModels::where('id', '=', 1)->first();
+                            $fondModels->fond = $fondModels->fond + $price / 2;
+                            $fondModels->save();
+                        }
                     }
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
@@ -367,10 +417,19 @@ class AddTicketController extends Controller
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
+
+        $model = User::where('id', '=', Auth::user()->getId())->first();
+                    
+        $money = strval(intval(Auth::user()->money()) - intval($mon));
+        $model->money = $money;
+                        
+        $model->save();
+
         return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
     }
 
     public function sixgame(Request $request) {
+        $mon = 0;
 
         for ($i = 1; $i <= $request->input('valid'); $i++) {
             $value1 = '';
@@ -402,6 +461,7 @@ class AddTicketController extends Controller
                     $price = (60 * count($arr22)) * $request->input('factor');
 
                     if (Auth::user()->money() >= $price) {
+                        $mon = $mon + $price;
                         SixGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,
@@ -410,12 +470,17 @@ class AddTicketController extends Controller
                             'price' => $price / 2
                         ));
 
-                        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-                        $money = strval(intval(Auth::user()->money()) - intval($price));
-                        $model->money = $money;
+                        if (FondModels::count('id') == 0) {
+                            FondModels::insert(array(
+                                'fond' => $price / 2
+                            ));
+                        }
+                        else {
+                            $fondModels = FondModels::where('id', '=', 1)->first();
+                            $fondModels->fond = $fondModels->fond + $price / 2;
+                            $fondModels->save();
+                        }
                         
-                        $model->save();
                     }
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
@@ -428,6 +493,14 @@ class AddTicketController extends Controller
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
+
+        $model = User::where('id', '=', Auth::user()->getId())->first();
+                    
+        $money = strval(intval(Auth::user()->money()) - intval($mon));
+        $model->money = $money;
+        
+        $model->save();
+
         return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
     }
     
