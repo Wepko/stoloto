@@ -13,10 +13,13 @@ use App\Models\FondModels;
 
 Route::get('/', function () {
 
-  $fondModels = FondModels::where('id', '=', 1)->first();
-
-  $fond = $fondModels->fond;
-
+  if ($fondModels = FondModels::where('id', '=', 1)->first()) {
+    $fondModels = FondModels::where('id', '=', 1)->first();
+    $fond = $fondModels->fond;
+  }
+  else  
+    $fond = 0;
+  
   $pre = "";
   $max1 = 6;
   $count = strlen($fond);
