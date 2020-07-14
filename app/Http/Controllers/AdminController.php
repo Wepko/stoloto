@@ -177,7 +177,7 @@ class AdminController extends Controller
                 }
             } 
             else 
-                $win =  0;
+                $win =  "Ваш билет не выйграл!!!";
 
             $model = User::where('id', '=', $ticket->user_id)->first();
             
@@ -502,9 +502,10 @@ class AdminController extends Controller
 
             $countOne = count($countOneArr);
             $countTwo = count($countTwoArr);
+            $countTicketTwoUser = $ticketTwoArr;
 
             if ($countOne > 3) {
-                if ($countTwo < 2) {
+                if ($countTicketTwoUser < 2) {
                     if ($countOne == 4 && $countTwo == 1) {
                         $win = 'Вы выйграли 150 рублей!';
                         $winMoney = 150;
@@ -542,64 +543,112 @@ class AdminController extends Controller
                         $winMoney = $fond * 0.3;
                     }
                 }
-                if ($countTwo == 2) {
+                if ($countTicketTwoUser == 2) {
                     if ($countOne == 4) {
                         $win = 'Вы выйграли 150 рублей!';
                         $winMoney = 150;
                     }
-                    if ($countOne == 5) {
+                    if ($countOne == 5 && $countTwo == 0) {
                         $win = 'Вы выйграли 300 рублей!';
                         $winMoney = 300;
                     }
-                    if ($countOne == 6) {
+                    if ($countOne == 5 && $countTwo == 1) {
+                        $win = 'Вы выйграли 400 рублей!';
+                        $winMoney = 300;
+                    }
+                    if ($countOne == 6 && $countTwo == 0) {
                         $win = 'Вы выйграли 1000 рублей!';
                         $winMoney = 1000;
                     }
-                    if ($countOne == 7) {
-                        $win = 'Вы выйграли 5000 рублей!';
-                        $winMoney = 5000;
+                    if ($countOne == 6 && $countTwo == 1) {
+                        $win = 'Вы выйграли 1500 рублей!';
+                        $winMoney = 1000;
                     }
-                    if ($countOne == 8) {
-                        $win = 'Вы выйграли 30000 рублей!';
-                        $winMoney = 30000;
+                    if ($countOne == 7 && $countTwo == 0) {
+                        $win = 'Вы выйграли 5000 рублей!';
+                        $winMoney = 2000;
+                    }
+                    if ($countOne == 7 && $countTwo == 1) {
+                        $win = 'Вы выйграли 7000 рублей!';
+                        $winMoney = 2000;
+                    }
+                    if ($countOne == 8 && $countTwo == 0) {
+                        $win = 'Вы выйграли 10000 рублей!';
+                        $winMoney = 3000;
+                    }
+                    if ($countOne == 8 && $countTwo == 1) {
+                        $win = 'Вы выйграли суперприз!';
+                        $winMoney = $fond * 0.3;
                     }
                 }
-                if ($countTwo == 3) {
+                if ($countTicketTwoUser == 3) {
                     if ($countOne == 4) {
                         $win = 'Вы выйграли 150 рублей!';
-                        $winMoney = 150;
+                        $winMoney = 250;
                     }
-                    if ($countOne == 5) {
+                    if ($countOne == 5 && $countTwo == 0) {
                         $win = 'Вы выйграли 300 рублей!';
-                        $winMoney = 300;
+                        $winMoney = 400;
                     }
-                    if ($countOne == 6) {
+                    if ($countOne == 5 && $countTwo == 1) {
+                        $win = 'Вы выйграли 300 рублей!';
+                        $winMoney = 500;
+                    }
+                    if ($countOne == 6 && $countTwo == 0) {
                         $win = 'Вы выйграли 600 рублей!';
-                        $winMoney = 6000;
+                        $winMoney = 600;
                     }
-                    if ($countOne == 7) {
-                        $win = 'Вы выйграли 1500 рублей!';
-                        $winMoney = 1500;
-                    }
-                    if ($countOne == 8) {
-                        $win = 'Вы выйграли 4500 рублей!';
-                        $winMoney = 4500;
-                    }
-                }
-                if ($countTwo == 4) {
-                    if ($countOne == 5) {
-                        $win = 'Вы выйграли 165 рублей!';
-                        $winMoney = 165;
-                    }
-                    if ($countOne == 6) {
+                    if ($countOne == 6 && $countTwo == 1) {
                         $win = 'Вы выйграли 900 рублей!';
                         $winMoney = 900;
                     }
-                    if ($countOne == 7) {
+                    if ($countOne == 7 && $countTwo == 0) {
+                        $win = 'Вы выйграли 1500 рублей!';
+                        $winMoney = 1500;
+                    }
+                    if ($countOne == 7 && $countTwo == 1) {
+                        $win = 'Вы выйграли 1500 рублей!';
+                        $winMoney = 2000;
+                    }
+                    if ($countOne == 8 && $countTwo == 0) {
                         $win = 'Вы выйграли 4500 рублей!';
                         $winMoney = 4500;
                     }
-                    if ($countOne == 8) {
+                    if ($countOne == 8 && $countTwo == 1) {
+                        $win = 'Вы выйграли суперприз!';
+                        $winMoney = $fond * 0.3;
+                    }
+                }
+                if ($countTicketTwoUser == 4) {
+                    if ($countOne == 5 && $countTwo == 0) {
+                        $win = 'Вы выйграли 165 рублей!';
+                        $winMoney = 165;
+                    }
+                    if ($countOne == 5 && $countTwo == 1) {
+                        $win = 'Вы выйграли 165 рублей!';
+                        $winMoney = 165;
+                    }
+                    if ($countOne == 6 && $countTwo == 0) {
+                        $win = 'Вы выйграли 900 рублей!';
+                        $winMoney = 900;
+                    }
+                    if ($countOne == 6 && $countTwo == 1) {
+                        $win = 'Вы выйграли 900 рублей!';
+                        $winMoney = 900;
+                    }
+                    if ($countOne == 7 && $countTwo == 0) {
+                        $win = 'Вы выйграли 4500 рублей!';
+                        $winMoney = 4500;
+                    }
+                    if ($countOne == 7 && $countTwo == 1) {
+                        $win = 'Вы выйграли 4500 рублей!';
+                        $winMoney = 4500;
+                    }
+                    if ($countOne == 8 && $countTwo == 0) {
+                        $win = 'Вы выйграли суперприз!';
+                        $winMoney = $fond * 0.3;
+                    }
+                    if ($countOne == 8 && $countTwo == 1) {
                         $win = 'Вы выйграли суперприз!';
                         $winMoney = $fond * 0.3;
                     }
