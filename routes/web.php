@@ -10,6 +10,7 @@ use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
 use App\Models\OutputModels;
 use App\Models\FondModels;
+use App\Models\UserWinnerModels;
 
 Route::get('/', function () {
 
@@ -92,7 +93,7 @@ Route::get('/broadcast', function (){
 })->name('broadcast');
 
 Route::get('/valid', function (){
-  return view('valid_ticket');
+  return view('valid_ticket', ['userwinner' => UserWinnerModels::all()]);
 })->name('valid_ticket');
 
 Route::get('/four-of-twenty', function (){
