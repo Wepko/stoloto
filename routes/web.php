@@ -24,6 +24,7 @@ Route::get('/', function () {
   $max1 = 6;
   $count = strlen($fond);
   $max1 = intval($max1) - intval($count);
+  
   for ($i = 1; $i<=$max1; $i++)
     $pre = $pre . "0";
 
