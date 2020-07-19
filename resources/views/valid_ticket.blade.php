@@ -56,7 +56,7 @@
       <!-- form-group// -->      
     </form>
 
-    <h1 class="mt-5" align="center">Результаты игр</h1>
+    <h1 class="mt-5" align="center">Результаты текущих игр</h1>
 
     <div class="row w-100 mt-4" style="margin:auto">
       <nav class="w-100">

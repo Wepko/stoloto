@@ -20,7 +20,6 @@
           <div class="card-body">
             <h5 class="card-title">Кошелек</h5>
             <h6 class="card-subtitle card-text mb-2 text-muted">{{ Auth::user()->money() }} руб</h6>
-          
 
             <form action="{{ route('refill') }}" method="get">
               @csrf
@@ -40,8 +39,7 @@
               @endif
               <input type="submit" class="btn btn-dark mt-2 w-100" value="Вывести">
             </form>
-
-
+            
           </div>
       </div>
       
@@ -60,7 +58,6 @@
           <a href="#" class="btn btn-dark mt-2" >Особые программы</a>
         </div>
       </div>
-
     </div>
 
     <div class="row w-100 mt-4 " >
@@ -86,14 +83,16 @@
         @endif     
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          @if($usertwogame)
-            @forelse ($usertwogame as $user)
-              @if ($user->user_id == Auth::user()->getId())
-                <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Номер игры {{ $user->numberGame }} Номер билета {{$user->id}}, Тираж №{{$user->circulation}} Поле1: {{ $user->ticketOne }} Поле2: {{ $user->ticketTwo }}</h6>
-              @endif
-            @empty  
-              <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>
-            @endforelse
+          @if($usergame)
+            @for ($i = 0; $i < 6; $i++)
+              @empty($usergame[$i])
+                @continue
+              @endempty
+                @forelse ($usergame[$i] as $user)
+                  <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Номер игры {{$user->numberGame}}, Номер билета {{$user->id}}, Тираж №{{$user->circulation}} Поле1: {{ $user->ticketOne }} Поле2: {{ $user->ticketTwo ?? ' Поля не существует'}}</h6>
+                @empty  
+                @endforelse
+            @endfor
           @else
             <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>    
           @endif     

@@ -17,6 +17,7 @@ class CreateTwogameTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->integer('circulation');
+            $table->integer('numberGame')->default(2);
             $table->string('ticketOne');
             $table->string('ticketTwo');
             $table->biginteger('price');

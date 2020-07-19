@@ -9,6 +9,11 @@ use App\Models\UserWinnerModels;
 use App\Models\RefillModels;
 use App\Models\OutputModels;
 use App\Models\TwoGameModels;
+use App\Models\OneGameModels;
+use App\Models\ThreeGameModels;
+use App\Models\FourGameModels;
+use App\Models\FiveGameModels;
+use App\Models\SixGameModels;
 use Illuminate\Http\Request;
 use DB;
 require "BillPayments.php";
@@ -57,8 +62,17 @@ class LKController extends Controller
                 }
             } 
         }
-        return view('lk', ['userwinner' => UserWinnerModels::all()], 
-                            ['usertwogame' => TwoGameModels::all()]);
+
+        $usergame = [
+            OneGameModels::where('user_id', '=', Auth::user()->getId())->get(),
+            TwoGameModels::where('user_id', '=', Auth::user()->getId())->get(),
+            ThreeGameModels::where('user_id', '=', Auth::user()->getId())->get(),
+            FourGameModels::where('user_id', '=', Auth::user()->getId())->get(),
+            FiveGameModels::where('user_id', '=', Auth::user()->getId())->get(),
+            SixGameModels::where('user_id', '=', Auth::user()->getId())->get()
+        ];
+
+        return view('lk', ['userwinner' => UserWinnerModels::all()])->with('usergame', $usergame);
     }
 
     public function logout(){

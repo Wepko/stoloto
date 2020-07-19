@@ -60,11 +60,11 @@ class AdminController extends Controller
         $countTwo = 0;
         $win = 0;
 
-        $fond = TwoGameModels::sum('price');
+        $fond = OneGameModels::sum('price');
         $winMoney = 0;
 
-        $tickets = DB::table('twogame')->where('circulation', TwoGameWinModels::max('circulation'))->get();
-        $ticketWin = DB::table('twogamewin')->where('circulation', TwoGameWinModels::max('circulation'))->first();
+        $tickets = DB::table('onegame')->where('circulation', OneGameWinModels::max('circulation'))->get();
+        $ticketWin = DB::table('onegamewin')->where('circulation', OneGameWinModels::max('circulation'))->first();
 
         $ticketWinOne = $ticketWin->ticketOne;
         $ticketWinTwo = $ticketWin->ticketTwo;
@@ -86,7 +86,7 @@ class AdminController extends Controller
             $countOne = count($countOneArr);
             $countTwo = count($countTwoArr);
 
-            if ($countOne != 0 || $countTwo != 0) {
+            if ($countOne != 0 && $countTwo != 0) {
                 if ($countOne == 0 && $countTwo != 0) {
                     if ($countTwo == 2) {
                         $win = 'Вы выйграли 12 категорию';
