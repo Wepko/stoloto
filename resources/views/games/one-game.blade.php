@@ -9,7 +9,7 @@
 
 <main id='main' class="card mt-5">
     <div class="alert alert-success text-center" style="width:100%;" role="alert">
-        <div data-countdown="{{ $time ?? ''}}"></div>
+        <div data-countdown="{{ $time }}"></div>
     </div>
     <div class="alert alert-warning text-center" style="width:100%;" role="alert">
         Призовой фонд игры <span>{{ $fond ?? '0' }}</span> рублей!

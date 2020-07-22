@@ -120,7 +120,7 @@ Route::get('/four-of-twenty', function (){
   $fond = OneGameModels::sum('price');
   $circulation = OneGameModels::max('circulation');
   $time = OneGameTimerModels::where('id','=', 1)->value('time');
-  return view('games.one-game', ['fond' => $fond], ['circulation' => $circulation], ['time' => $time]);
+  return view('games.one-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
 })->name('one-game');
 
 Route::get('/five-of-threety-six', function (){
