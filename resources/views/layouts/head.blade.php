@@ -344,6 +344,19 @@ table input[type='checkbox']:checked + label{
 	<script src="{{ asset('js/mmenu.js') }}"></script>
   
 		<script src="{{ asset('js/main.js')}}"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="application/javascript"></script>
+		<script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js" type="application/javascript"></script>
+
+		<script type="application/javascript">
+			$('[data-countdown]').each(function() {
+			var $this = $(this);
+			var finalDate = $(this).data('countdown');
+			$this.countdown(finalDate, function(event) {
+				$this.html(event.strftime('До начала розыгрыша %D Д %H:%M:%S'));
+			});
+			});
+		</script>
   
  
  

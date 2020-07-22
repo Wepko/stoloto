@@ -40,42 +40,53 @@
                 @csrf
                 <input type="submit" class="btn btn-dark"  value="Начать разыгрыш 4 из 20">
             </form>
-            <h3>Изменение стоимости билета</h3>
+            <h3 class="mt-5">Статистика</h3>
+            <p class="inpt1">Проданных билетов: {{$count[0] ?? '0'}} На сумму: {{$sum[0] ?? '0'}}</p>
         </div>
 
-        <div class="tab-pane fade" id="nav-twogame" role="tabpanel" aria-labelledby="nav-twogame-tab">
+        <div class="tab-pane fade" id="nav-twogame" role="tabpanel" aria-labelledby="nav-twogame-tab" align="left">
           <form action= "{{ route('WinnerTwoGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 5 из 36">
           </form>
+          <h3 class="mt-5">Статистика</h3>
+          <p class="inpt1">Проданных билетов: {{$count[1] ?? '0'}} На сумму: {{$sum[1] ?? '0'}}</p>
         </div>
 
-        <div class="tab-pane fade" id="nav-threegame" role="tabpanel" aria-labelledby="nav-threegame-tab">
+        <div class="tab-pane fade" id="nav-threegame" role="tabpanel" aria-labelledby="nav-threegame-tab" align="left">
           <form action= "{{ route('WinnerThreeGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 7 из 49">
           </form>
+          <h3 class="mt-5">Статистика</h3>
+          <p class="inpt1">Проданных билетов: {{$count[2] ?? '0'}} На сумму: {{$sum[2] ?? '0'}}</p>
         </div>
 
-        <div class="tab-pane fade" id="nav-fourgame" role="tabpanel" aria-labelledby="nav-fourgame-tab">
+        <div class="tab-pane fade" id="nav-fourgame" role="tabpanel" aria-labelledby="nav-fourgame-tab" align="left">
           <form action= "{{ route('WinnerFourGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 6 из 45">
           </form>
+          <h3 class="mt-5">Статистика</h3>
+          <p class="inpt1">Проданных билетов: {{$count[3] ?? '0'}} На сумму: {{$sum[3] ?? '0'}}</p>
         </div>
 
-        <div class="tab-pane fade" id="nav-fivegame" role="tabpanel" aria-labelledby="nav-fivegame-tab">
+        <div class="tab-pane fade" id="nav-fivegame" role="tabpanel" aria-labelledby="nav-fivegame-tab" align="left">
           <form action= "{{ route('WinnerFiveGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 12 из 24">
           </form>
+          <h3 class="mt-5">Статистика</h3>
+          <p class="inpt1">Проданных билетов: {{$count[4] ?? '0'}} На сумму: {{$sum[4] ?? '0'}}</p>
         </div>
 
-        <div class="tab-pane fade" id="nav-sixgame" role="tabpanel" aria-labelledby="nav-sixgame-tab">
+        <div class="tab-pane fade" id="nav-sixgame" role="tabpanel" aria-labelledby="nav-sixgame-tab" align="left">
           <form action= "{{ route('WinnerSixGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш рапидо">
           </form>
+          <h3 class="mt-5">Статистика</h3>
+          <p class="inpt1">Проданных билетов: {{$count[5] ?? '0'}} На сумму: {{$sum[5] ?? '0'}}</p>
         </div>
 
       </div>

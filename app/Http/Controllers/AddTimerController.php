@@ -18,13 +18,20 @@ class AddTimerController extends Controller
     public function onegame(Request $request) {
 
         $time = $request->input('timer');
-        $time = preg_replace("/-/", "/", $time);
         $time = preg_replace("/T/", " ", $time);
         $time = $time . ":00";
 
-        OneGameTimerModels::insert(array(
-            'time' => $time
-        ));
+        if (OneGameTimerModels::count() == 0) {
+            OneGameTimerModels::insert(array(
+                'time' => $time
+            ));
+        }
+        else {
+            $models = OneGameTimerModels::where('id', '=', 1)->first();
+            $models->time = $time;
+            $models->save();
+        }
+
         return redirect()->back()->with('info', 'Таймер успешно добавлен');
     }
 }

@@ -26,17 +26,11 @@ class AdminController extends Controller
 {
 
     public function distribution() {
-        $fond = strval(intval(OneGameModels::sum('price')) 
-          + intval(TwoGameModels::sum('price'))
-          + intval(ThreeGameModels::sum('price'))
-          + intval(FourGameModels::sum('price'))
-          + intval(FiveGameModels::sum('price'))
-          + intval(SixGameModels::sum('price')));
-        
+
+        $fond = strval(intval(OneGameModels::sum('price')));
         $countUsers = User::count('id');
         
         $fond = strval(intval($fond / $countUsers));
-
         $users = User::all();
 
         foreach ($users as $user) {
@@ -46,8 +40,16 @@ class AdminController extends Controller
             $model->save();
         }
 
+        $prices = OneGameModels::all();
+
+        foreach ($prices as $price) {
+            $modelPrice = OneGameModels::where('id', '=', $price->id)->first();
+            $modelPrice->price = 0;
+            $modelPrice->save();
+        }
+
         $model = FondModels::where('id', '=', 1)->first();
-        $model->fond = 0;
+        $model->fond = strval(intval($model->fond) - intval(OneGameModels::sum('price')));
         $model->save();
 
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');

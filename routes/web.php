@@ -81,7 +81,27 @@ Route::get('/refill', 'LKController@refill')->name('refill');
 Route::post('/refill', 'LKController@output')->name('output');
 
 Route::get('/admin', function (){
-  return view('admin-panel', ['useroutputs' => OutputModels::all()]);
+
+  $count = [
+    OneGameModels::count('id'),
+    TwoGameModels::count('id'),
+    ThreeGameModels::count('id'),
+    FourGameModels::count('id'),
+    FiveGameModels::count('id'),
+    SixGameModels::count('id')
+  ];
+  
+  $sum = [
+    OneGameModels::sum('price'),
+    TwoGameModels::sum('price'),
+    ThreeGameModels::sum('price'),
+    FourGameModels::sum('price'),
+    FiveGameModels::sum('price'),
+    SixGameModels::sum('price')
+  ];
+  
+  return view('admin-panel', ['useroutputs' => OutputModels::all()], ['count' => $count], ['sum' => $sum]);
+
 })->name('admin');
 
 Route::get('/ticket', function (){
@@ -99,11 +119,8 @@ Route::get('/valid', function (){
 Route::get('/four-of-twenty', function (){
   $fond = OneGameModels::sum('price');
   $circulation = OneGameModels::max('circulation');
-  if (OneGameTimerModels::max('time')) {
-    $time = OneGameTimerModels::max('time');
-    return view('games.one-game', ['fond' => $fond], ['circulation' => $circulation], ['time' => $time]);
-  }
-  return view('games.one-game', ['fond' => $fond], ['circulation' => $circulation]);
+  $time = OneGameTimerModels::where('id','=', 1)->value('time');
+  return view('games.one-game', ['fond' => $fond], ['circulation' => $circulation], ['time' => $time]);
 })->name('one-game');
 
 Route::get('/five-of-threety-six', function (){
