@@ -18,6 +18,8 @@ use App\Models\FourGameWinModels;
 use App\Models\FiveGameWinModels;
 use App\Models\SixGameWinModels;
 use App\Models\FondModels;
+use App\Models\PriceGameModels;
+use App\Models\DistGameModels;
 use Illuminate\Http\Request;
 use DB;
 
@@ -59,10 +61,10 @@ class AddTicketController extends Controller
 
                     for ($ii = 1; $ii <= 7; $ii++) {
                         if (count($arr11) == $ii) {
-                            $price1 = 100 * $mas[$ii];
+                            $price1 = (intval(PriceGameModels::where('id', '=', 1)->value('price')) / 2)  * $mas[$ii];
                         }
                         if (count($arr22) == $ii) {
-                            $price2 = 100 * $mas[$ii];
+                            $price2 = (intval(PriceGameModels::where('id', '=', 1)->value('price')) / 2) * $mas[$ii];
                         }
                     } 
 
@@ -75,23 +77,33 @@ class AddTicketController extends Controller
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
 
-                        OneGameModels::insert(array(
-                            'user_id'  => Auth::user()->getId(),
-                            'circulation' => $count + 1,
-                            'ticketOne' => implode($arr11),
-                            'ticketTwo' => implode($arr22),
-                            'price' => $price / 2
-                        ));
+                        $distgame = DistGameModels::where('numberGame', '=', "1")->first();
 
-                        if (FondModels::count('id') == 0) {
-                            FondModels::insert(array(
-                                'fond' => $price / 2
+                        if($distgame->distGame == true) {
+                            JackPotModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
                             ));
-                        }
-                        else {
-                            $fondModels = FondModels::where('id', '=', 1)->first();
-                            $fondModels->fond = $fondModels->fond + $price / 2;
-                            $fondModels->save();
+                        } else {
+                            OneGameModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'circulation' => $count + 1,
+                                'ticketOne' => implode($arr11),
+                                'ticketTwo' => implode($arr22),
+                                'price' => $price / 2
+                            ));
+
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
                         }
 
                     } 
@@ -154,7 +166,7 @@ class AddTicketController extends Controller
 
                     for ($ii = 1; $ii <= 11; $ii++) {
                         if (count($arr11) == $ii) {
-                            $price1 = 40 * $mas[$ii];
+                            $price1 = intval(PriceGameModels::where('id', '=', 2)->value('price')) * $mas[$ii];
                         }
                     } 
 
@@ -232,7 +244,7 @@ class AddTicketController extends Controller
 
                     for ($ii = 1; $ii <= 14; $ii++) {
                         if (count($arr11) == $ii) {
-                            $price1 = 25 * $mas[$ii];
+                            $price1 = intval(PriceGameModels::where('id', '=', 3)->value('price')) * $mas[$ii];
                         }
                     } 
 
@@ -309,7 +321,7 @@ class AddTicketController extends Controller
 
                     for ($ii = 1; $ii <= 14; $ii++) {
                         if (count($arr11) == $ii) {
-                            $price1 = 100 * $mas[$ii];
+                            $price1 = intval(PriceGameModels::where('id', '=', 4)->value('price')) * $mas[$ii];
                         }
                     } 
 
@@ -383,7 +395,7 @@ class AddTicketController extends Controller
             if (count($arr11) > 11) {
                 if (Auth::check()) {
 
-                    $price = 60 * $request->input('factor');
+                    $price = intval(PriceGameModels::where('id', '=', 5)->value('price')) * $request->input('factor');
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
@@ -458,7 +470,7 @@ class AddTicketController extends Controller
             if (count($arr11) > 7 && count($arr11) < 9 && count($arr22) > 0) {
                 if (Auth::check()) {
 
-                    $price = (60 * count($arr22)) * $request->input('factor');
+                    $price = (intval(PriceGameModels::where('id', '=', 6)->value('price')) * count($arr22)) * $request->input('factor');
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJackpotTable extends Migration
+class CreateFivegametimerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateJackpotTable extends Migration
      */
     public function up()
     {
-        Schema::create('jackpot', function (Blueprint $table) {
+        Schema::create('fivegametimer', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();
-            $table->string('ticketOne'); 
-            $table->string('price');
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('time');
 
             $table->timestamps();
         });
@@ -32,6 +28,6 @@ class CreateJackpotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jackpot');
+        Schema::dropIfExists('fivegametimer');
     }
 }

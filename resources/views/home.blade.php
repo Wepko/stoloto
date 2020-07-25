@@ -176,7 +176,7 @@
 	   					<div class="game-card-middle">
 	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа 6 из 45</div>
-	   						<div class="game-card-middle__price">Билет от 200р</div>
+	   						<div class="game-card-middle__price">Билет от 100р</div>
 	   						<div class="game-card-middle__btn"><a href="{{ route('four-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
 	   						<div class="game-card-middle__images">
 	   							<img src="img/Balls 4-20.jpg" alt="">

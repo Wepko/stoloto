@@ -8,6 +8,9 @@
   </div>
   @endif
 <main id="main" class="card mt-5">
+    <div class="alert alert-success text-center" style="width:100%;" role="alert">
+        <div data-countdown="{{ $time }}"></div>
+    </div>
 <div class="alert alert-warning text-center" role="alert">
             Призовой фонт этой игры <span>{{ $fond ?? '0' }}</span> рублей!
         </div>

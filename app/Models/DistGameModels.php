@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class JackPotModels extends Model
+class DistGameModels extends Model
 {
-    protected $table = 'jackpot';
+    protected $table = 'distgame';
 
     protected $fillable = [
         'id',
-        'user_id',
-        'ticketOne',
-        'price'
+        'numberGame',
+        'distGame'
     ];
 }

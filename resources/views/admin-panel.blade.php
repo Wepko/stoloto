@@ -32,7 +32,7 @@
             @csrf
                 <label>Добавить таймер</label><br>
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
-                <input type="submit" class="btn btn-dark mt-1" onclick="onegame()"  value="Добавить таймер">
+                <input type="submit" class="btn btn-dark mt-1"  value="Добавить таймер">
             </form>
             <h3 class="mt-5">Произвести розыгрыш</h3>
             <p class='inpt1'>Чтобы начать розыгрыш обязательно надо сначала добавить выйгрышный билет. Добавить его можно в игре.</p>
@@ -40,53 +40,144 @@
                 @csrf
                 <input type="submit" class="btn btn-dark"  value="Начать разыгрыш 4 из 20">
             </form>
+            <h3 class="mt-5">Изменить цену билета</h3>
+            <form action= "{{ route('ReplaceOneGame') }}" method="post">
+                @csrf
+                <input type="number" name="price" class="btn border" placeholder="Введите новую цену">
+                <input type="submit" class="btn btn-dark"  value="Изменить цену 4 из 20">
+            </form>
             <h3 class="mt-5">Статистика</h3>
-            <p class="inpt1">Проданных билетов: {{$count[0] ?? '0'}} На сумму: {{$sum[0] ?? '0'}}</p>
+            <p class="inpt1">Проданных билетов: {{$count[0] ?? '0'}} На сумму: {{$sum[0] * 2 ?? '0'}}</p>
         </div>
 
         <div class="tab-pane fade" id="nav-twogame" role="tabpanel" aria-labelledby="nav-twogame-tab" align="left">
+          <h3>Добавление таймера</h3>
+            <p class='inpt1'>Добавьте таймер для обратного отсчета до розыгрыша игры</p>
+            <form action= "{{ route('TimerTwoGame') }}" method="post">
+            @csrf
+                <label>Добавить таймер</label><br>
+                <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
+                <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
+          </form>
+
           <form action= "{{ route('WinnerTwoGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 5 из 36">
           </form>
+
+          <h3 class="mt-5">Изменить цену билета</h3>
+            <form action= "{{ route('ReplaceTwoGame') }}" method="post">
+                @csrf
+                <input type="number" name="price" class="btn border" placeholder="Введите новую цену">
+                <input type="submit" class="btn btn-dark"  value="Изменить цену 5 из 36">
+            </form>
+
           <h3 class="mt-5">Статистика</h3>
-          <p class="inpt1">Проданных билетов: {{$count[1] ?? '0'}} На сумму: {{$sum[1] ?? '0'}}</p>
+          <p class="inpt1">Проданных билетов: {{$count[1] ?? '0'}} На сумму: {{$sum[1] * 2 ?? '0'}}</p>
         </div>
 
         <div class="tab-pane fade" id="nav-threegame" role="tabpanel" aria-labelledby="nav-threegame-tab" align="left">
+          <h3>Добавление таймера</h3>
+            <p class='inpt1'>Добавьте таймер для обратного отсчета до розыгрыша игры</p>
+            <form action= "{{ route('TimerThreeGame') }}" method="post">
+            @csrf
+                <label>Добавить таймер</label><br>
+                <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
+                <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
+          </form>
+
           <form action= "{{ route('WinnerThreeGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 7 из 49">
           </form>
+
+          <h3 class="mt-5">Изменить цену билета</h3>
+            <form action= "{{ route('ReplaceThreeGame') }}" method="post">
+                @csrf
+                <input type="number" name="price" class="btn border" placeholder="Введите новую цену">
+                <input type="submit" class="btn btn-dark"  value="Изменить цену 7 из 49">
+            </form>
+
           <h3 class="mt-5">Статистика</h3>
-          <p class="inpt1">Проданных билетов: {{$count[2] ?? '0'}} На сумму: {{$sum[2] ?? '0'}}</p>
+          <p class="inpt1">Проданных билетов: {{$count[2] ?? '0'}} На сумму: {{$sum[2] * 2 ?? '0'}}</p>
         </div>
 
         <div class="tab-pane fade" id="nav-fourgame" role="tabpanel" aria-labelledby="nav-fourgame-tab" align="left">
+          <h3>Добавление таймера</h3>
+            <p class='inpt1'>Добавьте таймер для обратного отсчета до розыгрыша игры</p>
+            <form action= "{{ route('TimerFourGame') }}" method="post">
+            @csrf
+                <label>Добавить таймер</label><br>
+                <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
+                <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
+          </form>
+
           <form action= "{{ route('WinnerFourGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 6 из 45">
           </form>
+
+          <h3 class="mt-5">Изменить цену билета</h3>
+            <form action= "{{ route('ReplaceFourGame') }}" method="post">
+                @csrf
+                <input type="number" name="price" class="btn border" placeholder="Введите новую цену">
+                <input type="submit" class="btn btn-dark"  value="Изменить цену 6 из 45">
+            </form>
+
           <h3 class="mt-5">Статистика</h3>
-          <p class="inpt1">Проданных билетов: {{$count[3] ?? '0'}} На сумму: {{$sum[3] ?? '0'}}</p>
+          <p class="inpt1">Проданных билетов: {{$count[3] ?? '0'}} На сумму: {{$sum[3] * 2 ?? '0'}}</p>
         </div>
 
         <div class="tab-pane fade" id="nav-fivegame" role="tabpanel" aria-labelledby="nav-fivegame-tab" align="left">
+          <h3>Добавление таймера</h3>
+            <p class='inpt1'>Добавьте таймер для обратного отсчета до розыгрыша игры</p>
+            <form action= "{{ route('TimerFiveGame') }}" method="post">
+            @csrf
+                <label>Добавить таймер</label><br>
+                <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
+                <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
+          </form>
+          
           <form action= "{{ route('WinnerFiveGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 12 из 24">
           </form>
+
+          <h3 class="mt-5">Изменить цену билета</h3>
+            <form action= "{{ route('ReplaceFiveGame') }}" method="post">
+                @csrf
+                <input type="number" name="price" class="btn border" placeholder="Введите новую цену">
+                <input type="submit" class="btn btn-dark"  value="Изменить цену 12 из 24">
+            </form>
+
           <h3 class="mt-5">Статистика</h3>
-          <p class="inpt1">Проданных билетов: {{$count[4] ?? '0'}} На сумму: {{$sum[4] ?? '0'}}</p>
+          <p class="inpt1">Проданных билетов: {{$count[4] ?? '0'}} На сумму: {{$sum[4] * 2  ?? '0'}}</p>
         </div>
 
         <div class="tab-pane fade" id="nav-sixgame" role="tabpanel" aria-labelledby="nav-sixgame-tab" align="left">
+          <h3>Добавление таймера</h3>
+            <p class='inpt1'>Добавьте таймер для обратного отсчета до розыгрыша игры</p>
+            <form action= "{{ route('TimerSixGame') }}" method="post">
+            @csrf
+                <label>Добавить таймер</label><br>
+                <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
+                <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
+          </form>
+
           <form action= "{{ route('WinnerSixGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш рапидо">
           </form>
+
+          <h3 class="mt-5">Изменить цену билета</h3>
+            <form action= "{{ route('ReplaceSixGame') }}" method="post">
+                @csrf
+                <input type="number" name="price" class="btn border" placeholder="Введите новую цену">
+                <input type="submit" class="btn btn-dark"  value="Изменить цену Рапидо">
+            </form>
+
           <h3 class="mt-5">Статистика</h3>
-          <p class="inpt1">Проданных билетов: {{$count[5] ?? '0'}} На сумму: {{$sum[5] ?? '0'}}</p>
+          <p class="inpt1">Проданных билетов: {{$count[5] ?? '0'}} На сумму: {{$sum[5] * 2 ?? '0'}}</p>
         </div>
 
       </div>
@@ -107,9 +198,15 @@
       </div>
       <div class="mt-5"> 
         <h1>Распределение джекпота</h1>
+        <form action= "{{ route('distgame') }}" method="post">
+          @csrf
+          <input type="number" name="game" class="btn border" placeholder="Введите номер игры" >
+          <input type="submit" class="btn btn-dark"  value="Начать распределение">
+      </form>
         <form action= "{{ route('distribution') }}" method="post">
           @csrf
-          <input type="submit" class="btn btn-dark mt-2" value="Начать распределение">
+          <input type="number" name="winticket" class="btn border" placeholder="Введите комбинацию" >
+          <input type="submit" class="btn btn-dark mt-5" value="Провести распределение">
       </form>
       </div>
 @endif

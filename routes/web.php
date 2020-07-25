@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\OneGameModels;
-use App\Models\OneGameTimerModels;
 use App\Models\TwoGameModels;
 use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
@@ -11,6 +10,13 @@ use App\Models\SixGameModels;
 use App\Models\OutputModels;
 use App\Models\FondModels;
 use App\Models\UserWinnerModels;
+use App\Models\OneGameTimerModels;
+use App\Models\TwoGameTimerModels;
+use App\Models\ThreeGameTimerModels;
+use App\Models\FourGameTimerModels;
+use App\Models\FiveGameTimerModels;
+use App\Models\SixGameTimerModels;
+use App\Models\DistGameModels;
 
 Route::get('/', function () {
 
@@ -49,7 +55,7 @@ Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
 Route::get('/logout', 'LKController@logout')->name('logout');
 
 
-//добавление значения билетов пользователей
+//добавление значения билетов пользователей 
 Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->name('AddTicketValueOne');
 Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicketValueTwo');
 Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddTicketValueThree');
@@ -76,9 +82,22 @@ Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGam
 Route::post('/distribution', 'AdminController@distribution')->name('distribution');
 
 Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->name('TimerOneGame');
+Route::post('/AddTimerTwoGame', 'AddTimerController@twogame')->name('TimerTwoGame');
+Route::post('/AddTimerThreeGame', 'AddTimerController@threegame')->name('TimerThreeGame');
+Route::post('/AddTimerFourGame', 'AddTimerController@fourgame')->name('TimerFourGame');
+Route::post('/AddTimerFiveGame', 'AddTimerController@fivegame')->name('TimerFiveGame');
+Route::post('/AddTimerSixGame', 'AddTimerController@sixgame')->name('TimerSixGame');
 
 Route::get('/refill', 'LKController@refill')->name('refill');
 Route::post('/refill', 'LKController@output')->name('output');
+
+Route::post('/ReplaceOneGame', 'AdminController@replaceOneGame')->name('ReplaceOneGame');
+Route::post('/ReplaceTwoGame', 'AdminController@replaceTwoGame')->name('ReplaceTwoGame');
+Route::post('/ReplaceThreeGame', 'AdminController@replaceThreeGame')->name('ReplaceThreeGame');
+Route::post('/ReplaceFourGame', 'AdminController@replaceFourGame')->name('ReplaceFourGame');
+Route::post('/ReplaceFiveGame', 'AdminController@replaceFiveGame')->name('ReplaceFiveGame');
+Route::post('/ReplaceSixGame', 'AdminController@replaceSixGame')->name('ReplaceSixGame');
+Route::post('/DistGame', 'AdminController@distGame')->name('distgame');
 
 Route::get('/admin', function (){
 
@@ -100,7 +119,7 @@ Route::get('/admin', function (){
     SixGameModels::sum('price')
   ];
   
-  return view('admin-panel', ['useroutputs' => OutputModels::all()], ['count' => $count], ['sum' => $sum]);
+  return view('admin-panel', ['useroutputs' => OutputModels::all()], ['count' => $count, 'sum' => $sum]);
 
 })->name('admin');
 
@@ -126,31 +145,36 @@ Route::get('/four-of-twenty', function (){
 Route::get('/five-of-threety-six', function (){
   $fond = TwoGameModels::sum('price');
   $circulation = TwoGameModels::max('circulation');
-  return view('games.two-game', ['fond' => $fond], ['circulation' => $circulation]);
+  $time = TwoGameTimerModels::where('id','=', 1)->value('time');
+  return view('games.two-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
 })->name('two-game');
 
 Route::get('/seven-of-fourty-nine', function (){
   $fond = ThreeGameModels::sum('price');
   $circulation = ThreeGameModels::max('circulation');
-  return view('games.three-game', ['fond' => $fond], ['circulation' => $circulation]);
+  $time = ThreeGameTimerModels::where('id','=', 1)->value('time');
+  return view('games.three-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
 })->name('three-game');
 
 Route::get('/six-of-fourty-five', function (){
   $fond = FourGameModels::sum('price');
   $circulation = FourGameModels::max('circulation');
-  return view('games.four-game', ['fond' => $fond], ['circulation' => $circulation]);
+  $time = FourGameTimerModels::where('id','=', 1)->value('time');
+  return view('games.four-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
 })->name('four-game');
 
 Route::get('/twenteen-of-twenty-four', function (){
   $fond = FiveGameModels::sum('price');
   $circulation = FiveGameModels::max('circulation');
-  return view('games.five-game', ['fond' => $fond], ['circulation' => $circulation]);
+  $time = FiveGameTimerModels::where('id','=', 1)->value('time');
+  return view('games.five-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
 })->name('five-game');
 
 Route::get('/rapido', function (){
   $fond = SixGameModels::sum('price');
   $circulation = SixGameModels::max('circulation');
-  return view('games.six-game', ['fond' => $fond], ['circulation' => $circulation]);
+  $time = SixGameTimerModels::where('id','=', 1)->value('time');
+  return view('games.six-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
 })->name('six-game');
 
 Route::get('/speed-game', function (){

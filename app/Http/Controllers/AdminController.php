@@ -19,37 +19,52 @@ use App\Models\FiveGameModels;
 use App\Models\SixGameWinModels;
 use App\Models\SixGameModels;
 use App\Models\FondModels;
+use App\Models\PriceGameModels;
+use App\Models\DistGameModels;
+use App\Models\JackPotModels;
 use Illuminate\Http\Request;
 use DB; 
 
 class AdminController extends Controller
 {
 
+    public function distGame(Request $request) {
+        $numberGame = $request->input('game');
+        $model = DistGameModels::where('numberGame', '=', $numberGame)->first();
+        $model->distGame = true;
+        $model->save();
+        return redirect()->back()->with('info', 'Начат розыгрыш распределения');
+    }
+
     public function distribution() {
 
-        $fond = strval(intval(OneGameModels::sum('price')));
-        $countUsers = User::count('id');
+        $fond = JackPotModels::sum('price');
+
+        $constFond = $fond;
+        $countUsers = JackPotModels::count('id');
         
         $fond = strval(intval($fond / $countUsers));
         $users = User::all();
 
+        $ticketWinOne = $request->input('winticket');
+        $ticketWinOneArr = str_split($ticketWinOne, 2);
+
         foreach ($users as $user) {
-            $model = User::where('id', '=', $user->id)->first();
-            $money = strval(intval($user->money()) + intval($fond));
-            $model->money = $money;
-            $model->save();
-        }
+            $model = JackPotModels::where('user_id', '=', $user->id)->first();
+            $ticketOne = $model->ticketOne;
+            $ticketOneArr = str_split($ticketOne, 2);
+            $countOneArr = array_intersect($ticketWinOneArr, $ticketOneArr);
+            $countOne = count($countOneArr);
 
-        $prices = OneGameModels::all();
-
-        foreach ($prices as $price) {
-            $modelPrice = OneGameModels::where('id', '=', $price->id)->first();
-            $modelPrice->price = 0;
-            $modelPrice->save();
+            if ($countOne > 2) {
+                $money = strval(intval($user->money()) + intval($fond));
+                $model->money = $money;
+                $model->save();
+            }
         }
 
         $model = FondModels::where('id', '=', 1)->first();
-        $model->fond = strval(intval($model->fond) - intval(OneGameModels::sum('price')));
+        $model->fond = strval(intval($model->fond) - intval($constFond));
         $model->save();
 
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
@@ -673,6 +688,78 @@ class AdminController extends Controller
             ));
         }
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
+    }
+
+    public function replaceOneGame(Request $request) {
+
+        $newPrice = $request->input('price');
+
+        $model = PriceGameModels::where('id', '=', 1)->first();
+        $model->price = $newPrice;
+        $model->save();
+
+        return redirect()->back()->with('info', 'Цена успешно изменена!');
+
+    }
+
+    public function replaceTwoGame(Request $request) {
+
+        $newPrice = $request->input('price');
+
+        $model = PriceGameModels::where('id', '=', 2)->first();
+        $model->price = $newPrice;
+        $model->save();
+
+        return redirect()->back()->with('info', 'Цена успешно изменена!');
+
+    }
+
+    public function replaceThreeGame(Request $request) {
+
+        $newPrice = $request->input('price');
+
+        $model = PriceGameModels::where('id', '=', 3)->first();
+        $model->price = $newPrice;
+        $model->save();
+
+        return redirect()->back()->with('info', 'Цена успешно изменена!');
+
+    }
+
+    public function replaceFourGame(Request $request) {
+
+        $newPrice = $request->input('price');
+
+        $model = PriceGameModels::where('id', '=', 4)->first();
+        $model->price = $newPrice;
+        $model->save();
+
+        return redirect()->back()->with('info', 'Цена успешно изменена!');
+
+    }
+
+    public function replaceFiveGame(Request $request) {
+
+        $newPrice = $request->input('price');
+
+        $model = PriceGameModels::where('id', '=', 5)->first();
+        $model->price = $newPrice;
+        $model->save();
+
+        return redirect()->back()->with('info', 'Цена успешно изменена!');
+
+    }
+
+    public function replaceSixGame(Request $request) {
+
+        $newPrice = $request->input('price');
+
+        $model = PriceGameModels::where('id', '=', 6)->first();
+        $model->price = $newPrice;
+        $model->save();
+
+        return redirect()->back()->with('info', 'Цена успешно изменена!');
+
     }
 
 }
