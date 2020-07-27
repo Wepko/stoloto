@@ -10,8 +10,8 @@ function game(url) {
     document.body.style.background = bg;
   }
 
-  if (url == '/four-of-twenty') {
-    colorPicker('#fe8933');
+  if (url == '/games/four-of-twenty') {
+    colorPicker('#ffffff');
     var game4_20 = games({
       root: $root,
       itog: itog,
@@ -36,8 +36,8 @@ function game(url) {
     game4_20.init();
   }
 
-  if (url == '/five-of-threety-six') {
-    colorPicker('#50b848');
+  if (url == '/games/five-of-threety-six') {
+    colorPicker('#ffffff');
     var game5_36 = games({
       root: $root,
       itog: itog,
@@ -62,8 +62,8 @@ function game(url) {
     game5_36.init();
   }
 
-  if (url == '/seven-of-fourty-nine') {
-    colorPicker('#eb3131');
+  if (url == '/games/seven-of-fourty-nine') {
+    colorPicker('#ffffff');
     var game7_49 = games({
       root: $root,
       itog: itog,
@@ -82,8 +82,8 @@ function game(url) {
     game7_49.init();
   }
 
-  if (url == '/six-of-fourty-five') {
-    colorPicker('#ffd925');
+  if (url == '/games/six-of-fourty-five') {
+    colorPicker('#ffffff');
     var game6_45 = games({
       root: $root,
       itog: itog,
@@ -102,8 +102,8 @@ function game(url) {
     game6_45.init();
   }
 
-  if (url == '/twenteen-of-twenty-four') {
-    colorPicker('#1d7dff');
+  if (url == '/games/twenteen-of-twenty-four') {
+    colorPicker('#ffffff');
     var game12_24 = games({
       root: $root,
       itog: itog,
@@ -122,8 +122,8 @@ function game(url) {
     game12_24.init();
   }
 
-  if (url == '/rapido') {
-    colorPicker('#036977');
+  if (url == '/games/rapido') {
+    colorPicker('#ffffff');
     var rapido = games({
       root: $root,
       itog: itog,
@@ -218,12 +218,12 @@ class Routing {
     }
 }
 
-new Routing('/top-4', game)
-new Routing('/rapido', game)
-new Routing('/twenteen-of-twenty-four', game)
-new Routing('/six-of-fourty-five', game)
-new Routing('/seven-of-fourty-nine', game)
-new Routing('/five-of-threety-six', game)
-new Routing('/four-of-twenty', game)
+new Routing('/games/top-4', game)
+new Routing('/games/rapido', game)
+new Routing('/games/twenteen-of-twenty-four', game)
+new Routing('/games/six-of-fourty-five', game)
+new Routing('/games/seven-of-fourty-nine', game)
+new Routing('/games/five-of-threety-six', game)
+new Routing('/games/four-of-twenty', game)
 new Routing('/ticket', ticket)
 new Routing('/valid', valid)

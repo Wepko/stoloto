@@ -135,53 +135,159 @@ Route::get('/valid', function (){
   return view('valid_ticket', ['userwinner' => UserWinnerModels::all()]);
 })->name('valid_ticket');
 
-Route::get('/four-of-twenty', function (){
-  $fond = OneGameModels::sum('price');
-  $circulation = OneGameModels::max('circulation');
-  $time = OneGameTimerModels::where('id','=', 1)->value('time');
-  return view('games.one-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
-})->name('one-game');
+Route::prefix('/games')->group( function () {
 
-Route::get('/five-of-threety-six', function (){
-  $fond = TwoGameModels::sum('price');
-  $circulation = TwoGameModels::max('circulation');
-  $time = TwoGameTimerModels::where('id','=', 1)->value('time');
-  return view('games.two-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
-})->name('two-game');
+  Route::get('four-of-twenty', function (){
+    $fond = OneGameModels::sum('price');
 
-Route::get('/seven-of-fourty-nine', function (){
-  $fond = ThreeGameModels::sum('price');
-  $circulation = ThreeGameModels::max('circulation');
-  $time = ThreeGameTimerModels::where('id','=', 1)->value('time');
-  return view('games.three-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
-})->name('three-game');
+    $pre = "";
+    $max1 = 5;
+    $count = strlen($fond);
+    $max1 = intval($max1) - intval($count);
+    
+    for ($i = 1; $i<=$max1; $i++)
+      $pre = $pre . "0";
 
-Route::get('/six-of-fourty-five', function (){
-  $fond = FourGameModels::sum('price');
-  $circulation = FourGameModels::max('circulation');
-  $time = FourGameTimerModels::where('id','=', 1)->value('time');
-  return view('games.four-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
-})->name('four-game');
+    $fond = $pre . $fond;
 
-Route::get('/twenteen-of-twenty-four', function (){
-  $fond = FiveGameModels::sum('price');
-  $circulation = FiveGameModels::max('circulation');
-  $time = FiveGameTimerModels::where('id','=', 1)->value('time');
-  return view('games.five-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
-})->name('five-game');
+    $circulation = OneGameModels::max('circulation');
+    $time = OneGameTimerModels::where('id','=', 1)->value('time');
+    return view('games.one-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
+  })->name('one-game');
 
-Route::get('/rapido', function (){
-  $fond = SixGameModels::sum('price');
-  $circulation = SixGameModels::max('circulation');
-  $time = SixGameTimerModels::where('id','=', 1)->value('time');
-  return view('games.six-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
-})->name('six-game');
+  Route::get('five-of-threety-six', function (){
+    $fond = TwoGameModels::sum('price');
 
-Route::get('/speed-game', function (){
-  return view('games.speed-game');
-})->name('speed-game');
+    $pre = "";
+    $max1 = 5;
+    $count = strlen($fond);
+    $max1 = intval($max1) - intval($count);
+    
+    for ($i = 1; $i<=$max1; $i++)
+      $pre = $pre . "0";
 
-Route::get('/moment-game', function (){
-  return view('games.speed-game');
-})->name('moment-game');
+    $fond = $pre . $fond;
+
+    $circulation = TwoGameModels::max('circulation');
+    $time = TwoGameTimerModels::where('id','=', 1)->value('time');
+    return view('games.two-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
+  })->name('two-game');
+
+  Route::get('seven-of-fourty-nine', function (){
+    $fond = ThreeGameModels::sum('price');
+
+    $pre = "";
+    $max1 = 5;
+    $count = strlen($fond);
+    $max1 = intval($max1) - intval($count);
+    
+    for ($i = 1; $i<=$max1; $i++)
+      $pre = $pre . "0";
+
+    $fond = $pre . $fond;
+
+    $circulation = ThreeGameModels::max('circulation');
+    $time = ThreeGameTimerModels::where('id','=', 1)->value('time');
+    return view('games.three-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
+  })->name('three-game');
+
+  Route::get('six-of-fourty-five', function (){
+    $fond = FourGameModels::sum('price');
+
+    $pre = "";
+    $max1 = 5;
+    $count = strlen($fond);
+    $max1 = intval($max1) - intval($count);
+    
+    for ($i = 1; $i<=$max1; $i++)
+      $pre = $pre . "0";
+
+    $fond = $pre . $fond;
+
+    $circulation = FourGameModels::max('circulation');
+    $time = FourGameTimerModels::where('id','=', 1)->value('time');
+    return view('games.four-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
+  })->name('four-game');
+
+  Route::get('twenteen-of-twenty-four', function (){
+    $fond = FiveGameModels::sum('price');
+
+    $pre = "";
+    $max1 = 5;
+    $count = strlen($fond);
+    $max1 = intval($max1) - intval($count);
+    
+    for ($i = 1; $i<=$max1; $i++)
+      $pre = $pre . "0";
+
+    $fond = $pre . $fond;
+
+    $circulation = FiveGameModels::max('circulation');
+    $time = FiveGameTimerModels::where('id','=', 1)->value('time');
+    return view('games.five-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
+  })->name('five-game');
+
+  Route::get('rapido', function (){
+    $fond = SixGameModels::sum('price');
+
+    $pre = "";
+    $max1 = 5;
+    $count = strlen($fond);
+    $max1 = intval($max1) - intval($count);
+    
+    for ($i = 1; $i<=$max1; $i++)
+      $pre = $pre . "0";
+
+    $fond = $pre . $fond;
+
+    $circulation = SixGameModels::max('circulation');
+    $time = SixGameTimerModels::where('id','=', 1)->value('time');
+    return view('games.six-game', ['fond' => $fond, 'circulation' => $circulation, 'time' => $time]);
+  })->name('six-game');
+
+  Route::get('/speed-game', function (){
+    return view('games.speed-game');
+  })->name('speed-game');
+
+  Route::get('moment-game', function (){
+    return view('games.speed-game');
+  })->name('moment-game');
+
+});
+
+Route::prefix('/tutorials')->group( function () {
+  Route::get('one-game', function (){
+    return view('tutorials.one-game');
+  })->name('tutorials-one-game');
+  
+  Route::get('two-game', function (){
+    return view('tutorials.two-game');
+  })->name('tutorials-two-game');
+  
+  Route::get('three-game', function (){
+    return view('tutorials.three-game');
+  })->name('tutorials-three-game');
+  
+  Route::get('four-game', function (){
+    return view('tutorials.four-game');
+  })->name('tutorials-four-game');
+  
+  Route::get('five-game', function (){
+    return view('tutorials.five-game');
+  })->name('tutorials-five-game');
+  
+  Route::get('six-game', function (){
+    return view('tutorials.six-game');
+  })->name('tutorials-six-game');
+
+  Route::get('speed-game', function (){
+    return view('tutorials.speed-game');
+  })->name('tutorials-speed-game');
+  
+  Route::get('moment-game', function (){
+    return view('tutorials.moment-game');
+  })->name('tutorials-moment-game');
+});
+
+
 

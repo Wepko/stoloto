@@ -117,7 +117,7 @@
 		   					<div class="game-card-big__images"><img src="img/Happy guy.jpg" alt=""></div>
 		   					<div class="game-card-big__btns">
 		   						<a href="{{ route('speed-game') }}" class="btn-orange mr-3">Играть сейчас</a>
-		   						<a href="#" class="btn-orange-revers">Узнать подробнее</a>
+							    <a href="{{ route('tutorials-speed-game') }}" class="btn-orange-revers">Узнать подробнее</a>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -129,7 +129,7 @@
 		   					<div class="game-card-big__images"><img src="img/Happy girl.jpg" alt=""></div>
 		   					<div class="game-card-big__btns">
 		   						<a href="{{ route('moment-game') }}" class="btn-orange mr-3">Играть сейчас</a>
-		   						<a href="#" class="btn-orange-revers">Узнать подробнее</a>
+		   						<a href="{{ route('tutorials-moment-game') }}" class="btn-orange-revers">Узнать подробнее</a>
 		   					</div>
 		   				</div>
 		   			</div>
@@ -139,7 +139,7 @@
 		   		<div class="row">
 						<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
-	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
+	   						<div class="game-card-middle__text-decoration"><a href="{{ route('tutorials-one-game') }}" style="color: orange">ПОДРОБНЕЕ</a></div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа 4 из 20</div>
 	   						<div class="game-card-middle__price">Билет от 200р</div>
 	   						<div class="game-card-middle__btn"><a href="{{ route('one-game') }}" class="btn-access btn-active  pl-5 pr-5">Играть</a></div>
@@ -150,7 +150,7 @@
 	   				</div>
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
-	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
+	   						<div class="game-card-middle__text-decoration"><a href="{{ route('tutorials-two-game') }}" style="color: orange">ПОДРОБНЕЕ</a></div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа 5 из 36</div>
 	   						<div class="game-card-middle__price">Билет от 40р</div>
 	   						<div class="game-card-middle__btn"><a href="{{ route('two-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
@@ -161,7 +161,7 @@
 	   				</div>
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
-	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
+	   						<div class="game-card-middle__text-decoration"><a href="{{ route('tutorials-three-game') }}" style="color: orange">ПОДРОБНЕЕ</a></div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа 7 из 49</div>
 	   						<div class="game-card-middle__price">Билет от 25р</div>
 	   						<div class="game-card-middle__btn"><a href="{{ route('three-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
@@ -174,7 +174,7 @@
 		   		<div class="row">
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
-	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
+	   						<div class="game-card-middle__text-decoration"><a href="{{ route('tutorials-four-game') }}" style="color: orange">ПОДРОБНЕЕ</a></div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа 6 из 45</div>
 	   						<div class="game-card-middle__price">Билет от 100р</div>
 	   						<div class="game-card-middle__btn"><a href="{{ route('four-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
@@ -185,7 +185,7 @@
 	   				</div>
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
-	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
+	   						<div class="game-card-middle__text-decoration"><a href="{{ route('tutorials-five-game') }}" style="color: orange">ПОДРОБНЕЕ</a></div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа 12 из 24</div>
 	   						<div class="game-card-middle__price">Билет от 60р</div>
 	   						<div class="game-card-middle__btn"><a href="{{ route('five-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>
@@ -196,7 +196,7 @@
 	   				</div>
 	   				<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
-	   						<div class="game-card-middle__text-decoration">ПОДРОБНЕЕ</div>
+	   						<div class="game-card-middle__text-decoration"><a href="{{ route('tutorials-six-game') }}" style="color: orange">ПОДРОБНЕЕ</a></div>
 	   						<div class="game-card-middle__name-game">Золотая антилопа Рапидо</div>
 	   						<div class="game-card-middle__price">Билет от 60р</div>
 	   						<div class="game-card-middle__btn"><a href="{{ route('six-game') }}" class="btn-access btn-active pl-5 pr-5">Играть</a></div>

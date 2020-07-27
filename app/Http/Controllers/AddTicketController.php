@@ -121,14 +121,18 @@ class AddTicketController extends Controller
             }
         }
         
-        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-        $money = strval(intval(Auth::user()->money()) - intval($mon));
-        $model->money = $money;
-        
-        $model->save();
+        if (Auth::check()) {
+            $model = User::where('id', '=', Auth::user()->getId())->first();
+                        
+            $money = strval(intval(Auth::user()->money()) - intval($mon));
+            $model->money = $money;
+            
+            $model->save();
 
-        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+        }
+
+        return redirect()->back()->with('info', 'Войдите в аккаунт!');
     }
 
     public function twogame(Request $request) {
@@ -206,14 +210,18 @@ class AddTicketController extends Controller
             }
         }
 
-        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-        $money = strval(intval(Auth::user()->money()) - intval($mon));
-        $model->money = $money;
+        if (Auth::check()) {
+            $model = User::where('id', '=', Auth::user()->getId())->first();
                         
-        $model->save();
+            $money = strval(intval(Auth::user()->money()) - intval($mon));
+            $model->money = $money;
+            
+            $model->save();
 
-        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+        }
+
+        return redirect()->back()->with('info', 'Войдите в аккаунт!');;
     }
 
 
@@ -283,14 +291,18 @@ class AddTicketController extends Controller
             }
         }
 
-        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-        $money = strval(intval(Auth::user()->money()) - intval($mon));
-        $model->money = $money;
+        if (Auth::check()) {
+            $model = User::where('id', '=', Auth::user()->getId())->first();
                         
-        $model->save();
+            $money = strval(intval(Auth::user()->money()) - intval($mon));
+            $model->money = $money;
+            
+            $model->save();
 
-        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+        }
+
+        return redirect()->back()->with('info', 'Войдите в аккаунт!');
     }
 
 
@@ -359,14 +371,18 @@ class AddTicketController extends Controller
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
-        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-        $money = strval(intval(Auth::user()->money()) - intval($mon));
-        $model->money = $money;
-        
-        $model->save();
+        if (Auth::check()) {
+            $model = User::where('id', '=', Auth::user()->getId())->first();
+                        
+            $money = strval(intval(Auth::user()->money()) - intval($mon));
+            $model->money = $money;
+            
+            $model->save();
 
-        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+        }
+
+        return redirect()->back()->with('info', 'Войдите в аккаунт!');
     }
 
 
@@ -430,14 +446,18 @@ class AddTicketController extends Controller
             }
         }
 
-        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-        $money = strval(intval(Auth::user()->money()) - intval($mon));
-        $model->money = $money;
+        if (Auth::check()) {
+            $model = User::where('id', '=', Auth::user()->getId())->first();
                         
-        $model->save();
+            $money = strval(intval(Auth::user()->money()) - intval($mon));
+            $model->money = $money;
+            
+            $model->save();
 
-        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+        }
+
+        return redirect()->back()->with('info', 'Войдите в аккаунт!');
     }
 
     public function sixgame(Request $request) {
@@ -506,14 +526,18 @@ class AddTicketController extends Controller
             }
         }
 
-        $model = User::where('id', '=', Auth::user()->getId())->first();
-                    
-        $money = strval(intval(Auth::user()->money()) - intval($mon));
-        $model->money = $money;
-        
-        $model->save();
+        if (Auth::check()) {
+            $model = User::where('id', '=', Auth::user()->getId())->first();
+                        
+            $money = strval(intval(Auth::user()->money()) - intval($mon));
+            $model->money = $money;
+            
+            $model->save();
 
-        return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+        }
+
+        return redirect()->back()->with('info', 'Войдите в аккаунт!');
     }
     
 }

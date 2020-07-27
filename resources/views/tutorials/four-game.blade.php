@@ -2,114 +2,28 @@
 @section('content')
 </div>
 </header>
-
-@if (Session::has('info'))
-  <div class="alert alert-success mt-5" role="alert">
-    {{   Session::get('info') }}
-  </div>
-@elseif (Session::has('res'))
-  <div class="alert alert-success mt-5" role="alert">
-    {{   Session::get('res') }}
-  </div>
-@endif
-
-<section class="section-game" id="main">
-    <div class="section-game__title">
-            <h1>Быстрая игра</h1>
-    </div>	
-    <div class="section-game__body">	
-        <div class="container">
-            <div class="playground">
-                <div class="playground__game">
-                    <div class="row justify-content-between">					
-                         <div class="col-lg-7 col-sm-12 order-lg-1 order-sm-2">
-                                 <div class="fast-game">
-                                     <div class="block-ticket">
-                                             <div class="fast-game__header">
-                                                 <p class="block-ticket__title">Соберите слово ПРИЗ</p>
-                                             </div>
-                                             <div class="fast-game__content">
-                                                 <div class="zone-one">
-                                                     <div class="fast-game__zone-content">
-                                                         <div class="zone-header">Образец</div>
-                                                         <div class="fast-game__zone-list">
-                                                             <div class="fast-game__zone-item">x</div>
-                                                             <div class="fast-game__zone-item">п</div>
-                                                             <div class="fast-game__zone-item">р</div>
-                                                             <div class="fast-game__zone-item">и</div>
-                                                             <div class="fast-game__zone-item">з</div>
-                                                             <div class="fast-game__zone-item">х</div>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                                 <div class="zone-two">
-                                                     <div class="fast-game__zone-content">
-                                                         <div class="zone-header">Ваша игра</div>
-                                                         <div class="fast-game__zone-list">
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">П</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                             <div class="block-ticket__footer">
-                                                     <div class="block-ticket__icon">
-                                                         <svg class="icon1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50px" height="50px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                              <defs>
-                                                               <style type="text/css">
-                                                                <![CDATA[
-                                                                 .str0 {stroke:#2B2A29;stroke-width:0.755906}
-                                                                 .fil0 {fill:#1F1B20}
-                                                                ]]>
-                                                               </style>
-                                                              </defs>
-                                                              <g id="Слой_x0020_1">
-                                                               <metadata id="CorelCorpID_0Corel-Layer"/>
-                                                               <path class="fil0 str0" d="M450 497l-398 0c-27,0 -49,-22 -49,-49l0 -398c0,-27 22,-49 49,-49l398 0c27,0 49,22 49,49l0 398c0,27 -22,49 -49,49zm-130 -142l65 0 -38 37c-2,2 -4,6 -4,9 0,7 6,13 13,13 3,0 7,-1 9,-4l60 -60c2,-2 4,-6 4,-9 0,-3 -1,-7 -4,-9l-60 -60c-2,-2 -5,-3 -9,-3 -7,0 -13,6 -13,13 0,3 1,6 3,9l38 38 -59 0 -68 -80 68 -80 59 0 -38 38c-3,2 -4,6 -4,9 0,7 6,13 13,13 4,0 7,-1 9,-4l60 -60c2,-2 4,-6 4,-9 0,-3 -1,-7 -4,-9l0 0 -60 -60c-2,-2 -5,-3 -9,-3 -7,0 -13,6 -13,13 0,3 1,6 3,9l38 37 -65 0c-4,0 -7,2 -10,5l-69 81 -69 -81c-2,-3 -6,-5 -10,-5l-77 0c-7,0 -13,6 -13,13 0,7 6,13 13,13l71 0 68 80 -68 80 -71 0c-7,0 -13,6 -13,13 0,7 6,13 13,13l77 0c4,0 7,-2 10,-5l69 -81 69 81c2,3 6,5 10,5l0 0z"/>
-                                                              </g>
-                                                         </svg>
-                                                     </div>
-                                                     <div class="block-ticket__icon">
-                                                         <svg class="icon1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50px" height="50px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-                                                              <defs>
-                                                               <style type="text/css">
-                                                                <![CDATA[
-                                                                 .str0 {stroke:#2B2A29;stroke-width:0.755906}
-                                                                 .fil0 {fill:#1F1B20}
-                                                                ]]>
-                                                               </style>
-                                                              </defs>
-                                                              <g id="Слой_x0020_1">
-                                                               <metadata id="CorelCorpID_0Corel-Layer"/>
-                                                               <path class="fil0 str0" d="M450 497l-398 0c-27,0 -49,-22 -49,-49l0 -398c0,-27 22,-49 49,-49l398 0c27,0 49,22 49,49l0 398c0,27 -22,49 -49,49zm-130 -142l65 0 -38 37c-2,2 -4,6 -4,9 0,7 6,13 13,13 3,0 7,-1 9,-4l60 -60c2,-2 4,-6 4,-9 0,-3 -1,-7 -4,-9l-60 -60c-2,-2 -5,-3 -9,-3 -7,0 -13,6 -13,13 0,3 1,6 3,9l38 38 -59 0 -68 -80 68 -80 59 0 -38 38c-3,2 -4,6 -4,9 0,7 6,13 13,13 4,0 7,-1 9,-4l60 -60c2,-2 4,-6 4,-9 0,-3 -1,-7 -4,-9l0 0 -60 -60c-2,-2 -5,-3 -9,-3 -7,0 -13,6 -13,13 0,3 1,6 3,9l38 37 -65 0c-4,0 -7,2 -10,5l-69 81 -69 -81c-2,-3 -6,-5 -10,-5l-77 0c-7,0 -13,6 -13,13 0,7 6,13 13,13l71 0 68 80 -68 80 -71 0c-7,0 -13,6 -13,13 0,7 6,13 13,13l77 0c4,0 7,-2 10,-5l69 -81 69 81c2,3 6,5 10,5l0 0z"/>
-                                                              </g>
-                                                         </svg>
-                                                     </div>
-                                                     <a href="{{ route('tutorials-moment-game') }}" style="margin-left: auto" class="btn-access-revers">Смотреть правила</a>
-                                             </div>
-                                     </div>
-                                 </div>
-                         </div>
-                         <div class="col-lg-4 col-sm-12 order-lg-2 order-sm-1">
-                                 <div class="prize-pool">
-                                     <div class="prize-pool__title">Призовой фонд этой игры 100 рублей</div>
-                                 </div>
-
-                                 <div class="panel-score">
-                                     <p class="panel-score__discription">Стоимость одного билета 20р</p>
-                                     <div class="panel-score__icons">
+<section class="section-start-game man screen-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-8 offset-sm-0 offset-lg-5">
+                <div class="start-game">
+                    <h2 class="start-game__title">Золотая антилопа 6 из 45</h2>
+                    <h3 class="start-game__title-discription">Стоимость одной игры от 100р </h3>
+                    <p class="start-game__discription">В этой игре вам нужно отметить от 6 до 11 неповторяющихся чисел. Чем больше чисел отмечено, тем выше вероятность 
+                        выигрыша. Вы можете заполнить один билет или сразу несколько. <br><br>
+                        С помощью кнопки «Автоматически» можно выбрать случайную комбинацию 
+                        чисел, а для участия в нескольких тиражах выберите их количество. Выбрав 
+                        числа, переходите к оплате или поместите нужную комбинацию в корзину 
+                        и продолжайте играть - потом оплатите все вместе. Когда билет оформлен,
+                        вы среди претендентов на победу. Поздравляем!</p>
+                    <div class="start-game__icons" style="display:  flex; align-items: center">
                                         <div>
                                             
-                                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50px" height="50px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 60 50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="60px" height="60px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 60 50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                                              <defs>
                                               <style type="text/css">
                                                <![CDATA[
-                                                .fil0 {fill:white}
+                                                .fil0 {fill: #ff9b4d;}
                                                ]]>
                                               </style>
                                              </defs>
@@ -124,9 +38,9 @@
                                         </div>
                                         <div>
                                             <!-- Generated by IcoMoon.io -->
-                                            <svg class="icon2" version="1.1" xmlns="http://www.w3.org/2000/svg" width="43" height="32" viewBox="0 0 43 32">
+                                            <svg class="icon3" version="1.1" xmlns="http://www.w3.org/2000/svg" width="43" height="32" viewBox="0 0 43 32">
                                                 
-                                                <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1" stroke="#fff" d="M7.936 4.865h26.52c1.228 0 2.223 0.995 2.223 2.223v18.087c0 1.228-0.995 2.223-2.223 2.223h-26.52c-1.228 0-2.223-0.995-2.223-2.223v-18.087c0-1.228 0.995-2.223 2.223-2.223z"></path>
+                                                <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1" stroke="#ff9b4d" d="M7.936 4.865h26.52c1.228 0 2.223 0.995 2.223 2.223v18.087c0 1.228-0.995 2.223-2.223 2.223h-26.52c-1.228 0-2.223-0.995-2.223-2.223v-18.087c0-1.228 0.995-2.223 2.223-2.223z"></path>
                                                 <path d="M14.233 10.81l-0.72 3.73h-0.049l-0.98-3.73h-0.627l-0.917 3.73h-0.050l-0.789-3.73h-0.79l1.141 4.999h0.762l0.931-3.519h0.049l0.959 3.519h0.762l1.143-4.999h-0.825z"></path>
                                                 <path d="M28.893 19.209l-0.8 2.597h-0.042l-0.902-2.596h-0.776l1.353 3.527c-0.169 0.522-0.467 0.902-0.944 0.902v0.577c0.809 0 1.239-0.507 1.592-1.481l1.275-3.525z"></path>
                                                 <path d="M18.285 13.922c0-1.153-0.541-1.721-1.423-1.721-1.057 0-1.6 0.774-1.6 1.846 0 1.115 0.487 1.847 1.671 1.847 0.007 0 0.014 0 0.022 0 0.451 0 0.873-0.121 1.236-0.332l-0.012 0.006v-0.533c-0.387 0.232-0.74 0.365-1.12 0.365-0.725 0-1.071-0.373-1.071-1.22h2.297zM16 13.707c0.077-0.703 0.409-1.035 0.839-1.035 0.381 0 0.74 0.294 0.775 1.035z"></path>
@@ -151,9 +65,9 @@
                                         </div>
                                         <div>	
                                             <!-- Generated by IcoMoon.io -->
-                                            <svg class="icon2" version="1.1" xmlns="http://www.w3.org/2000/svg" width="43" height="32" viewBox="0 0 43 32">
+                                            <svg class="icon3" version="1.1" xmlns="http://www.w3.org/2000/svg" width="43" height="32" viewBox="0 0 43 32">
                                                 <title>Payment-02</title>
-                                                <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1" stroke="#fff" d="M8.069 4.199h26.52c1.228 0 2.223 0.995 2.223 2.223v18.087c0 1.228-0.995 2.223-2.223 2.223h-26.52c-1.228 0-2.223-0.995-2.223-2.223v-18.087c0-1.228 0.995-2.223 2.223-2.223z"></path>
+                                                <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1" stroke="#ff9b4d" d="M8.069 4.199h26.52c1.228 0 2.223 0.995 2.223 2.223v18.087c0 1.228-0.995 2.223-2.223 2.223h-26.52c-1.228 0-2.223-0.995-2.223-2.223v-18.087c0-1.228 0.995-2.223 2.223-2.223z"></path>
                                                 <path d="M33.044 10.733c-0.037-0.211-0.215-0.339-0.473-0.341-0.079 0-0.159 0.007-0.236 0-0.152-0.016-0.192 0.035-0.191 0.155 0.007 0.592 0.005 1.184 0 1.775 0 0.309-0.304 0.627-0.667 0.708-1.128 0.248-2.255 0.499-3.384 0.745-0.115 0.026-0.248 0.041-0.383 0.041-0.002 0-0.005 0-0.007 0h0c-0.065-0.004-0.121-0.036-0.158-0.084l-0-0.001c-0.016-0.028 0.033-0.095 0.073-0.129 0.053-0.041 0.114-0.074 0.18-0.097l0.004-0.001c0.207-0.074 0.417-0.141 0.626-0.211 0.838-0.279 1.677-0.553 2.513-0.834 0.377-0.127 0.581-0.379 0.587-0.697 0.019-1.029 0.009-2.057 0.005-3.087 0-0.163-0.085-0.299-0.279-0.369-0.223-0.080-0.42-0.016-0.614 0.076q-1.775 0.846-3.555 1.692c-0.349 0.166-0.543 0.407-0.542 0.75 0.004 0.973 0 1.944 0 2.916-0 0.003-0 0.006-0 0.010 0 0.048 0.007 0.094 0.021 0.138l-0.001-0.003c0.117 0.333 0.42 0.52 0.838 0.52 0.835 0 1.671 0 2.506 0s1.661 0 2.493 0c0.011 0.001 0.025 0.001 0.038 0.001 0.168 0 0.322-0.056 0.446-0.151l-0.002 0.001c0.175-0.141 0.166-0.321 0.166-0.499q0-1.421 0-2.843c0.001-0.018 0.002-0.038 0.002-0.059 0-0.042-0.003-0.084-0.008-0.125l0.001 0.005zM29.577 10.429c0.084-0.218 0.267-0.355 0.547-0.39 0.016-0.003 0.035-0.005 0.055-0.005 0.157 0 0.288 0.112 0.318 0.261l0 0.002c0.040 0.257-0.281 0.556-0.6 0.555-0.266-0.002-0.414-0.185-0.322-0.425z"></path>
                                                 <path d="M13.761 11.247v1.238h-0.927v-1.242h-0.485v3.067h0.499v-1.376h0.915v1.373h0.493v-3.060z"></path>
                                                 <path d="M26.462 19.342c-0.145-0.725-0.697-1.166-1.577-1.239-0.347-0.027-0.7-0.005-1.074-0.005v-1.933h-0.753v5.37c0.557 0 1.095 0.032 1.626-0.009 0.795-0.059 1.4-0.376 1.687-1.025 0.165-0.375 0.169-0.769 0.091-1.16zM25.297 20.156c-0.139 0.593-0.747 0.873-1.48 0.699 0-0.659 0-1.307 0.007-1.957 0-0.043 0.075-0.113 0.129-0.123 0.733-0.156 1.222 0.088 1.349 0.699 0.022 0.099 0.034 0.213 0.034 0.33 0 0.125-0.014 0.246-0.041 0.362l0.002-0.011z"></path>
@@ -172,9 +86,9 @@
                                         </div>
                                         <div>
                                             
-                                            <svg class="icon2" version="1.1" xmlns="http://www.w3.org/2000/svg" width="43" height="32" viewBox="0 0 43 32">
+                                            <svg class="icon3" version="1.1" xmlns="http://www.w3.org/2000/svg" width="43" height="32" viewBox="0 0 43 32">
                                                 <title>Payment-03</title>
-                                                <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1" stroke="#fff" d="M7.936 4.732h26.52c1.228 0 2.223 0.995 2.223 2.223v18.087c0 1.228-0.995 2.223-2.223 2.223h-26.52c-1.228 0-2.223-0.995-2.223-2.223v-18.087c0-1.228 0.995-2.223 2.223-2.223z"></path>
+                                                <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1" stroke="#ff9b4d" d="M7.936 4.732h26.52c1.228 0 2.223 0.995 2.223 2.223v18.087c0 1.228-0.995 2.223-2.223 2.223h-26.52c-1.228 0-2.223-0.995-2.223-2.223v-18.087c0-1.228 0.995-2.223 2.223-2.223z"></path>
                                                 <path d="M23.918 12.91c-0.062-0.311-0.221-0.578-0.443-0.775l-0.001-0.001c-0.077-0.075-0.165-0.14-0.261-0.191l-0.006-0.003c-0.162-0.093-0.356-0.149-0.563-0.149-0.013 0-0.026 0-0.038 0.001l0.002-0c0.092-0.047 0.229-0.049 0.37-0.047 0.119 0.017 0.225 0.043 0.327 0.078l-0.013-0.004c0.084 0.046 0.167 0.092 0.249 0.139 0.203-0.607 0.125-1.437-0.101-1.971-0.212-0.55-0.538-1.015-0.952-1.384l-0.004-0.003c-0.416-0.393-0.941-0.675-1.525-0.796l-0.021-0.004c-0.146-0.030-0.314-0.047-0.486-0.047-0.188 0-0.372 0.020-0.549 0.059l0.017-0.003c-0.301 0.081-0.563 0.211-0.793 0.384l0.006-0.004c-0.207 0.184-0.409 0.375-0.546 0.629-0.039 0.053-0.075 0.114-0.107 0.178l-0.003 0.008c-0.029 0.067-0.061 0.133-0.093 0.2-0.050 0.127-0.095 0.279-0.126 0.435l-0.003 0.018c-0.043 0.188-0.067 0.405-0.067 0.627 0 0.148 0.011 0.293 0.032 0.436l-0.002-0.016c0.044 0.343 0.132 0.653 0.258 0.944l-0.009-0.022c0.067 0.13 0.129 0.267 0.203 0.389 0.083 0.131 0.162 0.243 0.247 0.35l-0.006-0.008c0.183 0.204 0.386 0.384 0.609 0.539l0.011 0.007c0.494 0.339 1.099 0.553 1.751 0.582l0.007 0c0.015-0.031-0.021-0.091-0.028-0.129s-0.015-0.096-0.028-0.139c-0.006-0.047-0.009-0.102-0.009-0.157s0.003-0.11 0.010-0.163l-0.001 0.006c0.029 0.007 0.029 0.045 0.047 0.067s0.021 0.046 0.046 0.055c0.027 0.050 0.055 0.092 0.085 0.132l-0.002-0.003c0.070 0.072 0.124 0.159 0.213 0.213 0.152 0.125 0.326 0.231 0.514 0.31l0.014 0.005c0.183 0.097 0.43 0.133 0.675 0.167s0.485 0.076 0.712 0.133c0.226 0.066 0.423 0.151 0.606 0.256l-0.013-0.007c0.1 0.056 0.184 0.111 0.265 0.171l-0.006-0.004c0.046 0.028 0.085 0.058 0.121 0.093l-0-0c0.049 0.019 0.070 0.067 0.12 0.083 0.147 0.133 0.28 0.276 0.402 0.427l0.006 0.007c0.055 0.077 0.107 0.164 0.152 0.256l0.005 0.011c0.034 0.037 0.044 0.098 0.074 0.139 0 0.053 0.053 0.115 0.009 0.157-0.067 0.010-0.055-0.063-0.083-0.093-0.025-0.032-0.047-0.068-0.065-0.107l-0.001-0.003c-0.109-0.114-0.205-0.239-0.324-0.343-0.11-0.103-0.231-0.197-0.36-0.281l-0.010-0.006c-0.259-0.183-0.562-0.326-0.888-0.412l-0.020-0.004c-0.27-0.077-0.581-0.122-0.901-0.122-0.096 0-0.191 0.004-0.286 0.012l0.012-0.001c-0.203 0.022-0.388 0.065-0.564 0.125l0.018-0.005c-0.154 0.036-0.346 0.069-0.542 0.090l-0.023 0.002c-0.757 0.047-1.6-0.133-2.165-0.407-0.309-0.141-0.575-0.312-0.813-0.516l0.005 0.004c-0.126-0.1-0.238-0.206-0.34-0.321l-0.002-0.003c-0.102-0.112-0.194-0.236-0.272-0.369l-0.006-0.010c-0.099-0.123-0.158-0.287-0.241-0.426-0.055-0.165-0.133-0.307-0.167-0.49-0.054-0.162-0.094-0.351-0.111-0.546l-0.001-0.009c0-0.056-0.028-0.163-0.027-0.25 0-0.008 0.010-0.015 0.009-0.028-0.005-0.079-0.023-0.2 0-0.267 0.002-0.208 0.026-0.409 0.070-0.602l-0.004 0.019c0.038-0.2 0.086-0.374 0.146-0.542l-0.008 0.024c0.055-0.167 0.128-0.316 0.194-0.472 0.045-0.067 0.079-0.144 0.121-0.213s0.088-0.127 0.121-0.204c0.035-0.020 0.041-0.067 0.073-0.092 0.015-0.041 0.053-0.059 0.067-0.102 0.030-0.026 0.054-0.057 0.073-0.091l0.001-0.002c0.030-0.025 0.055-0.056 0.073-0.091l0.001-0.002c0.11-0.109 0.209-0.229 0.323-0.333s0.243-0.2 0.361-0.305c0.075-0.036 0.129-0.093 0.203-0.133 0.057-0.051 0.139-0.077 0.195-0.129 0.154-0.067 0.285-0.159 0.453-0.213 0.132-0.062 0.292-0.122 0.456-0.17l0.025-0.006c0.311-0.089 0.668-0.14 1.037-0.14 0.042 0 0.084 0.001 0.125 0.002l-0.006-0c0.016 0 0.024-0.016 0.028 0 0.737 0.013 1.418 0.243 1.984 0.628l-0.013-0.008c0.513 0.347 0.921 0.812 1.191 1.358l0.009 0.020c0.223 0.457 0.354 0.995 0.354 1.564 0 0.209-0.018 0.414-0.052 0.614l0.003-0.021c-0.070 0.374-0.177 0.707-0.32 1.020l0.011-0.027c-0.081 0.166-0.158 0.303-0.242 0.434l0.011-0.018c-0.040 0.074-0.083 0.137-0.131 0.196l0.002-0.002c-0.018 0.036-0.041 0.066-0.067 0.093l0-0c-0.012 0.017-0.024 0.033-0.038 0.047l0-0c-0.004 0.008-0.008 0.017-0.019 0.019 0.005 0.015-0.006 0.018-0.007 0.008z"></path>
                                                 <path d="M23.623 13.151c-0.109-0.043-0.127-0.175-0.176-0.277-0.006-0.019-0.009-0.042-0.009-0.065s0.003-0.046 0.010-0.067l-0 0.002c0.007 0 0.009-0.009 0.019-0.009 0.027-0.017 0.053 0.005 0.092 0.019 0.052 0.065 0.091 0.142 0.111 0.227l0.001 0.004c0.002 0.073 0.007 0.149-0.046 0.167z"></path>
                                                 <path d="M22.809 12.993c0-0.011 0.009-0.005 0.009 0 0.164 0.021 0.239 0.133 0.25 0.305-0.009 0.087-0.073 0.158-0.156 0.176l-0.001 0c-0.221 0.004-0.347-0.2-0.267-0.407 0.043-0.036 0.074-0.085 0.165-0.074z"></path>
@@ -185,56 +99,11 @@
                                             </svg>
 
                                         </div>
-                                     </div>
-                                    <div class="panel-score__btns">
-                                        <a href="#" class="btn-orange" style="width: 100%">Оплата</a>
-                                    </div>
-                                 </div>
-                         </div>
                     </div>
+                    <a href="{{ route('four-game') }}" class="btn-access">Играть</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-{{--<main id="main" class="mt-5">
-<div class="alert alert-warning text-center" role="alert">
-            Быстрая игра
-        </div>
-    <div class="container">
-
-        <div id="addRes"></div>
-    </div>
-        <div class=" container">
-            <div class="row">
-                <div class="col-12 col-md-12 col-xl-9">
-                    <div class="blocks-ticket">
-                        <div class="block-ticket card">
-                            <div class="help-information">
-                                <p id='startInfo'>В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово ПРИЗ. 
-                                Общее количесвто попыток на открытие ячеек 5. Стоимость билета 20 рублей. 
-                                В случае выигрыша вы получите 100 рублей. При оплате билета не обновляйте страницу! Приятной игры!</p>
-                                <p id='runInfo' style='display: none;'>Выбирете в поле до 5 ячеек, В случае если 4 из них соберут слово ПРИЗ, то вы выйграете 100 рублей. Удачи!</p>
-                            </div>
-                            <div class="zone-worker">
-                               <div id="addTable"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-12 col-xl-3">
-                    <div class="card panel-score box">
-                        <img src="" alt="">
-                        <p class="inpt2" id="summa">Сумма <strong>20</strong></p>
-                        <button type="submit" class="btn btn-dark" id='payGame' onclick="createGame()">Оплатить</button>
-                        <button type="submit" class="btn btn-dark" id='runGame' style='display: none' onclick="runGame()">Начать</button>
-                        <button type="submit" class="btn btn-dark" id='restartGame' style='display: none' onclick="location.reload()">Начать заново</button>
-                    </div>
-                </div>
-             </div>
-        </div>
-</main>--}}
-
-<script src="{{ asset('js/speedGame.js')}}"></script>
 @endsection
