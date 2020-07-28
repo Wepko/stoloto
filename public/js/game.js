@@ -164,7 +164,7 @@
                             </svg>
                         </div>
                         <div style="margin-left: auto;">
-                             <a href="#" class="btn-game"  id="addTicket">Добавить билет</a>
+                             <a href="#" class="btn-game" id="addTicket">Добавить билет</a>
                         </div>
                         
                     </div>
@@ -362,7 +362,7 @@
             
             const addTicket = game.querySelector('#addTicket')
             addTicket.addEventListener('click', (e) => {
-                //document.getElementById('validTicketNumber').value++
+                document.getElementById('validTicketNumber').value++
                 e.preventDefault()
                 this.doubleTable() 
             })
