@@ -34,6 +34,16 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1"  value="Добавить таймер">
             </form>
+            <form action="{{ route('AddWinTicketValueOne') }}" method="post" >
+              @csrf
+                  <div class="content-4_20">
+                      <label>Поле 1</label>
+                      <input type="number" class="form-control" name="TicketOneFieldOne" placeholder="Введите номера билетов"><br><br>
+                      <label>Поле 2</label>
+                      <input type="number" class="form-control" name="TicketOneFieldTwo" placeholder="Введите номера билетов"><br><br>
+                      <input type="submit" class="btn btn-dark" value="Добавить">
+                  </div>
+            </form>
             <h3 class="mt-5">Произвести розыгрыш</h3>
             <p class='inpt1'>Чтобы начать розыгрыш обязательно надо сначала добавить выйгрышный билет. Добавить его можно в игре.</p>
             <form action= "{{ route('WinnerOneGame') }}" method="post">
@@ -59,7 +69,15 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
-
+          <form action="{{ route('AddWinTicketValueTwo') }}" method="post" >
+            @csrf
+                <h1 class="mt-3">Добавить выигрышный билет</h1>
+                <label>Поле 1</label>
+                <input type="number" class="form-control" name="TicketTwoFieldOne" placeholder="Введите номера билетов"><br>
+                <label>Поле 2</label>
+                <input type="number" class="form-control" name="TicketTwoFieldTwo" placeholder="Введите номера билетов"><br>
+                <input type="submit" class="btn btn-dark" value="Добавить">
+            </form>
           <form action= "{{ route('WinnerTwoGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 5 из 36">
@@ -85,7 +103,13 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
-
+          <form action="{{ route('AddWinTicketValueThree') }}" method="post" >
+            @csrf
+                <h1>Добавить выигрышный билет</h1>
+                <label>Поле 1</label>
+                <input type="number" class="form-control" name="TicketThreeFieldOne" placeholder="Введите номера билетов"><br>
+                <input type="submit" class="btn btn-dark" value="Добавить">
+            </form>
           <form action= "{{ route('WinnerThreeGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 7 из 49">
@@ -111,7 +135,13 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
-
+          <form action="{{ route('AddWinTicketValueFour') }}" method="post" >
+            @csrf
+                <h1>Добавить выигрышный билет</h1>
+                <label>Поле 1</label>
+                <input type="number" class="form-control" name="TicketFourFieldOne" placeholder="Введите номера билетов"><br>
+                <input type="submit" class="btn btn-dark" value="Добавить">
+            </form>
           <form action= "{{ route('WinnerFourGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 6 из 45">
@@ -137,7 +167,13 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
-          
+          <form action="{{ route('AddWinTicketValueFive') }}" method="post" >
+            @csrf
+                <h1>Добавить выигрышный билет</h1>
+                <label>Поле 1</label>
+                <input type="number" class="form-control" name="TicketFiveFieldOne" placeholder="Введите номера билетов"><br>
+                <input type="submit" class="btn btn-dark" value="Добавить">
+            </form>
           <form action= "{{ route('WinnerFiveGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш 12 из 24">
@@ -163,7 +199,15 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
-
+          <form action="{{ route('AddWinTicketValueSix') }}" method="post" >
+            @csrf
+                <h1>Добавить выигрышный билет</h1>
+                <label>Поле 1</label>
+                <input type="number" class="form-control" name="TicketSixFieldOne" placeholder="Введите номера билетов"><br>
+                <label>Поле 2</label>
+                <input type="number" class="form-control" name="TicketSixFieldTwo" placeholder="Введите номера билетов"><br>
+                <input type="submit" class="btn btn-dark" value="Добавить">
+            </form>
           <form action= "{{ route('WinnerSixGame') }}" method="post">
             @csrf
             <input type="submit" class="btn btn-dark mt-2" value="Начать разыгрыш рапидо">

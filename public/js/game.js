@@ -147,7 +147,21 @@
                         </div>
 
                         <div class="block-ticket__icon">
-                            x
+                                    <svg class="icon1" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="500px" height="500px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                                    <defs>
+                                    <style type="text/css">
+                                    <![CDATA[
+                                    .fil0 {fill:black}
+                                    ]]>
+                                    </style>
+                                    </defs>
+                                    <g id="Слой_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"/>
+                                    <g id="_271839368">
+                                    <path class="fil0" d="M446 2l-397 0c-27,0 -49,22 -49,49l0 0 0 397c0,27 22,49 49,49l397 0c27,0 49,-22 49,-49l0 0 0 -397c0,-27 -22,-49 -49,-49l0 0zm-309 417c-33,0 -59,-27 -59,-59 0,-33 27,-59 59,-59 33,0 59,27 59,59l0 0c0,33 -27,59 -59,59l0 0zm111 -221c-33,0 -59,-27 -59,-59 0,-33 27,-59 59,-59 33,0 59,27 59,59l0 0c0,33 -27,59 -59,59l0 0zm111 221c-33,0 -59,-27 -59,-59 0,-33 27,-59 59,-59 33,0 59,27 59,59l0 0c0,33 -27,59 -59,59l0 0z"/>
+                                    </g>
+                                    </g>
+                            </svg>
                         </div>
                         <div style="margin-left: auto;">
                              <a href="#" class="btn-game"  id="addTicket">Добавить билет</a>
