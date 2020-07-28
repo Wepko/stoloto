@@ -1,5 +1,24 @@
-
 "use strict";
+
+function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function game(url) {
   var $root = document.getElementById('main');
@@ -32,7 +51,6 @@ function game(url) {
   }
 
   if (url == '/games/five-of-threety-six') {
-
     var game5_36 = games({
       root: $root,
       itog: itog,
@@ -140,83 +158,92 @@ function game(url) {
   }
 }
 
-$(document).on('ready', function() {
-    $(".regular").slick({
-      dots: false,
-      infinite: false,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    });
-    
-    $('.banner').slick();
-  })
+$(document).on('ready', function () {
+  $(".regular").slick({
+    dots: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  });
+  $('.banner').slick();
+});
 
 function ticket() {
-    $('[data-spy="scroll"]').each(function () {
-        var $spy = $(this).scrollspy('refresh')
-      })
+  $('[data-spy="scroll"]').each(function () {
+    var $spy = $(this).scrollspy('refresh');
+  });
 }
 
 function valid() {
-    const $select = document.querySelector('#inputGroupSelect01')
-    const $input = document.querySelector('input.hide')
-    const $valid = document.getElementById('valid')
-    
-    $select.onchange = () => {
-        const arrOptions = [...$select.options]
-        $input.classList.add('hide')
-        arrOptions.forEach(item => {
-            if (item.selected) {
-                if (item.id == 'game-4_20') {
-                    $valid.value = 1
-                    $input.classList.remove('hide')
-                }
-                if (item.id == 'game-5_36') {
-                    $valid.value = 2
-                    $input.classList.remove('hide')
-                }
-                if (item.id == 'game-7_49') {
-                    $valid.value = 3
-                }
-                if (item.id == 'game-6_45') {
-                    $valid.value = 4
-                }
-                if (item.id == 'game-12_24') {
-                    $valid.value = 5
-                }
-                if (item.id == 'game-rapido') {
-                    $valid.value = 6
-                    $input.classList.remove('hide')
-                }
-            }
-        })
-    }
-}
+  var $select = document.querySelector('#inputGroupSelect01');
+  var $input = document.querySelector('input.hide');
+  var $valid = document.getElementById('valid');
 
+  $select.onchange = function () {
+    var arrOptions = _toConsumableArray($select.options);
 
-
-class Routing {
-    constructor(url, fn) {
-        this.url = url
-        this.fn = fn
-        this.start()
-    }
-
-    start() {
-        if (document.location.pathname == this.url) {
-            this.fn(this.url)
+    $input.classList.add('hide');
+    arrOptions.forEach(function (item) {
+      if (item.selected) {
+        if (item.id == 'game-4_20') {
+          $valid.value = 1;
+          $input.classList.remove('hide');
         }
-    }
+
+        if (item.id == 'game-5_36') {
+          $valid.value = 2;
+          $input.classList.remove('hide');
+        }
+
+        if (item.id == 'game-7_49') {
+          $valid.value = 3;
+        }
+
+        if (item.id == 'game-6_45') {
+          $valid.value = 4;
+        }
+
+        if (item.id == 'game-12_24') {
+          $valid.value = 5;
+        }
+
+        if (item.id == 'game-rapido') {
+          $valid.value = 6;
+          $input.classList.remove('hide');
+        }
+      }
+    });
+  };
 }
 
-//new Routing('/games/game5_36.html', game)
+var Routing = /*#__PURE__*/function () {
+  function Routing(url, fn) {
+    _classCallCheck(this, Routing);
 
-new Routing('/games/top-4', game)
-new Routing('/games/rapido', game)
-new Routing('/games/twenteen-of-twenty-four', game)
-new Routing('/games/six-of-fourty-five', game)
-new Routing('/games/seven-of-fourty-nine', game)
-new Routing('/games/five-of-threety-six', game)
-new Routing('/games/four-of-twenty', game)
-new Routing('/ticket', ticket)
-new Routing('/valid', valid)
+    this.url = url;
+    this.fn = fn;
+    this.start();
+  }
+
+  _createClass(Routing, [{
+    key: "start",
+    value: function start() {
+      if (document.location.pathname == this.url) {
+        this.fn(this.url);
+      }
+    }
+  }]);
+
+  return Routing;
+}(); //new Routing('/games/game5_36.html', game)
+
+
+new Routing('/games/top-4', game);
+new Routing('/games/rapido', game);
+new Routing('/games/twenteen-of-twenty-four', game);
+new Routing('/games/six-of-fourty-five', game);
+new Routing('/games/seven-of-fourty-nine', game);
+new Routing('/games/five-of-threety-six', game);
+new Routing('/games/four-of-twenty', game);
+new Routing('/ticket', ticket);
+new Routing('/valid', valid);
