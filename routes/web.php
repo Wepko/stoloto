@@ -90,6 +90,7 @@ Route::post('/AddTimerSixGame', 'AddTimerController@sixgame')->name('TimerSixGam
 
 Route::get('/refill', 'LKController@refill')->name('refill');
 Route::get('/refillSpeedGame', 'EasyGameController@refillSpeedGame')->name('refillSpeedGame');
+Route::get('/refillMomentGame', 'EasyGameController@refillMomentGame')->name('refillMomentGame');
 Route::post('/refillOutput', 'LKController@output')->name('output');
 
 Route::post('/ReplaceOneGame', 'AdminController@replaceOneGame')->name('ReplaceOneGame');

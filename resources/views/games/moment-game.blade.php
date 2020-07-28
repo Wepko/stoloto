@@ -15,7 +15,7 @@
 
 <section class="section-game" id="main">
     <div class="section-game__title">
-        <h1>Моментальная игра</h1>
+            <h1>Моментальная игра</h1>
     </div>	
     <div class="section-game__body">	
         <div class="container">
@@ -32,7 +32,7 @@
                                                  <div class="zone-one">
                                                      <div class="fast-game__zone-content">
                                                          <div class="zone-header">Образец</div>
-                                                         <div class="fast-game__zone-list">
+                                                         <div class="fast-game__zone-list" id="exampleTable">
                                                              <div class="fast-game__zone-item">x</div>
                                                              <div class="fast-game__zone-item">п</div>
                                                              <div class="fast-game__zone-item">р</div>
@@ -44,15 +44,22 @@
                                                  </div>
                                                  <div class="zone-two">
                                                      <div class="fast-game__zone-content">
-                                                         <div class="zone-header">Ваша игра</div>
-                                                         <div class="fast-game__zone-list">
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">П</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                         </div>
+                                                        <div class="zone-header">Ваша игра</div>
+                                                        @if (Session::has('res'))
+                                                            <div class="fast-game__zone-list" id="userTable">
+
+                                                            </div>
+                                                        @else
+                                                            <div class="fast-game__zone-list">
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">П</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                            </div>
+                                                        @endif
+                                                        <div id="addRes" class="mt-2"></div>
                                                      </div>
                                                  </div>
                                              </div>
@@ -89,8 +96,8 @@
                                                                <path class="fil0 str0" d="M450 497l-398 0c-27,0 -49,-22 -49,-49l0 -398c0,-27 22,-49 49,-49l398 0c27,0 49,22 49,49l0 398c0,27 -22,49 -49,49zm-130 -142l65 0 -38 37c-2,2 -4,6 -4,9 0,7 6,13 13,13 3,0 7,-1 9,-4l60 -60c2,-2 4,-6 4,-9 0,-3 -1,-7 -4,-9l-60 -60c-2,-2 -5,-3 -9,-3 -7,0 -13,6 -13,13 0,3 1,6 3,9l38 38 -59 0 -68 -80 68 -80 59 0 -38 38c-3,2 -4,6 -4,9 0,7 6,13 13,13 4,0 7,-1 9,-4l60 -60c2,-2 4,-6 4,-9 0,-3 -1,-7 -4,-9l0 0 -60 -60c-2,-2 -5,-3 -9,-3 -7,0 -13,6 -13,13 0,3 1,6 3,9l38 37 -65 0c-4,0 -7,2 -10,5l-69 81 -69 -81c-2,-3 -6,-5 -10,-5l-77 0c-7,0 -13,6 -13,13 0,7 6,13 13,13l71 0 68 80 -68 80 -71 0c-7,0 -13,6 -13,13 0,7 6,13 13,13l77 0c4,0 7,-2 10,-5l69 -81 69 81c2,3 6,5 10,5l0 0z"/>
                                                               </g>
                                                          </svg>
-                                                    </div>
-                                                    <a href="{{ route('tutorials-moment-game') }}" style="margin-left: auto" class="btn-access-revers">Смотреть правила</a>
+                                                     </div>
+                                                     <a href="{{ route('tutorials-moment-game') }}" style="margin-left: auto" class="btn-access-revers">Смотреть правила</a>
                                              </div>
                                      </div>
                                  </div>
@@ -187,7 +194,14 @@
                                         </div>
                                      </div>
                                     <div class="panel-score__btns">
-                                        <a href="#" class="btn-orange" style="width: 100%">Оплата</a>
+                                        @if (Session::has('res'))
+                                            <button class="btn-orange" id="btn" onclick="runGame()" style="width: 100%; border: none">Начать</a>
+                                        @else
+                                            <form action="{{ route('refillMomentGame') }}" method='get'
+                                            @csrf
+                                                <button type="submit" class="btn-orange" style="width: 100%; border: none">Оплата</a>
+                                            </form>
+                                        @endif
                                     </div>
                                  </div>
                          </div>
@@ -198,68 +212,27 @@
     </div>
 </section>
 
-
 {{--<main id="main" class="mt-5">
 <div class="alert alert-warning text-center" role="alert">
-            Призовой фонт этой игры <span> 5123525 руб</span>
+            Быстрая игра
         </div>
     <div class="container">
 
-      </div>
-      @if (Session::has('good'))
-        <form action="{{ route('OneSpeedGameRes') }}" method='post'>
-      @else
-        <form action="{{ route('OneSpeedGame') }}" method='post'>
-      @endif
-      @csrf
+        <div id="addRes"></div>
+    </div>
         <div class=" container">
             <div class="row">
                 <div class="col-12 col-md-12 col-xl-9">
                     <div class="blocks-ticket">
                         <div class="block-ticket card">
                             <div class="help-information">
-                                <p>В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово ПРИЗ. 
+                                <p id='startInfo'>В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово ПРИЗ. 
                                 Общее количесвто попыток на открытие ячеек 5. Стоимость билета 20 рублей. 
                                 В случае выигрыша вы получите 100 рублей. При оплате билета не обновляйте страницу! Приятной игры!</p>
+                                <p id='runInfo' style='display: none;'>Выбирете в поле до 5 ячеек, В случае если 4 из них соберут слово ПРИЗ, то вы выйграете 100 рублей. Удачи!</p>
                             </div>
                             <div class="zone-worker">
-                                @if (Session::has('good'))
-                                <table class="table table-bordered" style="width:80%">
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="checkbox" name="lot1" id="lot1" value="1"><label for="lot1">?</label></td>
-                                            <td><input type="checkbox" name="lot2" id="lot2" value="2"><label for="lot2">?</label></td>
-                                            <td><input type="checkbox" name="lot3" id="lot3" value="3"><label for="lot3">?</label></td>
-                                            <td><input type="checkbox" name="lot4" id="lot4" value="4"><label for="lot4">?</label></td>
-                                            <td><input type="checkbox" name="lot5" id="lot5" value="5"><label for="lot5">?</label></td>
-                                            <td><input type="checkbox" name="lot6" id="lot6" value="6"><label for="lot6">?</label></td>
-                                        </tr>
-                                    </tbody>
-                                </table>  
-                                @elseif (Session::has('res'))
-                                    <table class="table table-bordered" style="width:80%">
-                                        <tbody>
-                                            <tr>
-                                                <td><input type="checkbox" name="lot1" id="lot1" value="1"><label for="lot1">{{ isset($lot1) ? $lot1 : 'X' }}</label></td>
-                                                <td><input type="checkbox" name="lot2" id="lot2" value="2"><label for="lot2">{{ isset($lot2) ? $lot2 : 'X' }}</label></td>
-                                                <td><input type="checkbox" name="lot3" id="lot3" value="3"><label for="lot3">{{ isset($lot3) ? $lot3 : 'X' }}</label></td>
-                                                <td><input type="checkbox" name="lot4" id="lot4" value="4"><label for="lot4">{{ isset($lot4) ? $lot4 : 'X' }}</label></td>
-                                                <td><input type="checkbox" name="lot5" id="lot5" value="5"><label for="lot5">{{ isset($lot5) ? $lot5 : 'X' }}</label></td>
-                                                <td><input type="checkbox" name="lot6" id="lot6" value="6"><label for="lot6">{{ isset($lot6) ? $lot6 : 'X' }}</label></td>
-                                            </tr>
-                                        </tbody>
-                                    </table> 
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="col-12 col-md-12 col-xl-3">
-                                        <div class="card panel-score box">
-                                            <img src="" alt="">
-                                                <button type="submit" class="btn btn-dark">Сыграть еще</button>
-                                        </div>
-                                    </div>
-                                @endif
+                               <div id="addTable"></div>
                             </div>
                         </div>
                     </div>
@@ -267,18 +240,15 @@
                 <div class="col-12 col-md-12 col-xl-3">
                     <div class="card panel-score box">
                         <img src="" alt="">
-                        @if (Session::has('good'))
-                            <button type="submit" class="btn btn-dark">Испытать удачу!</button>
-                        @else
-                            <p class="inpt2">Сумма <strong>20</strong></p>
-                            <button type="submit" class="btn btn-dark">Оплатить</button>
-                        @endif
+                        <p class="inpt2" id="summa">Сумма <strong>20</strong></p>
+                        <button type="submit" class="btn btn-dark" id='payGame' onclick="createGame()">Оплатить</button>
+                        <button type="submit" class="btn btn-dark" id='runGame' style='display: none' onclick="runGame()">Начать</button>
+                        <button type="submit" class="btn btn-dark" id='restartGame' style='display: none' onclick="location.reload()">Начать заново</button>
                     </div>
                 </div>
-            </div>
+             </div>
         </div>
-    </form>
-</main>  --}}
+</main>--}}
 
-
+<script src="{{ asset('js/speedGame.js')}}"></script>
 @endsection
