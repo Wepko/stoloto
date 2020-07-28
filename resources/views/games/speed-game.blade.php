@@ -32,7 +32,7 @@
                                                  <div class="zone-one">
                                                      <div class="fast-game__zone-content">
                                                          <div class="zone-header">Образец</div>
-                                                         <div class="fast-game__zone-list">
+                                                         <div class="fast-game__zone-list" id="exampleTable">
                                                              <div class="fast-game__zone-item">x</div>
                                                              <div class="fast-game__zone-item">п</div>
                                                              <div class="fast-game__zone-item">р</div>
@@ -44,15 +44,22 @@
                                                  </div>
                                                  <div class="zone-two">
                                                      <div class="fast-game__zone-content">
-                                                         <div class="zone-header">Ваша игра</div>
-                                                         <div class="fast-game__zone-list">
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">П</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                             <div class="fast-game__zone-item">?</div>
-                                                         </div>
+                                                        <div class="zone-header">Ваша игра</div>
+                                                        @if (Session::has('res'))
+                                                            <div class="fast-game__zone-list" id="userTable">
+
+                                                            </div>
+                                                        @else
+                                                            <div class="fast-game__zone-list">
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">П</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                                <div class="fast-game__zone-item">?</div>
+                                                            </div>
+                                                        @endif
+                                                        <div id="addRes" class="mt-2"></div>
                                                      </div>
                                                  </div>
                                              </div>
@@ -187,7 +194,14 @@
                                         </div>
                                      </div>
                                     <div class="panel-score__btns">
-                                        <a href="#" class="btn-orange" style="width: 100%">Оплата</a>
+                                        @if (Session::has('res'))
+                                            <button class="btn-orange" id="btn" onclick="runGame()" style="width: 100%; border: none">Начать</a>
+                                        @else
+                                            <form action="{{ route('refillSpeedGame') }}" method='get'
+                                            @csrf
+                                                <button type="submit" class="btn-orange" style="width: 100%; border: none">Оплата</a>
+                                            </form>
+                                        @endif
                                     </div>
                                  </div>
                          </div>

@@ -89,7 +89,8 @@ Route::post('/AddTimerFiveGame', 'AddTimerController@fivegame')->name('TimerFive
 Route::post('/AddTimerSixGame', 'AddTimerController@sixgame')->name('TimerSixGame');
 
 Route::get('/refill', 'LKController@refill')->name('refill');
-Route::post('/refill', 'LKController@output')->name('output');
+Route::get('/refillSpeedGame', 'EasyGameController@refillSpeedGame')->name('refillSpeedGame');
+Route::post('/refillOutput', 'LKController@output')->name('output');
 
 Route::post('/ReplaceOneGame', 'AdminController@replaceOneGame')->name('ReplaceOneGame');
 Route::post('/ReplaceTwoGame', 'AdminController@replaceTwoGame')->name('ReplaceTwoGame');
