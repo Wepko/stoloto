@@ -9,7 +9,7 @@
   </div>
 @endif
 
-  <section class="section-game" id="main" style="margin-top: 0">
+  <section class="section-game" id="main" >
     <div class="section-game__title">
             <h1>Золотая Антилопа Рапидо</h1>
             <div data-countdown="{{ $time }}" align="center"></div>

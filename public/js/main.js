@@ -6,12 +6,7 @@ function game(url) {
   var itog = $root.querySelector('#sum');
   var $nav = document.getElementById('nav');
 
-  function colorPicker(bg, text) {
-    document.body.style.background = bg;
-  }
-
   if (url == '/games/four-of-twenty') {
-    colorPicker('#ffffff');
     var game4_20 = games({
       root: $root,
       itog: itog,
@@ -37,15 +32,15 @@ function game(url) {
   }
 
   if (url == '/games/five-of-threety-six') {
-    colorPicker('#ffffff');
+
     var game5_36 = games({
       root: $root,
       itog: itog,
       fields: [{
         tr: 6,
-        td: 7,
+        td: 6,
         id: 1,
-        offset: 6,
+        offset: 0,
         activeCell: 5
       }, {
         tr: 1,
@@ -57,13 +52,12 @@ function game(url) {
       coefficient: [0, 0, 0, 0, 0, 1, 6, 21, 56, 126, 252, 462],
       minStoimos: 40,
       type: 'game5_36',
-      infoField: 'Отметьте от 5 до 11 чисел в первом поле и от 1 до 4 во втором. Чем больше чисел отмечено — тем выше вероятность выигрыша.'
+      infoField: ''
     });
     game5_36.init();
   }
 
   if (url == '/games/seven-of-fourty-nine') {
-    colorPicker('#ffffff');
     var game7_49 = games({
       root: $root,
       itog: itog,
@@ -83,7 +77,6 @@ function game(url) {
   }
 
   if (url == '/games/six-of-fourty-five') {
-    colorPicker('#ffffff');
     var game6_45 = games({
       root: $root,
       itog: itog,
@@ -103,7 +96,6 @@ function game(url) {
   }
 
   if (url == '/games/twenteen-of-twenty-four') {
-    colorPicker('#ffffff');
     var game12_24 = games({
       root: $root,
       itog: itog,
@@ -123,7 +115,6 @@ function game(url) {
   }
 
   if (url == '/games/rapido') {
-    colorPicker('#ffffff');
     var rapido = games({
       root: $root,
       itog: itog,
@@ -217,6 +208,8 @@ class Routing {
         }
     }
 }
+
+//new Routing('/games/game5_36.html', game)
 
 new Routing('/games/top-4', game)
 new Routing('/games/rapido', game)
