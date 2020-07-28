@@ -139,7 +139,7 @@
                                         </div>
                                         <div class="panel-score__btns">
                                             <button type="submit" class="btn-orange" style="width: 100%; border: none">Оплата</button>
-                                            <a href="#" class="btn-orange-revers mt-3" style="width: 100%">Добавить в корзину</a>
+                                            <a href="{{ route('tutorials-one-game')}}" class="btn-orange-revers mt-3" style="width: 100%">Как играть?</a>
                                         </div>
                                     </div>
                             </div>
