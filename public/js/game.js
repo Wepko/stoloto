@@ -192,7 +192,6 @@
         let countInput = Create2DArray(5)
 
         function valid(id) {  
-            console.log(countInput)
             countInput[id-1][0]
             countInput[id-1][1]
            function summa(arr) {
@@ -218,8 +217,6 @@
                 } else {
                     price = (price1 * 2) * (price2 / 100)
                 }
-                console.log(countInput[id-1])
-                console.log(countInput[id-1][0])
                 itog[id-1] = isNaN(price) ? 0 : price
                 $itog.innerHTML = summa(itog)
             }
@@ -233,13 +230,11 @@
                     }
                 } 
                 price = price1 * countInput[id-1][1];
-                console.log(price)
                 itog[id-1] = price
                 $itog.innerHTML = summa(itog)
             }
             if (type == 'game7_49') {
                 const mas = coefficient
-                console.log(mas)
                 let price, price1 = 0
                 for (let i = 1; i <= 14; i++) {
                     if (countInput[id-1][0] == i) {
@@ -303,13 +298,11 @@
                 } else  {
                     price = 0
                 }
-                console.log(price)
                 itog[id-1] = price
                 $itog.innerHTML = summa(itog)
             }
         }
         function analiz(id, table, index) {
-            console.log(id, table, index)
             countInput[id-1][index] = 0
             const inputs = [...table.querySelectorAll('input')]
             
@@ -346,12 +339,10 @@
                         break
                         case 3:
                             btn.addEventListener('click', () => {
-                                console.log(field)
                                 inputs.forEach(item => {
                                     item.checked = false
                                 })
                                 countInput[idTicket-1][index] = 0
-                                console.log(countInput)
                                 valid(idTicket)
                             })
                         break
