@@ -232,7 +232,7 @@
         <br><br><br>
         @if($useroutputs)
           @forelse ($useroutputs as $user)
-            <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Номер карты {{ $user->cardNumber }} Сумма {{ $user->price }}</h6>
+            <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">ID пользователя {{ $user->user_id}} Номер карты {{ $user->cardNumber }} Сумма {{ $user->price }}</h6>
           @empty  
             <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Счетов пока нету</h6>
           @endforelse
@@ -244,13 +244,14 @@
         <h1>Распределение джекпота</h1>
         <form action= "{{ route('distgame') }}" method="post">
           @csrf
-          <input type="number" name="game" class="btn border" placeholder="Введите номер игры" >
+          <input type="number" name="game" class="btn border" placeholder="Введите номер игры для распределения" style="width: 360px"><br>
           <input type="submit" class="btn btn-dark"  value="Начать распределение">
       </form>
-        <form action= "{{ route('distribution') }}" method="post">
+      <form action= "{{ route('distribution') }}" method="post" class="mt-5">
           @csrf
-          <input type="number" name="winticket" class="btn border" placeholder="Введите комбинацию" >
-          <input type="submit" class="btn btn-dark mt-5" value="Провести распределение">
+          <label>Внимание! Розыгрыш распределение нужно проводить после окончания таймера</label><br>
+          <input type="number" name="winticket" class="btn border" placeholder="Введите комбинацию распределения" style="width: 360px"><br>
+          <input type="submit" class="btn btn-dark" value="Провести распределение">
       </form>
       </div>
 @endif

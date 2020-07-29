@@ -122,6 +122,10 @@ class LKController extends Controller
 
         if (Auth::user()->money() >= $request->input('price')) {
 
+            $model = User::where('id', '=', Auth::user()->getId())->first();
+            $model->money = strval(intval($model->money) - intval($request->input('price')));
+            $model->save();
+
             OutputModels::insert(array(
                 'user_id'  => Auth::user()->getId(),
                 'cardNumber' => $request->input('card'),
