@@ -18,7 +18,26 @@ use App\Models\FiveGameTimerModels;
 use App\Models\SixGameTimerModels;
 use App\Models\DistGameModels;
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', function () {
+  if ($fondModels = FondModels::where('id', '=', 1)->first()) {
+    $fondModels = FondModels::where('id', '=', 1)->first();
+    $fond = intval($fondModels->fond);
+  }
+  else  
+    $fond = 0;
+  
+  $pre = "";
+  $max1 = 6;
+  $count = strlen($fond);
+  $max1 = intval($max1) - intval($count);
+  
+  for ($i = 1; $i<=$max1; $i++)
+    $pre = $pre . "0";
+
+  $fond = $pre . $fond;
+
+  return view('home', ['fond' => $fond]);
+})->name('home');
 
 Route::get('/reg', function (){
   return view('reg');
@@ -28,21 +47,21 @@ Route::get('/login', function (){
   return view('login');
 })->name('login');
 
-Route::get('/lk', 'LKController@index')->middleware('verified')->name('lk');
+Route::get('/lk', 'HomeController@index')->middleware('verified')->name('lk');
 Auth::routes(['verify' => true]);
 
 Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
-Route::get('/logout', 'LKController@logout')->name('logout');
+Route::get('/logout', 'HomeController@logout')->name('logout');
 
 
 //добавление значения билетов пользователей 
-Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->name('AddTicketValueOne');
-Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicketValueTwo');
-Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddTicketValueThree');
-Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTicketValueFour');
-Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->name('AddTicketValueFive');
-Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->name('AddTicketValueSix');
+Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->middleware('verified')->name('AddTicketValueOne');
+Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->middleware('verified')->name('AddTicketValueTwo');
+Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->middleware('verified')->name('AddTicketValueThree');
+Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->middleware('verified')->name('AddTicketValueFour');
+Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->middleware('verified')->name('AddTicketValueFive');
+Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->middleware('verified')->name('AddTicketValueSix');
 
 //добавление значения выиграшных билетов
 Route::post('/AddWinTicketValueOne', 'AddWinTicketController@onegamewin')->name('AddWinTicketValueOne');
@@ -69,10 +88,10 @@ Route::post('/AddTimerFourGame', 'AddTimerController@fourgame')->name('TimerFour
 Route::post('/AddTimerFiveGame', 'AddTimerController@fivegame')->name('TimerFiveGame');
 Route::post('/AddTimerSixGame', 'AddTimerController@sixgame')->name('TimerSixGame');
 
-Route::get('/refill', 'LKController@refill')->name('refill');
+Route::get('/refill', 'HomeController@refill')->name('refill');
 Route::get('/refillSpeedGame', 'EasyGameController@refillSpeedGame')->name('refillSpeedGame');
 Route::get('/refillMomentGame', 'EasyGameController@refillMomentGame')->name('refillMomentGame');
-Route::post('/refillOutput', 'LKController@output')->name('output');
+Route::post('/refillOutput', 'HomeController@output')->name('output');
 
 Route::post('/ReplaceOneGame', 'AdminController@replaceOneGame')->name('ReplaceOneGame');
 Route::post('/ReplaceTwoGame', 'AdminController@replaceTwoGame')->name('ReplaceTwoGame');
@@ -271,9 +290,6 @@ Route::prefix('/tutorials')->group( function () {
     return view('tutorials.moment-game');
   })->name('tutorials-moment-game');
 });
-
-
-
 
 Auth::routes();
 
