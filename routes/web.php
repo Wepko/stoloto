@@ -18,27 +18,7 @@ use App\Models\FiveGameTimerModels;
 use App\Models\SixGameTimerModels;
 use App\Models\DistGameModels;
 
-Route::get('/', function () {
-
-  if ($fondModels = FondModels::where('id', '=', 1)->first()) {
-    $fondModels = FondModels::where('id', '=', 1)->first();
-    $fond = intval($fondModels->fond);
-  }
-  else  
-    $fond = 0;
-  
-  $pre = "";
-  $max1 = 6;
-  $count = strlen($fond);
-  $max1 = intval($max1) - intval($count);
-  
-  for ($i = 1; $i<=$max1; $i++)
-    $pre = $pre . "0";
-
-  $fond = $pre . $fond;
-
-  return view('home', ['fond' => $fond]);
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/reg', function (){
   return view('reg');
@@ -48,7 +28,8 @@ Route::get('/login', function (){
   return view('login');
 })->name('login');
 
-Route::get('/lk', 'LKController@index')->name('lk');
+Route::get('/lk', 'LKController@index')->middleware('verified')->name('lk');
+Auth::routes(['verify' => true]);
 
 Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
@@ -292,4 +273,7 @@ Route::prefix('/tutorials')->group( function () {
 });
 
 
+
+
+Auth::routes();
 
