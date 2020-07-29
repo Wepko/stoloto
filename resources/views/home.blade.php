@@ -64,8 +64,8 @@
 					</div>
 				</div>
 				<div class="special-offer__btns">
-					<a href="#" class="btn-access">Принять участие</a>
-					<a href="#" class="btn-access-revers ml-3">Узнать подробности</a>	
+					<a href="{{ route('one-game') }}" class="btn-access">Принять участие</a>
+					<a href="#" class="btn-access-revers ml-3" onclick="help()">Узнать подробности</a>	
 				</div>
 			</div>
 		</div>

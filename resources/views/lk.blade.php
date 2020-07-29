@@ -9,7 +9,7 @@
   </div>
 </header>
 
-
+@if(Auth::check())
 
 <div class="content-4_20">
   <div class="container" >
@@ -105,4 +105,7 @@
   </div>
 
 </div>
+
+@endif
+
 @endsection
