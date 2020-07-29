@@ -48,60 +48,58 @@ Route::get('/login', function (){
   return view('login');
 })->name('login');
 
-Route::get('/lk', 'LKController@index')->middleware('verified')->name('lk');
+Route::get('/lk', 'LKController@index')->name('lk');
 
 Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
-Route::get('/logout', 'LKController@logout')->middleware('verified')->name('logout');
-
-Auth::routes(['verify' => true]);
+Route::get('/logout', 'LKController@logout')->name('logout');
 
 
 //добавление значения билетов пользователей 
-Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->middleware('verified')->name('AddTicketValueOne');
-Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->middleware('verified')->name('AddTicketValueTwo');
-Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->middleware('verified')->name('AddTicketValueThree');
-Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->middleware('verified')->name('AddTicketValueFour');
-Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->middleware('verified')->name('AddTicketValueFive');
-Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->middleware('verified')->name('AddTicketValueSix');
+Route::post('/AddTicketValueOne', 'AddTicketController@onegame')->name('AddTicketValueOne');
+Route::post('/AddTicketValueTwo', 'AddTicketController@twogame')->name('AddTicketValueTwo');
+Route::post('/AddTicketValueThree', 'AddTicketController@threegame')->name('AddTicketValueThree');
+Route::post('/AddTicketValueFour', 'AddTicketController@fourgame')->name('AddTicketValueFour');
+Route::post('/AddTicketValueFive', 'AddTicketController@fivegame')->name('AddTicketValueFive');
+Route::post('/AddTicketValueSix', 'AddTicketController@sixgame')->name('AddTicketValueSix');
 
 //добавление значения выиграшных билетов
-Route::post('/AddWinTicketValueOne', 'AddWinTicketController@onegamewin')->middleware('verified')->name('AddWinTicketValueOne');
-Route::post('/AddWinTicketValueTwo', 'AddWinTicketController@twogamewin')->middleware('verified')->name('AddWinTicketValueTwo');
-Route::post('/AddWinTicketValueThree', 'AddWinTicketController@threegamewin')->middleware('verified')->name('AddWinTicketValueThree');
-Route::post('/AddWinTicketValueFour', 'AddWinTicketController@fourgamewin')->middleware('verified')->name('AddWinTicketValueFour');
-Route::post('/AddWinTicketValueFive', 'AddWinTicketController@fivegamewin')->middleware('verified')->name('AddWinTicketValueFive');
-Route::post('/AddWinTicketValueSix', 'AddWinTicketController@sixgamewin')->middleware('verified')->name('AddWinTicketValueSix');
+Route::post('/AddWinTicketValueOne', 'AddWinTicketController@onegamewin')->name('AddWinTicketValueOne');
+Route::post('/AddWinTicketValueTwo', 'AddWinTicketController@twogamewin')->name('AddWinTicketValueTwo');
+Route::post('/AddWinTicketValueThree', 'AddWinTicketController@threegamewin')->name('AddWinTicketValueThree');
+Route::post('/AddWinTicketValueFour', 'AddWinTicketController@fourgamewin')->name('AddWinTicketValueFour');
+Route::post('/AddWinTicketValueFive', 'AddWinTicketController@fivegamewin')->name('AddWinTicketValueFive');
+Route::post('/AddWinTicketValueSix', 'AddWinTicketController@sixgamewin')->name('AddWinTicketValueSix');
 
 //Проверка билетов
-Route::post('/ValidTicket', 'ValidTicketController@valid')->middleware('verified')->name('ValidTicketGame');
-Route::post('/WinnerOne', 'AdminController@goWinnerOneGame')->middleware('verified')->name('WinnerOneGame');
-Route::post('/WinnerTwo', 'AdminController@goWinnerTwoGame')->middleware('verified')->name('WinnerTwoGame');
-Route::post('/WinnerThree', 'AdminController@goWinnerThreeGame')->middleware('verified')->name('WinnerThreeGame');
-Route::post('/WinnerFour', 'AdminController@goWinnerFourGame')->middleware('verified')->name('WinnerFourGame');
-Route::post('/WinnerFive', 'AdminController@goWinnerFiveGame')->middleware('verified')->name('WinnerFiveGame');
-Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->middleware('verified')->name('WinnerSixGame');
-Route::post('/distribution', 'AdminController@distribution')->middleware('verified')->name('distribution');
+Route::post('/ValidTicket', 'ValidTicketController@valid')->name('ValidTicketGame');
+Route::post('/WinnerOne', 'AdminController@goWinnerOneGame')->name('WinnerOneGame');
+Route::post('/WinnerTwo', 'AdminController@goWinnerTwoGame')->name('WinnerTwoGame');
+Route::post('/WinnerThree', 'AdminController@goWinnerThreeGame')->name('WinnerThreeGame');
+Route::post('/WinnerFour', 'AdminController@goWinnerFourGame')->name('WinnerFourGame');
+Route::post('/WinnerFive', 'AdminController@goWinnerFiveGame')->name('WinnerFiveGame');
+Route::post('/WinnerSix', 'AdminController@goWinnerSixGame')->name('WinnerSixGame');
+Route::post('/distribution', 'AdminController@distribution')->name('distribution');
 
-Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->middleware('verified')->name('TimerOneGame');
-Route::post('/AddTimerTwoGame', 'AddTimerController@twogame')->middleware('verified')->name('TimerTwoGame');
-Route::post('/AddTimerThreeGame', 'AddTimerController@threegame')->middleware('verified')->name('TimerThreeGame');
-Route::post('/AddTimerFourGame', 'AddTimerController@fourgame')->middleware('verified')->name('TimerFourGame');
-Route::post('/AddTimerFiveGame', 'AddTimerController@fivegame')->middleware('verified')->name('TimerFiveGame');
-Route::post('/AddTimerSixGame', 'AddTimerController@sixgame')->middleware('verified')->name('TimerSixGame');
+Route::post('/AddTimerOneGame', 'AddTimerController@onegame')->name('TimerOneGame');
+Route::post('/AddTimerTwoGame', 'AddTimerController@twogame')->name('TimerTwoGame');
+Route::post('/AddTimerThreeGame', 'AddTimerController@threegame')->name('TimerThreeGame');
+Route::post('/AddTimerFourGame', 'AddTimerController@fourgame')->name('TimerFourGame');
+Route::post('/AddTimerFiveGame', 'AddTimerController@fivegame')->name('TimerFiveGame');
+Route::post('/AddTimerSixGame', 'AddTimerController@sixgame')->name('TimerSixGame');
 
-Route::get('/refill', 'LKController@refill')->middleware('verified')->name('refill');
-Route::get('/refillSpeedGame', 'EasyGameController@refillSpeedGame')->middleware('verified')->name('refillSpeedGame');
-Route::get('/refillMomentGame', 'EasyGameController@refillMomentGame')->middleware('verified')->name('refillMomentGame');
-Route::post('/refillOutput', 'LKController@output')->middleware('verified')->name('output');
+Route::get('/refill', 'LKController@refill')->name('refill');
+Route::get('/refillSpeedGame', 'EasyGameController@refillSpeedGame')->name('refillSpeedGame');
+Route::get('/refillMomentGame', 'EasyGameController@refillMomentGame')->name('refillMomentGame');
+Route::post('/refillOutput', 'LKController@output')->name('output');
 
-Route::post('/ReplaceOneGame', 'AdminController@replaceOneGame')->middleware('verified')->name('ReplaceOneGame');
-Route::post('/ReplaceTwoGame', 'AdminController@replaceTwoGame')->middleware('verified')->name('ReplaceTwoGame');
-Route::post('/ReplaceThreeGame', 'AdminController@replaceThreeGame')->middleware('verified')->name('ReplaceThreeGame');
-Route::post('/ReplaceFourGame', 'AdminController@replaceFourGame')->middleware('verified')->name('ReplaceFourGame');
-Route::post('/ReplaceFiveGame', 'AdminController@replaceFiveGame')->middleware('verified')->name('ReplaceFiveGame');
-Route::post('/ReplaceSixGame', 'AdminController@replaceSixGame')->middleware('verified')->name('ReplaceSixGame');
-Route::post('/DistGame', 'AdminController@distGame')->middleware('verified')->name('distgame');
+Route::post('/ReplaceOneGame', 'AdminController@replaceOneGame')->name('ReplaceOneGame');
+Route::post('/ReplaceTwoGame', 'AdminController@replaceTwoGame')->name('ReplaceTwoGame');
+Route::post('/ReplaceThreeGame', 'AdminController@replaceThreeGame')->name('ReplaceThreeGame');
+Route::post('/ReplaceFourGame', 'AdminController@replaceFourGame')->name('ReplaceFourGame');
+Route::post('/ReplaceFiveGame', 'AdminController@replaceFiveGame')->name('ReplaceFiveGame');
+Route::post('/ReplaceSixGame', 'AdminController@replaceSixGame')->name('ReplaceSixGame');
+Route::post('/DistGame', 'AdminController@distGame')->name('distgame');
 
 Route::get('/admin', function (){
 
@@ -125,7 +123,7 @@ Route::get('/admin', function (){
   
   return view('admin-panel', ['useroutputs' => OutputModels::all()->reverse()], ['count' => $count, 'sum' => $sum]);
 
-})->middleware('verified')->name('admin');
+})->name('admin');
 
 Route::get('/ticket', function (){
   return view('ticket_sms');
