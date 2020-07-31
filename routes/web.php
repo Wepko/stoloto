@@ -19,6 +19,7 @@ use App\Models\FourGameTimerModels;
 use App\Models\FiveGameTimerModels;
 use App\Models\SixGameTimerModels;
 use App\Models\DistGameModels;
+use App\Models\DistGameTimerModels;
 
 Route::get('/', function () {
   if ($fondModels = FondModels::where('id', '=', 1)->first()) {
@@ -37,8 +38,9 @@ Route::get('/', function () {
     $pre = $pre . "0";
 
   $fond = $pre . $fond;
+  $time = OneGameTimerModels::where('id','=', 1)->value('time');
 
-  return view('home', ['fond' => $fond]);
+  return view('home', ['fond' => $fond, 'time' => $time]);
 })->name('home');
 
 Route::get('/reg', function (){
@@ -89,6 +91,7 @@ Route::post('/AddTimerThreeGame', 'AddTimerController@threegame')->name('TimerTh
 Route::post('/AddTimerFourGame', 'AddTimerController@fourgame')->name('TimerFourGame');
 Route::post('/AddTimerFiveGame', 'AddTimerController@fivegame')->name('TimerFiveGame');
 Route::post('/AddTimerSixGame', 'AddTimerController@sixgame')->name('TimerSixGame');
+Route::post('/AddTimerDistGame', 'AddTimerController@distgame')->name('TimerDistGame');
 
 Route::get('/refill', 'HomeController@refill')->name('refill');
 Route::get('/refillSpeedGame', 'EasyGameController@refillSpeedGame')->name('refillSpeedGame');
@@ -291,6 +294,12 @@ Route::prefix('/tutorials')->group( function () {
   Route::get('moment-game', function (){
     return view('tutorials.moment-game');
   })->name('tutorials-moment-game');
+
+  Route::get('dist-game', function (){
+    $time = DistGameTimerModels::where('id','=', 1)->value('time');
+
+    return view('tutorials.dist', ['time' => $time]);
+  })->name('dist-game');
 });
 
 Auth::routes();

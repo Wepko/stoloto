@@ -17,7 +17,7 @@
 			<span>Выйгрыш в каждом билете!</span>
 		</div>
 		<div class="preview__btn">
-			<a href="#" class="btn-main">Принять участие</a>
+			<a href="{{ route('one-game') }}" class="btn-main">Принять участие</a>
 		</div>
 	
 	</div>
@@ -47,6 +47,7 @@
 			<div class="special-offer__content">
 				<div class="special-offer__title">Специальное предложение!</div>
 				<div class="special-offer__info">
+					
 					<div class="special-offer__info-block">
 						<h3>Не упустите возможность принять участие 
 							<span>в розыгрыше Джекпота!</span></h3>
@@ -65,8 +66,9 @@
 				</div>
 				<div class="special-offer__btns">
 					<a href="{{ route('one-game') }}" class="btn-access">Принять участие</a>
-					<a href="#" class="btn-access-revers ml-3" onclick="help()">Узнать подробности</a>	
+					<a href="{{ route('dist-game') }}" class="btn-access-revers ml-3">Узнать подробности</a>	
 				</div>
+				
 			</div>
 		</div>
 	</div>

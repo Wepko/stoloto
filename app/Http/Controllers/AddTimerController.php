@@ -16,6 +16,7 @@ use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
 use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
+use App\Models\DistGameTimerModels;
 use Illuminate\Http\Request;
 
 class AddTimerController extends Controller
@@ -133,6 +134,26 @@ class AddTimerController extends Controller
         }
         else {
             $models = SixGameTimerModels::where('id', '=', 1)->first();
+            $models->time = $time;
+            $models->save();
+        }
+
+        return redirect()->back()->with('info', 'Таймер успешно добавлен');
+    }
+
+    public function distgame(Request $request) {
+
+        $time = $request->input('timer');
+        $time = preg_replace("/T/", " ", $time);
+        $time = $time . ":00";
+
+        if (DistGameTimerModels::count() == 0) {
+            DistGameTimerModels::insert(array(
+                'time' => $time
+            ));
+        }
+        else {
+            $models = DistGameTimerModels::where('id', '=', 1)->first();
             $models->time = $time;
             $models->save();
         }

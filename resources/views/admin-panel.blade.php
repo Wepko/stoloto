@@ -242,6 +242,12 @@
       </div>
       <div class="mt-5"> 
         <h1>Распределение джекпота</h1>
+        <form action= "{{ route('TimerDistGame') }}" method="post">
+          @csrf
+              <label>Добавить таймер</label><br>
+              <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
+              <input type="submit" class="btn btn-dark mt-1"  value="Добавить таймер">
+          </form>
         <form action= "{{ route('distgame') }}" method="post">
           @csrf
           <input type="number" name="game" class="btn border" placeholder="Введите номер игры для распределения" style="width: 360px"><br>
