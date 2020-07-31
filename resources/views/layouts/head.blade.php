@@ -353,7 +353,7 @@ table input[type='checkbox']:checked + label{
 			var $this = $(this);
 			var finalDate = $(this).data('countdown');
 			$this.countdown(finalDate, function(event) {
-				$this.html(event.strftime('До начала розыгрыша %D Д %H:%M:%S'));
+				$this.html(event.strftime('До начала розыгрыша<br>%D Д %H:%M:%S'));
 			});
 			});
 		</script>

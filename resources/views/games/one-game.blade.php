@@ -13,7 +13,7 @@
 <section class="section-game" id="main">
     <div class="section-game__title">
             <h1>Золотая Антилопа 4 из 20</h1>
-            <div data-countdown="{{ $time }}" align="center"></div>
+            <div data-countdown="{{ $time }}" align="center" style="color: orange; font-size: 3em;"></div>
     </div>	
     <form action="{{ route('AddTicketValueOne') }}" method='post'>
     @csrf
