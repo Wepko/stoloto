@@ -17,6 +17,7 @@ class CreateDistgameTable extends Migration
             $table->id();
             $table->string('numberGame');
             $table->boolean('distGame');
+            $table->boolean('stopGame')->default(true);
 
             $table->timestamps();
         });

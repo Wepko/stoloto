@@ -34,6 +34,12 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1"  value="Добавить таймер">
             </form>
+
+            <form action="{{ route('StopGame') }}" class="mt-5" method="post">
+              <input type="number" name="number" value="1" style="display: none"><br>
+              <input type="submit" class="btn btn-dark mt-1"  value="Остановить игру">
+            </form>
+
             <form action="{{ route('AddWinTicketValueOne') }}" method="post" >
               @csrf
                   <div class="content-4_20">
@@ -69,6 +75,10 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
+          <form action="{{ route('StopGame') }}" class="mt-5" method="post">
+            <input type="number" name="number" value="2" style="display: none"><br>
+            <input type="submit" class="btn btn-dark mt-1"  value="Остановить игру">
+          </form>
           <form action="{{ route('AddWinTicketValueTwo') }}" method="post" >
             @csrf
                 <h1 class="mt-3">Добавить выигрышный билет</h1>
@@ -103,6 +113,10 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
+          <form action="{{ route('StopGame') }}" class="mt-5" method="post">
+            <input type="number" name="number" value="3" style="display: none"><br>
+            <input type="submit" class="btn btn-dark mt-1"  value="Остановить игру">
+          </form>
           <form action="{{ route('AddWinTicketValueThree') }}" method="post" >
             @csrf
                 <h1>Добавить выигрышный билет</h1>
@@ -134,6 +148,10 @@
                 <label>Добавить таймер</label><br>
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
+          </form>
+          <form action="{{ route('StopGame') }}" class="mt-5" method="post">
+            <input type="number" name="number" value="4" style="display: none"><br>
+            <input type="submit" class="btn btn-dark mt-1"  value="Остановить игру">
           </form>
           <form action="{{ route('AddWinTicketValueFour') }}" method="post" >
             @csrf
@@ -167,6 +185,10 @@
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
           </form>
+          <form action="{{ route('StopGame') }}" class="mt-5" method="post">
+            <input type="number" name="number" value="5" style="display: none"><br>
+            <input type="submit" class="btn btn-dark mt-1"  value="Остановить игру">
+          </form>
           <form action="{{ route('AddWinTicketValueFive') }}" method="post" >
             @csrf
                 <h1>Добавить выигрышный билет</h1>
@@ -198,6 +220,10 @@
                 <label>Добавить таймер</label><br>
                 <input id="datetime" type="datetime-local" id="datetime" name="timer"><br>
                 <input type="submit" class="btn btn-dark mt-1" value="Добавить таймер">
+          </form>
+          <form action="{{ route('StopGame') }}" class="mt-5" method="post">
+            <input type="number" name="number" value="6" style="display: none"><br>
+            <input type="submit" class="btn btn-dark mt-1"  value="Остановить игру">
           </form>
           <form action="{{ route('AddWinTicketValueSix') }}" method="post" >
             @csrf

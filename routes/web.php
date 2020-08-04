@@ -105,6 +105,7 @@ Route::post('/ReplaceFourGame', 'AdminController@replaceFourGame')->name('Replac
 Route::post('/ReplaceFiveGame', 'AdminController@replaceFiveGame')->name('ReplaceFiveGame');
 Route::post('/ReplaceSixGame', 'AdminController@replaceSixGame')->name('ReplaceSixGame');
 Route::post('/DistGame', 'AdminController@distGame')->name('distgame');
+Route::post('/StopGame', 'AddTicketController@stopGame')->name('StopGame');
 
 Route::get('/admin', function (){
 

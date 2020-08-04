@@ -67,6 +67,8 @@ class AdminController extends Controller
         $model->fond = strval(intval($model->fond) - intval($constFond));
         $model->save();
 
+
+
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
@@ -210,6 +212,11 @@ class AdminController extends Controller
             ));
 
         }
+        
+        $models = DistGameModels::where('id','=',1)->first();
+        $models->stopGame = true;
+        $model->save();
+
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
@@ -284,7 +291,9 @@ class AdminController extends Controller
                 'win' => $win
             ));
         }
-
+        $models = DistGameModels::where('id','=',2)->first();
+        $models->stopGame = true;
+        $model->save();
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
 
     }
@@ -354,6 +363,9 @@ class AdminController extends Controller
             ));
 
         }
+        $models = DistGameModels::where('id','=',3)->first();
+        $models->stopGame = true;
+        $model->save();
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
@@ -420,6 +432,9 @@ class AdminController extends Controller
                 'win' => $win
             ));
         }
+        $models = DistGameModels::where('id','=',4)->first();
+        $models->stopGame = true;
+        $model->save();
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
@@ -485,6 +500,9 @@ class AdminController extends Controller
                 'win' => $win
             ));
         }
+        $models = DistGameModels::where('id','=',5)->first();
+        $models->stopGame = true;
+        $model->save();
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
@@ -687,6 +705,9 @@ class AdminController extends Controller
                 'win' => $win
             ));
         }
+        $models = DistGameModels::where('id','=',6)->first();
+        $models->stopGame = true;
+        $model->save();
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 

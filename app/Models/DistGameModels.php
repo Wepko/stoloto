@@ -11,6 +11,7 @@ class DistGameModels extends Model
     protected $fillable = [
         'id',
         'numberGame',
-        'distGame'
+        'distGame',
+        'stopGame'
     ];
 }

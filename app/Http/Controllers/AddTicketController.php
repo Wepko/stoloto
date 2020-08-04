@@ -25,11 +25,54 @@ use DB;
 
 class AddTicketController extends Controller
 {
+
+    public function stopGame(Request $request) {
+
+        if ($request->input('number') == 1) {
+            $models = DistGameModels::where('id','=',1)->first();
+            $models->stopGame = false;
+            $model->save();
+        }
+        if ($request->input('number') == 2) {
+            $models = DistGameModels::where('id','=',2)->first();
+            $models->stopGame = false;
+            $model->save();
+        }
+        if ($request->input('number') == 3) {
+            $models = DistGameModels::where('id','=',3)->first();
+            $models->stopGame = false;
+            $model->save();
+        }
+        if ($request->input('number') == 4) {
+            $models = DistGameModels::where('id','=',4)->first();
+            $models->stopGame = false;
+            $model->save();
+        }
+        if ($request->input('number') == 5) {
+            $models = DistGameModels::where('id','=',5)->first();
+            $models->stopGame = false;
+            $model->save();
+        }
+        if ($request->input('number') == 6) {
+            $models = DistGameModels::where('id','=',6)->first();
+            $models->stopGame = false;
+            $model->save();
+        }
+
+    }
+
     public function onegame(Request $request) {
+
+        $modelss = DistGameModels::where('id','=',1)->first();
+
+        if ($modelss->stopGame == false) {
+            return redirect()->back()->with('info', 'Розыгрыш пока недоступен!');
+        }
+
         $mon = 0;
         $aer = 0;
         for ($i = 1; $i <= $request->input('valid'); $i++) {
-            
+
             $aer++;
             $value1 = '';
             $value2 = '';
@@ -136,6 +179,11 @@ class AddTicketController extends Controller
     }
 
     public function twogame(Request $request) {
+        $modelss = DistGameModels::where('id','=',2)->first();
+
+        if ($modelss->stopGame == false) {
+            return redirect()->back()->with('info', 'Розыгрыш пока недоступен!');
+        }
         $mon = 0;
         for ($i = 1; $i <= intval($request->input('valid')); $i++) {
             
@@ -226,6 +274,11 @@ class AddTicketController extends Controller
 
 
     public function threegame(Request $request) {
+        $modelss = DistGameModels::where('id','=',3)->first();
+
+        if ($modelss->stopGame == false) {
+            return redirect()->back()->with('info', 'Розыгрыш пока недоступен!');
+        }
         $mon = 0;
         
         for ($i = 1; $i <= $request->input('valid'); $i++) {
@@ -308,6 +361,11 @@ class AddTicketController extends Controller
 
 
     public function fourgame(Request $request) {
+        $modelss = DistGameModels::where('id','=',4)->first();
+
+        if ($modelss->stopGame == false) {
+            return redirect()->back()->with('info', 'Розыгрыш пока недоступен!');
+        }
         $mon = 0;
         for ($i = 1; $i <= $request->input('valid'); $i++) {
 
@@ -389,6 +447,11 @@ class AddTicketController extends Controller
 
 
     public function fivegame(Request $request) {
+        $modelss = DistGameModels::where('id','=',5)->first();
+
+        if ($modelss->stopGame == false) {
+            return redirect()->back()->with('info', 'Розыгрыш пока недоступен!');
+        }
         $aer = 0;
         $mon = 0;
 
@@ -464,6 +527,11 @@ class AddTicketController extends Controller
     }
 
     public function sixgame(Request $request) {
+        $modelss = DistGameModels::where('id','=',6)->first();
+
+        if ($modelss->stopGame == false) {
+            return redirect()->back()->with('info', 'Розыгрыш пока недоступен!');
+        }
         $mon = 0;
 
         for ($i = 1; $i <= $request->input('valid'); $i++) {
