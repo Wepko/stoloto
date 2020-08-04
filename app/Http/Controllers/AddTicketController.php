@@ -74,7 +74,7 @@ class AddTicketController extends Controller
                     else {
                         $price = ($price1 * 2) * ($price2 / 100);
                     }
-                    if (Auth::user()->money() >= $price && Auth::user()->money() >= $mon) {
+                    if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
 
                         $distgame = DistGameModels::where('numberGame', '=', "1")->first();
@@ -116,20 +116,20 @@ class AddTicketController extends Controller
                 }
             }
             else {
-                
                 return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             }
         }
         
         if (Auth::check()) {
             $model = User::where('id', '=', Auth::user()->getId())->first();
-                        
-            $money = strval(intval(Auth::user()->money()) - intval($mon));
-            $model->money = $money;
             
-            $model->save();
-
-            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            if (Auth::user()->money() >= $mon) {
+                $money = strval(intval(Auth::user()->money()) - intval($mon));
+                $model->money = $money;
+                $model->save();
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'У вас недостаточно средств!');
         }
 
         return redirect()->back()->with('info', 'Войдите в аккаунт!');
@@ -176,7 +176,7 @@ class AddTicketController extends Controller
 
                     $price = $price1 * count($arr22);
 
-                    if (Auth::user()->money() >= $price && Auth::user()->money() >= $mon) {
+                    if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
                         TwoGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
@@ -212,16 +212,16 @@ class AddTicketController extends Controller
 
         if (Auth::check()) {
             $model = User::where('id', '=', Auth::user()->getId())->first();
-                        
-            $money = strval(intval(Auth::user()->money()) - intval($mon));
-            $model->money = $money;
             
-            $model->save();
-
-            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            if (Auth::user()->money() >= $mon) {
+                $money = strval(intval(Auth::user()->money()) - intval($mon));
+                $model->money = $money;
+                $model->save();
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'У вас недостаточно средств!');
         }
-
-        return redirect()->back()->with('info', 'Войдите в аккаунт!');;
+        return redirect()->back()->with('info', 'Войдите в аккаунт!');
     }
 
 
@@ -258,7 +258,7 @@ class AddTicketController extends Controller
 
                     $price = $price1;
 
-                    if (Auth::user()->money() >= $price && Auth::user()->money() >= $mon) {
+                    if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
                         ThreeGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
@@ -293,13 +293,14 @@ class AddTicketController extends Controller
 
         if (Auth::check()) {
             $model = User::where('id', '=', Auth::user()->getId())->first();
-                        
-            $money = strval(intval(Auth::user()->money()) - intval($mon));
-            $model->money = $money;
             
-            $model->save();
-
-            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            if (Auth::user()->money() >= $mon) {
+                $money = strval(intval(Auth::user()->money()) - intval($mon));
+                $model->money = $money;
+                $model->save();
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'У вас недостаточно средств!');
         }
 
         return redirect()->back()->with('info', 'Войдите в аккаунт!');
@@ -339,7 +340,7 @@ class AddTicketController extends Controller
 
                     $price = $price1;
 
-                    if (Auth::user()->money() >= $price && Auth::user()->money() >= $mon) {
+                    if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
 
                         FourGameModels::insert(array(
@@ -373,13 +374,14 @@ class AddTicketController extends Controller
         }
         if (Auth::check()) {
             $model = User::where('id', '=', Auth::user()->getId())->first();
-                        
-            $money = strval(intval(Auth::user()->money()) - intval($mon));
-            $model->money = $money;
             
-            $model->save();
-
-            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            if (Auth::user()->money() >= $mon) {
+                $money = strval(intval(Auth::user()->money()) - intval($mon));
+                $model->money = $money;
+                $model->save();
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'У вас недостаточно средств!');
         }
 
         return redirect()->back()->with('info', 'Войдите в аккаунт!');
@@ -413,7 +415,7 @@ class AddTicketController extends Controller
 
                     $price = intval(PriceGameModels::where('id', '=', 5)->value('price')) * $request->input('factor');
 
-                    if (Auth::user()->money() >= $price && Auth::user()->money() >= $mon) {
+                    if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
 
                         FiveGameModels::insert(array(
@@ -448,13 +450,14 @@ class AddTicketController extends Controller
 
         if (Auth::check()) {
             $model = User::where('id', '=', Auth::user()->getId())->first();
-                        
-            $money = strval(intval(Auth::user()->money()) - intval($mon));
-            $model->money = $money;
             
-            $model->save();
-
-            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            if (Auth::user()->money() >= $mon) {
+                $money = strval(intval(Auth::user()->money()) - intval($mon));
+                $model->money = $money;
+                $model->save();
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'У вас недостаточно средств!');
         }
 
         return redirect()->back()->with('info', 'Войдите в аккаунт!');
@@ -492,7 +495,7 @@ class AddTicketController extends Controller
 
                     $price = (intval(PriceGameModels::where('id', '=', 6)->value('price')) * count($arr22)) * $request->input('factor');
 
-                    if (Auth::user()->money() >= $price && Auth::user()->money() >= $mon) {
+                    if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
                         SixGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
@@ -528,13 +531,14 @@ class AddTicketController extends Controller
 
         if (Auth::check()) {
             $model = User::where('id', '=', Auth::user()->getId())->first();
-                        
-            $money = strval(intval(Auth::user()->money()) - intval($mon));
-            $model->money = $money;
             
-            $model->save();
-
-            return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            if (Auth::user()->money() >= $mon) {
+                $money = strval(intval(Auth::user()->money()) - intval($mon));
+                $model->money = $money;
+                $model->save();
+                return redirect()->back()->with('info', 'Вы успешно отправили билет, ждите розыгрыша!');
+            }
+            return redirect()->back()->with('info', 'У вас недостаточно средств!');
         }
 
         return redirect()->back()->with('info', 'Войдите в аккаунт!');

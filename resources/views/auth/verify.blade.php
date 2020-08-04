@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Проверьте свой адрес электронной почты') }}</div>
+                <div class="card-header">{{ __('Подтверждение с помощью Email') }}</div>
 
                 <div class="card-body">
                     @if (session('resent'))

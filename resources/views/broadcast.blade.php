@@ -2,17 +2,22 @@
 @section('content')
 </div>
 </header>
-<main role="main" class="mt-5">
+<main role="main" >
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-3">Тиражи в прямом эфире</h1>
         <p>Смотрите прямые трансляции тиражей государственных лотерей! Выигрышные комбинации определятся прямо на ваших глазах!</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button" >Хочу на шоу</a></p>
+        <p><a class="btn btn-primary btn-lg" href="https://www.youtube.com/channel/UCZcxoworiPEC3ejKEG_ZUPA/" target="_blank"  role="button" >Хочу на шоу</a></p>
       </div>
     </div>
-    <h1 class="display-5 text-center mb-5" >Ближайшие трансляции</h1>
+
+    <div align="center">
+      <iframe style="width: 80vw; height: 80vh" src="https://www.youtube.com/embed/sRh0_W9eQow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h1 class="display-5 text-center mb-5 mt-5" >Ближайшие трансляции</h1>
     <div class="container">
       
       <div class="row">
