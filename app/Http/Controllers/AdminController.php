@@ -36,7 +36,7 @@ class AdminController extends Controller
         return redirect()->back()->with('info', 'Начат розыгрыш распределения');
     }
 
-    public function distribution() {
+    public function distribution(Request $request) {
 
         $fond = JackPotModels::sum('price');
 
