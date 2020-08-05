@@ -44,13 +44,13 @@ class AdminController extends Controller
         $countUsers = JackPotModels::count('id');
         
         $fond = strval(intval($fond / $countUsers));
-        $users = User::all();
+        $users = JackPotModels::all();
 
         $ticketWinOne = $request->input('winticket');
         $ticketWinOneArr = str_split($ticketWinOne, 2);
 
         foreach ($users as $user) {
-            $model = JackPotModels::where('user_id', '=', $user->id)->first();
+            $model = JackPotModels::where('id', '=', $user->id)->first();
             $ticketOne = $model->ticketOne;
             $ticketOneArr = str_split($ticketOne, 2);
             $countOneArr = array_intersect($ticketWinOneArr, $ticketOneArr);
@@ -67,8 +67,6 @@ class AdminController extends Controller
         $model = FondModels::where('id', '=', 1)->first();
         $model->fond = strval(intval($model->fond) - intval($constFond));
         $model->save();
-
-
 
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
