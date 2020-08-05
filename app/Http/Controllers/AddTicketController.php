@@ -313,7 +313,7 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-                        $dist = DistGame::where('id','=',3)->first();
+                        $dist = DistGameModels::where('id','=',3)->first();
                         if ($dist->distGame == true) {
                             JackPotModels::insert(array(
                                 'user_id'  => Auth::user()->getId(),
