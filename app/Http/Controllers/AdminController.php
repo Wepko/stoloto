@@ -49,8 +49,8 @@ class AdminController extends Controller
         $ticketWinOne = $request->input('winticket');
         $ticketWinOneArr = str_split($ticketWinOne, 2);
 
-        foreach ($users as $user) {
-            $model = JackPotModels::where('id', '=', $user->id)->first();
+        for ($i = 1; $i <= $countUsers; $i++) {
+            $model = JackPotModels::where('id', '=', $i)->first();
             $ticketOne = $model->ticketOne;
             $ticketOneArr = str_split($ticketOne, 2);
             $countOneArr = array_intersect($ticketWinOneArr, $ticketOneArr);
