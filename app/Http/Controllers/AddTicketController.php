@@ -313,6 +313,26 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
+                        $dist = DistGame::where('id','=',3)->first();
+                        if ($dist->distGame == true) {
+                            JackPotModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'circulation' => $count + 1,
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
+                            )); 
+    
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
+                        }
                         ThreeGameModels::insert(array(
                             'user_id'  => Auth::user()->getId(),
                             'circulation' => $count + 1,

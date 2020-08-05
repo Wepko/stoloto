@@ -226,6 +226,7 @@ class AdminController extends Controller
         $countTwo = 0;
         $fond = TwoGameModels::sum('price');
         $winMoney = 0;
+        $win = 0;
 
         $tickets = DB::table('twogame')->where('circulation', TwoGameWinModels::max('circulation'))->get();
         $ticketWin = DB::table('twogamewin')->where('circulation', TwoGameWinModels::max('circulation'))->first();
