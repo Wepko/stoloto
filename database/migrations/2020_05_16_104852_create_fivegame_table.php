@@ -18,7 +18,7 @@ class CreateFivegameTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('circulation');
             $table->integer('numberGame')->default(5);
-            $table->string('nameGame')->default("гослото 12 из 24");
+            $table->string('nameGame')->default("12 из 24");
             $table->string('ticketOne');
             $table->biginteger('price')->default(0);
 

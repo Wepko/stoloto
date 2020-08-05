@@ -18,7 +18,7 @@ class CreateThreegameTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('circulation');
             $table->integer('numberGame')->default(3);
-            $table->string('nameGame')->default("гослото 7 из 49");
+            $table->string('nameGame')->default("7 из 49");
             $table->string('ticketOne');
             $table->biginteger('price')->default(0);
 

@@ -17,6 +17,7 @@ class CreateUserwinnerTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->integer('numberGame');
+            $table->string('nameGame');
             $table->integer('circulation');
             //12 category
             $table->string('win');

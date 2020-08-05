@@ -207,6 +207,7 @@ class AdminController extends Controller
             UserWinnerModels::insert(array(
                 'user_id' => $ticket->user_id,
                 'numberGame' => 1,
+                'nameGame' => '4 из 20',
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -288,6 +289,7 @@ class AdminController extends Controller
             UserWinnerModels::insert(array(
                 'user_id' => $ticket->user_id,
                 'numberGame' => 2,
+                'nameGame' => '5 из 36',
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -359,6 +361,7 @@ class AdminController extends Controller
             UserWinnerModels::insert(array(
                 'user_id' => $ticket->user_id,
                 'numberGame' => 3,
+                'nameGame' => '7 из 49',
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -429,6 +432,7 @@ class AdminController extends Controller
             UserWinnerModels::insert(array(
                 'user_id' => $ticket->user_id,
                 'numberGame' => 4,
+                'nameGame' => '6 из 45',
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -497,6 +501,7 @@ class AdminController extends Controller
             UserWinnerModels::insert(array(
                 'user_id' => $ticket->user_id,
                 'numberGame' => 5,
+                'nameGame' => '12 из 24',
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -702,6 +707,7 @@ class AdminController extends Controller
             UserWinnerModels::insert(array(
                 'user_id' => $ticket->user_id,
                 'numberGame' => 6,
+                'nameGame' => 'Рапидо',
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
