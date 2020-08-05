@@ -41,7 +41,7 @@ class AdminController extends Controller
         $fond = JackPotModels::sum('price');
 
         $constFond = $fond;
-        $countUsers = JackPotModels::count('id');
+        $countUsers = JackPotModels::count();
         
         $fond = strval(intval($fond / $countUsers));
         $users = JackPotModels::all();

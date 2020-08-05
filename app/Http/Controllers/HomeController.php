@@ -101,7 +101,9 @@ class HomeController extends Controller
         SixGameTimerModels::where('id', '=', 1)->first()
     ];
 
-      return view('lk', ['userwinner' => UserWinnerModels::all(), 'data' => $datagame])->with('usergame', $usergame);
+        $infodist = JackPotModels::all();
+
+      return view('lk', ['userwinner' => UserWinnerModels::all(), 'data' => $datagame, 'infodist' => $infodist])->with('usergame', $usergame);
   }
 
   public function logout(){
