@@ -140,7 +140,7 @@ function validGame(number) {
 
             if (hRes == 4) {
                 zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">
-                                                            Вы выйграли!
+                Вы проиграли...
                                                         </div>`)
                 document.getElementById('runGame').style.display = 'none'
                 document.getElementById('restartGame').style.display = 'inline'
