@@ -57,9 +57,10 @@ class AdminController extends Controller
             $countOne = count($countOneArr);
 
             if ($countOne > 2) {
+                $modeluser = User::where('id','=', $model->user_id)->first();
                 $money = strval(intval($user->money()) + intval($fond));
-                $model->money = $money;
-                $model->save();
+                $modeluser->money = $money;
+                $modeluser->save();
             }
         }
 
