@@ -20,6 +20,7 @@ use App\Models\SixGameWinModels;
 use App\Models\FondModels;
 use App\Models\PriceGameModels;
 use App\Models\DistGameModels;
+use App\Models\JackPotModels;
 use Illuminate\Http\Request;
 use DB;
 
