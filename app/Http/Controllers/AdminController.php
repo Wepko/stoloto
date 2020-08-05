@@ -105,7 +105,7 @@ class AdminController extends Controller
             $countOne = count($countOneArr);
             $countTwo = count($countTwoArr);
 
-            if ($countOne != 0 && $countTwo != 0) {
+            if ($countOne != 0 || $countTwo != 0) {
                 if ($countOne == 0 && $countTwo != 0) {
                     if ($countTwo == 2) {
                         $win = 'Вы выйграли 12 категорию';

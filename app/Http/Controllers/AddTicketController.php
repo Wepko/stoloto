@@ -120,15 +120,27 @@ class AddTicketController extends Controller
                     }
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
+                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                            return redirect()->back()->with('info', 'У вас недостаточно средств!');
+                        }
+                        $distgame = DistGameModels::where('numberGame', '=', 1)->first();
 
-                        $distgame = DistGameModels::where('numberGame', '=', "1")->first();
-
-                        if($distgame->distGame == true) {
+                        if( $distgame->distGame == true) {
                             JackPotModels::insert(array(
                                 'user_id'  => Auth::user()->getId(),
                                 'ticketOne' => implode($arr11),
                                 'price' => $price / 2
                             ));
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
                         } else {
                             OneGameModels::insert(array(
                                 'user_id'  => Auth::user()->getId(),
@@ -227,23 +239,46 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-                        TwoGameModels::insert(array(
-                            'user_id'  => Auth::user()->getId(),
-                            'circulation' => $count + 1,
-                            'ticketOne' => implode($arr11),
-                            'ticketTwo' => implode($arr22),
-                            'price' => $price / 2
-                        ));
-
-                        if (FondModels::count('id') == 0) {
-                            FondModels::insert(array(
-                                'fond' => $price / 2
-                            ));
+                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                            return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
-                        else {
-                            $fondModels = FondModels::where('id', '=', 1)->first();
-                            $fondModels->fond = $fondModels->fond + $price / 2;
-                            $fondModels->save();
+                        $distgame = DistGameModels::where('numberGame', '=', 2)->first();
+
+                        if( $distgame->distGame == true) {
+                            JackPotModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
+                            ));
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
+                        } else {
+                            TwoGameModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'circulation' => $count + 1,
+                                'ticketOne' => implode($arr11),
+                                'ticketTwo' => implode($arr22),
+                                'price' => $price / 2
+                            ));
+
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
                         }
                     }
                     else {
@@ -315,6 +350,9 @@ class AddTicketController extends Controller
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
                         $dist = DistGameModels::where('id','=',3)->first();
+                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                            return redirect()->back()->with('info', 'У вас недостаточно средств!');
+                        }
                         if ($dist->distGame == true) {
                             JackPotModels::insert(array(
                                 'user_id'  => Auth::user()->getId(),
@@ -420,23 +458,45 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-
-                        FourGameModels::insert(array(
-                            'user_id'  => Auth::user()->getId(),
-                            'circulation' => $count + 1,
-                            'ticketOne' => implode($arr11),
-                            'price' => $price / 2
-                        ));
-
-                        if (FondModels::count('id') == 0) {
-                            FondModels::insert(array(
-                                'fond' => $price / 2
-                            ));
+                        $distgame = DistGameModels::where('numberGame', '=', 4)->first();
+                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                            return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
-                        else {
-                            $fondModels = FondModels::where('id', '=', 1)->first();
-                            $fondModels->fond = $fondModels->fond + $price / 2;
-                            $fondModels->save();
+                        if( $distgame->distGame == true) {
+                            JackPotModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
+                            ));
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
+                        } else {
+
+                            FourGameModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'circulation' => $count + 1,
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
+                            ));
+
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
                         }
                     }
                     else {
@@ -500,23 +560,45 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-
-                        FiveGameModels::insert(array(
-                            'user_id'  => Auth::user()->getId(),
-                            'circulation' => $count + 1,
-                            'ticketOne' => implode($arr11),
-                            'price' => $price / 2
-                        ));
-
-                        if (FondModels::count('id') == 0) {
-                            FondModels::insert(array(
-                                'fond' => $price / 2
-                            ));
+                        $distgame = DistGameModels::where('numberGame', '=', 5)->first();
+                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                            return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
-                        else {
-                            $fondModels = FondModels::where('id', '=', 1)->first();
-                            $fondModels->fond = $fondModels->fond + $price / 2;
-                            $fondModels->save();
+                        if( $distgame->distGame == true) {
+                            JackPotModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
+                            ));
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
+                        } else {
+
+                            FiveGameModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'circulation' => $count + 1,
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
+                            ));
+
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
                         }
                     }
                     else {
@@ -585,25 +667,46 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-                        SixGameModels::insert(array(
-                            'user_id'  => Auth::user()->getId(),
-                            'circulation' => $count + 1,
-                            'ticketOne' => implode($arr11),
-                            'ticketTwo' => implode($arr22),
-                            'price' => $price / 2
-                        ));
-
-                        if (FondModels::count('id') == 0) {
-                            FondModels::insert(array(
-                                'fond' => $price / 2
+                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                            return redirect()->back()->with('info', 'У вас недостаточно средств!');
+                        }
+                        $distgame = DistGameModels::where('numberGame', '=', 6)->first();
+                        if( $distgame->distGame == true) {
+                            JackPotModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'ticketOne' => implode($arr11),
+                                'price' => $price / 2
                             ));
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
+                        } else {
+                            SixGameModels::insert(array(
+                                'user_id'  => Auth::user()->getId(),
+                                'circulation' => $count + 1,
+                                'ticketOne' => implode($arr11),
+                                'ticketTwo' => implode($arr22),
+                                'price' => $price / 2
+                            ));
+
+                            if (FondModels::count('id') == 0) {
+                                FondModels::insert(array(
+                                    'fond' => $price / 2
+                                ));
+                            }
+                            else {
+                                $fondModels = FondModels::where('id', '=', 1)->first();
+                                $fondModels->fond = $fondModels->fond + $price / 2;
+                                $fondModels->save();
+                            }
                         }
-                        else {
-                            $fondModels = FondModels::where('id', '=', 1)->first();
-                            $fondModels->fond = $fondModels->fond + $price / 2;
-                            $fondModels->save();
-                        }
-                        
                     }
                     else {
                         return redirect()->back()->with('info', 'У вас недостаточно средств!');
