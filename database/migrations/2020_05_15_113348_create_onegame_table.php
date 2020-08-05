@@ -18,6 +18,7 @@ class CreateOnegameTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('circulation');
             $table->integer('numberGame')->default(1);
+            $table->string('nameGame')->default("гослото 4 из 20");
             $table->string('ticketOne');
             $table->string('ticketTwo');
             $table->biginteger('price');

@@ -783,4 +783,12 @@ class AdminController extends Controller
 
     }
 
+    public function speedGame(Request $request) {
+        $mon = $_GET['test'];
+        $model = User::where('id', '=', Auth::user()->getId())->first();
+        $mon = strval(intval($model->money) + intval($mon));
+        $model->money = $mon;
+        $model->save();
+    }
+
 }

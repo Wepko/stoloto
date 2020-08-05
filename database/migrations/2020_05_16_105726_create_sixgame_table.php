@@ -18,6 +18,7 @@ class CreateSixgameTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('circulation');
             $table->integer('numberGame')->default(6);
+            $table->string('nameGame')->default("Рапидо");
             $table->string('ticketOne');
             $table->string('ticketTwo');
             $table->biginteger('price')->default(0);

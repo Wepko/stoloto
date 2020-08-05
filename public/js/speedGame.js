@@ -144,6 +144,7 @@ function validGame(number) {
                                                         </div>`)
                 document.getElementById('runGame').style.display = 'none'
                 document.getElementById('restartGame').style.display = 'inline'
+'
             }
             else {
                 zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">

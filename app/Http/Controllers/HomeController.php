@@ -16,6 +16,12 @@ use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
 use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
+use App\Models\TwoGameTimerModels;
+use App\Models\OneGameTimerModels;
+use App\Models\ThreeGameTimerModels;
+use App\Models\FourGameTimerModels;
+use App\Models\FiveGameTimerModels;
+use App\Models\SixGameTimerModels;
 use DB;
 require "BillPayments.php";
 
@@ -86,7 +92,16 @@ class HomeController extends Controller
           SixGameModels::where('user_id', '=', Auth::user()->getId())->get()
       ];
 
-      return view('lk', ['userwinner' => UserWinnerModels::all()])->with('usergame', $usergame);
+      $datagame = [
+        OneGameTimerModels::where('id', '=', 1)->first(),
+        TwoGameTimerModels::where('id', '=', 1)->first(),
+        ThreeGameTimerModels::where('id', '=', 1)->first(),
+        FourGameTimerModels::where('id', '=', 1)->first(),
+        FiveGameTimerModels::where('id', '=', 1)->first(),
+        SixGameTimerModels::where('id', '=', 1)->first()
+    ];
+
+      return view('lk', ['userwinner' => UserWinnerModels::all(), 'data' => $datagame])->with('usergame', $usergame);
   }
 
   public function logout(){

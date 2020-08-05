@@ -18,6 +18,8 @@ class OneGameModels extends Model
         'id',
         'user_id',
         'circulation',
+        'numberGame',
+        'nameGame',
         'ticketOne',
         'ticketTwo',
         'price'

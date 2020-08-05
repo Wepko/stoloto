@@ -22,25 +22,25 @@
       
       <div class="row">
         <div class="col-md-4">
-          <h2 >Гослото</h2>
+          <h2 >Гослото 4 из 20</h2>
           <p >Теперь вы знаете, за что играете!
-            Выиграйте 200 000 рублей,
-            угадав 5 чисел!</p>
-          <p><a class="btn btn-light" href="#" role="button">Билет от 100р</a></p>
+            Выиграйте суперприз,
+            угадав все числа!</p>
+          <p><a class="btn btn-light" href="{{route('one-game')}}" role="button">Билет от 200р</a></p>
         </div>
         <div class="col-md-4">
             <h2 >Гослото</h2>
             <p >Теперь вы знаете, за что играете!
-              Выиграйте 200 000 рублей,
-              угадав 5 чисел!</p>
-            <p><a class="btn btn-light" href="#" role="button">Билет от 200р</a></p>
+              Выиграйте суперприз,
+              угадав 6 чисел!</p>
+            <p><a class="btn btn-light" href="{{route('two-game')}}" role="button">Билет от 40р</a></p>
           </div>
           <div class="col-md-4">
             <h2 >Гослото</h2>
             <p >Теперь вы знаете, за что играете!
-              Выиграйте 200 000 рублей,
-              угадав 5 чисел!</p>
-            <p><a class="btn btn-light" href="#" role="button">Билет от 20р</a></p>
+              Выиграйте суперприз,
+              угадав 7 чисел!</p>
+            <p><a class="btn btn-light" href="{{route('three-game')}}" role="button">Билет от 25р</a></p>
           </div>
       </div>
 

@@ -57,7 +57,7 @@
         @if($userwinner)
           @forelse ($userwinner as $user)
             @if ($user->user_id == Auth::user()->getId())
-              <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра №{{$user->numberGame}}, Тираж №{{$user->circulation}}<br> Результат: {{ $user->win }}<br><br></h6>
+              <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра {{$user->nameGame}}<br>Тираж №{{$user->circulation}}<br> Результат: {{ $user->win }}<br><br></h6>
             @endif
           @empty  
           <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Результатов пока нету</h6>
@@ -73,7 +73,7 @@
                 @continue
               @endempty
                 @forelse ($usergame[$i] as $user)
-                  <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Номер игры {{$user->numberGame}}, Номер билета {{$user->id}}<br>Тираж №{{$user->circulation}}<br> Поле1: {{ $user->ticketOne }} <br> Поле2: {{ $user->ticketTwo ?? ' Поля не существует'}}<br><br></h6>
+                    <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра {{$user->nameGame}}, Номер билета {{$user->id}}<br>Тираж №{{$user->circulation}}<br> Стоимость {{ $user->price * 2 }} руб<br> Поле1: {{ $user->ticketOne }} <br> Поле2: {{ $user->ticketTwo ?? ' Поля не существует'}}<br>Дата розыгрыша: {{ $data[$user->numberGame - 1]->time ?? 'Скоро'}}<br><br></h6>
                 @empty  
                 @endforelse
             @endfor
