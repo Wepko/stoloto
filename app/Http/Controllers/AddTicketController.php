@@ -120,7 +120,7 @@ class AddTicketController extends Controller
                     }
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                        if ($price * $request->input('valid') > Auth::user()->money()) {
                             return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
                         $distgame = DistGameModels::where('numberGame', '=', 1)->first();
@@ -239,7 +239,7 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                        if ($price * $request->input('valid') > Auth::user()->money()) {
                             return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
                         $distgame = DistGameModels::where('numberGame', '=', 2)->first();
@@ -350,7 +350,7 @@ class AddTicketController extends Controller
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
                         $dist = DistGameModels::where('id','=',3)->first();
-                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                        if ($price * $request->input('valid') > Auth::user()->money()) {
                             return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
                         if ($dist->distGame == true) {
@@ -459,7 +459,7 @@ class AddTicketController extends Controller
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
                         $distgame = DistGameModels::where('numberGame', '=', 4)->first();
-                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                        if ($price * $request->input('valid') > Auth::user()->money()) {
                             return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
                         if( $distgame->distGame == true) {
@@ -561,7 +561,7 @@ class AddTicketController extends Controller
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
                         $distgame = DistGameModels::where('numberGame', '=', 5)->first();
-                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                        if ($price * $request->input('valid') > Auth::user()->money()) {
                             return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
                         if( $distgame->distGame == true) {
@@ -667,7 +667,7 @@ class AddTicketController extends Controller
 
                     if (Auth::user()->money() >= $price) {
                         $mon = $mon + $price;
-                        if ($price * $request->input('valid') >= Auth::user()->money()) {
+                        if ($price * $request->input('valid') > Auth::user()->money()) {
                             return redirect()->back()->with('info', 'У вас недостаточно средств!');
                         }
                         $distgame = DistGameModels::where('numberGame', '=', 6)->first();
