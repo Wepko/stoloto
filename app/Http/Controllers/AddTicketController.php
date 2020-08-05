@@ -318,7 +318,6 @@ class AddTicketController extends Controller
                         if ($dist->distGame == true) {
                             JackPotModels::insert(array(
                                 'user_id'  => Auth::user()->getId(),
-                                'circulation' => $count + 1,
                                 'ticketOne' => implode($arr11),
                                 'price' => $price / 2
                             )); 
