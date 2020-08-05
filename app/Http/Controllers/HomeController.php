@@ -16,6 +16,7 @@ use App\Models\ThreeGameModels;
 use App\Models\FourGameModels;
 use App\Models\FiveGameModels;
 use App\Models\SixGameModels;
+use App\Models\JackPotModels;
 use App\Models\TwoGameTimerModels;
 use App\Models\OneGameTimerModels;
 use App\Models\ThreeGameTimerModels;
