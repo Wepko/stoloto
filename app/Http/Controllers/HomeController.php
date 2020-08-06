@@ -23,6 +23,12 @@ use App\Models\ThreeGameTimerModels;
 use App\Models\FourGameTimerModels;
 use App\Models\FiveGameTimerModels;
 use App\Models\SixGameTimerModels;
+use App\Models\TwoGameWinModels;
+use App\Models\OneGameWinModels;
+use App\Models\ThreeGameWinModels;
+use App\Models\FourGameWinModels;
+use App\Models\FiveGameWinModels;
+use App\Models\SixGameWinModels;
 use DB;
 require "BillPayments.php";
 
@@ -93,6 +99,15 @@ class HomeController extends Controller
           SixGameModels::where('user_id', '=', Auth::user()->getId())->get()
       ];
 
+      $userwingame = [
+        OneGameWinModels::all(),
+        TwoGameWinModels::all(),
+        ThreeGameWinModels::all(),
+        FourGameWinModels::all(),
+        FiveGameWinModels::all(),
+        SixGameWinModels::all()
+    ];
+
       $datagame = [
         OneGameTimerModels::where('id', '=', 1)->first(),
         TwoGameTimerModels::where('id', '=', 1)->first(),
@@ -104,7 +119,7 @@ class HomeController extends Controller
 
         $infodist = JackPotModels::all();
 
-      return view('lk', ['userwinner' => UserWinnerModels::all(), 'data' => $datagame, 'infodist' => $infodist])->with('usergame', $usergame);
+      return view('lk', ['userwinner' => UserWinnerModels::all(), 'userwingame' => $userwingame, 'data' => $datagame, 'infodist' => $infodist])->with('usergame', $usergame);
   }
 
   public function logout(){

@@ -68,6 +68,8 @@ class AdminController extends Controller
         $model->fond = strval(intval($model->fond) - intval($constFond));
         $model->save();
 
+        JackPotModels::delete();
+
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
 
@@ -207,6 +209,8 @@ class AdminController extends Controller
                 'user_id' => $ticket->user_id,
                 'numberGame' => 1,
                 'nameGame' => '4 из 20',
+                'ticketOne' => $ticketOne,
+                'ticketTwo' => $ticketTwo,
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -289,6 +293,8 @@ class AdminController extends Controller
                 'user_id' => $ticket->user_id,
                 'numberGame' => 2,
                 'nameGame' => '5 из 36',
+                'ticketOne' => $ticketOne,
+                'ticketTwo' => $ticketTwo,
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -361,6 +367,7 @@ class AdminController extends Controller
                 'user_id' => $ticket->user_id,
                 'numberGame' => 3,
                 'nameGame' => '7 из 49',
+                'ticketOne' => $ticketOne,
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -432,6 +439,7 @@ class AdminController extends Controller
                 'user_id' => $ticket->user_id,
                 'numberGame' => 4,
                 'nameGame' => '6 из 45',
+                'ticketOne' => $ticketOne,
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -501,6 +509,7 @@ class AdminController extends Controller
                 'user_id' => $ticket->user_id,
                 'numberGame' => 5,
                 'nameGame' => '12 из 24',
+                'ticketOne' => $ticketOne,
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));
@@ -707,6 +716,8 @@ class AdminController extends Controller
                 'user_id' => $ticket->user_id,
                 'numberGame' => 6,
                 'nameGame' => 'Рапидо',
+                'ticketOne' => $ticketOne,
+                'ticketTwo' => $ticketTwo,
                 'circulation' => $ticket->circulation,
                 'win' => $win
             ));

@@ -209,9 +209,6 @@ class Routing {
     }
 }
 
-function help() {
-  alert("Подробности")
-}
 
 //new Routing('/games/game5_36.html', game)
 
