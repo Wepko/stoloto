@@ -85,10 +85,10 @@
             @if($infodist)
               @forelse ($infodist as $user)
                 @if ($user->user_id == Auth::user()->getId())
-                  <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра {{$user->id}}<br>Поле1: {{$user->ticketOne}}<br><br></h6>
+          <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра распределения №{{$user->id}}<br>Поле: {{$user->ticketOne}}<br>Цена {{ $user->price * 2}} руб.<br><br></h6>
                 @endif
               @empty  
-              <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Результатов пока нету</h6>
+                <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Результатов пока нету</h6>
               @endforelse
             @else
               <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>     
