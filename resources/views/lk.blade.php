@@ -53,49 +53,71 @@
           </div>
         </nav>
         <div class="tab-content w-100 p-4 border border-top-0 text-center" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" style="display: flex; flex-wrap: wrap; flex-basis: 30%; justify-content: space-around" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="tab-pane fade show active" id="nav-home"  role="tabpanel" aria-labelledby="nav-home-tab">
           @if($userwinner)
+            <div style="display: flex; flex-wrap: wrap; flex-basis: 30%; justify-content: space-around">
             @forelse ($userwinner as $user)
               @if ($user->user_id == Auth::user()->getId())
+              <div>
                 <div class="card mb-4" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Игра {{$user->nameGame}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Тираж №{{$user->circulation}}</h6>
-                    <p class="card-text">Поле 1: <label class="ticketOne">{{ $user->ticketOne}}</label><br>Поле 2: {{ $user->ticketTwo ?? 'поля не существует'}}<br>Выйгрышное поле<br> <label class="winTicketOne">{{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketOne ?? 'поля не существует'}}</label> {{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketTwo ?? 'поля не существует'}}<br> Результат: {{ $user->win }}</p>
+                    <p class="card-text">Поле 1: <label class="ticketOne">{{ $user->ticketOne}}</label><br>Поле 2: {{ $user->ticketTwo ?? 'поля не существует'}}<br>Выйгрышное поле: <label class="winTicketOne">{{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketOne ?? 'поля не существует'}}</label> {{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketTwo ?? 'поля не существует'}}<br> Результат: {{ $user->win }}</p>
                   </div>
                 </div>
+              </div>
+                {{--<h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left"><br>Тираж №{{$user->circulation}}<br>Поле 1: <label class="ticketOne">{{ $user->ticketOne}}</label><br>Поле 2: {{ $user->ticketTwo ?? 'поля не существует'}}<br>Выйгрышное поле: <label class="winTicketOne">{{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketOne ?? 'поля не существует'}}</label> {{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketTwo ?? 'поля не существует'}}<br> Результат: {{ $user->win }}<br><br></h6>--}}
               @endif
             @empty  
             <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Результатов пока нету</h6>
             @endforelse
+            </div>
           @else
             <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>     
           @endif     
           </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="tab-pane fade"  id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
             @if($usergame)
+            <div style="display: flex; flex-wrap: wrap; flex-basis: 30%; justify-content: space-around">
               @for ($i = 0; $i < 6; $i++)
                 @empty($usergame[$i])
                   @continue
                 @endempty
                   @forelse ($usergame[$i] as $user)
-                      <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра {{$user->nameGame}}, Номер билета {{$user->id}}<br>Тираж №{{$user->circulation}}<br> Стоимость {{ $user->price * 2 }} руб<br> Поле1: {{ $user->ticketOne }} <br> Поле2: {{ $user->ticketTwo ?? ' Поля не существует'}}<br>Дата розыгрыша: {{ $data[$user->numberGame - 1]->time ?? 'Скоро'}}<br><br></h6>
+                    <div class="card mb-4" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">Игра {{$user->nameGame}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Тираж №{{$user->circulation}}</h6>
+                        <p class="card-text">Стоимость {{ $user->price * 2 }} руб<br> Поле1: {{ $user->ticketOne }} <br> Поле2: {{ $user->ticketTwo ?? ' Поля не существует'}}<br>Дата розыгрыша: {{ $data[$user->numberGame - 1]->time ?? 'Скоро'}}</p>
+                      </div>
+                    </div>
+                      {{--<h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра {{$user->nameGame}}, Номер билета {{$user->id}}<br>Тираж №{{$user->circulation}}<br> Стоимость {{ $user->price * 2 }} руб<br> Поле1: {{ $user->ticketOne }} <br> Поле2: {{ $user->ticketTwo ?? ' Поля не существует'}}<br>Дата розыгрыша: {{ $data[$user->numberGame - 1]->time ?? 'Скоро'}}<br><br></h6>--}}
                   @empty  
                   @endforelse
               @endfor
+                  </div>
             @else
               <h6 class="card-subtitle  card-text mb-2 text-muted">В вашей корзине нет билетов.<br> Участвуйте в тиражах, выигрывайте чаще</h6>    
             @endif     
           </div> 
           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             @if($infodist)
+            <div style="display: flex; flex-wrap: wrap; flex-basis: 30%; justify-content: space-around">
               @forelse ($infodist as $user)
                 @if ($user->user_id == Auth::user()->getId())
-                  <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра распределения №{{$user->id}}<br>Поле: {{$user->ticketOne}}<br>Цена {{ $user->price * 2}} руб.<br><br></h6>
+                  <div class="card mb-4" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Игра распределения №{{$user->id}}</h5>
+                      <p class="card-text">Поле: {{$user->ticketOne}}<br>Цена {{ $user->price * 2}} руб.</p>
+                    </div>
+                  </div>
+                  {{--<h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра распределения №{{$user->id}}<br>Поле: {{$user->ticketOne}}<br>Цена {{ $user->price * 2}} руб.<br><br></h6>--}}
                 @endif
               @empty  
                 <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Результатов пока нету</h6>
               @endforelse
+            </div>
             @else
               <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>     
             @endif    
@@ -103,6 +125,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
   <script src="{{ asset('js/win.js')}}"></script>
