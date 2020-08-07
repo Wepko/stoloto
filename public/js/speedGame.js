@@ -120,10 +120,11 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
-            zoneRes.insertAdjacentHTML('afterbegin',
+            /*zoneRes.insertAdjacentHTML('afterbegin',
             `<div class="alert alert-success text-center" role="alert">
                 Вы проиграли...
-            </div>`)
+            </div>`)*/
+            alert('Вы проиграли...')
             document.getElementById('runGame').style.display = 'none'
             document.getElementById('restartGame').style.display = 'inline'
         }
@@ -139,17 +140,29 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">
-                Вы проиграли...
-                                                        </div>`)
+                /*zoneRes.insertAdjacentHTML('afterbegin',`<div class="remodal modal-win" data-remodal-id="modal">
+                <div class="modal-win__container">
+                    <div class="modal-win__header"><h1>ПОБЕДА!</h1></div>
+                    <div class="modal-win__content">
+                        <p>Поздравляем, Вы выиграли!</p>
+                        <div>100 рублей</div>
+                    </div>
+                    <div class="modal-win__footer">
+                        <a href="" class="btn-access">Забрал приз</a>
+                        <a href="" class="btn-access">Играть еще</a>
+                    </div>
+                </div>
+            </div>`)*/
+            alert('Вы проиграли...')
                 document.getElementById('runGame').style.display = 'none'
                 document.getElementById('restartGame').style.display = 'inline'
 
             }
             else {
-                zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">
+                /*zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">
                                                             Вы проиграли...
-                                                        </div>`)
+                                                        </div>`)*/
+                alert('Вы проиграли...')
                 document.getElementById('runGame').style.display = 'none'
                 document.getElementById('restartGame').style.display = 'inline'
             }
