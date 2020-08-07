@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-sm-12 col-lg-8 offset-sm-0 offset-lg-5">
                 <div class="start-game">
-                    <h2 class="start-game__title">Золотая антилопа 4 из 20</h2>
-                    <h3 class="start-game__title-discription">Стоимость одной игры от 200р </h3>
-                    <p class="start-game__discription">В этой игре вам нужно отметить от 4 до 11 неповторяющихся чисел в первом 
+                    <h2 class="start-game__title">Золотая антилопа 5 из 36</h2>
+                    <h3 class="start-game__title-discription">Стоимость одной игры от 40р </h3>
+                    <p class="start-game__discription">В этой игре вам нужно отметить от 5 до 11 неповторяющихся чисел в первом 
                         поле и от 1 до 4 во втором. Чем больше чисел отмечено, тем выше вероятность 
                         выигрыша. Вы можете заполнить один билет или сразу несколько. <br><br>
                         С помощью кнопки «Автоматически» можно выбрать случайную комбинацию 
