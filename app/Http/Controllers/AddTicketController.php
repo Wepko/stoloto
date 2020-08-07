@@ -98,6 +98,11 @@ class AddTicketController extends Controller
             
            
             $count = DB::table('onegamewin')->max('circulation');
+
+            if (count($arr11 > 7))
+                return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
+            if (count($arr22 > 7))
+                return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             
             if (count($arr11) > 3 && count($arr22) > 3 ) {
                 if (Auth::check()) {
@@ -223,6 +228,9 @@ class AddTicketController extends Controller
             $arr22 = array_diff($arr2, array(" "));
 
             $count = DB::table('twogamewin')->max('circulation');
+
+            if (count($arr11 > 11))
+                return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             
             if (count($arr11) > 4 && count($arr22) > 0) {
                 if (Auth::check()) { 
@@ -333,6 +341,9 @@ class AddTicketController extends Controller
             $arr11 = array_diff($arr1, array(" "));
 
             $count = DB::table('threegamewin')->max('circulation');
+
+            if (count($arr11 > 14))
+                return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             
             if (count($arr11) > 6 && count($arr11) < 15) {
                 if (Auth::check()) {
@@ -442,6 +453,9 @@ class AddTicketController extends Controller
             $arr11 = array_diff($arr1, array(" "));
 
             $count = DB::table('fourgamewin')->max('circulation');
+
+            if (count($arr11 > 13))
+                return redirect()->back()->with('info', 'Вы не выбрали номера билетов!');
             
             if (count($arr11) > 5 && count($arr11) < 14) {
                 if (Auth::check()) {
@@ -552,8 +566,9 @@ class AddTicketController extends Controller
             $arr11 = array_diff($arr1, array(" "));
 
             $count = DB::table('fivegamewin')->max('circulation');
+
             
-            if (count($arr11) > 11) {
+            if (count($arr11) == 12) {
                 if (Auth::check()) {
 
                     $price = intval(PriceGameModels::where('id', '=', 5)->value('price')) * $request->input('factor');
