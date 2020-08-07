@@ -353,11 +353,10 @@
             
             const addTicket = game.querySelector('#addTicket')
             addTicket.addEventListener('click', (e) => {
-                if (document.getElementById('validTicketNumber').value > 5)
+                if (document.getElementById('validTicketNumber').value < 6)
                     document.getElementById('validTicketNumber').value++
                 e.preventDefault()
                 this.doubleTable() 
-                console.log(document.getElementById('validTicketNumber').value)
             })
         }
 
