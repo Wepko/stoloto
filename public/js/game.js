@@ -357,6 +357,7 @@
                     document.getElementById('validTicketNumber').value++
                 e.preventDefault()
                 this.doubleTable() 
+                console.log(document.getElementById('validTicketNumber').value)
             })
         }
 
