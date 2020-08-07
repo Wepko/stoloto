@@ -53,11 +53,17 @@
           </div>
         </nav>
         <div class="tab-content w-100 p-4 border border-top-0 text-center" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="tab-pane fade show active" id="nav-home" style="display: flex; flex-wrap: wrap; flex-basis: 30%; justify-content: space-around" role="tabpanel" aria-labelledby="nav-home-tab">
           @if($userwinner)
             @forelse ($userwinner as $user)
               @if ($user->user_id == Auth::user()->getId())
-                <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">Игра {{$user->nameGame}}<br>Тираж №{{$user->circulation}}<br>Поле 1: <label id="ticketOne">{{ $user->ticketOne}}</label><br>Поле 2: {{ $user->ticketTwo ?? 'поля не существует'}}<br>Выйгрышное поле: <label id="winTicketOne">{{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketOne ?? 'поля не существует'}}</label> {{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketTwo ?? 'поля не существует'}}<br> Результат: {{ $user->win }}<br><br></h6>
+                <div class="card mb-4" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Игра {{$user->nameGame}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Тираж №{{$user->circulation}}</h6>
+                    <p class="card-text">Поле 1: <label class="ticketOne">{{ $user->ticketOne}}</label><br>Поле 2: {{ $user->ticketTwo ?? 'поля не существует'}}<br>Выйгрышное поле<br> <label class="winTicketOne">{{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketOne ?? 'поля не существует'}}</label> {{ $userwingame[$user->numberGame - 1][$user->circulation - 1]->ticketTwo ?? 'поля не существует'}}<br> Результат: {{ $user->win }}</p>
+                  </div>
+                </div>
               @endif
             @empty  
             <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Результатов пока нету</h6>
@@ -97,7 +103,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <script src="{{ asset('js/win.js')}}"></script>

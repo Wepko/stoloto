@@ -68,7 +68,11 @@ class AdminController extends Controller
         $model->fond = strval(intval($model->fond) - intval($constFond));
         $model->save();
 
-        JackPotModels::delete();
+        $rm = DistGameModels::where('distGame', '=', true)->first();
+        $rm->distGame = false;
+        $rm->save();
+
+        JackPotModels::truncate();
 
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
@@ -219,7 +223,7 @@ class AdminController extends Controller
         
         $models = DistGameModels::where('id','=',1)->first();
         $models->stopGame = true;
-        $model->save();
+        $models->save();
 
         return redirect()->back()->with('info', 'Розыгрыш успешно прошел!');
     }
