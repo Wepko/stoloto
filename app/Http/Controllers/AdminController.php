@@ -80,12 +80,7 @@ class AdminController extends Controller
 
     public function goWinnerOneGame() {
 
-        $countOne = 0;
-        $countTwo = 0;
-        $win = 0;
-
         $fond = OneGameModels::sum('price');
-        $winMoney = 0;
 
         $tickets = DB::table('onegame')->where('circulation', OneGameWinModels::max('circulation'))->get();
         $ticketWin = DB::table('onegamewin')->where('circulation', OneGameWinModels::max('circulation'))->first();
@@ -94,7 +89,10 @@ class AdminController extends Controller
         $ticketWinTwo = $ticketWin->ticketTwo;
 
         foreach ($tickets as $ticket) {
-
+            $countOne = 0;
+            $countTwo = 0;
+            $win = 0;
+            $winMoney = 0;
             //ticket user
             $ticketOne = $ticket->ticketOne;
             $ticketTwo = $ticket->ticketTwo;
@@ -230,12 +228,7 @@ class AdminController extends Controller
 
     public function goWinnerTwoGame() {
 
-        $countOne = 0;
-        $countTwo = 0;
         $fond = TwoGameModels::sum('price');
-        $winMoney = 0;
-        $win = 0;
-
         $tickets = DB::table('twogame')->where('circulation', TwoGameWinModels::max('circulation'))->get();
         $ticketWin = DB::table('twogamewin')->where('circulation', TwoGameWinModels::max('circulation'))->first();
 
@@ -243,7 +236,10 @@ class AdminController extends Controller
         $ticketWinTwo = $ticketWin->ticketTwo;
 
         foreach ($tickets as $ticket) {
-
+            $countOne = 0;
+            $countTwo = 0;
+            $winMoney = 0;
+            $win = 0;
             //ticket user
             $ticketOne = $ticket->ticketOne;
             $ticketTwo = $ticket->ticketTwo;
@@ -312,12 +308,8 @@ class AdminController extends Controller
 
     public function goWinnerThreeGame() {
         
-        $countOne = 0;
-        $win = 0;
-
         $fond = ThreeGameModels::sum('price');
-        $winMoney = 0;
-
+        
         $tickets = DB::table('threegame')->where('circulation', ThreeGameWinModels::max('circulation'))->get();
         $ticketWin = DB::table('threegamewin')->where('circulation', ThreeGameWinModels::max('circulation'))->first();
         
@@ -325,6 +317,9 @@ class AdminController extends Controller
         $ticketWinOneArr = str_split($ticketWinOne, 2);
 
         foreach ($tickets as $ticket) {
+            $winMoney = 0;
+            $win = "";
+            $countOne = 0;
 
             $ticketOne = $ticket->ticketOne;
             $ticketOneArr = str_split($ticketOne, 2);
@@ -385,12 +380,8 @@ class AdminController extends Controller
 
     public function goWinnerFourGame() {
 
-        $countOne = 0;
-        $win = 0;
-
         $fond = FourGameModels::sum('price');
-        $winMoney = 0;
-
+      
         $tickets = DB::table('fourgame')->where('circulation', FourGameWinModels::max('circulation'))->get();
         $ticketWin = DB::table('fourgamewin')->where('circulation', FourGameWinModels::max('circulation'))->first();
         
@@ -398,6 +389,9 @@ class AdminController extends Controller
         $ticketWinOneArr = str_split($ticketWinOne, 2);
 
         foreach ($tickets as $ticket) {
+            $countOne = 0;
+            $win = 0;
+            $winMoney = 0;
 
             $ticketOne = $ticket->ticketOne;
                 
@@ -456,12 +450,8 @@ class AdminController extends Controller
 
     public function goWinnerFiveGame() {
 
-        $countOne = 0;
-        $win = 0;
-
         $fond = FiveGameModels::sum('price');
-        $winMoney = 0;
-
+      
         $tickets = DB::table('fivegame')->where('circulation', FiveGameWinModels::max('circulation'))->get();
         $ticketWin = DB::table('fivegamewin')->where('circulation', FiveGameWinModels::max('circulation'))->first();
         
@@ -469,6 +459,9 @@ class AdminController extends Controller
         $ticketWinOneArr = str_split($ticketWinOne, 2);
 
         foreach ($tickets as $ticket) {
+            $countOne = 0;
+            $win = 0;
+            $winMoney = 0;
 
             $ticketOne = $ticket->ticketOne;
                 
@@ -526,13 +519,8 @@ class AdminController extends Controller
 
     public function goWinnerSixGame() {
 
-        $countOne = 0;
-        $countTwo = 0;
-        $win = 0;
-
         $fond = SixGameModels::sum('price');
-        $winMoney = 0;
-
+        
         $tickets = DB::table('sixgame')->where('circulation', SixGameWinModels::max('circulation'))->get();
         $ticketWin = DB::table('sixgamewin')->where('circulation', SixGameWinModels::max('circulation'))->first();
 
@@ -540,6 +528,11 @@ class AdminController extends Controller
         $ticketWinTwo = $ticketWin->ticketTwo;
 
         foreach ($tickets as $ticket) {
+
+            $countOne = 0;
+            $countTwo = 0;
+            $winMoney = 0;
+            $win = 0;
 
             //ticket user
             $ticketOne = $ticket->ticketOne;
