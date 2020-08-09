@@ -121,10 +121,7 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
-            console.log('lose')
             modal.open()
-            //document.getElementById('runGame').style.display = 'none'
-           // document.getElementById('restartGame').style.display = 'inline'
         }
     } else {
         if (h == 5) {
@@ -138,19 +135,30 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                
-                console.log('win')
+                const url = 'https://win-1.ru/speed-game/win'
+
+                const data = { 
+                    res : true
+                }
+
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    const json = await response.text()
+                    console.log('Успех:', JSON.stringify(json))
+                } catch (error) {
+                console.error('Ошибка:', error)
+                }
                 modal2.open()
-              //  document.getElementById('runGame').style.display = 'none'
-                //document.getElementById('restartGame').style.display = 'inline'
 
             }
             else {
-               
-                console.log('lose')
                 modal.open()
-                //document.getElementById('runGame').style.display = 'none'
-               // document.getElementById('restartGame').style.display = 'inline'
             }
             
         }

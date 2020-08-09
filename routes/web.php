@@ -257,7 +257,7 @@ Route::prefix('/games')->group( function () {
     return view('games.speed-game');
   })->name('speed-game');
 
-  Route::get('/speed-game/win', 'AdminController@speedGame')->name('speedGame');
+  Route::post('/speed-game/win', 'AdminController@speedGame')->name('speedGame');
 
   Route::get('moment-game', function (){
     return view('games.speed-game');
