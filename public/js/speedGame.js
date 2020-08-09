@@ -134,26 +134,17 @@ function validGame(number) {
 
             if (hRes == 4) {
                 var xhr = new XMLHttpRequest();
-                var json = JSON.stringify({
-                  res: true
-                });
                 xhr.open("POST", 'https://win-1.ru/speed-game/win', true)
-                xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-                xhr.onreadystatechange = ...;
-                xhr.send(json);
+                xhr.send();
                 modal2.open()
 
             }
             else {
                 var xhr = new XMLHttpRequest();
-                var json = JSON.stringify({
-                  res: true
-                });
                 xhr.open("POST", 'https://win-1.ru/speed-game/win', true)
-                xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-                xhr.onreadystatechange = ...;
-                xhr.send(json);
-                modal2.open()
+                xhr.send();
+                console.log("win")
+                modal.open()
             }
             
         }
