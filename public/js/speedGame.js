@@ -133,7 +133,25 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                
+                const url = 'https://win-1.ru/speed-game/win'
+
+                const data = { 
+                    res : true
+                }
+
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    const json = await response.text()
+                    console.log('Успех:', JSON.stringify(json))
+                } catch (error) {
+                console.error('Ошибка:', error)
+                }
                 modal2.open()
 
             }
