@@ -117,11 +117,19 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
-            var request = new XMLHttpRequest(); // Создвём объект запроса
-
-            request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
-            request.send(null); // Выполняем отправку 
-         
+            $.ajax({
+                type: 'get',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/games/speed-game/win',
+                data: {
+                    test: true
+                },
+                success: function() {
+                    
+                }
+            });
             modal.open()
 
         }
@@ -137,20 +145,36 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                var request = new XMLHttpRequest(); // Создвём объект запроса
-
-                request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
-                request.send(null); // Выполняем отправку 
-             
+                $.ajax({
+                    type: 'get',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: '/games/speed-game/win',
+                    data: {
+                        test: true
+                    },
+                    success: function() {
+                        
+                    }
+                });
                 modal2.open()
 
             }
             else {
-                var request = new XMLHttpRequest(); // Создвём объект запроса
-                data
-                request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
-                request.send(null); // Выполняем отправку 
-             
+                $.ajax({
+                    type: 'get',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: '/games/speed-game/win',
+                    data: {
+                        test: true
+                    },
+                    success: function() {
+                        
+                    }
+                });
                 modal.open()
             }
             
