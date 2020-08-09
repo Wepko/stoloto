@@ -132,19 +132,11 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                $.ajax({
-                    type: 'get',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    url: '/games/speed-game/win',
-                    data: {
-                        test: true
-                    },
-                    success: function() {
-                        
-                    }
-                });
+                var request = new XMLHttpRequest(); // Создвём объект запроса
+
+                request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
+                request.send(); // Выполняем отправку 
+             
                 modal2.open()
 
             }
