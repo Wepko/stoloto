@@ -132,6 +132,9 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', '/speed-game/win');
+                xhr.send();
                 modal2.open()
 
             }
