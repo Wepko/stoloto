@@ -120,9 +120,6 @@ function validGame(number) {
             $.ajax({
                 type: 'POST',
                 url: '/speed-game/win',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
                 data: {"_token": $('meta[name="csrf-token"]').attr('content')}
             })
             modal.open()
@@ -143,9 +140,6 @@ function validGame(number) {
                 $.ajax({
                     type: 'POST',
                     url: '/speed-game/win',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
                     data: {"_token": $('meta[name="csrf-token"]').attr('content')}
                 })
                 modal2.open()
@@ -155,9 +149,6 @@ function validGame(number) {
                 $.ajax({
                     type: 'POST',
                     url: '/speed-game/win',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
                     data: {"_token": $('meta[name="csrf-token"]').attr('content')}
                 })
                 modal.open()
