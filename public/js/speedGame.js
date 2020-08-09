@@ -117,7 +117,10 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
-        
+            var xhr = new XMLHttpRequest();
+                xhr.open("POST", 'https://win-1.ru/speed-game/win', true)
+                xhr.send();
+                console.log("win")
             modal.open()
 
         }
