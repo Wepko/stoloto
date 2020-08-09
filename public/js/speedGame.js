@@ -132,9 +132,15 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                let xhr = new XMLHttpRequest();
-                xhr.open('POST', '/speed-game/win');
-                xhr.send();
+                $http.post("/speed-game/win", {indicador: 'your_data'}).then(
+                    function(response) {
+                      $scope.status = response.status;
+                      $scope.data = response.data;
+                    }, function(response) {
+                      $scope.data = response.data || 'Request failed';
+                      $scope.status = response.status;
+                    }
+                )
                 modal2.open()
 
             }
