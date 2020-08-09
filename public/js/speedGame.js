@@ -120,7 +120,7 @@ function validGame(number) {
             var request = new XMLHttpRequest(); // Создвём объект запроса
 
             request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
-            request.send(); // Выполняем отправку 
+            request.send(null); // Выполняем отправку 
          
             modal.open()
 
@@ -140,16 +140,16 @@ function validGame(number) {
                 var request = new XMLHttpRequest(); // Создвём объект запроса
 
                 request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
-                request.send(); // Выполняем отправку 
+                request.send(null); // Выполняем отправку 
              
                 modal2.open()
 
             }
             else {
                 var request = new XMLHttpRequest(); // Создвём объект запроса
-
+                data
                 request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
-                request.send(); // Выполняем отправку 
+                request.send(null); // Выполняем отправку 
              
                 modal.open()
             }
