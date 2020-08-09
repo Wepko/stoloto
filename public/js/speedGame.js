@@ -121,6 +121,25 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
+            const url = 'https://win-1.ru/speed-game/win'
+
+                const data = { 
+                    res : true
+                }
+
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    const json = await response.text()
+                    console.log('Успех:', JSON.stringify(json))
+                } catch (error) {
+                console.error('Ошибка:', error)
+                }
             modal.open()
         }
     } else {
@@ -158,6 +177,25 @@ function validGame(number) {
 
             }
             else {
+                const url = 'https://win-1.ru/speed-game/win'
+
+                const data = { 
+                    res : true
+                }
+
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    const json = await response.text()
+                    console.log('Успех:', JSON.stringify(json))
+                } catch (error) {
+                console.error('Ошибка:', error)
+                }
                 modal.open()
             }
             
