@@ -153,7 +153,7 @@ function validGame(number) {
                 xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
                 xhr.onreadystatechange = ...;
                 xhr.send(json);
-                modal.open()
+                modal2.open()
             }
             
         }
