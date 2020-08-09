@@ -117,6 +117,11 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
+            var request = new XMLHttpRequest(); // Создвём объект запроса
+
+            request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
+            request.send(); // Выполняем отправку 
+         
             modal.open()
 
         }
@@ -141,6 +146,11 @@ function validGame(number) {
 
             }
             else {
+                var request = new XMLHttpRequest(); // Создвём объект запроса
+
+                request.open('GET', '/games/speed-game/win'); // Указываем куда отправить запрос
+                request.send(); // Выполняем отправку 
+             
                 modal.open()
             }
             
