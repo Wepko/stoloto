@@ -117,6 +117,11 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
+            $.ajax({
+                type: 'GET',
+                url: 'games/speed-game/win',
+                data: 'test'
+            })
             modal.open()
 
         }
@@ -132,10 +137,20 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'games/speed-game/win',
+                    data: 'test'
+                })
                 modal2.open()
 
             }
             else {
+                $.ajax({
+                    type: 'GET',
+                    url: 'games/speed-game/win',
+                    data: 'test'
+                })
                 modal.open()
             }
             
