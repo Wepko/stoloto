@@ -119,7 +119,7 @@ function validGame(number) {
             }
             $.ajax({
                 type: 'POST',
-                url: 'speed-game/win',
+                url: '/speed-game/win',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -142,7 +142,7 @@ function validGame(number) {
             if (hRes == 4) {
                 $.ajax({
                     type: 'POST',
-                    url: 'speed-game/win',
+                    url: '/speed-game/win',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -154,7 +154,7 @@ function validGame(number) {
             else {
                 $.ajax({
                     type: 'POST',
-                    url: 'speed-game/win',
+                    url: '/speed-game/win',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
