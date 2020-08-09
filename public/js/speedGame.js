@@ -38,11 +38,7 @@ function runGame() {
                                             <div class="fast-game__zone-item"><input type="checkbox" style="opacity:0" onclick="validGame(4)" name="lot4" id="lot4" value="4"><label id="l4" for="lot4">?</label></div>
                                             <div class="fast-game__zone-item"><input type="checkbox" style="opacity:0" onclick="validGame(5)" name="lot5" id="lot5" value="5"><label id="l5" for="lot5">?</label></div>
                                             <div class="fast-game__zone-item"><input type="checkbox" style="opacity:0" onclick="validGame(6)" name="lot6" id="lot6" value="6"><label id="l6" for="lot6">?</label></div>
-`)
-
-    
-
-
+    `)
 }
 
 const wordRes = ['X','П','Р','И','З','X']
@@ -121,26 +117,9 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
-            const url = 'https://win-1.ru/speed-game/win'
-
-                const data = { 
-                    res : true
-                }
-
-                try {
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        body: JSON.stringify(data),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    const json = await response.text()
-                    console.log('Успех:', JSON.stringify(json))
-                } catch (error) {
-                console.error('Ошибка:', error)
-                }
+        
             modal.open()
+
         }
     } else {
         if (h == 5) {
@@ -154,48 +133,12 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                const url = 'https://win-1.ru/speed-game/win'
-
-                const data = { 
-                    res : true
-                }
-
-                try {
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        body: JSON.stringify(data),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    const json = await response.text()
-                    console.log('Успех:', JSON.stringify(json))
-                } catch (error) {
-                console.error('Ошибка:', error)
-                }
+                
                 modal2.open()
 
             }
             else {
-                const url = 'https://win-1.ru/speed-game/win'
-
-                const data = { 
-                    res : true
-                }
-
-                try {
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        body: JSON.stringify(data),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    const json = await response.text()
-                    console.log('Успех:', JSON.stringify(json))
-                } catch (error) {
-                console.error('Ошибка:', error)
-                }
+                
                 modal.open()
             }
             
