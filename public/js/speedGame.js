@@ -1,4 +1,7 @@
 
+const modal = m.modal({ typeModal: "lose" })
+const modal2 = m.modal({ typeModal: "win" })
+
 
 function createGame() {
     const zone = document.getElementById('exampleTable')
@@ -15,7 +18,6 @@ function createGame() {
     for (var i = 1; i <= 6; i++) {
         document.getElementById('lot' + i).setAttribute("disabled", "true")
     }
-
 }
 
 function runGame() {
@@ -59,7 +61,6 @@ var coff = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
 var value = []
 
 function validGame(number) { 
-
     const zoneRes = document.getElementById('addRes')
     
     if (number == 1) {
@@ -120,13 +121,10 @@ function validGame(number) {
             for (var i = 1; i <= 6; i++) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
-            /*zoneRes.insertAdjacentHTML('afterbegin',
-            `<div class="alert alert-success text-center" role="alert">
-                Вы проиграли...
-            </div>`)*/
-            alert('Вы проиграли...')
-            document.getElementById('runGame').style.display = 'none'
-            document.getElementById('restartGame').style.display = 'inline'
+            console.log('lose')
+            modal.open()
+            //document.getElementById('runGame').style.display = 'none'
+           // document.getElementById('restartGame').style.display = 'inline'
         }
     } else {
         if (h == 5) {
@@ -140,34 +138,22 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                /*zoneRes.insertAdjacentHTML('afterbegin',`<div class="remodal modal-win" data-remodal-id="modal">
-                <div class="modal-win__container">
-                    <div class="modal-win__header"><h1>ПОБЕДА!</h1></div>
-                    <div class="modal-win__content">
-                        <p>Поздравляем, Вы выиграли!</p>
-                        <div>100 рублей</div>
-                    </div>
-                    <div class="modal-win__footer">
-                        <a href="" class="btn-access">Забрал приз</a>
-                        <a href="" class="btn-access">Играть еще</a>
-                    </div>
-                </div>
-            </div>`)*/
-            alert('Вы проиграли...')
-                document.getElementById('runGame').style.display = 'none'
-                document.getElementById('restartGame').style.display = 'inline'
+                
+                console.log('win')
+                modal2.open()
+              //  document.getElementById('runGame').style.display = 'none'
+                //document.getElementById('restartGame').style.display = 'inline'
 
             }
             else {
-                /*zoneRes.insertAdjacentHTML('afterbegin',`<div class="alert alert-success text-center" role="alert">
-                                                            Вы проиграли...
-                                                        </div>`)*/
-                alert('Вы проиграли...')
-                document.getElementById('runGame').style.display = 'none'
-                document.getElementById('restartGame').style.display = 'inline'
+               
+                console.log('lose')
+                modal.open()
+                //document.getElementById('runGame').style.display = 'none'
+               // document.getElementById('restartGame').style.display = 'inline'
             }
+            
         }
     }
 }
-
 

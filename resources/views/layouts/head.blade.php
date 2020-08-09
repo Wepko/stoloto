@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ asset('css/mmenu.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/mmenu.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
 
 	<style>
@@ -339,10 +339,10 @@ table input[type='checkbox']:checked + label{
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script src="{{ asset('js/app.min.js') }}"></script>
 
-	<script src="{{ asset('js/game.js')}}"></script>
-<script src="{{ asset('js/mmenu.polyfills.js') }}"></script>	
-	<script src="{{ asset('js/mmenu.js') }}"></script>
-  
+		<script src="{{ asset('js/game.js')}}"></script>
+		<script src="{{ asset('js/mmenu.polyfills.js') }}"></script>	
+		<script src="{{ asset('js/mmenu.js') }}"></script>
+	
 		<script src="{{ asset('js/main.js')}}"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="application/javascript"></script>
