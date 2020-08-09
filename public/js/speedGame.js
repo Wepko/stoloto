@@ -137,7 +137,7 @@ function validGame(number) {
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    url: '/speed-game/win',
+                    url: '/games/speed-game/win',
                     data: {
                         test: true
                     },
