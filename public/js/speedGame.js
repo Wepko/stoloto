@@ -132,15 +132,19 @@ function validGame(number) {
             }
 
             if (hRes == 4) {
-                $http.post("/speed-game/win", {indicador: 'your_data'}).then(
-                    function(response) {
-                      $scope.status = response.status;
-                      $scope.data = response.data;
-                    }, function(response) {
-                      $scope.data = response.data || 'Request failed';
-                      $scope.status = response.status;
+                $.ajax({
+                    type: 'post',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: '/speed-game/win',
+                    data: {
+                        test: true
+                    },
+                    success: function() {
+                        
                     }
-                )
+                });
                 modal2.open()
 
             }
