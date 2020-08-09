@@ -120,7 +120,7 @@ function validGame(number) {
             $.ajax({
                 type: 'GET',
                 url: 'games/speed-game/win',
-                data: 'test'
+                data: ''
             })
             modal.open()
 
@@ -140,7 +140,7 @@ function validGame(number) {
                 $.ajax({
                     type: 'GET',
                     url: 'games/speed-game/win',
-                    data: 'test'
+                    data: ''
                 })
                 modal2.open()
 
