@@ -118,9 +118,12 @@ function validGame(number) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: 'games/speed-game/win',
-                data: ''
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: 'test'
             })
             modal.open()
 
@@ -138,18 +141,24 @@ function validGame(number) {
 
             if (hRes == 4) {
                 $.ajax({
-                    type: 'GET',
+                    type: 'POST',
                     url: 'games/speed-game/win',
-                    data: ''
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: 'test'
                 })
                 modal2.open()
 
             }
             else {
                 $.ajax({
-                    type: 'GET',
+                    type: 'POST',
                     url: 'games/speed-game/win',
-                    data: ''
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: 'test'
                 })
                 modal.open()
             }
