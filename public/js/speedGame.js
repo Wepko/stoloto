@@ -133,7 +133,7 @@ function validGame(number) {
 
             if (hRes == 4) {
                 $.ajax({
-                    type: 'post',
+                    type: 'get',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
