@@ -211,6 +211,6 @@
         </div>
     </div>
 </section>
-
+<script src="{{ asset('js/modal2.js')}}"></script>
 <script src="{{ asset('js/momentGame.js')}}"></script>
 @endsection
