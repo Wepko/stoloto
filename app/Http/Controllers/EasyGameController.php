@@ -29,7 +29,7 @@ class EasyGameController extends Controller
             if (Auth::user()->money() >= 100) {
 
                 $model = User::where('id', '=', Auth::user()->getId())->first();
-                $money = strval(intval(Auth::user()->money()) - 20);
+                $money = strval(intval(Auth::user()->money()) - 100);
                 $model->money = $money;
                 $model->save();
 
