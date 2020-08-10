@@ -261,7 +261,7 @@ Route::prefix('/games')->group( function () {
   Route::post('/moment-game/win', 'AdminController@momentGame');
 
   Route::get('moment-game', function (){
-    return view('games.speed-game');
+    return view('games.moment-game');
   })->name('moment-game');
 
 });
