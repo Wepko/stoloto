@@ -805,7 +805,6 @@ class AdminController extends Controller
             $model->money = $mon;
             $model->save();
         }
-        return response()->json(array('msg'=> $msg), 200);
     }
 
 }
