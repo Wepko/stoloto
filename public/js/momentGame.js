@@ -2,6 +2,7 @@
 const modal = m2.modal({ typeModal: "lose" })
 const modal2 = m2.modal({ typeModal: "win" })
 
+var h = 0
 
 function createGame() {
     const zone = document.getElementById('exampleTable')
@@ -118,6 +119,7 @@ function validGame(number) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
             modal.open()
+            console.log(h++)
 
         }
     } else {
@@ -145,6 +147,7 @@ function validGame(number) {
             }
             else {
                 modal.open()
+                console.log(h++)
             }
             
         }
