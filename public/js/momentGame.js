@@ -119,8 +119,6 @@ function validGame(number) {
                 document.getElementById('lot' + i).setAttribute("disabled", "true")
             }
             modal.open()
-            console.log(h++)
-
         }
     } else {
         if (h == 5) {
@@ -147,7 +145,6 @@ function validGame(number) {
             }
             else {
                 modal.open()
-                console.log(h++)
             }
             
         }
