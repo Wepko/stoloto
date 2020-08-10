@@ -197,7 +197,7 @@
                                         @if (Session::has('res'))
                                             <button class="btn-orange" id="btn" onclick="runGame()" style="width: 100%; border: none">Начать</a>
                                         @else
-                                            <form action="{{ route('refillMomentGame') }}" method='get'
+                                            <form action="{{ route('refillMomentGame') }}" method='get'>
                                             @csrf
                                                 <button type="submit" class="btn-orange" style="width: 100%; border: none">Оплата</a>
                                             </form>
