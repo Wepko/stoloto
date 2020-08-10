@@ -137,7 +137,7 @@ function validGame(number) {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     type: 'POST',
-                    url: '/games/speed-game/win',
+                    url: '/games/moment-game/win',
                     data: {}
                 })
                 modal2.open()
