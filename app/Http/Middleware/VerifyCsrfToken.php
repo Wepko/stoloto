@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        '/games/speed-game/win'
+        'https://www.win-1.ru/games/speed-game/win'
     ];
 }
