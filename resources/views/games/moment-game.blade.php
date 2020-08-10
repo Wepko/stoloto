@@ -212,5 +212,5 @@
     </div>
 </section>
 
-<script src="{{ asset('js/speedGame.js')}}"></script>
+<script src="{{ asset('js/momentGame.js')}}"></script>
 @endsection

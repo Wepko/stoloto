@@ -1,6 +1,6 @@
 
-const modal = m.modal({ typeModal: "lose" })
-const modal2 = m.modal({ typeModal: "win" })
+const modal = m2.modal({ typeModal: "lose" })
+const modal2 = m2.modal({ typeModal: "win" })
 
 
 function createGame() {
