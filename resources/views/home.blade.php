@@ -10,14 +10,14 @@
 <!-- logo -->
 <div class="preview">
 	<div class="preview__content">
-		<p class="preview__text">Сыграй, чтобы осуществить свою мечту!</p>
+		<p class="preview__text">Учись, чтобы осуществить свою мечту!</p>
 		<div class="preview__title">					
-			<h1>Призовой фонд</h1>
+			<!--<h1>Призовой фонд</h1>
 			<strong>100 000 <b>p</b></strong>
-			<span>Выйгрыш в каждом билете!</span>
+			<span>Выйгрыш в каждом билете!</span>-->
 		</div>
 		<div class="preview__btn">
-			<a href="{{ route('one-game') }}" class="btn-main">Принять участие</a>
+			<a href="#" class="btn-main">Принять участие</a>
 		</div>
 	
 	</div>
@@ -25,7 +25,7 @@
 </div>
 </div>
 </header>
-<section class="special-offer screen-one">
+<!--<section class="special-offer screen-one">
 	<div class="container">
 		<div class="jackpot">
 			<div class="jackpot__wrapper">
@@ -51,7 +51,7 @@
 					<div class="special-offer__info-block">
 						<h3>Не упустите возможность принять участие 
 							<span>в розыгрыше Джекпота!</span></h3>
-						<p>Накопительный Джекпот составляется из всех игр, кроме моментальных, 
+						<p>Накопительный  составляется из всех игр, кроме моментальных, 
 							и образуется из 50% суммы от купленных билетов. В 3-х дневный период 
 							перед началом розыгрыша основного призового фонда, его накопление 
 							останавливаться, а стоимость билета может быть увеличена. </p>
@@ -72,10 +72,10 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section>-->
 
 
-	<section class="our-servis screen-two">
+	<!--<section class="our-servis screen-two">
 		<div class="container">		
 			<h2 class="our-servis__title">Как работает наш сервис ?</h2>
 			<div class="our-servis__content">	
@@ -104,7 +104,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
    
 	<section class="games-card screen-one">
 		<h2 class="games-card__title">Игры на любой вкус</h2>
@@ -115,7 +115,7 @@
 		   				<div class="game-card-big">
 		   					<div class="game-card-big__text-decoration">Испытай удачу!</div>
 		   					<div class="game-card-big__name-game">Быстрая игра</div>
-		   					<div class="game-card-big__price">Билет от 20р</div>
+		   					<div class="game-card-big__price"></div>
 		   					<div class="game-card-big__images"><img src="img/Happy guy.jpg" alt=""></div>
 		   					<div class="game-card-big__btns">
 		   						<a href="{{ route('speed-game') }}" class="btn-orange mr-3">Играть сейчас</a>
@@ -127,7 +127,7 @@
 		   				<div class="game-card-big">
 		   					<div class="game-card-big__text-decoration">Выигрывай больше!</div>
 		   					<div class="game-card-big__name-game">Моментальная игра</div>
-		   					<div class="game-card-big__price">Билет от 100р</div>
+		   					<div class="game-card-big__price"></div>
 		   					<div class="game-card-big__images"><img src="img/Happy girl.jpg" alt=""></div>
 		   					<div class="game-card-big__btns">
 		   						<a href="{{ route('moment-game') }}" class="btn-orange mr-3">Играть сейчас</a>
@@ -137,7 +137,7 @@
 		   			</div>
 		   		</div>
 		   	</div>
-		   	<div class="games-card__middle">
+		   	<!--<div class="games-card__middle">
 		   		<div class="row">
 						<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
@@ -209,7 +209,7 @@
 	   				</div>
 		   		</div>
 		   	</div>
-	 		</div>
+	 		</div>-->
 	</section>
 
 	<section class="our-winners screen-two">
