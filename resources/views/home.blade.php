@@ -25,7 +25,7 @@
 </div>
 </div>
 </header>
-<!--<section class="special-offer screen-one">
+{{--<section class="special-offer screen-one">
 	<div class="container">
 		<div class="jackpot">
 			<div class="jackpot__wrapper">
@@ -72,7 +72,7 @@
 			</div>
 		</div>
 	</div>
-</section>-->
+</section>--}}
 
 
 	<!--<section class="our-servis screen-two">
