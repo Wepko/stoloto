@@ -33,7 +33,6 @@ function _createMadal(option) {
 							<div class="modal-win__header"><h1>ПОБЕДА!</h1></div>
 							<div class="modal-win__content">
 								<p>Поздравляем, Вы выиграли!</p>
-								<div>500 рублей</div>
 							</div>
 							<div class="modal-win__footer">
 								<a href="" class="btn-access" id="canel" data-close="true">Забрал приз</a>

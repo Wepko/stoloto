@@ -103,12 +103,12 @@
                                  </div>
                          </div>
                          <div class="col-lg-4 col-sm-12 order-lg-2 order-sm-1">
-                                 <div class="prize-pool">
+                                 <!--<div class="prize-pool">
                                      <div class="prize-pool__title">Призовой фонд этой игры 100 рублей</div>
-                                 </div>
+                                 </div>-->
 
                                  <div class="panel-score">
-                                     <p class="panel-score__discription">Стоимость одного билета 20р</p>
+                                     <!--<p class="panel-score__discription">Стоимость одного билета 20р</p>-->
                                      <div class="panel-score__icons">
                                         <div>
                                             
@@ -199,7 +199,7 @@
                                         @else
                                             <form action="{{ route('refillSpeedGame') }}" method='get'
                                             @csrf
-                                                <button type="submit" class="btn-orange" style="width: 100%; border: none">Оплата</a>
+                                                <button type="submit" class="btn-orange" style="width: 100%; border: none">Играть</a>
                                             </form>
                                         @endif
                                     </div>

@@ -21,7 +21,7 @@
 		</div>
 	
 	</div>
-	<div class="preview__images"><img src="img/main-baby.png" alt=""></div>
+	<!--<div class="preview__images"><img src="img/main-baby.png" alt=""></div>-->
 </div>
 </div>
 </header>
@@ -212,7 +212,7 @@
 	 		</div>-->
 	</section>
 
-	<section class="our-winners screen-two">
+	<!--<section class="our-winners screen-two">
 		<h2 class="our-winners__title">Наши побелители</h2>
 		<div class="container">		
 			<div class="our-winners__blocks">
@@ -237,7 +237,7 @@
 				<a href="#" class="btn-orange">Смотреть все коментарии</a>
 			</div>
 		</div>
-	</section>
+	</section>-->
  
 
 @endsection
