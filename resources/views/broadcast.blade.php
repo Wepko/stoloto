@@ -14,7 +14,7 @@
     </div>
 
     <div align="center">
-      <iframe style="width: 80vw; height: 80vh" src="https://www.youtube.com/embed/sRh0_W9eQow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <!--<iframe style="width: 80vw; height: 80vh" src="https://www.youtube.com/embed/sRh0_W9eQow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
     </div>
 
     <h1 class="display-5 text-center mb-5 mt-5" >Ближайшие трансляции</h1>
