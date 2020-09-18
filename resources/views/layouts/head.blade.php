@@ -280,7 +280,7 @@ table input[type='checkbox']:checked + label{
 										<div class="row">
 											<div class="col-sm-12 col-lg-4 link__main">
 												<h3>Золотая антилопа</h3>
-												<p>Прибыльный доход без рисков и усилий. Выигрыш ждет тебя в каждом билете!</p>
+												<!--<p>Прибыльный доход без рисков и усилий. Выигрыш ждет тебя в каждом билете!</p>-->
 											</div>
 											<div class="col-sm-12 col-lg-2 link__menu">
 												<h3>Меню</h3>
