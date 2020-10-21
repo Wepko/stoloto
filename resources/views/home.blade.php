@@ -12,20 +12,20 @@
 	<div class="preview__content">
 		<p class="preview__text">Учись, чтобы осуществить свою мечту!</p>
 		<div class="preview__title">					
-			<!--<h1>Призовой фонд</h1>
+			<h1>Призовой фонд</h1>
 			<strong>100 000 <b>p</b></strong>
-			<span>Выйгрыш в каждом билете!</span>-->
+			<span>Выйгрыш в каждом билете!</span>
 		</div>
 		<div class="preview__btn">
 			<a href="#" class="btn-main">Принять участие</a>
 		</div>
 	
 	</div>
-	<!--<div class="preview__images"><img src="img/main-baby.png" alt=""></div>-->
+	<div class="preview__images"><img src="img/main-baby.png" alt=""></div>
 </div>
 </div>
 </header>
-{{--<section class="special-offer screen-one">
+<section class="special-offer screen-one">
 	<div class="container">
 		<div class="jackpot">
 			<div class="jackpot__wrapper">
@@ -72,10 +72,10 @@
 			</div>
 		</div>
 	</div>
-</section>--}}
+</section>
 
 
-	<!--<section class="our-servis screen-two">
+	<section class="our-servis screen-two">
 		<div class="container">		
 			<h2 class="our-servis__title">Как работает наш сервис ?</h2>
 			<div class="our-servis__content">	
@@ -104,7 +104,7 @@
 				</div>
 			</div>
 		</div>
-	</section>-->
+	</section>
    
 	<section class="games-card screen-one">
 		<h2 class="games-card__title">Игры на любой вкус</h2>
@@ -137,7 +137,7 @@
 		   			</div>
 		   		</div>
 		   	</div>
-		   	<!--<div class="games-card__middle">
+		   	<div class="games-card__middle">
 		   		<div class="row">
 						<div class="col-lg-4 col-sm-12">
 	   					<div class="game-card-middle">
@@ -209,10 +209,10 @@
 	   				</div>
 		   		</div>
 		   	</div>
-	 		</div>-->
+	 		</div>
 	</section>
 
-	<!--<section class="our-winners screen-two">
+	<section class="our-winners screen-two">
 		<h2 class="our-winners__title">Наши побелители</h2>
 		<div class="container">		
 			<div class="our-winners__blocks">
@@ -237,7 +237,7 @@
 				<a href="#" class="btn-orange">Смотреть все коментарии</a>
 			</div>
 		</div>
-	</section>-->
+	</section>
  
 
 @endsection

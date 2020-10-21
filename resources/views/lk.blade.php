@@ -19,9 +19,9 @@
         <div class="card card-block w-100" >
             <div class="card-body">
               <h2 class="card-title">Кошелек</h2>
-              <!--<h4 class="card-subtitle card-text mb-2 text-muted">{{ Auth::user()->money() }} руб</h4>-->
+              <h4 class="card-subtitle card-text mb-2 text-muted">{{ Auth::user()->money() }} руб</h4>
 
-              <!--<form action="{{ route('refill') }}" method="get">
+              <form action="{{ route('refill') }}" method="get">
                 @csrf
                 <input type="number" name="price" placeholder="Сумма" style="border: 1px solid black" class="btn mt-2 w-100">
                 @if ($errors->has('price'))
@@ -38,13 +38,13 @@
                   <p style="color: red">{{ $errors->first('price') }}</p>
                 @endif
                 <input type="submit" class="btn btn-dark mt-2 w-100" value="Вывести">
-              </form>-->
+              </form>
               
             </div>
         </div>
       </div>
 
-      <!--<div class="row w-100 mt-4 " >
+      <div class="row w-100 mt-4 " >
         <nav class="w-100">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Результаты</a>
@@ -123,7 +123,7 @@
             @endif    
           </div>
         </div>
-      </div>-->
+      </div>
     </div>
 
   </div>

@@ -103,13 +103,13 @@
                                  </div>
                          </div>
                          <div class="col-lg-4 col-sm-12 order-lg-2 order-sm-1">
-                                 <!--<div class="prize-pool">
+                                 <div class="prize-pool">
                                      <div class="prize-pool__title">Призовой фонд этой игры 500 рублей</div>
-                                 </div>-->
+                                 </div>
 
                                  <div class="panel-score">
-                                     <!--<p class="panel-score__discription">Стоимость одного билета 100р</p>-->
-                                     <!-- <div class="panel-score__icons">
+                                    <p class="panel-score__discription">Стоимость одного билета 100р</p>
+                                     <div class="panel-score__icons">
                                         <div>
                                             
                                             <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50px" height="50px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 60 50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
@@ -192,7 +192,7 @@
                                             </svg>
 
                                         </div>
-                                     </div>-->
+                                     </div>
                                     <div class="panel-score__btns">
                                         @if (Session::has('res'))
                                             <button class="btn-orange" id="btn" onclick="runGame()" style="width: 100%; border: none">Начать</a>

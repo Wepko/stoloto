@@ -8,7 +8,7 @@
             <div class="col-sm-12 col-lg-8 offset-sm-0 offset-lg-5">
                 <div class="start-game">
                     <h2 class="start-game__title">Быстрая игра</h2>
-                    <!--<h3 class="start-game__title-discription">Стоимость одной игры 20р </h3>-->
+                    <h3 class="start-game__title-discription">Стоимость одной игры 20р </h3>
                     <p class="start-game__discription">В этой игре вам нужно из 6 ячеек угадать 4 ячейки, где скрывается слово 
                                                                 ПРИЗ. Общее количесвто попыток на открытие ячеек 5. Приятной игры!</p>
                     <div class="start-game__icons" style="display:  flex; align-items: center">
