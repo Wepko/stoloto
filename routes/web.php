@@ -40,7 +40,7 @@ Route::get('/', function () {
   $fond = $pre . $fond;
   $time = OneGameTimerModels::where('id','=', 1)->value('time');
 
-  return view('home', ['fond' => $fond + 237600, 'time' => $time]);
+  return view('home', ['fond' => $fond, 'time' => $time]);
 })->name('home');
 
 Route::get('/reg', function (){
