@@ -31,12 +31,12 @@
 			<div class="jackpot__wrapper">
 				<strong class="jackpot__title">Текущий Jackpot</strong>
 				<div class="jackpot__total">
-					<div class="jackpot__element">2</div>
-					<div class="jackpot__element">3</div>
-					<div class="jackpot__element">2</div>
-					<div class="jackpot__element">7</div>
-					<div class="jackpot__element">0</div>
-					<div class="jackpot__element">0</div>
+					<div class="jackpot__element">{{ $fond[0] }}</div>
+					<div class="jackpot__element">{{ $fond[1] }}</div>
+					<div class="jackpot__element">{{ $fond[2] }}</div>
+					<div class="jackpot__element">{{ $fond[3] }}</div>
+					<div class="jackpot__element">{{ $fond[4] }}</div>
+					<div class="jackpot__element">{{ $fond[5] }}</div>
 				</div>
 			</div>
 		</div>
