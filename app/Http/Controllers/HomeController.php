@@ -29,6 +29,7 @@ use App\Models\ThreeGameWinModels;
 use App\Models\FourGameWinModels;
 use App\Models\FiveGameWinModels;
 use App\Models\SixGameWinModels;
+use App\Models\RefUserModels;
 use DB;
 require "BillPayments.php";
 
@@ -106,7 +107,7 @@ class HomeController extends Controller
         FourGameWinModels::all(),
         FiveGameWinModels::all(),
         SixGameWinModels::all()
-    ];
+      ];
 
       $datagame = [
         OneGameTimerModels::where('id', '=', 1)->first(),
@@ -115,11 +116,33 @@ class HomeController extends Controller
         FourGameTimerModels::where('id', '=', 1)->first(),
         FiveGameTimerModels::where('id', '=', 1)->first(),
         SixGameTimerModels::where('id', '=', 1)->first()
-    ];
+      ];
 
         $infodist = JackPotModels::all();
+        $ref = 'ref=' . Auth::user()->getId();
 
-      return view('lk', ['userwinner' => UserWinnerModels::all(), 'userwingame' => $userwingame, 'data' => $datagame, 'infodist' => $infodist])->with('usergame', $usergame);
+        if (count(DB::table('ref_user')->where('user_id', Auth::user()->getId())->get()) > 0) {
+            $ref_users = DB::table('ref_user')->where('user_ref_id', Auth::user()->getId())->get();
+            return view('lk', ['userwinner' => UserWinnerModels::all(), 'ref_users' => $ref_users, 'userwingame' => $userwingame, 'data' => $datagame, 'infodist' => $infodist, 'ref_link' => 'https://www.win-1.ru/reg/' . $ref])->with('usergame', $usergame);
+        }
+        else {
+            $vm = Auth::user()->getRefId();
+            if (isset($vm)) {
+                RefUserModels::create([
+                    'user_id' => Auth::user()->getId(),
+                    'user_ref_id' => Auth::user()->getRefId(),
+                    'status' => 1
+                ]);
+            }
+            else {
+                RefUserModels::create([
+                    'user_id' => Auth::user()->getId(),
+                    'status' => 0
+                ]);
+            }
+        }
+
+        return view('lk', ['userwinner' => UserWinnerModels::all(), 'userwingame' => $userwingame, 'data' => $datagame, 'infodist' => $infodist, 'ref_link' => 'https://www.win-1.ru/reg/' . $ref])->with('usergame', $usergame);
   }
 
   public function logout(){

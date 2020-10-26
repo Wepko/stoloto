@@ -20,6 +20,7 @@ use App\Models\FiveGameTimerModels;
 use App\Models\SixGameTimerModels;
 use App\Models\DistGameModels;
 use App\Models\DistGameTimerModels;
+use App\Models\RefUserModels;
 
 Route::get('/', function () {
   if ($fondModels = FondModels::where('id', '=', 1)->first()) {
@@ -43,6 +44,10 @@ Route::get('/', function () {
   return view('home', ['fond' => $fond, 'time' => $time]);
 })->name('home');
 
+Route::get('/reg/ref={id}', function ($id){
+  return view('reg', ['ref' => $id]);
+})->name('reg');
+
 Route::get('/reg', function (){
   return view('reg');
 })->name('reg');
@@ -56,6 +61,7 @@ Auth::routes(['verify' => true]);
 
 Route::post('/login-submit', 'LoginController@submit')->name('login-submit');
 Route::post('/reg-submit', 'RegController@submit')->name('reg-submit');
+Route::post('/reg-submit-ref', 'RegController@submitRef')->name('reg-submit-ref');
 Route::get('/logout', 'HomeController@logout')->name('logout');
 
 
@@ -106,6 +112,8 @@ Route::post('/ReplaceFiveGame', 'AdminController@replaceFiveGame')->name('Replac
 Route::post('/ReplaceSixGame', 'AdminController@replaceSixGame')->name('ReplaceSixGame');
 Route::post('/DistGame', 'AdminController@distGame')->name('distgame');
 Route::post('/StopGame', 'AddTicketController@stopGame')->name('StopGame');
+Route::post('/RenameRefCoff', 'AdminController@renameRefCoff')->name('RenameRefCoff');
+
 
 Route::get('/admin', function (){
 

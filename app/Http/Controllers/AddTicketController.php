@@ -21,6 +21,8 @@ use App\Models\FondModels;
 use App\Models\PriceGameModels;
 use App\Models\DistGameModels;
 use App\Models\JackPotModels;
+use App\Models\RefUserModels;
+use App\Models\RefCoffModels;
 use Illuminate\Http\Request;
 use DB;
 
@@ -185,6 +187,16 @@ class AddTicketController extends Controller
             $model = User::where('id', '=', Auth::user()->getId())->first();
             
             if (Auth::user()->money() >= $mon) {
+                $vm = Auth::user()->getRefId();
+
+                if ($vm != null) {
+                    $ref_user = User::where('id', '=', $vm)->first();
+                    $coff = RefCoffModels::where('id', '=', 1)->first(); 
+                    $money = strval(intval($ref_user->money) + intval($mon * ($coff->coff / 100)));
+                    $ref_user->money = $money;
+                    $ref_user->save();
+                }
+
                 $money = strval(intval(Auth::user()->money()) - intval($mon));
                 $model->money = $money;
                 $model->save();
@@ -306,6 +318,17 @@ class AddTicketController extends Controller
             $model = User::where('id', '=', Auth::user()->getId())->first();
             
             if (Auth::user()->money() >= $mon) {
+
+                $vm = Auth::user()->getRefId();
+
+                if ($vm != null) {
+                    $ref_user = User::where('id', '=', $vm)->first();
+                    $coff = RefCoffModels::where('id', '=', 1)->first(); 
+                    $money = strval(intval($ref_user->money) + intval($mon * ($coff->coff / 100)));
+                    $ref_user->money = $money;
+                    $ref_user->save();
+                }
+
                 $money = strval(intval(Auth::user()->money()) - intval($mon));
                 $model->money = $money;
                 $model->save();
@@ -417,6 +440,16 @@ class AddTicketController extends Controller
             $model = User::where('id', '=', Auth::user()->getId())->first();
             
             if (Auth::user()->money() >= $mon) {
+                $vm = Auth::user()->getRefId();
+
+                if ($vm != null) {
+                    $ref_user = User::where('id', '=', $vm)->first();
+                    $coff = RefCoffModels::where('id', '=', 1)->first(); 
+                    $money = strval(intval($ref_user->money) + intval($mon * ($coff->coff / 100)));
+                    $ref_user->money = $money;
+                    $ref_user->save();
+                }
+
                 $money = strval(intval(Auth::user()->money()) - intval($mon));
                 $model->money = $money;
                 $model->save();
@@ -528,6 +561,16 @@ class AddTicketController extends Controller
             $model = User::where('id', '=', Auth::user()->getId())->first();
             
             if (Auth::user()->money() >= $mon) {
+                $vm = Auth::user()->getRefId();
+
+                if ($vm != null) {
+                    $ref_user = User::where('id', '=', $vm)->first();
+                    $coff = RefCoffModels::where('id', '=', 1)->first(); 
+                    $money = strval(intval($ref_user->money) + intval($mon * ($coff->coff / 100)));
+                    $ref_user->money = $money;
+                    $ref_user->save();
+                }
+
                 $money = strval(intval(Auth::user()->money()) - intval($mon));
                 $model->money = $money;
                 $model->save();
@@ -632,6 +675,16 @@ class AddTicketController extends Controller
             $model = User::where('id', '=', Auth::user()->getId())->first();
             
             if (Auth::user()->money() >= $mon) {
+                $vm = Auth::user()->getRefId();
+
+                if ($vm != null) {
+                    $ref_user = User::where('id', '=', $vm)->first();
+                    $coff = RefCoffModels::where('id', '=', 1)->first(); 
+                    $money = strval(intval($ref_user->money) + intval($mon * ($coff->coff / 100)));
+                    $ref_user->money = $money;
+                    $ref_user->save();
+                }
+
                 $money = strval(intval(Auth::user()->money()) - intval($mon));
                 $model->money = $money;
                 $model->save();
@@ -739,6 +792,16 @@ class AddTicketController extends Controller
             $model = User::where('id', '=', Auth::user()->getId())->first();
             
             if (Auth::user()->money() >= $mon) {
+                $vm = Auth::user()->getRefId();
+
+                if ($vm != null) {
+                    $ref_user = User::where('id', '=', $vm)->first();
+                    $coff = RefCoffModels::where('id', '=', 1)->first(); 
+                    $money = strval(intval($ref_user->money) + intval($mon * ($coff->coff / 100)));
+                    $ref_user->money = $money;
+                    $ref_user->save();
+                }
+                
                 $money = strval(intval(Auth::user()->money()) - intval($mon));
                 $model->money = $money;
                 $model->save();

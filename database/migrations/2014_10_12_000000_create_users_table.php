@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->biginteger('money')->default(0);
             $table->string('token_reset_password')->nullable();
             $table->boolean('is_admin')->default(0);
+            $table->biginteger('referal_id')->nullable();
 
             $table->timestamps();
         });

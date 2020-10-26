@@ -15,6 +15,7 @@
     <div class="container" >
       <h1>Личный кабинет</h1>
       <h4>Добро пожаловать {{ Auth::user()->getName() }}</h4>
+      <h6>Referal link: {{ $ref_link }}</h6>
       <div class="row w-100 mt-5">
         <div class="card card-block w-100" >
             <div class="card-body">
@@ -50,6 +51,7 @@
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Результаты</a>
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Мои билеты</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Распределение</a>
+            <a class="nav-item nav-link" id="nav-ref-tab" data-toggle="tab" href="#nav-ref" role="tab" aria-controls="nav-ref" aria-selected="false">Referals</a>
           </div>
         </nav>
         <div class="tab-content w-100 p-4 border border-top-0 text-center" id="nav-tabContent">
@@ -121,6 +123,17 @@
             @else
               <h6 class="card-subtitle  card-text mb-2 text-muted ">Билетов с неполученными выйграшами нет</h6>     
             @endif    
+          </div>
+          <div class="tab-pane fade" id="nav-ref" role="tabpanel" aria-labelledby="nav-ref-tab">
+            @isset($ref_users)
+            <div style="display: flex; flex-wrap: wrap; flex-basis: 30%; justify-content: space-around">
+              @forelse ($ref_users as $user)
+                  <h6 class="card-subtitle card-text mb-2 text-muted " style="text-align: left">ID referal user {{$user->user_id}}</h6>
+              @empty  
+                <h6 class="card-subtitle card-text mb-2 mt-2 text-muted " style="text-align: center">Referals not found</h6>
+              @endforelse
+            </div>
+            @endisset  
           </div>
         </div>
       </div>

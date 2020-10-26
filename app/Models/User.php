@@ -24,7 +24,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'location',
         'phone',
         'money',
-        'is_admin'
+        'is_admin',
+        'referal_id'
     ];
 
     /**
@@ -75,6 +76,10 @@ class User extends Authenticatable implements MustVerifyEmail
     
     public function getLPass() {
         return $this->password;
+    }
+
+    public function getRefId() {
+        return $this->referal_id;
     }
 
 }

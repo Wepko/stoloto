@@ -22,6 +22,7 @@ use App\Models\FondModels;
 use App\Models\PriceGameModels;
 use App\Models\DistGameModels;
 use App\Models\JackPotModels;
+use App\Models\RefCoffModels;
 use Illuminate\Http\Request;
 use DB; 
 
@@ -34,6 +35,14 @@ class AdminController extends Controller
         $model->distGame = true;
         $model->save();
         return redirect()->back()->with('info', 'Начат розыгрыш распределения');
+    }
+
+    public function renameRefCoff(Request $request) {
+        $number = $request->input('number');
+        $model = RefCoffModels::where('id', '=', 1)->first();
+        $model->coff = $number;
+        $model->save();
+        return redirect()->back()->with('info', 'Rename succes');
     }
 
     public function distribution(Request $request) {

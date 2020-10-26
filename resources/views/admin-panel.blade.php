@@ -286,6 +286,15 @@
           <input type="submit" class="btn btn-dark" value="Провести распределение">
       </form>
       </div>
+      <div class="mt-5"> 
+        <h1>Rename referal coff</h1>
+        <form action= "{{ route('RenameRefCoff') }}" method="post">
+          @csrf
+              <label>Rename</label><br>
+              <input id="number" type="number"  name="number"><br>
+              <input type="submit" class="btn btn-dark mt-1"  value="Rename">
+          </form>
+      </div>
 @endif
     </div>
 @endsection

@@ -9,8 +9,14 @@
     <h4 class="card-title mt-3 text-center">Регистрация</h4>
     <p class="text-center">Начните с вашего бесплатного аккаунта</p>
 
+    @if ($ref ?? '')
+    <form class="" action="{{ route('reg-submit-ref') }}" method="post" novalidate>
+    <input type="hidden" name="ref_link" value="{{$ref}}">
+    @csrf
+    @else
     <form class="" action="{{ route('reg-submit') }}" method="post" novalidate>
     @csrf
+    @endif
       <div class="form-group input-group">
         <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
